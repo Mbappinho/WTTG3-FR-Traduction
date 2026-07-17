@@ -73,8 +73,8 @@ function Select-GameRoot {
 
     Write-Host "Exemple Steam :"
     Write-Host '  C:\Program Files (x86)\Steam\steamapps\common\Welcome to the Game III'
-    Write-Host "Exemple crack / copie locale :"
-    Write-Host '  C:\Users\...\Welcome.to.the.Game.III\game'
+    Write-Host "Exemple dossier local :"
+    Write-Host '  C:\Games\Welcome to the Game III'
     Write-Host ""
     $manual = Read-Host "Chemin complet du dossier du jeu"
     $manual = $manual.Trim().Trim('"')
