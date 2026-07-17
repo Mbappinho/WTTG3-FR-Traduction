@@ -1,0 +1,272 @@
+[
+  {
+    "description": "Terminer le jeu en difficulté Normal",
+    "displayName": "Dettes réglées",
+    "hidden": 0,
+    "icon": "achievement_images/9a0563bf987eaeccccd57d5e13e31a9fc1b3e26c.jpg",
+    "icongray": "achievement_images/2e4173bf1df299eb3b7040136d3574773df694ba.jpg",
+    "name": "ACH_DEBT_SETTLED",
+    "displayName_en": "Debt Settled",
+    "description_en": "Beat the game on Normal difficulty"
+  },
+  {
+    "description": "Terminer le jeu en difficulté 1337",
+    "displayName": "God Gamer",
+    "hidden": 0,
+    "icon": "achievement_images/cc0699f27b4c36c2b9b2148c6bb46700aeb68fbd.jpg",
+    "icongray": "achievement_images/317010e88202ea75d1eb7cc9cad8fc05d036a730.jpg",
+    "name": "ACH_GOD_GAMER",
+    "displayName_en": "God Gamer",
+    "description_en": "Beat the game on 1337 difficulty"
+  },
+  {
+    "description": "Rester une heure dans la scène de crime de Tanner",
+    "displayName": "Chouchou de Tanner",
+    "hidden": 0,
+    "icon": "achievement_images/d2cf9155fe4b57ff8adb7c1fef6465ab6a4696c9.jpg",
+    "icongray": "achievement_images/509fe37363609c48337a1799acc8fd5938ff6417.jpg",
+    "name": "ACH_TANNER_PET",
+    "displayName_en": "Tanner’s Pet",
+    "description_en": "Stay one hour in Tanner’s Crime Scene"
+  },
+  {
+    "description": "Rester 10 heures cumulées dans la scène de crime de Tanner",
+    "displayName": "Bonne fille de Tanner",
+    "hidden": 0,
+    "icon": "achievement_images/c571900bdebdc5c4b1f20bee62d337c36ed75474.jpg",
+    "icongray": "achievement_images/067947a620309b134eb93db619b10bd28a5a3c4c.jpg",
+    "name": "ACH_TANNER_GOOD_GIRL",
+    "displayName_en": "Tanner’s Good Girl",
+    "description_en": "Stay 10 cumulative hours in Tanner’s Crime Scene"
+  },
+  {
+    "description": "Tu l'as cherché",
+    "displayName": "Mauvaise haleine",
+    "hidden": 0,
+    "icon": "achievement_images/d3f1c3581f001797caf53d53665c70ba9bb4aa0f.jpg",
+    "icongray": "achievement_images/d0079a2a515fc661c2c7ffad039ebf55a8880261.jpg",
+    "name": "ACH_BAD_BREATH",
+    "displayName_en": "Bad Breath",
+    "description_en": "You asked for it"
+  },
+  {
+    "description": "Terminer le tutoriel",
+    "displayName": "Approbation de Ronald",
+    "hidden": 0,
+    "icon": "achievement_images/298a151dd3b3bbd662a78843d2027fbfd6955e38.jpg",
+    "icongray": "achievement_images/b044b1ad59c17c8527b73162a917ebb2d3dbfb60.jpg",
+    "name": "ACH_RONALD_APPROVAL",
+    "displayName_en": "Ronald’s Approval",
+    "description_en": "Finish the tutorial"
+  },
+  {
+    "description": "Agacer Ronald",
+    "displayName": "Vengeance de Ronald",
+    "hidden": 0,
+    "icon": "achievement_images/f8726263b1612da4392c4e5adfa8e879b5191a86.jpg",
+    "icongray": "achievement_images/16f368f3a8424be1a9d61e1daa0849e0f2c8f5f9.jpg",
+    "name": "ACH_RONALD_VENGEANCE",
+    "displayName_en": "Ronald’s Vengeance",
+    "description_en": "Piss off Ronald"
+  },
+  {
+    "description": "Obtenir le jackpot maximum sur Merramun",
+    "displayName": "Juiced",
+    "hidden": 0,
+    "icon": "achievement_images/97683bc496fc3f9df1490c721a0b378ba6a4efc2.jpg",
+    "icongray": "achievement_images/7735ab0829a65df2e0b3fd5ec4af40742fb67195.jpg",
+    "name": "ACH_JUICED",
+    "displayName_en": "Juiced",
+    "description_en": "Get maximum Jackpot on Merramun"
+  },
+  {
+    "description": "Subir une perte maximale sur Merramun",
+    "displayName": "Pas de chance",
+    "hidden": 0,
+    "icon": "achievement_images/4997c092f9fca104cc27c657c64c50597e9a9472.jpg",
+    "icongray": "achievement_images/f67c5b1724eb0bd0557fcb09d5d0567404baaff1.jpg",
+    "name": "ACH_BAD_LUCK",
+    "displayName_en": "Bad Luck",
+    "description_en": "Get a max loss on Merramun"
+  },
+  {
+    "description": "Éliminer tous les autres joueurs via services de hitman en une seule partie",
+    "displayName": "Agent 67",
+    "hidden": 0,
+    "icon": "achievement_images/fca18330bd65d2dfafb013d5a78bb4e9dea2e293.jpg",
+    "icongray": "achievement_images/549430d8dc64a7f76a13619f4f28f999130d34b4.jpg",
+    "name": "ACH_AGENT_67",
+    "displayName_en": "Agent 67",
+    "description_en": "Kill all other players with hitman services in a single run"
+  },
+  {
+    "description": "Contrer 100 hacks Stack Pusher",
+    "displayName": "Stacked",
+    "hidden": 0,
+    "icon": "achievement_images/8cf7b6b1ec70819f63fa541c9791a0fea591ed98.jpg",
+    "icongray": "achievement_images/bc969dc835d32a72abec40dcf3a9eade1bd120ea.jpg",
+    "name": "ACH_STACKED",
+    "displayName_en": "Stacked",
+    "description_en": "Defeat 100 Stack Pusher hacks"
+  },
+  {
+    "description": "Contrer 100 hacks KernalCompiler",
+    "displayName": "QWERTY",
+    "hidden": 0,
+    "icon": "achievement_images/e3f3a156411373147c7992f0ea71cdf24fe36dc7.jpg",
+    "icongray": "achievement_images/a19d2a2e720662465d9ca27c096ede94dc0cbd73.jpg",
+    "name": "ACH_QWERTY",
+    "displayName_en": "QWERTY",
+    "description_en": "Defeat 100 KernalCompiler hacks"
+  },
+  {
+    "description": "Contrer 100 hacks MEMDeallacator",
+    "displayName": " Doigts rapides",
+    "hidden": 0,
+    "icon": "achievement_images/ceff7ad2d5ec59ec02713dede02c3a57e3b7343a.jpg",
+    "icongray": "achievement_images/4b6dfa14b8ad946fd0daa968dcdc4e7d2e649b00.jpg",
+    "name": "ACH_FAST_FINGERS",
+    "displayName_en": " Fast Fingers",
+    "description_en": "Defeat 100 MEMDeallacator hacks"
+  },
+  {
+    "description": "Contrer 100 hacks TOKEN9",
+    "displayName": "Tu es humain",
+    "hidden": 0,
+    "icon": "achievement_images/6c4337faacf81ec86b8502ba8238d94a21220b36.jpg",
+    "icongray": "achievement_images/113ed92105338b78abd9a1cb0694987947b3d653.jpg",
+    "name": "ACH_YOU_ARE_HUMAN",
+    "displayName_en": "You Are Human",
+    "description_en": "Defeat 100 TOKEN9 hacks"
+  },
+  {
+    "description": "Contrer 100 hacks ShiftSeq",
+    "displayName": "Stick Shift",
+    "hidden": 0,
+    "icon": "achievement_images/d05e5dc7ce5cb2925e144409073a887916457f5f.jpg",
+    "icongray": "achievement_images/6b4c40f8c6453b047451c7202b9a867f92466a2e.jpg",
+    "name": "ACH_STICK_SHIFT",
+    "displayName_en": "Stick Shift",
+    "description_en": "Defeat 100 ShiftSeq hacks"
+  },
+  {
+    "description": "Pirater 50 machines virtuelles",
+    "displayName": "Breacher",
+    "hidden": 0,
+    "icon": "achievement_images/8a794306d37039b0b343469ea8056b584a2e55c7.jpg",
+    "icongray": "achievement_images/4175907411ff500be85c2d5e795bbf611f34d0c9.jpg",
+    "name": "ACH_BREACHER",
+    "displayName_en": "Breacher",
+    "description_en": "Hack into 50 virtual machines"
+  },
+  {
+    "description": "Vendre 50 vidéos DarkNet",
+    "displayName": "Soirée cinéma",
+    "hidden": 0,
+    "icon": "achievement_images/4356d649d81bdf68192774bdc47c7a80aef90485.jpg",
+    "icongray": "achievement_images/7e5e0fcd5b86b76d30a391a5741b9a0569c24b05.jpg",
+    "name": "ACH_MOVIE_NIGHT",
+    "displayName_en": "Movie Night",
+    "description_en": "Sell 50 DarkNet videos"
+  },
+  {
+    "description": "Acheter tous les objets DarkDrop en une seule partie",
+    "displayName": "Folle journée shopping",
+    "hidden": 0,
+    "icon": "achievement_images/39913797b1b506dff66e250f3119b6caa0e35a52.jpg",
+    "icongray": "achievement_images/484b9ea3a594ec6a7e6b900af73a59edf7f4f1d8.jpg",
+    "name": "ACH_SHOPPING_SPREE",
+    "displayName_en": "Shopping Spree",
+    "description_en": "Purchase all DarkDrop items in a single run"
+  },
+  {
+    "description": "Ne perdre aucun hack dans une partie sans utiliser de NOPSleds",
+    "displayName": "Blackhat",
+    "hidden": 0,
+    "icon": "achievement_images/1de49807e923d56e62abe3a8251199e20a20fbd9.jpg",
+    "icongray": "achievement_images/50e683a344f9082d2b204c5aa5e33c555a533e48.jpg",
+    "name": "ACH_BLACKHAT",
+    "displayName_en": "Blackhat",
+    "description_en": "Don’t lose a single hack in a run without using NOPSleds"
+  },
+  {
+    "description": "Utiliser 50 NOP Sleds",
+    "displayName": "NOPE",
+    "hidden": 0,
+    "icon": "achievement_images/09fe128e6cbda8f0dd25bcd63a1dd67c622ce2ff.jpg",
+    "icongray": "achievement_images/e6c5190a4cb10bdd130d8baca906aae93ee0753d.jpg",
+    "name": "ACH_NOPE",
+    "displayName_en": "NOPE",
+    "description_en": "Use 50 NOP Sleds"
+  },
+  {
+    "description": "Se faire tuer par Lucas d'une certaine façon",
+    "displayName": "JESTER",
+    "hidden": 0,
+    "icon": "achievement_images/d17124a2729bb58047d854c45ae7801ba8da1bc8.jpg",
+    "icongray": "achievement_images/ce3427a2ec154a100160ff629aeb15f26800fd14.jpg",
+    "name": "ACH_JESTER",
+    "displayName_en": "JESTER",
+    "description_en": "Get killed by Lucas in a certain way"
+  },
+  {
+    "description": "Lui obéir 10 fois",
+    "displayName": "Bon garçon",
+    "hidden": 0,
+    "icon": "achievement_images/a866ff278fde63aadf4bdf64338b6cb1fde8e9df.jpg",
+    "icongray": "achievement_images/380e9dcb86ab68ebabe9aa056f7429be0ae36511.jpg",
+    "name": "ACH_GOOD_BOY",
+    "displayName_en": "Good Boy",
+    "description_en": "Obey her 10 times"
+  },
+  {
+    "description": "Acheter 250 Krystal Kings",
+    "displayName": "Heisenberg",
+    "hidden": 0,
+    "icon": "achievement_images/76982fe39db4806aa290fadf268c005172c6ed48.jpg",
+    "icongray": "achievement_images/7dcdf2826d7d148ef58b91cb2b043cc03c887aa5.jpg",
+    "name": "ACH_HEISENBERG",
+    "displayName_en": "Heisenberg",
+    "description_en": "Purchase 250 Krystal Kings"
+  },
+  {
+    "description": "Pousser jusqu'à la limite",
+    "displayName": "Arrêt cardiaque",
+    "hidden": 0,
+    "icon": "achievement_images/2b7de8d7a0575ea9d3e2b33e5215dbe05ee72d97.jpg",
+    "icongray": "achievement_images/dc5358675632653da69a23a86e37e4e20b773839.jpg",
+    "name": "ACH_CARDIAC_ARREST",
+    "displayName_en": "Cardiac Arrest",
+    "description_en": "Push it to the limit"
+  },
+  {
+    "description": "Fuir le Breather jusqu'en sécurité sans aide supplémentaire",
+    "displayName": "As de la course",
+    "hidden": 0,
+    "icon": "achievement_images/ee98846d795291f29040f4fd49b0999cafc37140.jpg",
+    "icongray": "achievement_images/0ac0d0ec5766ab9a070d31ac72cf8809a43cf366.jpg",
+    "name": "ACH_TRACK_STAR",
+    "displayName_en": "Track Star",
+    "description_en": "Flee to safety from the Breather without any extra help"
+  },
+  {
+    "description": "Avoir 4 détecteurs de mouvement et 4 Go Cams tout en possédant des AID Pods",
+    "displayName": "Parano",
+    "hidden": 0,
+    "icon": "achievement_images/f3023ad56650aa51e3609597073d8a8511d275af.jpg",
+    "icongray": "achievement_images/b61a044f5683bd3e47b3e6a679981685063955ed.jpg",
+    "name": "ACH_PARANOID",
+    "displayName_en": "Paranoid",
+    "description_en": "Have 4 motion sensors and 4 Go Cams while owning AID Pods"
+  },
+  {
+    "description": "Voler 5 000 DOS aux autres joueurs dans The Game",
+    "displayName": "Yoink",
+    "hidden": 0,
+    "icon": "achievement_images/be9640c0ca0f05ca998d81b017ee962703ac19f2.jpg",
+    "icongray": "achievement_images/1d00fa43752207fb8ef716ab2d8ab6dfd092477d.jpg",
+    "name": "ACH_YOINK",
+    "displayName_en": "Yoink",
+    "description_en": "Steal 5,000 DOS from other players in The Game"
+  }
+]

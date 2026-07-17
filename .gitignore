@@ -1,0 +1,37 @@
+# Game extracts / copyrighted cooked assets
+source/
+backup/
+build/
+
+# Third-party binaries (install separately)
+tools/
+*.dll
+Engine.csv
+
+# Built beginner pack binaries + zip (published via GitHub Releases)
+release/WTTG3-FR-Beginner/
+release/WTTG3-FR-Traduction.zip
+release/github-repo/
+
+# Local / temp
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.log
+.DS_Store
+Thumbs.db
+
+# Optional large local caches
+work/acrs_batches/
+build/uassetgui_json/
+build/uassetgui_patched/
+
+# Personal machine path (do not commit)
+local_game_path.txt
+
+# Local inject helpers (not part of the translation pipeline)
+scripts/InjectDll.exe
+scripts/InjectDll.cs
+release/github-release-tmp/
+
