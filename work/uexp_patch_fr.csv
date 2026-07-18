@@ -2,131 +2,147 @@ source,translation,len_en,len_fr
 Play,Jouer,4,5
 PLAY,JOUER,4,5
 Continue,Continuer,8,9
-Settings,Parametres,8,10
+Settings,Paramètres,8,10
 Exit,Quitter,4,7
 Resume,Reprendre,6,9
 PAUSE,PAUSE,5,5
-SETTINGS,PARAMETRES,8,10
+SETTINGS,PARAMÈTRES,8,10
 BACK,RETOUR,4,6
 INVENTORY,INVENTAIRE,9,10
 CANCEL,ANNULER,6,7
-Equip,Equiper,5,7
+Confirm,Confirmer,7,9
+Connect,Connecter,7,9
+Checkout,Commander,8,9
+Hide,Se cacher,4,9
+Open,Ouvrir,4,6
+Close,Fermer,5,6
+Unlock,Déverrouiller,6,13
+Lock,Verrouiller,4,11
+Turn On,Allumer,7,7
+Turn Off,Éteindre,8,8
+Turn On Computer,Allumer l'ordinateur,16,20
+Peep,Regarder,4,8
+Repair,Réparer,6,7
+Attempt Defusal,Tenter désamorçage,15,18
+Enter Panic Mode,Mode panique,16,12
+Head To Work,Aller au travail,12,16
+Equip,Équiper,5,7
 Flashlight,Lampe torche,10,12
 Assign Quick Use,Assigner raccourci,16,18
 Quit Game,Quitter le jeu,9,14
 Quit to main menu,Retour au menu principal,17,24
-Graphics Settings,Parametres graphiques,17,21
-Audio Settings,Parametres audio,14,16
-Game Settings,Parametres de jeu,13,17
-Mouse Sensitivity,Sensibilite de la souris,17,24
+Graphics Settings,Paramètres graphiques,17,21
+Audio Settings,Paramètres audio,14,16
+Game Settings,Paramètres de jeu,13,17
+Mouse Sensitivity,Sensibilité de la souris,17,24
 Show Tooltips,Afficher les info-bulles,13,24
-Anti-aliasing,Anticrenelage,13,13
+Anti-aliasing,Anticrénelage,13,13
 FPS Limit,Limite FPS,9,10
-Resolution,Resolution,10,10
-Window Mode,Mode fenetre,11,12
+Resolution,Résolution,10,10
+Window Mode,Mode fenêtre,11,12
 Global Illumination,Illumination globale,19,20
 Post Processing,Post-traitement,15,15
-Reflections,Reflexions,11,10
-Resolution Scale,Echelle de resolution,16,21
+Reflections,Réflexions,11,10
+Resolution Scale,Échelle de résolution,16,21
 View Distance,Distance d'affichage,13,20
 Pause Music,Musique en pause,11,16
 Game Audio,Audio du jeu,10,12
 Title Music,Musique du titre,11,16
-Quality,Qualite,7,7
+Quality,Qualité,7,7
 Effects,Effets,7,6
 Shading,Ombrage,7,7
 Shadows,Ombres,7,6
 Textures,Textures,8,8
-CUSTOM,PERSONNALISE,6,12
+CUSTOM,PERSONNALISÉ,6,12
 LOW,BAS,3,3
 MID,MOYEN,3,5
 HIGH,HAUT,4,4
 EPIC,EPIC,4,4
-NEAR,PRES,4,4
+NEAR,PRÈS,4,4
 FAR,LOIN,3,4
 Normal,Normal,6,6
-OVERWRITE?,ECRASER ?,10,9
-Select Your Difficulty:,Choisissez votre difficulte :,23,29
-This will overwrite your current save file.,Ceci ecrasera votre sauvegarde actuelle.,43,40
-Are you sure?,Etes-vous sur ?,13,15
-Tanner's Crime Scene,Scene de crime de Tanner,20,24
-THANKS FOR PLAYING!,MERCI D'AVOIR JOUE !,19,20
+OVERWRITE?,ÉCRASER ?,10,9
+Select Your Difficulty:,Choisissez votre difficulté :,23,29
+This will overwrite your current save file.,Ceci écrasera votre sauvegarde actuelle.,43,40
+Are you sure?,Êtes-vous sûr ?,13,15
+Tanner's Crime Scene,Scène de crime de Tanner,20,24
+THANKS FOR PLAYING!,MERCI D'AVOIR JOUÉ !,19,20
 PRESS [ESC] TO EXIT,APPUYEZ SUR [ESC] POUR QUITTER,19,30
-GAME DEVELOPERS,DEVELOPPEURS,15,12
+GAME DEVELOPERS,DÉVELOPPEURS,15,12
 PLAYTESTERS,TESTEURS,11,8
 SPECIAL THANKS,REMERCIEMENTS,14,13
-Created By,Cree par,10,8
-WEB DEVELOPERS,DEVELOPPEURS WEB,14,16
-ANIMATION TEAM,EQUIPE ANIMATION,14,16
-ENVIRONMENT TEAM,EQUIPE ENVIRONNEMENT,16,20
-UI/UX TEAM,EQUIPE UI/UX,10,12
-AUDIO TEAM,EQUIPE AUDIO,10,12
+Created By,Créé par,10,8
+WEB DEVELOPERS,DÉVELOPPEURS WEB,14,16
+ANIMATION TEAM,ÉQUIPE ANIMATION,14,16
+ENVIRONMENT TEAM,ÉQUIPE ENVIRONNEMENT,16,20
+UI/UX TEAM,ÉQUIPE UI/UX,10,12
+AUDIO TEAM,ÉQUIPE AUDIO,10,12
 CHARACTER ARTIST,ARTISTE PERSONNAGES,16,19
-VOICE ACTORS,COMEDIENS VOIX,12,14
-Associate Producer,Producteur associe,18,18
+VOICE ACTORS,COMÉDIENS VOIX,12,14
+Associate Producer,Producteur associé,18,18
 WRITERS,AUTEURS,7,7
 Enter Computer,Entrer dans l'ordinateur,14,24
-NO CAMERAS DETECTED,AUCUNE CAMERA DETECTEE,19,22
+NO CAMERAS DETECTED,AUCUNE CAMÉRA DÉTECTÉE,19,22
 CONNECTING,CONNEXION,10,9
-ARMED,ARME,5,4
-DISARMED,DESARME,8,7
+ARMED,ARMÉ,5,4
+DISARMED,DÉSARMÉ,8,7
 STREAM,FLUX,6,4
 OFFLINE,HORS LIGNE,7,10
-"Every time you are prompted, hold/release [SPACEBAR] to keep the ring between the bands","Quand on vous le demande, maintenez/relachez [ESPACE] pour garder l'anneau entre les bandes",87,91
+"Every time you are prompted, hold/release [SPACEBAR] to keep the ring between the bands","Quand on vous le demande, maintenez/relâchez [ESPACE] pour garder l'anneau entre les bandes",87,91
 DOSCoin Balance,Solde DOSCoin,15,13
 YoloYen Balance,Solde YoloYen,15,13
 Firewall Tier I,Pare-feu niveau I,15,17
-0 Hacks Blocked,0 hacks bloques,15,15
+0 Hacks Blocked,0 hacks bloqués,15,15
 Backdoor Hacks,Hacks backdoor,14,14
-Network Status,Etat du reseau,14,14
+Network Status,État du réseau,14,14
 Signal Booster Strength,Force de l'amplificateur,23,24
 Quick Switch To Virtual Desktop,Basculer vers le bureau virtuel,31,31
 Quick Switch To Desktop,Basculer vers le bureau,23,23
-Key Finding,Recherche de cles,11,17
+Key Finding,Recherche de clés,11,17
 Name Goes Here,Nom ici,14,7
-STARTING UP,DEMARRAGE,11,9
-SHUTTING DOWN,ARRET EN COURS,13,14
+STARTING UP,DÉMARRAGE,11,9
+SHUTTING DOWN,ARRÊT EN COURS,13,14
 A.C.R.S - Anon Chat Relay Service,A.C.R.S - Relais de chat anonyme,33,32
 Not Enough Rep - Required Rep Level 3,Pas assez de rep - Niveau requis : 3,37,36
-Not Enough Rep To Message This User,Pas assez de rep pour ecrire a cet utilisateur,35,46
-This user has blocked you.,Cet utilisateur vous a bloque.,26,30
-You seem to be offline...,Tu sembles etre hors ligne...,25,29
+Not Enough Rep To Message This User,Pas assez de rep pour écrire à cet utilisateur,35,46
+This user has blocked you.,Cet utilisateur vous a bloqué.,26,30
+You seem to be offline...,Tu sembles être hors ligne...,25,29
 User Offline...,Utilisateur hors ligne...,15,25
 SEND DOS COIN,ENVOYER DOS COIN,13,16
-PING SENT,PING ENVOYE,9,11
-PINGS DISABLED,PINGS DESACTIVES,14,16
+PING SENT,PING ENVOYÉ,9,11
+PINGS DISABLED,PINGS DÉSACTIVÉS,14,16
 User Info:,Infos utilisateur :,10,19
- SYSTEM CLEARED CHAT, LE SYSTEME A VIDE LE CHAT,20,26
+ SYSTEM CLEARED CHAT, LE SYSTÈME A VIDÉ LE CHAT,20,26
 Internet Connection Lost,Connexion internet perdue,24,25
 Source Code Viewer,Visionneuse de code source,18,26
 Fetch URL...,URL Fetch...,12,12
 Enter Fetch URL...,Entrer l'URL Fetch...,18,21
 Enter Dealer ID,Entrer l'ID vendeur,15,19
 Invalid Dealer ID,ID vendeur invalide,17,19
-Order Submitted,Commande envoyee,15,16
+Order Submitted,Commande envoyée,15,16
 Confirm Order,Confirmer la commande,13,21
 Order in progress,Commande en cours,17,17
-Active Order Detected,Commande active detectee,21,24
-Dealer will share details directly,Le vendeur enverra les details directement,34,42
+Active Order Detected,Commande active détectée,21,24
+Dealer will share details directly,Le vendeur enverra les détails directement,34,42
 Sessions are temporary.,Les sessions sont temporaires.,23,30
-Access expires after order is placed.,L'acces expire apres la commande.,37,33
-Authorized Vendor Access,Acces vendeur autorise,24,22
+Access expires after order is placed.,L'accès expire après la commande.,37,33
+Authorized Vendor Access,Accès vendeur autorisé,24,22
 Proceed with this order?,Confirmer cette commande ?,24,26
-Est. Delivery:,Livraison estimee :,14,19
+Est. Delivery:,Livraison estimée :,14,19
 RETURN HOME,RETOUR ACCUEIL,11,14
 GO BACK,RETOUR,7,6
-EXCHANGE,ECHANGER,8,8
-Exchange Processing,Echange en cours,19,16
-Estimated waiting time:,Temps d'attente estime :,23,24
+EXCHANGE,ÉCHANGER,8,8
+Exchange Processing,Échange en cours,19,16
+Estimated waiting time:,Temps d'attente estimé :,23,24
 Gas Fee:,Frais de gas :,8,14
 Time Remaining: 230 seconds,Temps restant : 230 secondes,27,28
-Access to hacker agents,Acces aux agents hackers,23,24
-Access to hitman,Acces au tueur a gages,16,22
-FOUND VIDEO FILE,FICHIER VIDEO TROUVE,16,20
-Create Valid Auth Token,Creer un jeton d'auth valide,23,28
+Access to hacker agents,Accès aux agents hackers,23,24
+Access to hitman,Accès au tueur à gages,16,22
+FOUND VIDEO FILE,FICHIER VIDÉO TROUVÉ,16,20
+Create Valid Auth Token,Créer un jeton d'auth valide,23,28
 Launching Counter Measures...,Lancement des contre-mesures...,29,31
--- INCOMING HACK [SOURCE] DETECTED --,-- HACK ENTRANT [SOURCE] DETECTE --,37,35
-> CORRUPTED MEMORY BLOCKS:,> BLOCS MEMOIRE CORROMPUS :,26,27
+-- INCOMING HACK [SOURCE] DETECTED --,-- HACK ENTRANT [SOURCE] DÉTECTÉ --,37,35
+> CORRUPTED MEMORY BLOCKS:,> BLOCS MÉMOIRE CORROMPUS :,26,27
 Website Name,Nom du site,12,11
 INJECTING,INJECTION,9,9
 VALIDATING,VALIDATION,10,10
@@ -134,80 +150,80 @@ Dealer ID:,ID vendeur :,10,12
 Dealer ID,ID vendeur,9,10
 "A.N.N. is a special web browser that can connect to the Dark Net.
 
-A.N.N. can be found on every computer you enter through VirtMesh.","A.N.N. est un navigateur special capable de se connecter au Dark Net.
+A.N.N. can be found on every computer you enter through VirtMesh.","A.N.N. est un navigateur spécial capable de se connecter au Dark Net.
 
-A.N.N. se trouve sur chaque ordinateur auquel vous accedez via VirtMesh.",134,145
+A.N.N. se trouve sur chaque ordinateur auquel vous accédez via VirtMesh.",134,145
 "Access to Dark Net websites is gained through a Wiki page, which will have several links to choose from.
 
-Important to note that a site may not be active at the time you to try visit it. If that happens try again after a few minutes. Certain sites are more secretive than others, reserving their active time to a shorter period within each hour.","L'acces aux sites du Dark Net se fait via une page Wiki, avec plusieurs liens au choix.
+Important to note that a site may not be active at the time you to try visit it. If that happens try again after a few minutes. Certain sites are more secretive than others, reserving their active time to a shorter period within each hour.","L'accès aux sites du Dark Net se fait via une page Wiki, avec plusieurs liens au choix.
 
-Un site peut etre inactif au moment ou vous essayez d'y acceder. Dans ce cas, reessayez apres quelques minutes. Certains sites sont plus secrets et ne restent actifs que peu de temps chaque heure.",347,287
+Un site peut être inactif au moment où vous essayez d'y accéder. Dans ce cas, réessayez après quelques minutes. Certains sites sont plus secrets et ne restent actifs que peu de temps chaque heure.",347,287
 "Your goal is to uncover all 8 keys.
 
 The 8 keys are spread out across multiple sites, accessible only through different Wiki pages, and hidden in one of three unique methods.
 
 Pro Tip: Copy text by using [CTRL + C] and paste text by using [CTRL + V]
-","Votre but est de decouvrir les 8 cles.
+","Votre but est de découvrir les 8 clés.
 
-Les 8 cles sont reparties sur plusieurs sites, accessibles via differentes pages Wiki, et cachees selon l'une des trois methodes.
+Les 8 clés sont réparties sur plusieurs sites, accessibles via différentes pages Wiki, et cachées selon l'une des trois méthodes.
 
 Astuce : copiez le texte avec [CTRL + C] et collez avec [CTRL + V]
 ",255,243
 "First, keys can be hidden in plain sight. Keep your eyes peeled when looking over a page.
 
-Pro Tip: Resizing the A.N.N. browser can help your search","D'abord, les cles peuvent etre cachees au vu de tous. Fouillez chaque page attentivement.
+Pro Tip: Resizing the A.N.N. browser can help your search","D'abord, les clés peuvent être cachées au vu de tous. Fouillez chaque page attentivement.
 
 Astuce : redimensionner le navigateur A.N.N. peut aider votre recherche",150,164
 "Second, keys can be hidden inside an element on the page, only revealing themselves through a click. Look over every word, image, and any other elements, including the area surrounding them.
 
-When you click a key's location a sound will be played and its text will either be revealed somewhere on the page or a file will be downloaded onto your desktop with the information. Check both before moving on.","Ensuite, une cle peut etre cachee dans un element de la page et ne se reveler qu'au clic. Verifiez chaque mot, image et zone autour.
+When you click a key's location a sound will be played and its text will either be revealed somewhere on the page or a file will be downloaded onto your desktop with the information. Check both before moving on.","Ensuite, une clé peut être cachée dans un element de la page et ne se révéler qu'au clic. Verifiez chaque mot, image et zone autour.
 
-Quand vous cliquez sur l'emplacement d'une cle, un son est joue et le texte apparait sur la page, ou un fichier est telecharge sur votre bureau. Verifiez les deux avant de continuer.",405,318
-"Third, keys can be hidden within a webpage's source code. When searching a page be sure to open its source code and carefully look through it. ","Enfin, une cle peut etre cachee dans le code source d'une page. Ouvrez le code source et parcourez-le attentivement. ",143,117
+Quand vous cliquez sur l'emplacement d'une cle, un son est joué et le texte apparait sur la page, ou un fichier est téléchargé sur votre bureau. Verifiez les deux avant de continuer.",405,318
+"Third, keys can be hidden within a webpage's source code. When searching a page be sure to open its source code and carefully look through it. ","Enfin, une clé peut être cachée dans le code source d'une page. Ouvrez le code source et parcourez-le attentivement. ",143,117
 "After finding a key make sure you've copied it's index and key hash i.e. 1 - 2bfc88a4.
 You'll need both parts for it to be decrypted by an agent found in the ACRS chatroom. 
 
-Each decrypted key moves you one step closer to winning The Game.","Apres avoir trouve une cle, copiez son index et son hash, par exemple : 1 - 2bfc88a4.
-Il vous faut les deux parties pour qu'un agent du salon ACRS puisse la dechiffrer. 
+Each decrypted key moves you one step closer to winning The Game.","Après avoir trouvé une clé, copiez son index et son hash, par exemple : 1 - 2bfc88a4.
+Il vous faut les deux parties pour qu'un agent du salon ACRS puisse la déchiffrer. 
 
-Chaque cle dechiffree vous rapproche d'une victoire dans The Game.",243,240
+Chaque clé déchiffrée vous rapproche d'une victoire dans The Game.",243,240
 "While searching for keys you may encounter Fetch URLs. These URLs direct to video files which ACRS users may have interest in buying, so save them if you come across one.
 
-All Fetch URLs begin with file:// and finish with .fetch. Copy and paste them into the ShadowFetch application to see what its contents are, then download to later sell the video file.","En cherchant des cles, vous pouvez croiser des URL Fetch. Ce sont des fichiers video que des utilisateurs ACRS peuvent vouloir acheter : sauvegardez-les.
+All Fetch URLs begin with file:// and finish with .fetch. Copy and paste them into the ShadowFetch application to see what its contents are, then download to later sell the video file.","En cherchant des clés, vous pouvez croiser des URL Fetch. Ce sont des fichiers video que des utilisateurs ACRS peuvent vouloir acheter : sauvegardez-les.
 
-Toutes les URL Fetch commencent par file:// et finissent par .fetch. Collez-les dans ShadowFetch pour voir le contenu, puis telechargez pour revendre la video.",358,316
-Example key:,Exemple de cle :,12,16
+Toutes les URL Fetch commencent par file:// et finissent par .fetch. Collez-les dans ShadowFetch pour voir le contenu, puis téléchargez pour revendre la video.",358,316
+Example key:,Exemple de clé :,12,16
 "Ok, you know what todo!","Ok, tu sais quoi faire !",23,24
 "Hi I'm Ronald, the Game Master for tonight.","Salut, je suis Ronald, le Game Master de ce soir.",43,49
-Courtesy of your friend Wade I'll be offering a bit of help.,"Grace a ton ami Wade, je vais t'offrir un peu d'aide.",60,53
-VirtMesh is a program you need to install. Without it you won't be able to get onto the Dark Net.,"VirtMesh est un programme a installer. Sans lui, tu ne pourras pas acceder au Dark Net.",97,87
-ShadowFetch will be your way to download instructions and general help documents. I'd use it if I were you.,"ShadowFetch te servira a telecharger des instructions et des documents d'aide. A ta place, je l'utiliserais.",107,108
+Courtesy of your friend Wade I'll be offering a bit of help.,"Grâce à ton ami Wade, je vais t'offrir un peu d'aide.",60,53
+VirtMesh is a program you need to install. Without it you won't be able to get onto the Dark Net.,"VirtMesh est un programme a installer. Sans lui, tu ne pourras pas accéder au Dark Net.",97,87
+ShadowFetch will be your way to download instructions and general help documents. I'd use it if I were you.,"ShadowFetch te servira à télécharger des instructions et des documents d'aide. A ta place, je l'utiliserais.",107,108
 VirtMesh? ShadowFetch? What are you fucking talking about? how do I get those programs?!,VirtMesh ? ShadowFetch ? Tu parles de quoi putain ? Comment j'obtiens ces programmes ?!,88,87
-Open Dark Drop to download both VirtMesh and ShadowFetch.,Ouvre Dark Drop pour telecharger VirtMesh et ShadowFetch.,57,57
-"Oh, wait, that's right. Wade did tell me you have a gambling problem, and you probably have no DOSCoin. ","Ah oui, c'est vrai. Wade m'a dit que tu as un probleme de jeu, et que tu n'as probablement pas de DOSCoin. ",104,107
+Open Dark Drop to download both VirtMesh and ShadowFetch.,Ouvre Dark Drop pour télécharger VirtMesh et ShadowFetch.,57,57
+"Oh, wait, that's right. Wade did tell me you have a gambling problem, and you probably have no DOSCoin. ","Ah oui, c'est vrai. Wade m'a dit que tu as un problème de jeu, et que tu n'as probablement pas de DOSCoin. ",104,107
 Here is some DOS Coin to get you started.,Voici un peu de DOS Coin pour commencer.,41,40
-"Ok, I got them installed. Now what?","Ok, c'est installe. Et maintenant ?",35,35
-Take this fetch link [VMFETCHURL] and put it into ShadowFetch to download a file onto your desktop. It'll breakdown how VirtMesh works.,Prends ce lien fetch [VMFETCHURL] et mets-le dans ShadowFetch pour telecharger un fichier sur ton bureau. Il explique le fonctionnement de VirtMesh.,135,148
-Or you can open up VirtMesh and try to figure it out yourself.,Ou tu peux ouvrir VirtMesh et essayer de comprendre par toi-meme.,62,65
+"Ok, I got them installed. Now what?","Ok, c'est installé. Et maintenant ?",35,35
+Take this fetch link [VMFETCHURL] and put it into ShadowFetch to download a file onto your desktop. It'll breakdown how VirtMesh works.,Prends ce lien fetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Il explique le fonctionnement de VirtMesh.,135,148
+Or you can open up VirtMesh and try to figure it out yourself.,Ou tu peux ouvrir VirtMesh et essayer de comprendre par toi-même.,62,65
 "Through VirtMesh hack, mount, then enter a computer. Once you get that done switch over to this desktop and I'll share a link to a Wiki Page that has all types of websites on it.","Via VirtMesh : hack, monte, puis entre dans un ordinateur. Une fois fait, reviens sur ce bureau et je te partagerai un lien vers une page Wiki avec toutes sortes de sites.",178,171
-If what I'm saying doesn't make sense download and look at that document from the fetch link above.,"Si ce que je dis n'est pas clair, telecharge et lis le document du lien fetch ci-dessus.",99,88
+If what I'm saying doesn't make sense download and look at that document from the fetch link above.,"Si ce que je dis n'est pas clair, télécharge et lis le document du lien fetch ci-dessus.",99,88
 "Alright. If you're still connected to that computer I'd urge you to disconnect from it.
 
 Staying connected to a hacked computer will eventually lock you out of it permanently. From here the easiest way to disconnect would be opening up VirtMesh through the app icon, then double clicking the circle in the center of the screen to exit it.
 
-Later on you'll be better off switching between multiple computers to avoid permanent lockouts.","Bon. Si tu es encore connecte a cet ordinateur, je te conseille fortement de te deconnecter.
+Later on you'll be better off switching between multiple computers to avoid permanent lockouts.","Bon. Si tu es encore connecté à cet ordinateur, je te conseille fortement de te déconnecter.
 
-Rester connecte a un ordinateur pirate finit par t'en exclure definitivement. Le plus simple ici : ouvre VirtMesh via l'icone de l'appli, puis double-clique le cercle au centre de l'ecran pour en sortir.
+Rester connecté à un ordinateur piraté finit par t'en exclure définitivement. Le plus simple ici : ouvre VirtMesh via l'icône de l'appli, puis double-clique le cercle au centre de l'écran pour en sortir.
 
-Plus tard, tu auras interet a alterner entre plusieurs ordinateurs pour eviter les blocages definitifs.",439,406
+Plus tard, tu auras intérêt à alterner entre plusieurs ordinateurs pour éviter les blocages definitifs.",439,406
 "This is the first Wiki Page:
 [WIKI]
 
-Put that link into A.N.N. to access a bunch of different Dark Net websites.","Voici la premiere page Wiki :
+Put that link into A.N.N. to access a bunch of different Dark Net websites.","Voici la première page Wiki :
 [WIKI]
 
-Mets ce lien dans A.N.N. pour acceder a plein de sites du Dark Net.",115,108
-"It's very important to know what you're looking for. I downloaded a guide onto your desktop, which breaks that down. I'd highly recommend checking that out before going onto the Dark Net.",Il est tres important de savoir ce que tu cherches. J'ai telecharge un guide sur ton bureau qui explique tout. Je te conseille fortement de le lire avant d'aller sur le Dark Net.,187,178
+Mets ce lien dans A.N.N. pour accéder à plein de sites du Dark Net.",115,108
+"It's very important to know what you're looking for. I downloaded a guide onto your desktop, which breaks that down. I'd highly recommend checking that out before going onto the Dark Net.",Il est très important de savoir ce que tu cherches. J'ai téléchargé un guide sur ton bureau qui explique tout. Je te conseille fortement de le lire avant d'aller sur le Dark Net.,187,178
 "I reached out to some people who will contact you soon in CryptChat with more information, but unlike me they'll charge you for it.
 
 ODDroot - Has information on hacks you'll face. 
@@ -218,162 +234,162 @@ After you've collected, then decrypted all 8 keys, send me the master key (each 
 
 But let's be real.. You are more than likely dead as fuck lol. 
 
-Good luck! ","J'ai contacte des gens qui vont bientot t'ecrire sur CryptChat avec plus d'infos, mais contrairement a moi ils te feront payer.
+Good luck! ","J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement a moi ils te feront payer.
 
 ODDroot - A des infos sur les hacks que tu vas rencontrer. 
 
 Goggin - A des infos sur les gens qui vont essayer de te tuer ce soir.
 
-Quand tu auras collecte puis dechiffre les 8 cles, envoie-moi la master key (chaque cle dechiffree dans l'ordre de son index, assemblees en une seule cle) pour gagner la partie de ce soir. 
+Quand tu auras collecté puis déchiffré les 8 clés, envoie-moi la master key (chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule cle) pour gagner la partie de ce soir. 
 
-Mais soyons honnetes.. T'es probablement deja mort a chier lol. 
+Mais soyons honnêtes.. T'es probablement deja mort a chier lol. 
 
 Bonne chance ! ",542,544
 I know who's coming for you tonight. Pay me [PRICE] DOS Coin and I'll link a file you can download off ShadowFetch that'll give you a fighting chance.,Je sais qui vient te chercher ce soir. Paie-moi [PRICE] DOS Coin et je te file un lien ShadowFetch qui te donnera une chance de t'en sortir.,150,140
-If you want information on the hacks you'll need to counter pay me [PRICE] DOS Coin and I'll link a file you can download off ShadowFetch,"Si tu veux des infos sur les hacks a contrer, paie-moi [PRICE] DOS Coin et je te file un lien a telecharger sur ShadowFetch",137,123
-Was that a tip? Doesn't matter if it wasn't you're not getting that back.,"C'etait un pourboire ? Peu importe, tu ne recuperes pas ca.",73,59
+If you want information on the hacks you'll need to counter pay me [PRICE] DOS Coin and I'll link a file you can download off ShadowFetch,"Si tu veux des infos sur les hacks a contrer, paie-moi [PRICE] DOS Coin et je te file un lien à télécharger sur ShadowFetch",137,123
+Was that a tip? Doesn't matter if it wasn't you're not getting that back.,"C'était un pourboire ? Peu importe, tu ne récupères pas ca.",73,59
 It's still [PRICE] DOS Coin to get the file. Send it all in a single payment or you get nothing.,C'est toujours [PRICE] DOS Coin pour le fichier. Envoie tout en un seul paiement ou tu n'as rien.,96,97
-"Stop typing, just give me the DOS Coin and you will get what you want.","Arrete d'ecrire, donne-moi juste le DOS Coin et tu auras ce que tu veux.",70,72
+"Stop typing, just give me the DOS Coin and you will get what you want.","Arrête d'écrire, donne-moi juste le DOS Coin et tu auras ce que tu veux.",70,72
 "Okay, thanks. Here's the link: 
 [LINK]
 
 Put that into ShadowFetch to download your file. I'm out of here.. Later","Ok, merci. Voici le lien : 
 [LINK]
 
-Mets ca dans ShadowFetch pour telecharger ton fichier. Je me casse.. A plus",115,114
+Mets ça dans ShadowFetch pour télécharger ton fichier. Je me casse.. A plus",115,114
 BUY,ACHETER,3,7
 VirtMesh,VirtMesh,8,8
 ShadowFetch,ShadowFetch,11,11
 "Trying to browse the Dark Net? This software is your one stop *secure solution. Access a web of virtual machines that can be hacked for Dark Net browsing or converted into DOS Coin crypto miners!
 
-*Virtual machine access can be lost if connection is overstayed.","Tu veux surfer sur le Dark Net ? Ce logiciel est ta *solution securisee. Accede a un reseau de machines virtuelles a pirater pour le Dark Net, ou convertis-les en mineurs de crypto DOS Coin !
+*Virtual machine access can be lost if connection is overstayed.","Tu veux surfer sur le Dark Net ? Ce logiciel est ta *solution sécurisée. Accède à un réseau de machines virtuelles a pirater pour le Dark Net, ou convertis-les en mineurs de crypto DOS Coin !
 
-*L'acces a une machine virtuelle peut etre perdu si tu restes connecte trop longtemps.",263,281
-Looking to download contents from .fetch URLs found on the Dark Net? This program has you covered.,Tu veux telecharger le contenu des URL .fetch trouvees sur le Dark Net ? Ce programme est fait pour ca.,98,103
+*L'accès à une machine virtuelle peut être perdu si tu restes connecte trop longtemps.",263,281
+Looking to download contents from .fetch URLs found on the Dark Net? This program has you covered.,Tu veux télécharger le contenu des URL .fetch trouvées sur le Dark Net ? Ce programme est fait pour ça.,98,103
 ACRS,ACRS,4,4
-Install and chat with strangers! Anon Chat Relay Server is the premiere application to communicate with all types of people. Ping users to privately buy and sell goods or services through CryptChat.,Installe et discute avec des inconnus ! Anon Chat Relay Server est l'appli de reference pour parler a tout le monde. Pingue des utilisateurs pour acheter ou vendre en prive via CryptChat.,198,187
+Install and chat with strangers! Anon Chat Relay Server is the premiere application to communicate with all types of people. Ping users to privately buy and sell goods or services through CryptChat.,Installe et discute avec des inconnus ! Anon Chat Relay Server est l'appli de référence pour parler a tout le monde. Pingue des utilisateurs pour acheter ou vendre en privé via CryptChat.,198,187
 AID Pods,AID Pods,8,8
 "In-ear headphones which increase the audible range of all sounds. Particularly useful for those who have security concerns.
 
-Press [R] to power on / off.","Ecouteurs intra-auriculaires qui augmentent la portee audible de tous les sons. Utile si tu as des soucis de securite.
+Press [R] to power on / off.","Écouteurs intra-auriculaires qui augmentent la portée audible de tous les sons. Utile si tu as des soucis de sécurité.
 
-Appuie sur [R] pour allumer / eteindre.",155,161
+Appuie sur [R] pour allumer / éteindre.",155,161
 Backdoor Hack,Hack backdoor,13,13
-Want a way to get back at those pesky hackers?! The Backdoor Hack is what you need! Defeating a hack will steal DOS Coin from the hacker! Each time you're hacked one will be auto-consumed.,"Envie de te venger de ces satanes hackers ?! Le Hack backdoor est ce qu'il te faut ! Battre un hack vole des DOS Coin au hacker ! A chaque hack subi, un exemplaire est consomme automatiquement.",188,193
-"Want a way to get back at those pesky hackers?! Then the Backdoor Hack is what you need! Each time you are hacked, it will auto consume, if you defeat the hack you will steal DOS Coin from the hacker!","Envie de te venger de ces satanes hackers ?! Le Hack backdoor est ce qu'il te faut ! A chaque hack subi il se consomme ; si tu gagnes, tu voles des DOS Coin au hacker !",200,168
+Want a way to get back at those pesky hackers?! The Backdoor Hack is what you need! Defeating a hack will steal DOS Coin from the hacker! Each time you're hacked one will be auto-consumed.,"Envie de te venger de ces satânés hackers ?! Le Hack backdoor est ce qu'il te faut ! Battre un hack vole des DOS Coin au hacker ! A chaque hack subi, un exemplaire est consommé automatiquement.",188,193
+"Want a way to get back at those pesky hackers?! Then the Backdoor Hack is what you need! Each time you are hacked, it will auto consume, if you defeat the hack you will steal DOS Coin from the hacker!","Envie de te venger de ces satânés hackers ?! Le Hack backdoor est ce qu'il te faut ! A chaque hack subi il se consomme ; si tu gagnes, tu voles des DOS Coin au hacker !",200,168
 DAREDash,DAREDash,8,8
-"Convenient app to purchase drugs off the Dark Net. Quickly access drug dealer inventories, make a selection, then order for delivery.","Appli pratique pour acheter de la drogue sur le Dark Net. Accede vite aux stocks des dealers, choisis, puis commande en livraison.",133,130
+"Convenient app to purchase drugs off the Dark Net. Quickly access drug dealer inventories, make a selection, then order for delivery.","Appli pratique pour acheter de la drogue sur le Dark Net. Accède vite aux stocks des dealers, choisis, puis commande en livraison.",133,130
 Firewall Tier II,Pare-feu niveau II,16,18
 Firewall Tier III,Pare-feu niveau III,17,19
 Firewall Tier IV,Pare-feu niveau IV,16,18
 Firewall Tier V,Pare-feu niveau V,15,17
-Passively prevents incoming hacks with a 20% success rate. Can be turned on / off by clicking on the taskbar icon and checking / unchecking the box.,Bloque passivement les hacks entrants avec 20% de reussite. Active / desactive via l'icone de la barre des taches.,148,114
-Increases passive defense against incoming hacks to a 40% success rate.,Passe la defense passive contre les hacks entrants a 40% de reussite.,71,69
-Increases passive defense against incoming hacks to a 60% success rate.,Passe la defense passive contre les hacks entrants a 60% de reussite.,71,69
-Increases passive defense against incoming hacks to a 80% success rate.,Passe la defense passive contre les hacks entrants a 80% de reussite.,71,69
-Increases passive defense against incoming hacks to a 98% success rate.,Passe la defense passive contre les hacks entrants a 98% de reussite.,71,69
+Passively prevents incoming hacks with a 20% success rate. Can be turned on / off by clicking on the taskbar icon and checking / unchecking the box.,Bloque passivement les hacks entrants avec 20% de réussite. Active / désactive via l'icone de la barre des taches.,148,114
+Increases passive defense against incoming hacks to a 40% success rate.,Passe la défense passive contre les hacks entrants a 40% de réussite.,71,69
+Increases passive defense against incoming hacks to a 60% success rate.,Passe la défense passive contre les hacks entrants a 60% de réussite.,71,69
+Increases passive defense against incoming hacks to a 80% success rate.,Passe la défense passive contre les hacks entrants a 80% de réussite.,71,69
+Increases passive defense against incoming hacks to a 98% success rate.,Passe la défense passive contre les hacks entrants a 98% de réussite.,71,69
 GO CAM,GO CAM,6,6
-Portable battery-powered camera that can be attached to a surface and viewed remotely through the SecCam application. All placed cameras auto-sync to SecCam.,"Camera portable a piles, a fixer sur une surface et a consulter a distance via SecCam. Toutes les cameras placees se synchronisent avec SecCam.",157,143
-Portable battery-powered camera that can be attached to a surface and viewed remotely through the SecCam application. All placed cameras auto-sync to the SecCam application.,"Camera portable a piles, a fixer sur une surface et a consulter a distance via SecCam. Toutes les cameras placees se synchronisent avec SecCam.",173,143
+Portable battery-powered camera that can be attached to a surface and viewed remotely through the SecCam application. All placed cameras auto-sync to SecCam.,"Caméra portable à piles, à fixer sur une surface et à consulter a distance via SecCam. Toutes les caméras placées se synchronisent avec SecCam.",157,143
+Portable battery-powered camera that can be attached to a surface and viewed remotely through the SecCam application. All placed cameras auto-sync to the SecCam application.,"Caméra portable à piles, à fixer sur une surface et à consulter a distance via SecCam. Toutes les caméras placées se synchronisent avec SecCam.",173,143
 Key Cue,Key Cue,7,7
 Key Cue Plus,Key Cue Plus,12,12
-Want extra help to find key hashes? When loaded onto a website that contains one there will be a small key icon visible near the top right of A.N.N. browser.,"Besoin d'aide pour trouver les hash de cles ? Sur un site qui en contient une, une petite icone cle apparait en haut a droite du navigateur A.N.N.",157,146
-Interested in gaining more help with key hashes? When loaded onto the specific website page which contains one the key icon near the top right of A.N.N. browser will change from white to a gold color.,"Envie d'encore plus d'aide pour les hash de cles ? Sur la page exacte qui en contient une, l'icone cle en haut a droite d'A.N.N. passe du blanc au dore.",200,152
+Want extra help to find key hashes? When loaded onto a website that contains one there will be a small key icon visible near the top right of A.N.N. browser.,"Besoin d'aide pour trouver les hash de clés ? Sur un site qui en contient une, une petite icône clé apparait en haut a droite du navigateur A.N.N.",157,146
+Interested in gaining more help with key hashes? When loaded onto the specific website page which contains one the key icon near the top right of A.N.N. browser will change from white to a gold color.,"Envie d'encore plus d'aide pour les hash de clés ? Sur la page exacte qui en contient une, l'icône clé en haut a droite d'A.N.N. passe du blanc au doré.",200,152
 Motion Alert,Alerte mouvement,12,16
 "Software that provides visual & audio notifications when a placed motion sensor is triggered. Perfect for the person who's focused on other tasks when unexpected motion arrives.
 
-Clicking on the motion alert taskbar icon will reveal the named location and status of all placed motion sensors.","Logiciel qui envoie des alertes visuelles et sonores quand un detecteur de mouvement place se declenche. Ideal quand tu es concentre ailleurs.
+Clicking on the motion alert taskbar icon will reveal the named location and status of all placed motion sensors.","Logiciel qui envoie des alertes visuelles et sonores quand un détecteur de mouvement placé se déclenche. Idéal quand tu es concentré ailleurs.
 
-Clique l'icone d'alerte dans la barre des taches pour voir le lieu et l'etat de tous les detecteurs places.",294,253
-Motion Sensor,Detecteur de mouvement,13,22
-Portable battery-powered sensor that detects nearby motion. Requires separate purchase of Motion Alert to receive visual and sound based notifications on your computer when a sensor is triggered.,Capteur portable a piles qui detecte le mouvement a proximite. Necessite l'achat separe d'Alerte mouvement pour les notifications sur ton PC.,195,141
+Clique l'icone d'alerte dans la barre des taches pour voir le lieu et l'état de tous les détecteurs placés.",294,253
+Motion Sensor,Détecteur de mouvement,13,22
+Portable battery-powered sensor that detects nearby motion. Requires separate purchase of Motion Alert to receive visual and sound based notifications on your computer when a sensor is triggered.,Capteur portable à piles qui detecte le mouvement à proximité. Nécessite l'achat separe d'Alerte mouvement pour les notifications sur ton PC.,195,141
 NOP Sled,NOP Sled,8,8
 "Want to skip an incoming hack? The NOP Sled is your answer! Upon activation you'll immediately break free. (Backdoor Hacks are not consumed).
 
-Press [Middle Mouse Button] during a hack to activate.","Envie de zapper un hack entrant ? Le NOP Sled est la reponse ! A l'activation tu te liberes tout de suite. (Les Hacks backdoor ne sont pas consommes).
+Press [Middle Mouse Button] during a hack to activate.","Envie de zapper un hack entrant ? Le NOP Sled est la réponse ! A l'activation tu te libères tout de suite. (Les Hacks backdoor ne sont pas consommés).
 
 Appuie sur [Clic molette] pendant un hack pour l'activer.",199,211
-Find yourself in a hack you don't want to deal with? Then the NOPSled is what you want! By simply pressing the middle mouse button you break free from the hack!(Does not consume any Backdoors),Coince dans un hack dont tu ne veux pas ? Le NOPSled est fait pour toi ! Un clic molette et tu te liberes ! (Ne consomme aucun Backdoor),192,136
+Find yourself in a hack you don't want to deal with? Then the NOPSled is what you want! By simply pressing the middle mouse button you break free from the hack!(Does not consume any Backdoors),Coincé dans un hack dont tu ne veux pas ? Le NOPSled est fait pour toi ! Un clic molette et tu te libères ! (Ne consomme aucun Backdoor),192,136
 Ringonome,Ringonome,9,9
 "Finger ring that provides a ticking noise once per second when activated. Great way to keep your counting consistent.
 
-Press [T] to power on / off.","Bague qui fait un tic une fois par seconde une fois activee. Pratique pour compter regulierement.
+Press [T] to power on / off.","Bague qui fait un tic une fois par seconde une fois activée. Pratique pour compter régulièrement.
 
-Appuie sur [T] pour allumer / eteindre.",149,140
+Appuie sur [T] pour allumer / éteindre.",149,140
 SecCam,SecCam,6,6
-Monitor your placed GO CAM camera feeds with this app. Navigate between cameras using the on-screen buttons or press [A] / [D].,Surveille tes flux GO CAM avec cette appli. Change de camera avec les boutons a l'ecran ou [A] / [D].,127,101
+Monitor your placed GO CAM camera feeds with this app. Navigate between cameras using the on-screen buttons or press [A] / [D].,Surveille tes flux GO CAM avec cette appli. Change de camera avec les boutons à l'écran ou [A] / [D].,127,101
 Signal Booster,Amplificateur de signal,14,23
 "Temporarily increase internet speed by placing this device in an *optimal location. View on-device section labled ""Signal Strength"" to see quality of speed boost.
 
-*Over time device may need to be moved to maintain full speed boost.","Augmente temporairement la vitesse internet en placant cet appareil a un endroit *optimal. Regarde la section ""Signal Strength"" sur l'appareil pour la qualite du boost.
+*Over time device may need to be moved to maintain full speed boost.","Augmente temporairement la vitesse internet en placant cet appareil a un endroit *optimal. Regarde la section ""Signal Strength"" sur l'appareil pour la qualité du boost.
 
-*Avec le temps, tu devras peut-etre le deplacer pour garder le boost max.",234,245
+*Avec le temps, tu devras peut-être le deplacer pour garder le boost max.",234,245
 Sig.Boost Monitor,Moniteur amplif.,17,16
-Track your Signal Booster's internet speed increase through a desktop taskbar icon. The icon will display the current boost strength.,Suis le boost de vitesse de ton Amplificateur via une icone de barre des taches. L'icone affiche la force actuelle.,133,115
+Track your Signal Booster's internet speed increase through a desktop taskbar icon. The icon will display the current boost strength.,Suis le boost de vitesse de ton Amplificateur via une icône de barre des taches. L'icone affiche la force actuelle.,133,115
 VM Cyrpto Miner,Mineur crypto VM,15,16
 "Purchase a *single-use script that turns a hacked computer in VirtMesh to a crypto miner for passive money generation.
 
-*Choosing to unmine a hacked computer will destroy the script. It can be mined again, but will require another script to do so.","Achete un script *a usage unique qui transforme un PC pirate dans VirtMesh en mineur crypto pour gagner passivement.
+*Choosing to unmine a hacked computer will destroy the script. It can be mined again, but will require another script to do so.","Achete un script *à usage unique qui transforme un PC piraté dans VirtMesh en mineur crypto pour gagner passivement.
 
-*Deminer un PC detruit le script. Tu pourras reminer, mais il faudra un autre script.",249,205
+*Déminer un PC détruit le script. Tu pourras reminer, mais il faudra un autre script.",249,205
 VM Grid Tier II,Grille VM niveau II,15,19
 VM Grid Tier III,Grille VM niveau III,16,20
-"Expand access within VirtMesh to higher quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.",Elargit l'acces VirtMesh a des PC de meilleure qualite : plus d'uptime avant compromission et meilleur potentiel de minage.,155,123
-"Expand access within VirtMesh to highest quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.",Elargit l'acces VirtMesh aux meilleurs PC : plus d'uptime avant compromission et meilleur potentiel de minage.,156,110
+"Expand access within VirtMesh to higher quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.",Élargit l'accès VirtMesh a des PC de meilleure qualite : plus d'uptime avant compromission et meilleur potentiel de minage.,155,123
+"Expand access within VirtMesh to highest quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.",Élargit l'accès VirtMesh aux meilleurs PC : plus d'uptime avant compromission et meilleur potentiel de minage.,156,110
 VM Mount Tier II,Montage VM niveau II,16,20
 VM Mount Tier III,Montage VM niveau III,17,21
-Increase maximum mounted computers in VirtMesh from 2 -> 4. Mounted computers can access A.N.N. web browser.,Passe le max de PC montes dans VirtMesh de 2 a 4. Les PC montes peuvent utiliser le navigateur A.N.N.,108,101
-Increase maximum mounted computers in VirtMesh from 4 -> 6. Mounted computers can access A.N.N. web browser.,Passe le max de PC montes dans VirtMesh de 4 a 6. Les PC montes peuvent utiliser le navigateur A.N.N.,108,101
+Increase maximum mounted computers in VirtMesh from 2 -> 4. Mounted computers can access A.N.N. web browser.,Passe le max de PC montés dans VirtMesh de 2 a 4. Les PC montés peuvent utiliser le navigateur A.N.N.,108,101
+Increase maximum mounted computers in VirtMesh from 4 -> 6. Mounted computers can access A.N.N. web browser.,Passe le max de PC montés dans VirtMesh de 4 a 6. Les PC montés peuvent utiliser le navigateur A.N.N.,108,101
 Eviction Letter,Lettre d'expulsion,15,18
 Just a letter from my dickhead landord telling me I am getting evicted. Don't have time to read it right now.,Juste une lettre de mon connard de proprio qui me dit que je me fais expulser. Pas le temps de la lire maintenant.,109,114
 "High-powered handheld light.
 
 Press [F] to power on / off.","Lampe portative puissante.
 
-Appuie sur [F] pour allumer / eteindre.",60,69
-[F] - Toggle Flash Light,[F] - Allumer / eteindre la lampe,24,33
-[R] - Toggle AID Pods,[R] - Allumer / eteindre les AID Pods,21,37
-[T] - Toggle Ringonome,[T] - Allumer / eteindre le Ringonome,22,37
-Electrical Room Key,Cle de la salle electrique,19,26
-This key unlocks the inner electrical room door.,Cette cle ouvre la porte interieure de la salle electrique.,48,59
-Employee Key,Cle employe,12,11
-This key unlocks the employee back doors.,Cette cle ouvre les portes arriere reservees aux employes.,41,58
+Appuie sur [F] pour allumer / éteindre.",60,69
+[F] - Toggle Flash Light,[F] - Allumer / éteindre la lampe,24,33
+[R] - Toggle AID Pods,[R] - Allumer / éteindre les AID Pods,21,37
+[T] - Toggle Ringonome,[T] - Allumer / éteindre le Ringonome,22,37
+Electrical Room Key,Clé de la salle électrique,19,26
+This key unlocks the inner electrical room door.,Cette clé ouvre la porte interieure de la salle électrique.,48,59
+Employee Key,Clé employé,12,11
+This key unlocks the employee back doors.,Cette clé ouvre les portes arrière reservees aux employes.,41,58
 Motel Master Key,Passe-partout du motel,16,22
-This key locks / unlocks the motel room doors.,Cette cle ferme / ouvre les portes des chambres du motel.,46,57
+This key locks / unlocks the motel room doors.,Cette clé ferme / ouvre les portes des chambres du motel.,46,57
 Crank'd,Crank'd,7,7
 "Banned energy drink that claims to amplify your physical capabilities.
 
-I've heard stories of people having sudden heart attacks after consuming these drinks.","Boisson energetique interdite qui pretend booster tes capacites physiques.
+I've heard stories of people having sudden heart attacks after consuming these drinks.","Boisson énergétique interdite qui prétend booster tes capacités physiques.
 
-J'ai entendu parler de gens qui font des crises cardiaques apres en avoir bu.",160,155
+J'ai entendu parler de gens qui font des crises cardiaques après en avoir bu.",160,155
 Krystal King,Krystal King,12,12
 "Baggie of crushed methamphetamine.
 
-No way I'm trying that shit.","Sachet de methamphetamine ecrasee.
+No way I'm trying that shit.","Sachet de méthamphétamine écrasée.
 
 Pas question que j'y touche.",66,66
 Zannac,Zannac,6,6
 "Low-dosage prescription grade anxiety medication.
 
-Taking everything in the pill bottle will calm my nerves.","Anxiolytique de prescription a faible dose.
+Taking everything in the pill bottle will calm my nerves.","Anxiolytique de prescription à faible dose.
 
 Avaler tout le flacon devrait calmer mes nerfs.",110,94
 I can't hold anymore of these...,Je ne peux plus en tenir davantage...,32,37
-It's locked...,C'est ferme a cle...,14,20
+It's locked...,C'est fermé à clé...,14,20
 Shit... I gotta get to work...,Merde... Je dois aller bosser...,30,32
-I don't have the key...,Je n'ai pas la cle...,23,21
+I don't have the key...,Je n'ai pas la clé...,23,21
 I have to stay calm...,Je dois rester calme...,22,23
 I think he's gone...,Je crois qu'il est parti...,20,27
-There is someone in there...,Il y a quelqu'un la-dedans...,28,29
+There is someone in there...,Il y a quelqu'un là-dedans...,28,29
 This room is out of order...,Cette chambre est hors service...,28,33
 ./>Welcome to ShadowFetch,./>Bienvenue sur ShadowFetch,25,28
-Error: No Connection Detected,Erreur : aucune connexion detectee,29,34
-Error: No connection detected.,Erreur : aucune connexion detectee.,30,35
-Enter the Fetch URL to verify the file...,Entre l'URL Fetch pour verifier le fichier...,41,45
-Enter the Fetch  URL to verify the file...,Entre l'URL Fetch pour verifier le fichier...,42,45
+Error: No Connection Detected,Erreur : aucune connexion détectée,29,34
+Error: No connection detected.,Erreur : aucune connexion détectée.,30,35
+Enter the Fetch URL to verify the file...,Entre l'URL Fetch pour vérifier le fichier...,41,45
+Enter the Fetch  URL to verify the file...,Entre l'URL Fetch pour vérifier le fichier...,42,45
 Invalid Fetch URL - Enter A Valid Fetch URL!,URL Fetch invalide - entre une URL Fetch valide !,44,49
-File downloaded successfully on your desktop!,Fichier telecharge avec succes sur ton bureau !,45,47
-Check your internet connection.,Verifie ta connexion internet.,31,30
+File downloaded successfully on your desktop!,Fichier téléchargé avec succès sur ton bureau !,45,47
+Check your internet connection.,Vérifie ta connexion internet.,31,30
 Must Complete Normal Mode,Terminer le mode Normal d'abord,25,31
 "- Perma Death
 - Good Luck","- Mort permanente
@@ -381,11 +397,11 @@ Must Complete Normal Mode,Terminer le mode Normal d'abord,25,31
 "- No Perma Death
 - Challenging","- Pas de mort permanente
 - Challenging",31,39
-I can't believe that fucking degenerate gambler won...,J'arrive pas a croire que ce putain de joueur degenere ait gagne...,54,67
-Pay off the rent he owes and make sure the payment's in his name. Keeping him in that shithole will make it easy to find him if we're given a reason,Paie le loyer qu'il doit et assure-toi que le paiement est a son nom. Le garder dans ce trou a rats facilitera de le retrouver si on a une raison,148,145
-"Also, you can cut surveillance to focus on the big task. I assume you know what...","Aussi, tu peux couper la surveillance pour te concentrer sur la grosse tache. Je suppose que tu vois ce que...",82,110
+I can't believe that fucking degenerate gambler won...,J'arrive pas a croire que ce putain de joueur dégénéré ait gagné...,54,67
+Pay off the rent he owes and make sure the payment's in his name. Keeping him in that shithole will make it easy to find him if we're given a reason,Paie le loyer qu'il doit et assure-toi que le paiement est à son nom. Le garder dans ce trou a rats facilitera de le retrouver si on a une raison,148,145
+"Also, you can cut surveillance to focus on the big task. I assume you know what...","Aussi, tu peux couper la surveillance pour te concentrer sur la grosse tâche. Je suppose que tu vois ce que...",82,110
 Sure thing.,Avec plaisir.,11,13
-"Yeah, I'm already back on it.","Ouais, j'y suis deja remis.",29,27
+"Yeah, I'm already back on it.","Ouais, j'y suis déjà remis.",29,27
 "[#VelvetRoad]: Buy / Sell Decryption Services, Hitman Services, Drugs, Dark Net Files & Sites, +more","[#VelvetRoad]: Achat / vente services de dechiffrement, tueurs a gages, drogue, fichiers & sites Dark Net, +encore",100,114
 [#VelvetRoad] Read & Interact only - CHAT DISABLED,[#VelvetRoad] Lecture & interaction seulement - CHAT DESACTIVE,50,62
 ARE YOU AN ADDICT? DO YOU NEED DRUGS? I SELL THEM. DRUGS WILL BE DELIVERED. PING FOR INFO.,T'ES ADDICT ? T'AS BESOIN DE DROGUE ? J'EN VENDS. LIVRAISON ASSUREE. PING POUR INFOS.,90,85

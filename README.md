@@ -10,11 +10,13 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 ## Contenu traduit (pack Release)
 
-- Menus / UI / inventaire / DarkDrop
+- Menus / UI / inventaire / DarkDrop (accents FR via FString UTF-16)
+- Prompts interaction monde (Ouvrir, Déverrouiller, Allumer, Se cacher, etc.)
 - CryptChat + ACRS (salon + dialogues agents)
 - PDF in-game
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
+- HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)
 
 ## Structure du code
 

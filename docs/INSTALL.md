@@ -70,7 +70,9 @@ Voir `scripts/build_ui_uassetgui_patch.py` :
 - `UI\Widgets`
 - `Data\DataAssets\Agents` / `Products` / `PlayerItems` / `SimonThoughts` / `ChoiceTrees` / `Difficulty` / `ACRS`
 - `Data\DataTables`
-- `BluePrints\Cinema`
+- `BluePrints\Cinema` / `BluePrints\Pawns` / `BluePrints\GameActors`
+
+Les libellés UI avec accents sont stockés en FString **UTF-16** (longueur négative). Le cp1252 faisait **disparaître** les lettres accentuées à l’affichage (police / décodage UE).
 
 Regenerer la grosse map ACRS/CryptChat :
 
@@ -85,16 +87,58 @@ Les dialogues CryptChat doivent matcher la **FString exacte** du `.uexp` (souven
 ## Limites connues (pas de FString extractible)
 
 - Intro Simon (« You are Simon Zhao… ») : introuvable dans les assets / exe (ni ASCII ni UTF-16) — probablement texture, séquence ou génération runtime.
-- Prompts HUD `Move` / `Run` / `Inventory` / `Pick Up` : absents en FString ; très probablement dérivés des noms d’InputAction (`IA_Default_Move` → `Move`) côté moteur.
+- Boutons « génériques » de `work/ui_fr.csv` **sans FString UI** (ex. Apply, Yes/No génériques, Credits menu, Install, Next…) : **non patchables** par cette méthode. Yes/No n’apparaissent que sur des assets Dark Net (`dontwasteit_*`, hors périmètre).
+
+### HUD mouvement / Enhanced Input (bilan confirmé)
+
+Les libellés `Move` / `Run` / `Inventory` (et variantes `[W,A,S,D] Move`, `[SHIFT] Run`, `[TAB] Inventory` dans les CSV) **n’existent pas** comme FString dans les `.uexp`.
+
+Ils viennent d’**Enhanced Input** : le HUD affiche le nom « leaf » de l’asset InputAction.
+
+| Asset | Affichage typique |
+|-------|-------------------|
+| `Input/Default/IA_Default_Move` | Move |
+| `Input/Default/IA_Default_Run` | Run |
+| `Input/Default/IA_Default_Inventory` | Inventory |
+| `Input/Default/IA_Default_Look` | Look |
+| `Input/Default/IA_Default_Flashlight` | Flashlight |
+| `Input/Default/IA_Default_QuickUse` | QuickUse |
+| `Input/Default/IA_Default_AidPods` / `Ringonome` / `Alpha` / `Beta` | idem |
+
+Ces `.uexp` sont quasi vides (pas de `DisplayName` cooked). Un rename casserait les chemins `/Game/Input/Default/IA_Default_*` (IMC / blueprints) — **non tenté**.
+
+`Pick Up` : aucune occurrence FString ni dans l’exe Shipping.  
+`Crouch` dans l’exe = API CharacterMovement (`IsCrouching`, etc.), pas un prompt HUD de ce jeu.
+
+Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentation seule, pas injectées par le build).
+
+## Boutons / prompts interaction patchés
+
+| EN | FR | Où |
+|----|----|-----|
+| `BUY` | `ACHETER` | DarkDrop |
+| `Confirm` / `Connect` / `Checkout` | `Confirmer` / `Connecter` / `Commander` | DAREDash |
+| `BACK` / `CANCEL` / `GO BACK` / `RETURN HOME` | `RETOUR` / `ANNULER` / … | Settings / DARE |
+| `Hide` | `Se cacher` | Pawns (casier / chariot) |
+| `Open` / `Close` / `Lock` / `Unlock` | `Ouvrir` / `Fermer` / `Verrouiller` / `Déverrouiller` | Portes (`GameActors`) |
+| `Turn On` / `Turn Off` | `Allumer` / `Éteindre` | Interrupteurs / disjoncteurs |
+| `Turn On Computer` | `Allumer l'ordinateur` | PC principal |
+| `Enter Computer` | `Entrer dans l'ordinateur` | Tooltip input |
+| `Peep` / `Repair` | `Regarder` / `Réparer` | Judas / hub réseau |
+| `Attempt Defusal` | `Tenter désamorçage` | Bombe |
+| `Enter Panic Mode` | `Mode panique` | Bouton panique |
+| `Head To Work` | `Aller au travail` | Quitter l'appart |
 
 ## QA in-game
 
-1. Menu : **Jouer / Continuer / Parametres / Quitter** (mots complets)
-2. Pause / réglages en FR
+1. Menu : **Jouer / Continuer / Paramètres / Quitter** (accents visibles)
+2. Pause / réglages en FR (Paramètres graphiques / audio…)
 3. Tutoriel Ronald + Key Finding en FR (wrap-up complet + Good luck)
 4. CryptChat ODDroot/Goggin : message de paiement **et** message avec lien ShadowFetch
 5. DarkDrop : descriptions VirtMesh / ShadowFetch + bouton **ACHETER**
-6. Inventaire : Lettre d'expulsion + descriptions items
-7. PDF FR ; WebSites toujours EN
-8. UE4SS désactivé (`dwmapi.dll.off`)
-9. Fermer le jeu avant rebuild (sinon verrouillage `FR_P.ucas`)
+6. DAREDash : **Confirmer** / **Commander** / **Annuler** / **Retour**
+7. Inventaire : Lettre d'expulsion + descriptions items
+8. Interactions monde : **Ouvrir / Déverrouiller**, **Allumer / Éteindre**, **Se cacher**, **Regarder**, etc.
+9. PDF FR ; WebSites toujours EN
+10. UE4SS désactivé (`dwmapi.dll.off`)
+11. Fermer le jeu avant rebuild (sinon verrouillage `FR_P.ucas`)

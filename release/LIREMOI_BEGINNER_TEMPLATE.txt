@@ -2,7 +2,8 @@ WTTG3 - Traduction francaise (pack debutant)
 ============================================
 
 CONTENU
-- Menus / UI / CryptChat / ACRS / inventaire / DarkDrop (mod FR_P)
+- Menus / UI / CryptChat / ACRS / inventaire / DarkDrop (mod FR_P, accents FR)
+- Boutons patchables : ACHETER, Confirmer, Commander, Se cacher, etc.
 - PDF in-game en francais
 - Achievements FR si le dossier steam_settings existe
 

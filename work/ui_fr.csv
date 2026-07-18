@@ -23,16 +23,16 @@ key,source,translation,priority,notes
 ,Quit,Quitter,P0,translated
 ,RESUME,REPRENDRE,P0,translated
 ,Retry,Réessayer,P0,translated
-,Run,Courir,P0,translated
+,Run,Courir,P0,unpatchable_inputaction
 ,Settings,Paramètres,P0,translated
 ,Skip,Passer,P0,translated
 ,Start,Démarrer,P0,translated
 ,Submit,Envoyer,P0,translated
 ,Take,Prendre,P0,translated
 ,Yes,Oui,P0,translated
-,[SHIFT] Run,[SHIFT] Courir,P0,translated
-,[TAB] Inventory,[TAB] Inventaire,P0,translated
-,"[W,A,S,D] Move","[Z,Q,S,D] Se déplacer",P0,translated
+,[SHIFT] Run,[SHIFT] Courir,P0,unpatchable_inputaction
+,[TAB] Inventory,[TAB] Inventaire,P0,unpatchable_inputaction
+,"[W,A,S,D] Move","[Z,Q,S,D] Se déplacer",P0,unpatchable_inputaction
 ,!!!! MYSTERY BOX GIVEAWAY ALERT !!!! Tickets to join the giveaway cost only 20 DOS Coin / Ticket. !!!! MYSTERY BOX GIVEAWAY ALERT !!!!,!!!! ALERTE MYSTERY BOX !!!! Les tickets coûtent seulement 20 DOS Coin. !!!! ALERTE MYSTERY BOX !!!!,P1,translated_chat_P1
 ,!!!!---!!!! MONEY MAKING OPPORTUNITY !!!!---!!!! A SMALL INVESTMENT OF 500 DOS Coin CAN EARN YOU 200% RETURNS IN ONLY 10 MINUTES!!!! CONTACT FOR ADDITIONAL DETAILS,!!!!---!!!! OPPORTUNITÉ DE FRIC !!!!---!!!! UN PETIT INVESTISSEMENT DE 500 DOS Coin PEUT TE RAPPORTER 200% EN 10 MINUTES!!!! CONTACTE POUR PLUS DE DÉTAILS,P1,translated_chat_P1
 ,$$$ GET YOUR $$$ MONEY UP $$$ 150% CASH BACK ON PURCHASE REAL $$$ MINIMUM 400 DOS COIN $$$,$$$ FAIS GONFLER TON FRIC $$$ 150% CASHBACK SUR ACHAT RÉEL $$$ MINIMUM 400 DOS COIN $$$,P1,translated_chat_P1
