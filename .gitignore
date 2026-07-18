@@ -24,6 +24,7 @@ Thumbs.db
 
 # ACRS batch EN manifests / leftovers (FR maps fr_*.json ARE tracked)
 work/acrs_batches/_en_*.json
+work/acrs_batches/_build_*.py
 work/acrs_batches/rest.json
 work/acrs_batches/status_*.json
 work/acrs_batches/ui.json
