@@ -86,6 +86,12 @@ python scripts\build_ui_uassetgui_patch.py
 
 Les dialogues CryptChat doivent matcher la **FString exacte** du `.uexp` (souvent un seul bloc avec `\r\n` et placeholders `[LINK]` / `[PRICE]` / `[WIKI]`). Des morceaux découpés ne matchent pas.
 
+## Chemins de fichiers (ne jamais traduire)
+
+Les FString du type `Threats/index.html`, `Hacks/index.html` sont des **chemins** vers `RawFiles/PDFS/…`.  
+Les traduire (ex. `Menaces/index.html`) provoque `ERR_FILE_NOT_FOUND` in-game.  
+Le merge ACRS et `build_ui_uassetgui_patch.py` forcent l’identité EN=FR pour ces chemins.
+
 ## Limites connues (pas de FString extractible)
 
 - Intro Simon (« You are Simon Zhao… ») : introuvable dans les assets / exe (ni ASCII ni UTF-16) — probablement texture, séquence ou génération runtime.
@@ -122,6 +128,10 @@ Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentati
 | `Confirm` / `Connect` / `Checkout` | `Confirmer` / `Connecter` / `Commander` | DAREDash |
 | `BACK` / `CANCEL` / `GO BACK` / `RETURN HOME` | `RETOUR` / `ANNULER` / … | Settings / DARE |
 | `Hide` | `Se cacher` | Pawns (casier / chariot) |
+| `[RMB] Exit` / `[RMB] - Exit` | `[Clic droit] Quitter` / `… - Quitter` | Panic / Peep / Hide |
+| `[RMB] Get Up From Desk` | `[Clic droit] Se lever du bureau` | Bureau |
+| `[RMB] Leave Computer` | `[Clic droit] Quitter l'ordinateur` | Moniteur |
+| `Exit To VertMesh` | `Passer à VirtMesh` | Switch VM |
 | `Open` / `Close` / `Lock` / `Unlock` | `Ouvrir` / `Fermer` / `Verrouiller` / `Déverrouiller` | Portes (`GameActors`) |
 | `Turn On` / `Turn Off` | `Allumer` / `Éteindre` | Interrupteurs / disjoncteurs |
 | `Turn On Computer` | `Allumer l'ordinateur` | PC principal |

@@ -3,10 +3,12 @@
 ## P0 (fait, à revalider in-game)
 
 - PDF VirtMesh / Hacks / Threats : traduits ; noms techniques (INJ3KT-R, K3RN3LC0MP1L3R, sujets) **conservés**.
+- **Bug fix** : `Threats/index.html` avait été traduit en `Menaces/index.html` (Agent_Goggin / ACRS) → PDF Threats en `ERR_FILE_NOT_FOUND`. Remis à `Threats/index.html` ; garde-fou chemins `*.html` dans merge + build.
 - Labels Contestants (PLAYER NAME, LOCATION, etc.).
 - Achievements (27) dans `work/achievements_fr.json`.
 - **Accents UI** : dict `RAW` avec accents ; patch en FString **UTF-16** (pas cp1252 — les glyphes disparaissaient in-game).
 - **Boutons / HUD interaction** : `BUY`→ACHETER ; DARE Confirm/Connect/Checkout ; `Hide`→Se cacher ; portes Open/Close/Lock/Unlock ; Turn On/Off ; Peep, Repair, Attempt Defusal, Enter Panic Mode, Head To Work (`BluePrints\GameActors`) ; VirtMesh `MONTER`/`DÉMONTER`/`MINER`/`DÉMINER`/`PIRATER`/`Entrer`.
+- **Prompts [RMB]** : `[RMB] Exit` / `- Exit` → `[Clic droit] Quitter` ; Get Up From Desk ; Leave Computer ; `Exit To VertMesh` → Passer à VirtMesh.
 - **HUD mouvement** (`Move`/`Run`/`Inventory`/`Pick Up`/`Crouch`) : **confirmé non patchable** — labels dérivés des noms `IA_Default_*` (Enhanced Input), pas de FString. CSV annotés `unpatchable_inputaction`. Pas de rename IA (casse les références IMC).
 
 ## P1

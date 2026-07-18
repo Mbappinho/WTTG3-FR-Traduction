@@ -12,8 +12,9 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 - Menus / UI / inventaire / DarkDrop (accents FR via FString UTF-16)
 - Prompts interaction monde (Ouvrir, Déverrouiller, Allumer, Se cacher, etc.)
+- Prompts `[RMB]` (Quitter / Se lever du bureau / Quitter l'ordinateur)
 - CryptChat + ACRS (salon + dialogues agents, FR soigné avec accents)
-- PDF in-game
+- PDF in-game (chemins `Threats/index.html` etc. **non traduits** — sinon 404)
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
 - HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)

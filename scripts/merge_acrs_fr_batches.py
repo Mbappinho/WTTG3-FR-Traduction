@@ -21,6 +21,8 @@ EN_STRINGS_FILE = WORK / "acrs_cryptchat_en_strings.json"
 
 PLACEHOLDER_RE = re.compile(r"\[[A-Z][A-Z0-9_]*\]")
 ACCENT_RE = re.compile(r"[àâäéèêëïîôùûüçœÀÂÄÉÈÊËÏÎÔÙÛÜÇŒ]")
+# File-relative paths must stay EN (game loads RawFiles/PDFS/<path>)
+ASSET_PATH_RE = re.compile(r"^[A-Za-z0-9_./\\-]+\.(html|css|js|jpg|jpeg|png|gif|fetch)$")
 
 
 def load_en_keys() -> list[str]:
@@ -72,7 +74,8 @@ def load_batches() -> dict[str, str]:
             raise SystemExit(f"Batch must be object: {path}")
         for k, v in data.items():
             if isinstance(k, str) and isinstance(v, str) and v.strip():
-                merged[k] = v
+                # Never localize asset/file paths (e.g. Threats/index.html)
+                merged[k] = k if ASSET_PATH_RE.match(k) else v
     return merged
 
 
@@ -82,9 +85,14 @@ def validate(en_keys: list[str], fr: dict[str, str]) -> list[str]:
     if missing:
         errors.append(f"missing_or_empty={len(missing)} (e.g. {missing[0][:60]!r})")
     ph_bad = 0
+    path_bad = 0
     for k in en_keys:
         if k not in fr:
             continue
+        if ASSET_PATH_RE.match(k) and fr[k] != k:
+            path_bad += 1
+            if path_bad <= 5:
+                errors.append(f"asset_path_translated {k!r} -> {fr[k]!r}")
         if placeholders(k) != placeholders(fr[k]):
             ph_bad += 1
             if ph_bad <= 5:
@@ -93,6 +101,8 @@ def validate(en_keys: list[str], fr: dict[str, str]) -> list[str]:
                 )
     if ph_bad > 5:
         errors.append(f"placeholder_mismatch_total={ph_bad}")
+    if path_bad > 5:
+        errors.append(f"asset_path_translated_total={path_bad}")
     with_acc = sum(1 for k in en_keys if k in fr and ACCENT_RE.search(fr[k]))
     # French of length > 20 should often have accents; soft check
     long_fr = [k for k in en_keys if k in fr and len(fr[k]) > 40]

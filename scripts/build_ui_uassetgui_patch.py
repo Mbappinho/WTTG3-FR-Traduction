@@ -14,6 +14,7 @@ from __future__ import annotations
 import base64
 import csv
 import json
+import re
 import shutil
 import struct
 import subprocess
@@ -51,6 +52,10 @@ COPY_PREFIXES = (
 EXTRA_MAP = ROOT / "work" / "acrs_cryptchat_fr.json"
 
 
+# File-relative paths must stay EN (game loads RawFiles/PDFS/<path>)
+_ASSET_PATH_RE = re.compile(r"^[A-Za-z0-9_./\\-]+\.(html|css|js|jpg|jpeg|png|gif|fetch)$")
+
+
 def _load_extra_raw() -> dict[str, str]:
     if not EXTRA_MAP.exists():
         return {}
@@ -58,7 +63,13 @@ def _load_extra_raw() -> dict[str, str]:
         data = json.loads(EXTRA_MAP.read_text(encoding="utf-8"))
     except Exception:
         return {}
-    return {str(k): str(v) for k, v in data.items() if isinstance(k, str) and isinstance(v, str)}
+    out: dict[str, str] = {}
+    for k, v in data.items():
+        if not isinstance(k, str) or not isinstance(v, str):
+            continue
+        # Never rewrite asset/file paths (e.g. Threats/index.html -> Menaces/...)
+        out[k] = k if _ASSET_PATH_RE.match(k) else v
+    return out
 
 
 # Full French — free length (ASCII ANSI / accents UTF-16)
@@ -78,6 +89,12 @@ RAW: dict[str, str] = {
     "Connect": "Connecter",
     "Checkout": "Commander",
     "Hide": "Se cacher",
+    # RMB / leave prompts (Hide, Panic, Peep, Desk, Monitor)
+    "[RMB] - Exit": "[Clic droit] - Quitter",
+    "[RMB] Exit": "[Clic droit] Quitter",
+    "[RMB] Get Up From Desk": "[Clic droit] Se lever du bureau",
+    "[RMB] Leave Computer": "[Clic droit] Quitter l'ordinateur",
+    "Exit To VertMesh": "Passer à VirtMesh",
     # HUD / interaction prompts (GameActors + tooltips)
     "Open": "Ouvrir",
     "Close": "Fermer",

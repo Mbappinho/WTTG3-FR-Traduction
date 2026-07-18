@@ -11,6 +11,11 @@ key,source,translation,priority,notes
 ,Disconnect,Déconnecter,P0,translated
 ,Enter Desk,S'asseoir au bureau,P0,translated
 ,Exit,Quitter,P0,translated
+,[RMB] Exit,[Clic droit] Quitter,P0,translated
+,[RMB] - Exit,[Clic droit] - Quitter,P0,translated
+,[RMB] Get Up From Desk,[Clic droit] Se lever du bureau,P0,translated
+,[RMB] Leave Computer,[Clic droit] Quitter l'ordinateur,P0,translated
+,Exit To VertMesh,Passer à VirtMesh,P0,translated
 ,Hide,Se cacher,P0,translated
 ,Install,Installer,P0,translated
 ,Next,Suivant,P0,translated
