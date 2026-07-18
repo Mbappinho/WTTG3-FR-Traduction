@@ -1,13 +1,28 @@
 # -*- coding: utf-8 -*-
-"""Machine-translate missing ACRS/CryptChat strings (placeholders protected)."""
+"""DEPRECATED — do not use for production FR.
+
+Historically filled gaps via Google Translate and stripped accents (deaccent).
+Final ACRS/CryptChat map is built from work/acrs_batches/fr_*.json via
+scripts/merge_acrs_fr_batches.py (human/agent quality + accents).
+
+This script remains only for emergency bootstrap; prefer merge_acrs_fr_batches.py.
+"""
 from __future__ import annotations
 
 import json
 import re
 import time
+import warnings
 from pathlib import Path
 
 from deep_translator import GoogleTranslator
+
+warnings.warn(
+    "mt_acrs_cryptchat.py is deprecated (Google + deaccent). "
+    "Use work/acrs_batches + merge_acrs_fr_batches.py instead.",
+    DeprecationWarning,
+    stacklevel=1,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / "work"
@@ -102,14 +117,14 @@ def main() -> None:
             else:
                 fr = tr.translate(prot)
             fr = restore(fr, found)
-            fr = deaccent(fr)
+            # Keep accents if any; do not strip for new runs
             cache[en] = fr
         except Exception as ex:
             print(f"FAIL {i}: {ex!r} :: {en[:60]!r}")
             time.sleep(2)
             try:
                 fr = tr.translate(prot[:4000])
-                cache[en] = deaccent(restore(fr, found))
+                cache[en] = restore(fr, found)
             except Exception as ex2:
                 print(f"FAIL2 {ex2!r}")
                 cache[en] = en  # leave EN rather than crash
@@ -128,7 +143,7 @@ def main() -> None:
         if en in RAW:
             continue
         if en in preferred:
-            fr_map[en] = deaccent(preferred[en])
+            fr_map[en] = preferred[en]
         elif en in cache:
             fr_map[en] = cache[en]
 

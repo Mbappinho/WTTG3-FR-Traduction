@@ -12,7 +12,7 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 - Menus / UI / inventaire / DarkDrop (accents FR via FString UTF-16)
 - Prompts interaction monde (Ouvrir, Déverrouiller, Allumer, Se cacher, etc.)
-- CryptChat + ACRS (salon + dialogues agents)
+- CryptChat + ACRS (salon + dialogues agents, FR soigné avec accents)
 - PDF in-game
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
@@ -25,6 +25,7 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 | `scripts/` | Build du mod UI (`build_ui_uassetgui_patch.py`), ACRS/CryptChat, pack debutant |
 | `docs/` | INSTALL, dump usmap, QA, notes de crash |
 | `work/` | Dictionnaires FR (CSV / JSON), map ACRS/CryptChat |
+| `work/acrs_batches/` | Lots ACRS (`fr_status.json` : pubs/UI ; `fr_dialogs_*.json` : dialogues agents ; `fr_topics.json` : 299 topics/spam lobby) |
 | `release/` | Template `LIREMOI` pour le pack debutant |
 
 Non versionne (trop gros / contenus jeu) : `source/` (extracts), `tools/` (retoc, UAssetGUI, UE4SS…), `build/`, `backup/`.

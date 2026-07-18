@@ -22,8 +22,13 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Optional large local caches
-work/acrs_batches/
+# ACRS batch EN manifests / leftovers (FR maps fr_*.json ARE tracked)
+work/acrs_batches/_en_*.json
+work/acrs_batches/rest.json
+work/acrs_batches/status_*.json
+work/acrs_batches/ui.json
+work/acrs_mt_cache.json
+work/acrs_mt_cache.json.deprecated
 build/uassetgui_json/
 build/uassetgui_patched/
 

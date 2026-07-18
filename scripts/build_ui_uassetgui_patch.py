@@ -257,7 +257,7 @@ RAW: dict[str, str] = {
         "Grâce à ton ami Wade, je vais t'offrir un peu d'aide."
     ),
     "VirtMesh is a program you need to install. Without it you won't be able to get onto the Dark Net.": (
-        "VirtMesh est un programme a installer. Sans lui, tu ne pourras pas accéder au Dark Net."
+        "VirtMesh est un programme à installer. Sans lui, tu ne pourras pas accéder au Dark Net."
     ),
     "ShadowFetch will be your way to download instructions and general help documents. I'd use it if I were you.": (
         "ShadowFetch te servira à télécharger des instructions et des documents d'aide. A ta place, je l'utiliserais."
@@ -329,6 +329,16 @@ RAW: dict[str, str] = {
         "Ok, merci. Voici le lien : \r\n[LINK]\r\n\r\n"
         "Mets ça dans ShadowFetch pour télécharger ton fichier. Je me casse.. A plus"
     ),
+    # VirtMesh app (UI/Widgets/Computer/VM)
+    "Mount": "MONTER",
+    "Unmount": "DÉMONTER",
+    "MINE": "MINER",
+    "UNMINE": "DÉMINER",
+    "HACK": "PIRATER",
+    "Enter": "Entrer",
+    "[EXIT]": "[QUITTER]",
+    "[MOUNTING]": "[MONTAGE]",
+    "47.56 / Min": "47.56 / min",
     # DarkDrop / Products
     "BUY": "ACHETER",
     "VirtMesh": "VirtMesh",
@@ -443,7 +453,7 @@ RAW: dict[str, str] = {
     "VM Grid Tier II": "Grille VM niveau II",
     "VM Grid Tier III": "Grille VM niveau III",
     "Expand access within VirtMesh to higher quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.": (
-        "Élargit l'accès VirtMesh a des PC de meilleure qualite : plus d'uptime avant compromission et meilleur potentiel de minage."
+        "Élargit l'accès VirtMesh à des PC de meilleure qualité : plus d'uptime avant compromission et meilleur potentiel de minage."
     ),
     "Expand access within VirtMesh to highest quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.": (
         "Élargit l'accès VirtMesh aux meilleurs PC : plus d'uptime avant compromission et meilleur potentiel de minage."
@@ -451,10 +461,10 @@ RAW: dict[str, str] = {
     "VM Mount Tier II": "Montage VM niveau II",
     "VM Mount Tier III": "Montage VM niveau III",
     "Increase maximum mounted computers in VirtMesh from 2 -> 4. Mounted computers can access A.N.N. web browser.": (
-        "Passe le max de PC montés dans VirtMesh de 2 a 4. Les PC montés peuvent utiliser le navigateur A.N.N."
+        "Passe le max de PC montés dans VirtMesh de 2 à 4. Les PC montés peuvent utiliser le navigateur A.N.N."
     ),
     "Increase maximum mounted computers in VirtMesh from 4 -> 6. Mounted computers can access A.N.N. web browser.": (
-        "Passe le max de PC montés dans VirtMesh de 4 a 6. Les PC montés peuvent utiliser le navigateur A.N.N."
+        "Passe le max de PC montés dans VirtMesh de 4 à 6. Les PC montés peuvent utiliser le navigateur A.N.N."
     ),
     # Inventaire / PlayerItems
     "Eviction Letter": "Lettre d'expulsion",

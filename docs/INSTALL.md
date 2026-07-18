@@ -74,13 +74,15 @@ Voir `scripts/build_ui_uassetgui_patch.py` :
 
 Les libellés UI avec accents sont stockés en FString **UTF-16** (longueur négative). Le cp1252 faisait **disparaître** les lettres accentuées à l’affichage (police / décodage UE).
 
-Regenerer la grosse map ACRS/CryptChat :
+Regénérer la map ACRS/CryptChat (qualité + accents) :
 
 ```powershell
-python scripts\gen_acrs_cryptchat_fr.py   # status/UI manuels + chunks
-python scripts\mt_acrs_cryptchat.py       # complete les manquants (Google Translate + cache)
+# Éditer / ajouter des lots FR dans work\acrs_batches\fr_*.json
+python scripts\merge_acrs_fr_batches.py --write --strict
 python scripts\build_ui_uassetgui_patch.py
 ```
+
+`mt_acrs_cryptchat.py` (Google + strip d'accents) est **déprécié** — ne plus l'utiliser pour le livrable.
 
 Les dialogues CryptChat doivent matcher la **FString exacte** du `.uexp` (souvent un seul bloc avec `\r\n` et placeholders `[LINK]` / `[PRICE]` / `[WIKI]`). Des morceaux découpés ne matchent pas.
 
@@ -128,6 +130,8 @@ Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentati
 | `Attempt Defusal` | `Tenter désamorçage` | Bombe |
 | `Enter Panic Mode` | `Mode panique` | Bouton panique |
 | `Head To Work` | `Aller au travail` | Quitter l'appart |
+| `Mount` / `Unmount` / `MINE` / `UNMINE` / `HACK` / `Enter` | `MONTER` / `DÉMONTER` / `MINER` / `DÉMINER` / `PIRATER` / `Entrer` | VirtMesh (menu nœud) |
+| `[EXIT]` / `[MOUNTING]` | `[QUITTER]` / `[MONTAGE]` | VirtMesh |
 
 ## QA in-game
 
