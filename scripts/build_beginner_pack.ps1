@@ -40,11 +40,17 @@ Copy-Item (Join-Path $LocRoot "scripts\beginner_common.ps1") (Join-Path $out "sc
 Copy-Item (Join-Path $LocRoot "scripts\install_fr_beginner.ps1") (Join-Path $out "scripts") -Force
 Copy-Item (Join-Path $LocRoot "scripts\uninstall_fr_beginner.ps1") (Join-Path $out "scripts") -Force
 
+# Keep the console open if PowerShell fails to parse/start (double-click UX).
 $installerBat = @(
     "@echo off",
     "chcp 65001 >nul",
     'cd /d "%~dp0"',
-    'powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\install_fr_beginner.ps1"'
+    'powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\install_fr_beginner.ps1"',
+    "if errorlevel 1 (",
+    "  echo.",
+    "  echo Echec de l'installateur. Relis le message ci-dessus.",
+    "  pause",
+    ")"
 ) -join "`r`n"
 Set-Content -Path (Join-Path $out "INSTALLER.bat") -Value $installerBat -Encoding ASCII
 
@@ -52,7 +58,12 @@ $uninstallerBat = @(
     "@echo off",
     "chcp 65001 >nul",
     'cd /d "%~dp0"',
-    'powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\uninstall_fr_beginner.ps1"'
+    'powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\uninstall_fr_beginner.ps1"',
+    "if errorlevel 1 (",
+    "  echo.",
+    "  echo Echec de la desinstallation. Relis le message ci-dessus.",
+    "  pause",
+    ")"
 ) -join "`r`n"
 Set-Content -Path (Join-Path $out "DESINSTALLER.bat") -Value $uninstallerBat -Encoding ASCII
 

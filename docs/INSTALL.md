@@ -83,6 +83,8 @@ Procedure propre apres une **MAJ Steam** ou une **nouvelle release FR** :
 
 **Crash au boot ?** → desinstaller tout de suite (`DESINSTALLER.bat`), confirmer que vanilla marche, puis installer **seulement** une release rebuildée pour la maj en cours. Un vieux zip ne “répare” en general pas un cook Steam change. Voir aussi [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md).
 
+**`INSTALLER.bat` plante au double-clic (fenetre rouge / erreur de syntaxe) ?** → souvent un zip trop vieux avec des tirets Unicode mal lus par Windows PowerShell. Reprendre le zip de la derniere release (scripts en UTF-8 BOM, tirets ASCII). Les sources `scripts/*.ps1` du pack doivent rester en UTF-8 **avec BOM**.
+
 **PDF revenus en anglais sans crash ?** → Steam a souvent ecrase `RawFiles/PDFS` : reinstaller la derniere release (etape desinstall + install ci-dessus).
 
 ## Appliquer (dev / avance)

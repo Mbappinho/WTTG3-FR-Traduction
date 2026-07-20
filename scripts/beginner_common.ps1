@@ -120,7 +120,7 @@ function Find-SteamAppManifest([string]$GameRoot, [string]$AppId) {
     $name = "appmanifest_$AppId.acf"
     $candidates = New-Object System.Collections.Generic.List[string]
 
-    # ...\steamapps\common\<Game> → ...\steamapps\appmanifest_*.acf
+    # ...\steamapps\common\<Game> -> ...\steamapps\appmanifest_*.acf
     try {
         $common = Split-Path -Parent $GameRoot
         $steamapps = Split-Path -Parent $common
