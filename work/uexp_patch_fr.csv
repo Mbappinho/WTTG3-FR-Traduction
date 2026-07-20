@@ -104,11 +104,11 @@ OFFLINE,HORS LIGNE,7,10
 "Every time you are prompted, hold/release [SPACEBAR] to keep the ring between the bands","Quand on vous le demande, maintenez/relâchez [ESPACE] pour garder l'anneau entre les bandes",87,91
 DOSCoin Balance,Solde DOSCoin,15,13
 YoloYen Balance,Solde YoloYen,15,13
-Firewall Tier I,Pare-feu niveau I,15,17
+Firewall Tier I,Pare-feu I,15,10
 0 Hacks Blocked,0 hacks bloqués,15,15
-Backdoor Hacks,Hacks backdoor,14,14
+Backdoor Hacks,Backdoors,14,9
 Network Status,État du réseau,14,14
-Signal Booster Strength,Force de l'amplificateur,23,24
+Signal Booster Strength,Force du boost,23,14
 Quick Switch To Virtual Desktop,Basculer vers le bureau virtuel,31,31
 Quick Switch To Desktop,Basculer vers le bureau,23,23
 Key Finding,Recherche de clés,11,17
@@ -127,7 +127,7 @@ PINGS DISABLED,PINGS DÉSACTIVÉS,14,16
 User Info:,Infos utilisateur :,10,19
  SYSTEM CLEARED CHAT, LE SYSTÈME A VIDÉ LE CHAT,20,26
 Internet Connection Lost,Connexion internet perdue,24,25
-Source Code Viewer,Visionneuse de code source,18,26
+Source Code Viewer,Visionneuse code,18,16
 Fetch URL...,URL Fetch...,12,12
 Enter Fetch URL...,Entrer l'URL Fetch...,18,21
 Enter Dealer ID,Entrer l'ID vendeur,15,19
@@ -296,15 +296,15 @@ AID Pods,AID Pods,8,8
 Press [R] to power on / off.","Écouteurs intra-auriculaires qui augmentent la portée audible de tous les sons. Utile si tu as des soucis de sécurité.
 
 Appuie sur [R] pour allumer / éteindre.",155,161
-Backdoor Hack,Hack backdoor,13,13
-Want a way to get back at those pesky hackers?! The Backdoor Hack is what you need! Defeating a hack will steal DOS Coin from the hacker! Each time you're hacked one will be auto-consumed.,"Envie de te venger de ces satânés hackers ?! Le Hack backdoor est ce qu'il te faut ! Battre un hack vole des DOS Coin au hacker ! A chaque hack subi, un exemplaire est consommé automatiquement.",188,193
-"Want a way to get back at those pesky hackers?! Then the Backdoor Hack is what you need! Each time you are hacked, it will auto consume, if you defeat the hack you will steal DOS Coin from the hacker!","Envie de te venger de ces satânés hackers ?! Le Hack backdoor est ce qu'il te faut ! A chaque hack subi il se consomme ; si tu gagnes, tu voles des DOS Coin au hacker !",200,168
+Backdoor Hack,Backdoor,13,8
+Want a way to get back at those pesky hackers?! The Backdoor Hack is what you need! Defeating a hack will steal DOS Coin from the hacker! Each time you're hacked one will be auto-consumed.,"Envie de te venger de ces satânés hackers ?! Le Backdoor est ce qu'il te faut ! Battre un hack vole des DOS Coin au hacker ! A chaque hack subi, un exemplaire est consommé automatiquement.",188,188
+"Want a way to get back at those pesky hackers?! Then the Backdoor Hack is what you need! Each time you are hacked, it will auto consume, if you defeat the hack you will steal DOS Coin from the hacker!","Envie de te venger de ces satânés hackers ?! Le Backdoor est ce qu'il te faut ! A chaque hack subi il se consomme ; si tu gagnes, tu voles des DOS Coin au hacker !",200,163
 DAREDash,DAREDash,8,8
 "Convenient app to purchase drugs off the Dark Net. Quickly access drug dealer inventories, make a selection, then order for delivery.","Appli pratique pour acheter de la drogue sur le Dark Net. Accède vite aux stocks des dealers, choisis, puis commande en livraison.",133,130
-Firewall Tier II,Pare-feu niveau II,16,18
-Firewall Tier III,Pare-feu niveau III,17,19
-Firewall Tier IV,Pare-feu niveau IV,16,18
-Firewall Tier V,Pare-feu niveau V,15,17
+Firewall Tier II,Pare-feu II,16,11
+Firewall Tier III,Pare-feu III,17,12
+Firewall Tier IV,Pare-feu IV,16,11
+Firewall Tier V,Pare-feu V,15,10
 Passively prevents incoming hacks with a 20% success rate. Can be turned on / off by clicking on the taskbar icon and checking / unchecking the box.,Bloque passivement les hacks entrants avec 20% de réussite. Active / désactive via l'icone de la barre des taches.,148,114
 Increases passive defense against incoming hacks to a 40% success rate.,Passe la défense passive contre les hacks entrants a 40% de réussite.,71,69
 Increases passive defense against incoming hacks to a 60% success rate.,Passe la défense passive contre les hacks entrants a 60% de réussite.,71,69
@@ -317,20 +317,20 @@ Key Cue,Key Cue,7,7
 Key Cue Plus,Key Cue Plus,12,12
 Want extra help to find key hashes? When loaded onto a website that contains one there will be a small key icon visible near the top right of A.N.N. browser.,"Besoin d'aide pour trouver les hash de clés ? Sur un site qui en contient une, une petite icône clé apparait en haut a droite du navigateur A.N.N.",157,146
 Interested in gaining more help with key hashes? When loaded onto the specific website page which contains one the key icon near the top right of A.N.N. browser will change from white to a gold color.,"Envie d'encore plus d'aide pour les hash de clés ? Sur la page exacte qui en contient une, l'icône clé en haut a droite d'A.N.N. passe du blanc au doré.",200,152
-Motion Alert,Alerte mouvement,12,16
+Motion Alert,Alerte mvt,12,10
 "Software that provides visual & audio notifications when a placed motion sensor is triggered. Perfect for the person who's focused on other tasks when unexpected motion arrives.
 
-Clicking on the motion alert taskbar icon will reveal the named location and status of all placed motion sensors.","Logiciel qui envoie des alertes visuelles et sonores quand un détecteur de mouvement placé se déclenche. Idéal quand tu es concentré ailleurs.
+Clicking on the motion alert taskbar icon will reveal the named location and status of all placed motion sensors.","Logiciel qui envoie des alertes visuelles et sonores quand un Capteur mvt placé se déclenche. Idéal quand tu es concentré ailleurs.
 
-Clique l'icone d'alerte dans la barre des taches pour voir le lieu et l'état de tous les détecteurs placés.",294,253
-Motion Sensor,Détecteur de mouvement,13,22
-Portable battery-powered sensor that detects nearby motion. Requires separate purchase of Motion Alert to receive visual and sound based notifications on your computer when a sensor is triggered.,Capteur portable à piles qui detecte le mouvement à proximité. Nécessite l'achat separe d'Alerte mouvement pour les notifications sur ton PC.,195,141
+Clique l'icone d'alerte dans la barre des taches pour voir le lieu et l'état de tous les capteurs placés.",294,240
+Motion Sensor,Capteur mvt,13,11
+Portable battery-powered sensor that detects nearby motion. Requires separate purchase of Motion Alert to receive visual and sound based notifications on your computer when a sensor is triggered.,Capteur portable à piles qui detecte le mouvement à proximité. Nécessite l'achat separe d'Alerte mvt pour les notifications sur ton PC.,195,135
 NOP Sled,NOP Sled,8,8
 "Want to skip an incoming hack? The NOP Sled is your answer! Upon activation you'll immediately break free. (Backdoor Hacks are not consumed).
 
-Press [Middle Mouse Button] during a hack to activate.","Envie de zapper un hack entrant ? Le NOP Sled est la réponse ! A l'activation tu te libères tout de suite. (Les Hacks backdoor ne sont pas consommés).
+Press [Middle Mouse Button] during a hack to activate.","Envie de zapper un hack entrant ? Le NOP Sled est la réponse ! A l'activation tu te libères tout de suite. (Les Backdoors ne sont pas consommés).
 
-Appuie sur [Clic molette] pendant un hack pour l'activer.",199,211
+Appuie sur [Clic molette] pendant un hack pour l'activer.",199,206
 Find yourself in a hack you don't want to deal with? Then the NOPSled is what you want! By simply pressing the middle mouse button you break free from the hack!(Does not consume any Backdoors),Coincé dans un hack dont tu ne veux pas ? Le NOPSled est fait pour toi ! Un clic molette et tu te libères ! (Ne consomme aucun Backdoor),192,136
 Ringonome,Ringonome,9,9
 "Finger ring that provides a ticking noise once per second when activated. Great way to keep your counting consistent.
@@ -340,26 +340,26 @@ Press [T] to power on / off.","Bague qui fait un tic une fois par seconde une fo
 Appuie sur [T] pour allumer / éteindre.",149,140
 SecCam,SecCam,6,6
 Monitor your placed GO CAM camera feeds with this app. Navigate between cameras using the on-screen buttons or press [A] / [D].,Surveille tes flux GO CAM avec cette appli. Change de camera avec les boutons à l'écran ou [A] / [D].,127,101
-Signal Booster,Amplificateur de signal,14,23
+Signal Booster,Boost signal,14,12
 "Temporarily increase internet speed by placing this device in an *optimal location. View on-device section labled ""Signal Strength"" to see quality of speed boost.
 
 *Over time device may need to be moved to maintain full speed boost.","Augmente temporairement la vitesse internet en placant cet appareil a un endroit *optimal. Regarde la section ""Signal Strength"" sur l'appareil pour la qualité du boost.
 
 *Avec le temps, tu devras peut-être le deplacer pour garder le boost max.",234,245
-Sig.Boost Monitor,Moniteur amplif.,17,16
-Track your Signal Booster's internet speed increase through a desktop taskbar icon. The icon will display the current boost strength.,Suis le boost de vitesse de ton Amplificateur via une icône de barre des taches. L'icone affiche la force actuelle.,133,115
-VM Cyrpto Miner,Mineur crypto VM,15,16
+Sig.Boost Monitor,Moniteur boost,17,14
+Track your Signal Booster's internet speed increase through a desktop taskbar icon. The icon will display the current boost strength.,Suis le boost de vitesse de ton Boost signal via une icône de barre des taches. L'icone affiche la force actuelle.,133,114
+VM Cyrpto Miner,Mineur VM,15,9
 "Purchase a *single-use script that turns a hacked computer in VirtMesh to a crypto miner for passive money generation.
 
 *Choosing to unmine a hacked computer will destroy the script. It can be mined again, but will require another script to do so.","Achete un script *à usage unique qui transforme un PC piraté dans VirtMesh en mineur crypto pour gagner passivement.
 
 *Déminer un PC détruit le script. Tu pourras reminer, mais il faudra un autre script.",249,205
-VM Grid Tier II,Grille VM niveau II,15,19
-VM Grid Tier III,Grille VM niveau III,16,20
+VM Grid Tier II,Grille VM II,15,12
+VM Grid Tier III,Grille VM III,16,13
 "Expand access within VirtMesh to higher quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.",Élargit l'accès VirtMesh à des PC de meilleure qualité : plus d'uptime avant compromission et meilleur potentiel de minage.,155,123
 "Expand access within VirtMesh to highest quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.",Élargit l'accès VirtMesh aux meilleurs PC : plus d'uptime avant compromission et meilleur potentiel de minage.,156,110
-VM Mount Tier II,Montage VM niveau II,16,20
-VM Mount Tier III,Montage VM niveau III,17,21
+VM Mount Tier II,Montage VM II,16,13
+VM Mount Tier III,Montage VM III,17,14
 Increase maximum mounted computers in VirtMesh from 2 -> 4. Mounted computers can access A.N.N. web browser.,Passe le max de PC montés dans VirtMesh de 2 à 4. Les PC montés peuvent utiliser le navigateur A.N.N.,108,101
 Increase maximum mounted computers in VirtMesh from 4 -> 6. Mounted computers can access A.N.N. web browser.,Passe le max de PC montés dans VirtMesh de 4 à 6. Les PC montés peuvent utiliser le navigateur A.N.N.,108,101
 Eviction Letter,Lettre d'expulsion,15,18
@@ -445,15 +445,15 @@ Once you have found both hashes and decrypted them into the key fragments, you m
 
 Pour être un joueur dans le jeu principal, tu dois terminer la session d'essai de ce soir, et ce sera pas une promenade de santé !
 
-Voici le lien vers ta page Wiki :
+Voici le lien vers ta page wiki :
 
 [WIKI]
 
-Tu dois parcourir les sites de ce wiki et trouver deux hashes cachés, mais les choses sont différentes de ce que tu as pu entendre. Au lieu de juste trouver les hashes et me les donner directement, tu dois les déchiffrer en fragments de clé.
+Tu dois parcourir les sites de ce wiki et trouver deux hashes cachés, mais les choses sont différentes de ce que tu as pu entendre. Au lieu de juste trouver les hashes et me les donner directement, tu dois les déchiffrer en fragment de clé.
 
-Pour déchiffrer les hashes en clés, un agent spécial s'en chargera pour toi.. et c'est pas donné ! Normalement tu devrais trouver ces agents toi-même, mais ce soir j'ai déjà choisi un agent qui va te contacter directement. Tu devrais avoir de ses nouvelles bientôt. 
+Pour déchiffrer les hashes en clés, un agent spécial s'en chargera pour toi.. et ils sont pas donnés ! Normalement tu devrais trouver ces agents toi-même, mais ce soir j'ai déjà choisi un agent qui va te contacter directement. Tu devrais avoir de ses nouvelles bientôt. 
 
-Une fois que tu auras trouvé les deux hashes et les auras déchiffrés en fragments de clé, tu dois les combiner selon l'ordre de leur index. Envoie-moi la clé assemblée et tu gagnes !",940,943
+Une fois que tu auras trouvé les deux hashes et les auras déchiffrés en fragments de clé, tu dois les combiner selon l'association de leur index. Envoie-moi la clé compilée et tu gagnes !",940,951
 I'm working to find a video that got scrubbed from the internet about a decade ago. In it this scientist worked out a device to capture and recycle the excess heat and kinetic motions of his custom 3D printer. It would recharge an external battery bank in the process of a normal print. It was so efficient at doing so no additional power source was needed. Reports claimed the government killed him. A few believe he's still out there. Some are cognizant enough to pick up on this being entirely fake and improbable because they have a grade level education. Today might have been a day where you learned something about yourself ;),Je cherche une vidéo effacée du net y a environ dix ans. Dedans un scientifique avait inventé un appareil pour capturer et recycler la chaleur et le mouvement cinétique de son imprimante 3D custom. Ça rechargeait une batterie externe pendant une impression normale. Tellement efficace qu'aucune autre source d'énergie n'était nécessaire. Des rapports disent que le gouvernement l'a tué. Certains croient qu'il est encore dehors. D'autres ont assez de cervelle pour voir que c'est entièrement faux et improbable parce qu'ils ont un niveau scolaire de base. Aujourd'hui t'as peut-être appris un truc sur toi ;),633,608
 "The dispatched hitman was unable to eliminate [TARGET]. Those running The Game force us to follow a fair play standard, which disallows our deployed hitman from hunting your target indefinitely.
 
@@ -680,9 +680,9 @@ Si tu veux doxer un de ces autres joueurs, je pourrai t'aider dans un moment. Ç
 "NEWSFLASH: leave your friendly demeanor at the door when you enter this chat. No one gives a fuck about manners, pleasantries, or any of that ""thank you so much"" bullshit. Typing anything even close to that will put a big fucking mark on your back. I made the mistake, avoid doing the same","FLASH INFO : laisse ta politesse à la porte en entrant dans ce chat. Personne en a rien à foutre des manières, des politesses, ou de ce genre de « merci beaucoup » de merde. Taper quoi que ce soit dans le genre te mettra une grosse cible dans le dos. J'ai fait l'erreur, évite de faire pareil",289,292
 "If you have their private info we can kill em. Assuming you've obtained a player's private information through doxxing we're able to deploy one of our many hitmen to eliminate their existence. 
 
-Price of doing so will cost [PRICE] DOS Coin. Secure our service by sending the money over.","Si t'as leurs infos privées on peut les buter. En supposant que t'as obtenu les infos privées d'un joueur via un dox, on peut déployer un de nos nombreux tueurs à gages pour les faire disparaître. 
+Price of doing so will cost [PRICE] DOS Coin. Secure our service by sending the money over.","Si t'as leurs infos privées on peut les buter. En supposant que t'as obtenu les infos privées d'un joueur via un dox, on peut déployer un de nos nombreux tueurs à gages pour éliminer leur existence. 
 
-Ça te coûtera [PRICE] DOS Coin. Envoie le fric pour confirmer.",288,263
+Le prix pour ça coûtera [PRICE] DOS Coin. Sécurise notre service en envoyant le fric.",288,288
 "This rep thing has to be funneling money back to the owner. It doesn't make any sense otherwise. Oh here's this thing I want, whooops can't buy it, you haven't dumped enough money in yet. Buy a bunch of stuff you don't need first to unlock access to BUY what you do. lol so fucking stupid","Ce truc de rep doit forcément renvoyer du fric au proprio. Ça a aucun sens autrement. Oh voilà le truc que je veux, oupsi tu peux pas l'acheter, t'as pas encore assez déversé de fric. Achète d'abord un tas de trucs dont t'as pas besoin pour débloquer l'accès à ACHETER ce que tu veux. lol tellement con",288,302
 "I hope researchers study the fans behind ""The Game"" one day. Would be very compelling to learn about these idiots and what positions they hold in their community. Imagine someone as intelligent as a neurosurgeon happened to be among the other losers rooting this trash programming on lol",J'espère que des chercheurs étudieront un jour les fans derrière « The Game ». Ce serait captivant d'apprendre qui sont ces idiots et quelles places ils tiennent dans leur communauté. Imagine qu'un type aussi intelligent qu'un neurochirurgien soit parmi les autres losers qui encouragent cette daube lol,287,303
 "My friends jokingly bought and downloaded some kind of brainwashing video the government created from this chat. It could be that I'm just paranoid, but I've been having really strange thoughts since then and my dreams are more vivid then they've ever been. make of that what you will","Mes potes ont acheté et téléchargé pour de rire une espèce de vidéo de lavage de cerveau créée par le gouvernement depuis ce chat. Peut-être que je suis juste parano, mais j'ai des pensées vraiment bizarres depuis et mes rêves sont plus vifs que jamais. faites-en ce que vous voulez",284,282
@@ -701,9 +701,9 @@ Sauf que ton deal avec Wade a envoyé tout ce paiement sur son portefeuille séc
 Tu devrais aller le voir. Il t'attend sur le parking devant.",282,285
 "Through VirtMesh hack, mount, then enter a computer. Once you get that done switch over to this desktop and I'll share a link to a Wiki Page that has all types of websites on it.
 
-If what I'm saying doesn't make sense download and look at that document from the fetch link above.","Via VirtMesh : pirater, monter, puis entre dans un ordi. Une fois que c'est fait, repasse sur ce bureau et je te partagerai un lien vers une page Wiki avec toutes sortes de sites.
+If what I'm saying doesn't make sense download and look at that document from the fetch link above.","Via VirtMesh, hack, MONTER, puis entre dans un ordi. Une fois que c'est fait, repasse sur ce bureau et je te partagerai un lien vers une Wiki Page avec toutes sortes de sites.
 
-Si ce que je dis a pas de sens, télécharge et lis ce document via le lien ShadowFetch ci-dessus.",281,279
+Si ce que je dis a pas de sens, télécharge et lis ce document via le lien fetch ci-dessus.",281,269
 ====== FULL SERVICE STOP ====== WE HAVE EVERYTHING YOU COULD POSSIBLY EVER NEED IN ONE SPOT ====== NO MINIMUM REP REQUIRED ====== EXTREMELY LOW PRICES FOR QUALITY PRODUCTS ====== ALWAYS SPEEDY TRANSACTION ====== PROOF AVAILABLE UPON REQUEST ====== PAID MEMBERSHIP REQUIRED ====== ,====== HALTE SERVICE COMPLET ====== ON A TOUT CE DONT TU POURRAIS AVOIR BESOIN AU MÊME ENDROIT ====== AUCUNE REP MINIMALE REQUISE ====== PRIX EXTRÊMEMENT BAS POUR DES PRODUITS DE QUALITÉ ====== TOUJOURS TRANSACTION RAPIDE ====== PREUVES DISPO SUR DEMANDE ====== ABONNEMENT PAYANT REQUIS ====== ,280,294
 "Cleaned up all the details I pulled on [TARGET] and put them in a single file. Retrieve the file through this fetch url.
 
@@ -758,9 +758,9 @@ this is going to sound fake but it's 100% true. I had considered paying to have 
 "this is the first chatroom I've seen where the chat gets routinely cleaned. while there's a loud minority of you that find it annoying it's something I think is great. Each time it clears I have to confirm to reconnect, don't you guys want active users in chat?","c'est le premier salon que je vois où le chat se clean régulièrement. même s'il y a une minorité bruyante qui trouve ça chiant je pense que c'est génial. À chaque clear je dois confirmer pour reconnecter, vous voulez pas des users actifs dans le chat ?",261,252
 "Courtesy of The Game, killing someone couldn't be cheaper. As long as you have their doxxed details one of our hitman can permanently pause the trouble their causing you.
 
-Your confirmation is required, specifically in the form of a [PRICE] DOS Coin payment.","Merci The Game : tuer quelqu'un n'a jamais été aussi bon marché. Tant que t'as leurs détails doxés, un de nos tueurs à gages peut régler définitivement les emmerdes qu'ils te causent.
+Your confirmation is required, specifically in the form of a [PRICE] DOS Coin payment.","Courtoisie de The Game : tuer quelqu'un n'a jamais été aussi bon marché. Tant que t'as leurs détails doxés, un de nos tueurs à gages peut mettre définitivement en pause les emmerdes qu'ils te causent.
 
-Ta confirmation est requise, sous la forme précise d'un paiement de [PRICE] DOS Coin.",260,272
+Ta confirmation est requise, sous la forme précise d'un paiement de [PRICE] DOS Coin.",260,289
 Just learned that one of the frequent users here is truly vile piece of shit that deserves to be exiled. I'm posting this from a throwaway account and will only reveal my identity to proven staff members. Either this person gets removed or I permanently leave.,"Je viens d'apprendre qu'un des habitués d'ici est vraiment une merde vile qui mérite l'exil. Je poste depuis un throwaway et je révélerai mon identité uniquement à du staff prouvé. Soit cette personne est virée, soit je me casse pour de bon.",260,241
 Desperate to finally meet my true love after searching far and wide myself for her location I paid for assistance to finally see her beautiful skin in person. Needless to say we're most certainly in love and she's beginning to understand what our future holds,"Désespéré de enfin rencontrer mon vrai amour après l'avoir cherchée partout, j'ai payé pour de l'aide et enfin voir sa belle peau en vrai. Inutile de dire qu'on est clairement amoureux et qu'elle commence à comprendre ce que notre avenir réserve",259,245
 "I'm not going to green light that hit, since [TARGET] is already contending with another hitman. It's just not something that we do. So choose any other player to kill or hold off for now and check back in with their doxxed details again, assuming they live.","Je vais pas valider ce hit, puisque [TARGET] est déjà aux prises avec un autre tueur à gages. C'est juste pas un truc qu'on fait. Donc choisis n'importe quel autre joueur à tuer ou attends pour l'instant et reviens avec leurs détails doxés, en supposant qu'ils survivent.",258,271
@@ -852,9 +852,9 @@ Il te faudra attendre un moment avant de pouvoir lancer un autre contrat via not
 my first time on the dark net and came here to try and find a site to buy guns. About a minute after I posted there had to be 20 or more messages in my inbox with options for different sites. Don't sleep on asking for stuff in here,ma première fois sur le dark net et je suis venu ici pour trouver un site pour acheter des armes. Environ une minute après mon post y avait forcément 20 messages ou plus dans ma boîte avec des options de sites différents. Dormez pas sur le fait de demander des trucs ici,231,270
 "There's nothing wrong with paying your way through The Game. A preferred hitman will be connected to your request via the doxxed player details you send us. 
 
-Prior to sharing those details send a payment of [PRICE] DOS Coin.","Y a rien de mal à se payer un passage dans The Game. Un tueur à gages sera assigné à ta demande via les détails doxés du joueur que tu nous envoies. 
+Prior to sharing those details send a payment of [PRICE] DOS Coin.","Y a rien de mal à se payer un passage dans The Game. Un tueur à gages privilégié sera relié à ta demande via les détails doxés du joueur que tu nous envoies. 
 
-Avant de partager ces détails, envoie un paiement de [PRICE] DOS Coin.",227,223
+Avant de partager ces détails, envoie un paiement de [PRICE] DOS Coin.",227,232
 "If you haven't heard I'm donating my entire 10,000+ dark net video collection to one lucky user. It's very easy to enter. This collection has made me a millionaire many times over and YOU can do the same. Contact me to enter.",Si t'as pas entendu je donne toute ma collection de +10 000 vidéos dark net à un user chanceux. C'est très simple de participer. Cette collection m'a rendu millionnaire plusieurs fois et TOI tu peux faire pareil. Contacte-moi pour entrer.,225,238
 QUICK I AM GIVING THE FIRST PERSON TO SEND ME mackUNLOAD_005.mp4 EVERYTHING I HAVE IN MY WALLET. THIS IS NOT A DRILL. I WILL LITERALLY GIVE YOU ZERO DOS COIN. I AM UNSURE YOU HAVE THE ABILITY TO COMPLETE THIS TASK. GOOD LUCK.,VITE JE DONNE À LA PREMIÈRE PERSONNE QUI M'ENVOIE mackUNLOAD_005.mp4 TOUT CE QUE J'AI DANS MON WALLET. C'EST PAS UN EXERCICE. JE TE DONNERAI LITTÉRALEMENT ZÉRO DOS COIN. JE SUIS PAS SÛR QUE TU AIES LA CAPACITÉ DE FAIRE ÇA. BONNE CHANCE.,225,236
 "Sincerely from the bottom of my heart, thank you. I can't wait to let my son know that a mouth breathing, button mashing buffoon couldn't get him the dark net video he wanted for his birthday. Either send [VIDEO] or fuck off.","Sincèrement, du fond du cœur, merci. J'ai hâte de dire à mon fils qu'un clown bouche ouverte qui spam des boutons a pas pu lui dénicher la vidéo dark net qu'il voulait pour son anniv. Soit tu envoies [VIDEO], soit tu te casses.",225,227
@@ -882,7 +882,7 @@ After basic preliminary tests I've confirmed this key can be decrypted using the
 "Yooooooooo game night. The game is back and it's better than ever. Ah shit, oh man, just realized I can do anything other than watch it. Well nevermind then. To all those who decide to tune in - go fucccccck yourself","Yooooooooo soirée game. The Game est de retour et c'est mieux que jamais. Ah merde, oh putain, je viens de réaliser que je peux faire n'importe quoi d'autre que le regarder. Bon tant pis alors. À tous ceux qui décident de regarder - allez vous faiiiiiire foutre",216,261
 [TARGET] has an active hitman hunting them. We don't send out multiple to handle a single job. Choose any other player or hold off and check back in with me if this one survives. I'll need that doxxed info PDF again.,[TARGET] a un tueur à gages actif qui les traque. On en envoie pas plusieurs pour un seul job. Choisis n'importe quel autre joueur ou attends et reviens me voir s'ils survivent. J'aurai encore besoin de ce PDF d'infos doxées.,216,225
 "nobody interact with the ""get rid of rep"" / ""remove chat clear"" people. If anything is likely they're the ones part of some group trying to degrade this chat room so their own venture profits. Say fuck em and move on",personne interagit avec les gens « virez la rep » / « retirez le clear ». S'il y a une chance c'est eux qui font partie d'un groupe qui veut pourrir ce salon pour que leur propre venture profite. Dites allez vous faire foutre et passez à autre chose,216,249
-"oh what i'd give to huff one whiff of [PLAYER]'s chair. this is a business, what is the estimate to buy that seat bottom? my desire has grown large but do not mistake that for poor judgment. i will not be ripped off.","oh ce que je donnerais pour sniffer une bouffée de la chaise de [PLAYER]. c'est un business, c'est quoi l'estimé pour acheter ce fond de siège ? mon désir a grandi mais prenez pas ça pour un manque de jugement. je me ferai pas plumer.",216,234
+"oh what i'd give to huff one whiff of [PLAYER]'s chair. this is a business, what is the estimate to buy that seat bottom? my desire has grown large but do not mistake that for poor judgment. i will not be ripped off.","oh ce que je donnerais pour sniffer une bouffée de la chaise de [PLAYER]. c'est un business, c'est quoi l'estimation pour acheter ce fond de siège ? mon désir a grandi mais prenez pas ça pour un manque de jugement. je me ferai pas plumer.",216,238
 "Want someone dead? We can make that happen. All it takes is the doxxed private details of a player to be shared to this chat and a [PRICE] DOS Coin payment. 
 
 Pay that fee now if you're sure this is what you want.","Tu veux la peau de quelqu'un ? On peut s'en charger. Il suffit de partager dans ce chat les infos privées doxées d'un joueur et un paiement de [PRICE] DOS Coin. 
@@ -905,7 +905,7 @@ Paiement nécessaire d'avance, [PRICE] DOS Coin.",211,229
 "Wrong. The cost is [PRICE] DOS Coin to decrypt, transfer it at once. If you lack the ability to do so I may also allow you to send a separate key. Maybe then its decryption price will be satisfactory to us both.","Non. Le coût pour déchiffrer c'est [PRICE] DOS Coin, vire-les tout de suite. Si tu peux pas, je peux aussi t'autoriser à envoyer une autre clé. Peut-être que son prix de déchiffrement nous arrangera tous les deux.",211,213
 "A friend showed me a video long ago that I can still remember years later. Its name escapes me, but if you have a bunch of files already send them to me and if it's there I'll tell you to get fucked idiot HAHA","Un pote m'a montré une vidéo y a longtemps et je m'en souviens encore des années après. Le nom m'échappe, mais si t'as déjà un tas de fichiers envoie-les-moi et si elle est dedans je te dirai d'aller te faire foutre idiot HAHA",209,226
 Decrypt key hashes with my service in 3 steps. 1) Send key 2) Pay price 3) Receive decrypted key. Service cost dependent on encryption strength. Only select encryption styles are compatible with my skill set.,Déchiffre des hashes de clé en 3 étapes. 1) Envoie la clé 2) Paie le prix 3) Reçois la clé déchiffrée. Tarif selon la force du chiffrement. Seuls certains types sont compatibles avec mon savoir-faire.,208,200
-"Okay, this is not what I asked you for. My side of things is frozen until you forward [PRICE] DOS Coin. Either do that or you can post some other key and that can be the one which gets decrypted. Your choice.","Ok, c'est pas ce que je t'ai demandé. De mon côté c'est bloqué tant que tu m'envoies pas [PRICE] DOS Coin. Soit tu le fais, soit tu postes une autre clé et ce sera celle-là qui sera déchiffrée. À toi de voir.",208,208
+"Okay, this is not what I asked you for. My side of things is frozen until you forward [PRICE] DOS Coin. Either do that or you can post some other key and that can be the one which gets decrypted. Your choice.","Ok, c'est pas ce que je t'ai demandé. Mon côté est gelé tant que tu m'envoies pas [PRICE] DOS Coin. Soit tu le fais, soit tu postes une autre clé et ce sera celle-là qui sera déchiffrée. À toi de voir.",208,201
 "Choose one of the hack options I have here. Whatever you pick will be used against a player and if it's more expensive that's because it's a more complicated hack. Send me money to select one.
 
 [HACK_LIST]","Choisis une des options de hack que j'ai ici. Ce que tu choisis sera utilisé contre un joueur, et si c'est plus cher c'est parce que le hack est plus complexe. Envoie-moi du fric pour en sélectionner un.
@@ -920,9 +920,9 @@ THIS IS NOT ENOUGH TO PURCHASE [SITE]. A SINGULAR PAYMENT OF [PRICE] IS NECESSAR
 ADMINISTRATION IS NOW REQUIRING EVERYONE VALIDATE THROUGH A SMALL TRANSACTION TO THIS ACCOUNT. FAILING TO VALIDATE WILL RESULT IN REMOVAL FROM THIS CHAT ROOM. IF REMOVED YOU WILL NOT BE ABLE TO REJOIN.,L'ADMINISTRATION EXIGE DÉSORMAIS QUE TOUT LE MONDE SE VALIDE VIA UNE PETITE TRANSACTION VERS CE COMPTE. SANS VALIDATION = EXPULSION DU SALON. SI T'ES VIRÉ TU POURRAS PAS REVENIR.,201,178
 "Take this fetch link [VMFETCHURL] and put it into ShadowFetch to download a file onto your desktop. It'll breakdown how VirtMesh works.
 
-Or you can open up VirtMesh and try to figure it out yourself.","Prends ce lien ShadowFetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Ça explique comment VirtMesh fonctionne.
+Or you can open up VirtMesh and try to figure it out yourself.","Prends ce lien fetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Ça explique comment VirtMesh fonctionne.
 
-Ou tu peux ouvrir VirtMesh et essayer de comprendre tout seul.",201,218
+Ou tu peux ouvrir VirtMesh et essayer de comprendre tout seul.",201,212
 "Thank you kindly for the gift. As said before it's [PRICE] to purchase [SITE]. There's no multiple payment stuff here, the full asking price must be transferred in a single go. Try again or move along.","Merci bien pour le cadeau. Comme dit avant, c'est [PRICE] pour acheter [SITE]. Pas de paiements multiples ici, le prix demandé doit être transféré d'un seul coup. Réessaie ou passe ton chemin.",201,192
 so it's been brought to my attention that there's a paid plug-in which filters out all the scammers from this chat and it's updated regularly. they really came up with a way to make a CHATROOM p2w lamo,donc on m'a dit qu'y a un plug-in payant qui filtre tous les arnaqueurs de ce chat et qu'il est mis à jour régulièrement. ils ont vraiment trouvé un moyen de rendre un SALON p2w mdr,201,181
 "I do indeed possess the tools necessary to decrypt that key. Firstly, transfer [PRICE] DOS Coin to me, then wait, the steps will take me a moment. I'll initiate when the funds have reached my wallet.","Je possède bien les outils nécessaires pour déchiffrer cette clé. D'abord, transfère-moi [PRICE] DOS Coin, puis attends, les étapes me prendront un moment. Je lance quand les fonds auront atteint mon portefeuille.",199,213
@@ -1006,7 +1006,7 @@ Vast connected network of hitmen able to deploy at a rapid rate. Share the requi
 "cost me all of 30 minutes and $10000 to have my bitch of a stepmom killed by a hit and run ""drunk driver"". Life insurance payout has been nice to me and my now much happier father",ça m'a coûté pile 30 minutes et 10000 $ pour faire tuer ma salope de belle-mère par un délit de fuite « conducteur bourré ». L'assurance-vie a été gentille avec moi et mon père bien plus heureux maintenant,179,205
 Hold onto your money for now. All we need is a PDF with the doxed player information to setup the hit. Drag and drop that file into this chat. I'll validate the info and confirm.,"Garde ton fric pour l'instant. Tout ce qu'il nous faut, c'est un PDF avec les infos doxées du joueur pour setup le hit. Glisse-dépose ce fichier dans ce chat. Je valide les infos et je confirme.",178,194
 "I don't have time for small chat. Just get me the key, only thing I want to see from you. If you keep messaging me, I will just kick you from the game, and you will NEVER get in.","J'ai pas le temps pour le small talk. File-moi juste la clé, c'est la seule chose que je veux voir de toi. Si tu continues à m'écrire, je te vire du jeu, et tu rentreras JAMAIS.",178,177
-I AM BOYCOTTING THE GAME AND SO SHOULD YOU. I PROVIDED ENDLESS SUGGESTIONS TO MAKE A HIGHER QUALITY BROADCAST AND NOT ONE OF THEM WAS ACCEPTED NOR ACKNOWLEDGED. BOYCOTT THE GAME,JE BOYCOTTE THE GAME ET TOI AUSSI TU DEVRAS. J'AI DONNÉ DES SUGGESTIONS EN PAGNE POUR UNE DIFFUSION DE MEILLEURE QUALITÉ ET AUCUNE N'A ÉTÉ ACCEPTÉE NI MÊME RECONNUE. BOYCOTTE THE GAME,177,183
+I AM BOYCOTTING THE GAME AND SO SHOULD YOU. I PROVIDED ENDLESS SUGGESTIONS TO MAKE A HIGHER QUALITY BROADCAST AND NOT ONE OF THEM WAS ACCEPTED NOR ACKNOWLEDGED. BOYCOTT THE GAME,JE BOYCOTTE THE GAME ET TOI AUSSI TU DEVRAS. J'AI DONNÉ DES SUGGESTIONS EN PAGAILLE POUR UNE DIFFUSION DE MEILLEURE QUALITÉ ET AUCUNE N'A ÉTÉ ACCEPTÉE NI MÊME RECONNUE. BOYCOTTE THE GAME,177,186
 Yeah I can dox [TARGET]. I'll need you to purchase a hacker's services and have them launch a hack on [TARGET]. Once that connection is made I can work on uncovering their info.,"Ouais je peux doxer [TARGET]. Faudra que tu achètes les services d'un hacker et qu'il lance un hack sur [TARGET]. Une fois la connexion établie, je pourrai travailler à découvrir leurs infos.",177,191
 "buncha cry babies wahwahing about chat clear, about rep, about not being coddled. bro its a dark net chat room. if you dont like the basic level guardrails they put up, fuck off","bande de chialards qui wahwahent sur le clear, sur la rep, sur le fait d'être pas chouchoutés. frère c'est un salon dark net. si t'aimes pas les garde-fous basiques qu'ils ont mis, casse-toi",177,190
 "hey I thought I had the URL for [SITE] in my bookmarks, but it turns out I was wrong. If you can pinpoint and upload it here there's monetary compensation ready to head your way","hey je croyais avoir l'URL pour [SITE] dans mes favoris, mais j'avais tort. Si tu peux la trouver et l'uploader ici, y a une compensation monétaire prête à partir vers toi",177,171
@@ -1064,7 +1064,7 @@ Congrats you've contacted someone who's capable to decrypt this key for you. The
 [HACK_LIST]","Voici les options de hack que je peux déployer. La puissance du hack est directement liée au prix. Choisis-en une en envoyant le paiement. Un joueur sera sélectionné ensuite.
 
 [HACK_LIST]",169,189
-seeing women trying to compete in the game is my favorite. lose and they get murdered for my enjoyment. win and they're mentally broken beyond belief. win win in my book,voir des femmes essayer de compétir dans the game c'est mon favori. elles perdent et se font buter pour mon plaisir. elles gagnent et sont mentalement brisées au-delà du croyable. win win selon moi,169,197
+seeing women trying to compete in the game is my favorite. lose and they get murdered for my enjoyment. win and they're mentally broken beyond belief. win win in my book,voir des femmes essayer de rivaliser dans the game c'est mon favori. elles perdent et se font buter pour mon plaisir. elles gagnent et sont mentalement brisées au-delà du croyable. win win selon moi,169,198
 FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU ,FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU FUCKYOU ,168,168
 "I for one like the rep system. Why should I have to deal with scum? Get me in contact with those who've proven themselves and I'll keep returning to do business, simple","Personnellement j'aime le système de rep. Pourquoi je devrais gérer des racailles ? Mettez-moi en contact avec ceux qui ont fait leurs preuves et je reviendrai faire affaire, simple",168,181
 "Oh was that mistake? [PRICE] DOS Coin is the cost of doxxing. Your previous payment is staying in my wallet, but you can pay the correct amount of [PRICE] DOS Coin now.","Oh c'était une erreur ? [PRICE] DOS Coin, c'est le prix du dox. Ton paiement précédent reste dans mon wallet, mais tu peux payer le bon montant de [PRICE] DOS Coin maintenant.",168,175
@@ -1237,7 +1237,7 @@ I believe you were to send a transfer of [PRICE] DOS Coin. If you no longer wish
 "Miss me? What a rush it was having someone actively hunt you. Maybe I'll gift you experience, or maybe not. It's more fun when you don't know","Je t'ai manqué ? Quelle montée d'adrénaline d'avoir quelqu'un qui te chasse activement. Peut-être que je t'offrirai de l'expérience, ou peut-être pas. C'est plus drôle quand tu sais pas",141,185
 My source tells me [TARGET] is already dealing with a contracted killer. We'll have to hack someone else. Send me the name when you're ready.,Ma source me dit que [TARGET] gère déjà un tueur sous contrat. On va devoir hacker quelqu'un d'autre. Envoie-moi le nom quand t'es prêt.,141,136
 WOW SO COOL YOU HAVE MONEY? WELL GUESS WHAT I HAVE MONEY TOO. PROBABLY MORE MONEY THAN YOU. SEND ME [VIDEO] AND ILL SHOW YOU. HAHAHA AH AH HA,WOW TROP COOL T'AS DE L'ARGENT ? DEVINE QUOI J'EN AI AUSSI. PROBABLEMENT PLUS QUE TOI. ENVOIE-MOI [VIDEO] ET JE TE MONTRERAI. HAHAHA AH AH HA,141,141
-"buy and sell here at your own risk! be prepared to get scammed! law of averages applies. if it hasnt happened to you yet, it will eventually.","achète et vends ici à tes risques et périls ! prépare-toi à te faire arnaquer ! la loi des moyennes s'applique. si ça t'est pas encore arrivé, ça arrivera.",141,155
+"buy and sell here at your own risk! be prepared to get scammed! law of averages applies. if it hasnt happened to you yet, it will eventually.","achète et vends ici à tes risques et périls ! prépare-toi à te faire arnaquer ! la loi des grands nombres s'applique. si ça t'est pas encore arrivé, ça arrivera.",141,161
 people are claiming the players in The Game willingly joined??? huh??? they will die if they lose why would ever join if they had a choice...,les gens prétendent que les joueurs de The Game ont rejoint volontairement ??? huh ??? ils mourront s'ils perdent pourquoi rejoindraient-ils jamais s'ils avaient le choix...,141,173
 who would've expected a sketchy dark net chatroom to have white knights... bro keep your bias out of my shit and just give me what I paid for,qui aurait cru qu'un salon dark net louche aurait des white knights... frère garde ton biais hors de ma merde et donne-moi juste ce que j'ai payé,141,145
 Did you locate the active URL for [SITE]? If you're unsure I have a way to validate. Once I'm 100% certain it's real you'll receive a reward,"T'as trouvé l'URL active pour [SITE] ? Si t'es pas sûr, j'ai un moyen de valider. Une fois que je suis sûr à 100 % que c'est du vrai, tu recevras une récompense",140,160
@@ -1350,7 +1350,7 @@ lol all the sellers here are bots. If you want to get fucked out of some money y
 "weird, didn't expect someone who was dumb enough to play without a backdoor to have the mental faculties needed to block a hack.","bizarre, j'attendais pas de quelqu'un assez con pour jouer sans backdoor qu'il ait les facultés mentales pour bloquer un hack.",128,126
 Assistance is needed to locate a working link for [SITE]. Once you have found it upload the content here to collect your reward,"Besoin d'aide pour localiser un lien qui marche pour [SITE]. Une fois trouvé, upload le contenu ici pour récupérer ta récompense",127,128
 Bunch of scamming fucks. Save your money. You will get ripped off. There is no way to get a refund. There's no real moderation.,Bande d'enculés d'arnaqueurs. Garde ton fric. Tu vas te faire plumer. Aucun moyen d'avoir un remboursement. Y a pas de vraie modération.,127,136
-HAVE MONEY AND DESIRE WHAT YOU CANNOT FIND ON THE REGULAR INTERNET? DO BUSINESS WITH ME. I CAN GET YOU ALMOST ANYTHING. PROMISE,T'AS DU FRIC ET TU VEUX CE QUE T'AS PAS SUR LE NET NORMAL ? FAIS AFFAIRE AVEC MOI. JE PEUX TE DÉNICHÉR PRESQUE N'IMPORTE QUOI. PROMIS,127,133
+HAVE MONEY AND DESIRE WHAT YOU CANNOT FIND ON THE REGULAR INTERNET? DO BUSINESS WITH ME. I CAN GET YOU ALMOST ANYTHING. PROMISE,T'AS DU FRIC ET TU VEUX CE QUE T'AS PAS SUR LE NET NORMAL ? FAIS AFFAIRE AVEC MOI. JE PEUX TE DÉNICHER PRESQUE N'IMPORTE QUOI. PROMIS,127,133
 I have one payment option available to customers and that is pay in full. [PRICE] DOS Coin. Do so or receive nothing in return.,J'ai une seule option de paiement pour les clients : payer en entier. [PRICE] DOS Coin. Fais-le ou reçois rien en retour.,127,121
 "Please tell me you also have [VIDEO]. By ""tell me"" I mean drop the copy in chat and let me see it. You'll get paid I promise :)","Dis-moi que t'as aussi [VIDEO]. Par « dis-moi » je veux dire balance la copie dans le chat et laisse-moi la voir. Tu seras payé, promis :)",127,138
 This ain't it. I'm praying that you find the strength to perform the simple actions needed to send me [VIDEO] like I asked for.,C'est pas ça. Je prie pour que tu trouves la force d'effectuer les actions simples pour m'envoyer [VIDEO] comme je l'ai demandé.,127,128
@@ -1414,12 +1414,12 @@ Sick of searching for [SITE]. Willing to purchase the URL from someone. If I che
 "Woah, misclick or something. I ain't sending that DOSCoin back just so you know. I will take [VIDEO] now though. Chop chop.","Ouah, mauvais clic ou un truc du genre. Je te renvoie pas ces DOSCoin, juste pour que tu saches. Par contre je prends [VIDEO] maintenant. Allez hop.",123,148
 About at my breaking point with this chat. I need simple instructions on how this works. I'm new. I don't get it. Help me.,Je suis à deux doigts de péter un câble avec ce chat. J'ai besoin d'instructions simples sur comment ça marche. Je suis nouveau. Je capte rien. Aidez-moi.,122,154
 Are you my savior? I lost the link to [SITE] when my browser crashed. Toss it in the chat and you'll be fairly compensated,T'es mon sauveur ? J'ai perdu le lien vers [SITE] quand mon navigateur a planté. Balance-le dans le chat et tu seras correctement payé,122,134
-Fucker was waiting for me to be without a backdoor to strike. Well eat shit pussy. I don't suck at blocking hacks like you,"Ce connard attendait que je sois sans porte dérobée pour frapper. Bah mange de la merde, pd. Je suis pas une merde pour bloquer les hacks comme toi",122,147
+Fucker was waiting for me to be without a backdoor to strike. Well eat shit pussy. I don't suck at blocking hacks like you,"Ce connard attendait que je sois sans backdoor pour frapper. Bah mange de la merde, tafiole. Je suis pas une merde pour bloquer les hacks comme toi",122,147
 Got the money. Now send over a PDF that has all the player's doxed info within it. Double check they're who you want dead.,J'ai le fric. Maintenant envoie un PDF avec toutes les infos doxées du joueur dedans. Vérifie bien que c'est bien celui que tu veux mort.,122,137
 "I'm unable to do anything with what you sent. Be sure to copy the full key, both its index and hash. Example: 4 - pt04jz10","Je peux rien faire avec ce que t'as envoyé. Assure-toi de copier la clé complète, à la fois son index et son hash. Exemple : 4 - pt04jz10",122,137
 "Who thought it was a good idea to allow anyone to speak here? Gatekeep that behind rep too, you already have the system...","Qui a pensé que c'était une bonne idée de laisser n'importe qui parler ici ? Gatekeepez ça derrière la rep aussi, vous avez déjà le système...",122,142
 Did I win something by messaging you? I thought you pinged me to send over a link to [SITE] like I was asking for in chat,J'ai gagné un truc en t'écrivant ? Je croyais que tu m'avais pingué pour m'envoyer un lien vers [SITE] comme je demandais dans le chat,121,134
-"Hacking me when I have a backdoor installed??? Not sending a difficult hack??? Get some air, you're not thinking straight","Me hacker alors que j'ai une porte dérobée installée ??? Sans envoyer un hack difficile ??? Prends l'air, tu réfléchis plus droit",121,129
+"Hacking me when I have a backdoor installed??? Not sending a difficult hack??? Get some air, you're not thinking straight","Me hacker alors que j'ai une backdoor installée ??? Sans envoyer un hack difficile ??? Prends l'air, tu réfléchis plus droit",121,124
 I'm able to work with this. It'll cost [PRICE] DOS Coin to receive the key's decrypted version. One payment. Much thanks.,Je peux travailler avec ça. Ça coûtera [PRICE] DOS Coin pour recevoir la version déchiffrée de la clé. Un seul paiement. Merci bien.,121,132
 Payment received. Grab the PDF that has this player's doxxed info and drop it here. Be sure it's the one you want killed.,Paiement reçu. Prends le PDF avec les infos doxées de ce joueur et balance-le ici. Assure-toi que c'est bien celui que tu veux faire tuer.,121,138
 "Ronald told me about you, be a pal and hook me up with a video by the name of [VIDEO] RIGHT NOW! mega DOSCoin on transfer","Ronald m'a parlé de toi, sois un pote et file-moi une vidéo qui s'appelle [VIDEO] TOUT DE SUITE ! mega DOSCoin en transfert",121,123
@@ -1474,7 +1474,7 @@ Righto. You will send me [VIDEO]. You want to send me [VIDEO]. The actions to de
 "What is this a joke? I'm about to buy something from you, remember? I'm in this private chat to get a URL for [SITE]","C'est une blague ? Je suis sur le point de t'acheter un truc, tu te souviens ? Je suis dans ce chat privé pour obtenir une URL pour [SITE]",116,138
 [TARGET] is offline at the moment. Without an active connection they cannot be hacked. Select anyone that is online.,"[TARGET] est hors ligne pour le moment. Sans connexion active, ils peuvent pas être hackés. Sélectionne n'importe qui en ligne.",116,127
 Chat clearing keeps this place feeling alive. I can't think of a single legitimate reason why it should be removed.,Le clear du chat garde cet endroit vivant. Je vois aucune raison légitime de le virer.,115,86
-"Everyone gets lucky once in a while and I guess this was your moment. Thanks for existing without a backdoor, idiot","Tout le monde a de la chance de temps en temps et j'imagine que c'était ton moment. Merci d'exister sans porte dérobée, idiot",115,125
+"Everyone gets lucky once in a while and I guess this was your moment. Thanks for existing without a backdoor, idiot","Tout le monde a de la chance de temps en temps et j'imagine que c'était ton moment. Merci d'exister sans backdoor, idiot",115,120
 "Listen I have someone who I am selling the link for [SITE] to, so send me that link. They hate waiting and so do I.","Écoute, j'ai quelqu'un à qui je vends le lien vers [SITE], alors envoie-moi ce lien. Cette personne déteste attendre, et moi aussi.",115,131
 Looks like the transfer went through. It doesn't take much time at all to decrypt. Expect the decrypted key shortly,On dirait que le transfert est passé. Déchiffrer ça prend vraiment pas longtemps. Attends-toi à la clé déchiffrée sous peu,115,122
 The kill request for [TARGET] has been accepted by a nearby hitman. Any updates on the situation will be forwarded.,La demande d'élimination pour [TARGET] a été acceptée par un tueur à gages à proximité. Toute update sur la situation te sera transmise.,115,136
@@ -1486,7 +1486,7 @@ Your payment was already validated. I'm going to need the doxxed private details
 my browser crashed before I could finish downloading [VIDEO] and now I can't get it. Will pay anyone who has a copy,mon navigateur a planté avant la fin du téléchargement de [VIDEO] et je l'ai plus. Je paie qui a une copie,115,106
 "Checked out [TARGET], they're able to be doxxed. Now hire a hacker to execute a hack on them and I'll tap into it.","J'ai checké [TARGET], ils peuvent être doxés. Maintenant engage un hacker pour lancer un hack sur eux et je m'y brancherai.",114,123
 Doxing one of the player's private data will run you [PRICE] DOS Coin. I'm not going to do anything until you pay.,Doxer les données privées d'un des joueurs te coûtera [PRICE] DOS Coin. Je ferai rien tant que tu paies pas.,114,108
-"Huh, hacking me? Don't you already have enough shit going on? Go again and I'll make you pay up with a backdoor ;)","Hein, me hacker ? T'as pas déjà assez de merde en cours ? Réessaie et je te ferai payer avec une porte dérobée ;)",114,113
+"Huh, hacking me? Don't you already have enough shit going on? Go again and I'll make you pay up with a backdoor ;)","Hein, me hacker ? T'as pas déjà assez de merde en cours ? Réessaie et je te ferai payer avec une backdoor ;)",114,108
 "I only count full payments. You're not getting that back, so either pay [PRICE] in one transaction or get nothing.","Je ne compte que les paiements complets. Tu récupères pas ça, donc soit tu paies [PRICE] en une transaction, soit tu as rien.",114,125
 Lab grade at street prices. Potent to the point you'll never forget who sold to you. Ping to reveal drug inventory,Qualité labo à prix de rue. Assez fort pour jamais oublier qui t'a vendu. Ping pour voir le stock,114,97
 "[VIDEO], send it now. Do not send me anything other than [VIDEO]. Do not respond with a message, just send [VIDEO]","[VIDEO], envoie-le maintenant. Envoie-moi rien d'autre que [VIDEO]. Réponds pas par un message, envoie juste [VIDEO]",114,116
@@ -1507,7 +1507,7 @@ I can't provide any services if you don't post the entire key (index + hash). It
 There is no such player currently participating in The Game. Double check the spelling and send another message.,Y a aucun joueur de ce nom qui participe actuellement à The Game. Revérifie l'orthographe et renvoie un message.,112,112
 Usually people send a tip after paying. Until I get [PRICE] in a single payment you're going to be empty handed.,"D'habitude les gens envoient un tip après avoir payé. Tant que j'ai pas [PRICE] en un seul paiement, tu repartiras les mains vides.",112,131
 surely there's someone out here that already has [VIDEO]. Pop that fucker over through chat and I'll pay ya back,y a forcément quelqu'un qui a déjà [VIDEO]. Balance ce putain de fichier en chat et je te paie,112,94
-"Blocked my hack and had a backdoor, impressive. Everyone's saying you're dumb as dirt, but maybe they're wrong.","T'as bloqué mon hack et t'avais une porte dérobée, impressionnant. Tout le monde dit que t'es con comme une porte, mais peut-être qu'ils ont tort.",111,146
+"Blocked my hack and had a backdoor, impressive. Everyone's saying you're dumb as dirt, but maybe they're wrong.","T'as bloqué mon hack et t'avais une backdoor, impressionnant. Tout le monde dit que t'es con comme une porte, mais peut-être qu'ils ont tort.",111,141
 I can't hack [TARGET] they're not playing The Game anymore. Pick a player who is living and send me their name.,"Je peux pas hacker [TARGET], ils jouent plus dans The Game. Choisis un joueur encore en vie et envoie-moi son nom.",111,114
 My search cannot find a player with that name. Are you sure that's spelled right? Send me another player's name,Ma recherche trouve aucun joueur avec ce nom. T'es sûr de l'orthographe ? Envoie-moi le nom d'un autre joueur,111,109
 "When you think about it blocking a hack without a backdoor is pretty stupid, and you did that. Nice one, stupid","Quand tu y penses, bloquer un hack sans backdoor c'est plutôt con, et c'est exactement ce que t'as fait. Bien joué, crétin",111,122
@@ -1612,8 +1612,8 @@ Okay so the chat clears all the messages every so often. How can I make it not d
 [SITE] secret info for sale | this won't be around forever | act quick if you want to succeed |Ping me.,Infos secrètes [SITE] à vendre | ça durera pas | agis vite si tu veux réussir |Pingue-moi.,103,90
 guys I am parked outside a house where one of the players is. what should I do? give me a couple ideas.,les gars je suis garé devant une maison où est un des joueurs. je fais quoi ? donnez-moi deux-trois idées.,103,106
 please send me the file of [VIDEO] in full. After I screen it myself to confirm you will be compensated,"envoie-moi le fichier [VIDEO] en entier. Après vérif de mon côté, tu seras payé",103,79
-Appreciate the baby level hack blessing my PC. Having a backdoor made your terrible idea worth my time,Merci pour le hack niveau bébé qui bénit mon PC. Avoir une porte dérobée a rendu ta idée de merde digne de mon temps,102,116
-Blowing money on baby level hacks is a bold strategy. If only I had a backdoor ready for your bullshit,"Claquer du fric sur des hacks niveau bébé, c'est une stratégie audacieuse. Si seulement j'avais une porte dérobée prête pour ta connerie",102,136
+Appreciate the baby level hack blessing my PC. Having a backdoor made your terrible idea worth my time,Merci pour le hack niveau bébé qui bénit mon PC. Avoir une backdoor a rendu ta idée de merde digne de mon temps,102,111
+Blowing money on baby level hacks is a bold strategy. If only I had a backdoor ready for your bullshit,"Claquer du fric sur des hacks niveau bébé, c'est une stratégie audacieuse. Si seulement j'avais une backdoor prête pour ta connerie",102,131
 "Got another one that I've been searching for, website goes by the name of [SITE]. Find its URL for me.","J'en ai un autre que je cherche, un site qui s'appelle [SITE]. Trouve son URL pour moi.",102,87
 "Info doxxing service will cost [PRICE] DOS Coin. Couldn't give less of shit who you pick, just pay up.","Le service de dox d'infos coûtera [PRICE] DOS Coin. J'en ai rien à foutre de qui tu choisis, paie juste.",102,104
 "Okay. You do have [VIDEO] right? Send me the file, I'm not looking to satisfy someone's paypig fetish.","Ok. T'as bien [VIDEO], hein ? Envoie-moi le fichier, je suis pas là pour nourrir le fétiche paypig de quelqu'un.",102,112
@@ -1648,7 +1648,7 @@ Note que j'accepte aussi d'autres clés pour déchiffrement.",99,89
 I think someone awarded me a rep point. How do I check that? Can y'all tell me if I got one? Hello?,Je crois que quelqu'un m'a donné un point de rep. Comment je check ça ? Vous pouvez me dire si j'en ai eu un ? Allo ?,99,117
 STUPID IDIOT SENDS STRANGER FREE MONEY BECAUSE THEY CANT USE BRAIN GOOD. [VIDEO] send it to me ASAP,IDIOT STUPIDE QUI ENVOIE DU FRIC GRATOS À UN INCONNU PARCE QU'IL SAIT PAS SE SERVIR DE SON CERVEAU. [VIDEO] envoie-le-moi ASAP,99,126
 "This isn't what I requested. Send the [PRICE] DOS Coin as asked, otherwise no one is getting doxed.","C'est pas ce que j'ai demandé. Envoie les [PRICE] DOS Coin comme demandé, sinon personne ne se fait dox.",99,104
-"What is this LAMO? [SITE], need a link to it. You got it or not? Send it and I'll transfer DOSCoin.","C'est quoi ça MDR ? [SITE], j'ai besoin d'un lien. T'l'as ou pas ? Envoie-le et je te vire des DOSCoin.",99,103
+"What is this LAMO? [SITE], need a link to it. You got it or not? Send it and I'll transfer DOSCoin.","C'est quoi ça MDR ? [SITE], j'ai besoin d'un lien. Tu l'as ou pas ? Envoie-le et je te vire des DOSCoin.",99,104
 What is this some kind of bundle? I only wanted a link to [SITE]. I'm not paying for anything else.,C'est un pack ou quoi ? Je voulais seulement un lien vers [SITE]. Je paie pour rien d'autre.,99,92
 You need to send me [PRICE] DOS coin first or I wont work with you. I need to see if you are legit.,Tu dois m'envoyer [PRICE] DOS Coin d'abord ou je bosse pas avec toi. Faut que je voie si t'es legit.,99,100
 "must have been impossible to lose against that hack, since only a moron would be lacking a backdoor","ça devait être impossible de perdre contre ce hack, vu que seul un débile serait sans backdoor",99,94
@@ -1657,7 +1657,7 @@ okay mister again I desire your help. [VIDEO] send it to me and payment will be 
 1de02538d080488ce87fceae71fac845 5efd5b0d7739e27c0fe76c4432ad9680 ff250a41fb2ef28cf7c9afd4b9110fa5,1de02538d080488ce87fceae71fac845 5efd5b0d7739e27c0fe76c4432ad9680 ff250a41fb2ef28cf7c9afd4b9110fa5,98,98
 5ef76d30bf9232902687324b5bfa0bd2 8fc42c6ddf9966db3b09e84365034357 4d066bbb0e40abe54f3000755a45aa6e,5ef76d30bf9232902687324b5bfa0bd2 8fc42c6ddf9966db3b09e84365034357 4d066bbb0e40abe54f3000755a45aa6e,98,98
 Are you fucking with me or do you actually have a URL for [SITE]? Please I can't wait much longer.,Tu te fous de ma gueule ou t'as vraiment une URL pour [SITE] ? S'il te plaît j'peux plus attendre longtemps.,98,108
-"Eat shit and die pussy. Next time you're getting fucked, backdoor or not, zero chance you stop it.","Mange de la merde et crève, pd. La prochaine fois que tu te feras niquer, porte dérobée ou pas, zéro chance que tu l'arrêtes.",98,125
+"Eat shit and die pussy. Next time you're getting fucked, backdoor or not, zero chance you stop it.","Mange de la merde et crève, tafiole. La prochaine fois que tu te feras niquer, backdoor ou pas, zéro chance que tu l'arrêtes.",98,125
 Hey great job at not doing what I asked for. This time press the buttons that relay [VIDEO] to me.,Hey beau travail de pas avoir fait ce que j'ai demandé. Cette fois appuie sur les boutons qui me relayent [VIDEO].,98,114
 I cannot locate any player with that name. Confirm the spelling is correct and give it another go.,Je localise aucun joueur avec ce nom. Confirme que l'orthographe est correcte et réessaie.,98,90
 If you are one of the dumbfucks who complains incessantly about the rep system just leave the chat,"Si t'es un des cons qui se plaignent sans arrêt du système de rep, casse-toi du chat",98,84
@@ -1824,7 +1824,7 @@ Thank you so much for the free DOSCoin. Now send the URL to [SITE] like I asked 
 are you dumb? I need a PDF file containing information on the player you want killed,t'es con ? J'ai besoin d'un fichier PDF avec les infos du joueur que tu veux faire tuer,84,87
 trouble sport manager admit someone mean describe citizen far walk always not weight,trouble sport manager admets quelqu'un méchant décrire citoyen loin marche toujours pas poids,84,93
 $$$$ EZ MONEY $$$$ SEND 20 DOS Coin -> WAIT ... -> GET 50 DOS Coin. SIMPLE. GO NOW!,$$$$ ARGENT FACILE $$$$ ENVOIE 20 DOS Coin -> ATTENDS ... -> REÇOIS 50 DOS Coin. SIMPLE. GO MAINTENANT !,83,104
-Got it all. I will share a fetch link in a bit that has all their personal details.,J'ai tout. Je partagerai un lien ShadowFetch dans un moment avec tous leurs détails perso.,83,90
+Got it all. I will share a fetch link in a bit that has all their personal details.,J'ai tout. Je partagerai un lien fetch dans un moment avec tous leurs détails perso.,83,84
 How do you give rep to people? Does it happen automatically and can I write a note?,Comment on donne de la rep aux gens ? C'est auto et on peut écrire une note ?,83,77
 I've got it. The process has started. Once complete the decrypted key will be sent.,"Je l'ai. Le processus a démarré. Une fois terminé, la clé déchiffrée sera envoyée.",83,82
 If you don't have [PRICE] DOS Coin to send don't even bother trying to buy from me.,"Si t'as pas [PRICE] DOS Coin à envoyer, même pas la peine d'essayer d'acheter chez moi.",83,87
@@ -1833,7 +1833,7 @@ Soooooo what happened to a direct link to [SITE] cause this is definitely not it
 Thanks for being shitty at defending against hacks I wanted an extra [DOS] DOS Coin,"Merci d'être une merde en défense contre les hacks, je voulais [DOS] DOS Coin en plus",83,85
 That hack didn't beat me I was doing something else and didn't even try to block it,"Ce hack m'a pas battu, je faisais autre chose et j'ai même pas essayé de le bloquer",83,83
 hook me up with a link to the live website [SITE] RIGHT NOW! mega DOSCoin available,file-moi un lien vers le site live [SITE] TOUT DE SUITE ! gros DOSCoin dispo,83,76
-Dumbass (YOU) tries to mess with a Computer God (ME) and gets fucked by a backdoor,L'abruti (TOI) essaie de niquer un Dieu de l'Ordi (MOI) et se fait niquer par une porte dérobée,82,95
+Dumbass (YOU) tries to mess with a Computer God (ME) and gets fucked by a backdoor,L'abruti (TOI) essaie de niquer un Dieu de l'Ordi (MOI) et se fait niquer par une backdoor,82,90
 I asked you for [PRICE] DOS Coin... I'm not accepting anything other than DOS Coin,Je t'ai demandé [PRICE] DOS Coin... J'accepte rien d'autre que des DOS Coin,82,75
 I don't need any more DOS from you. What's the name of the player you want to dox?,J'ai plus besoin de DOS de ta part. C'est quoi le nom du joueur que tu veux doxer ?,82,83
 Is there any chance you also have another URL for a website by the name of [SITE]?,Y a une chance que t'aies aussi une autre URL pour un site du nom de [SITE] ?,82,77
@@ -1893,7 +1893,7 @@ finally my collection is complete. Kudos for being the one to make that happen,e
 hey dumbass I'm still here. Ya know what that means? It means you're fucked :),hey abruti je suis toujours là. Tu sais ce que ça veut dire ? Que t'es dans la merde :),78,87
 "hey thanks for the free money, now can you send me the video file I asked for?","hey merci pour l'argent gratuit, maintenant tu peux m'envoyer le fichier vidéo que j'ai demandé ?",78,97
 locate n send a link to [SITE] here for a fair repayment for services rendered,trouve et envoie un lien vers [SITE] ici pour une juste rémunération des services rendus,78,88
-Get that hack outta here. You're fucking lucky I didn't have a backdoor setup,Barre-moi ce hack d'ici. T'as putain de chance que j'avais pas de porte dérobée setup,77,85
+Get that hack outta here. You're fucking lucky I didn't have a backdoor setup,Barre-moi ce hack d'ici. T'as putain de chance que j'avais pas de backdoor setup,77,80
 Quit letting them mess with you. Doxx your opps. Rates shared following ping.,Arrête de te laisser marcher dessus. Dox tes rivaux. Tarifs après ping.,77,71
 Thank you so much for the free DOSCoin. Now send me [VIDEO] like I asked for.,Merci beaucoup pour les DOSCoin gratos. Maintenant envoie-moi [VIDEO] comme je l'ai demandé.,77,92
 Uh oh someone made a whoopsie. Time to hand over [VIDEO] so I don't block you,Uh oh quelqu'un a fait une boulette. Il est temps de balancer [VIDEO] pour que je te bloque pas,77,95
@@ -2096,10 +2096,10 @@ what's going on? Did you forget who you were talking to?,il se passe quoi ? T'as
 If you want [SITE] it's gonna cost ya? [PRICE] DOSCoin.,Si tu veux [SITE] ça va te coûter ? [PRICE] DOSCoin.,55,52
 Professional doxxing for sale. Connect to reveal rates.,Dox professionnel à vendre. Connecte pour voir les tarifs.,55,58
 "SELLING [SITE] | QUICK REPLIES, HIGH REP, EXPERT SELLER","VENDS [SITE] | RÉPONSES RAPIDES, HAUTE REP, VENDEUR EXPERT",55,58
-Yooooooo sick. I still need [VIDEO]. You have it right?,"Yooooooo trop bien. J'ai encore besoin de [VIDEO]. T'l'as, hein ?",55,65
+Yooooooo sick. I still need [VIDEO]. You have it right?,"Yooooooo trop bien. J'ai encore besoin de [VIDEO]. Tu l'as, hein ?",55,66
 "I'm free to doxx another. Same rate, [PRICE] DOS Coin.","Je suis libre pour en doxer un autre. Même tarif, [PRICE] DOS Coin.",54,67
 Thank you. I've begun the process to decrypt your key.,Merci. J'ai lancé le processus pour déchiffrer ta clé.,54,54
-Yooooooo sick. I still need [SITE]. You have it right?,"Yooooooo trop bien. J'ai encore besoin de [SITE]. T'l'as, hein ?",54,64
+Yooooooo sick. I still need [SITE]. You have it right?,"Yooooooo trop bien. J'ai encore besoin de [SITE]. Tu l'as, hein ?",54,65
 bold move wasting my time with your pointless messages,osé de me faire perdre mon temps avec tes messages inutiles,54,59
 "had my finger on the block button, glad I didn't click","j'avais le doigt sur le bouton bloquer, content de pas avoir cliqué",54,67
 "huh??? I asked you for a video, why are you paying me?","hein ??? Je t'ai demandé une vidéo, pourquoi tu me paies ?",54,58
@@ -2116,7 +2116,7 @@ first to send me a WORKING copy of [VIDEO] gets paid,le premier à m'envoyer une
 "no fucking way you actually found it, damn. nice job","putain t'as vraiment trouvé, merde. beau boulot",52,47
 "35.88264, -80.08199 waiting. dark. nonstop. errant.","35.88264, -80.08199 attente. sombre. non-stop. errant.",51,54
 "gonna be direct here, I have no interest in talking","je vais être direct, j'ai zéro intérêt à parler",51,47
-"hey give yourself a pat on the back, you deserve it","hey tape-toi dans le dos, tu l'as mérité",51,40
+"hey give yourself a pat on the back, you deserve it","hey félicite-toi, tu l'as mérité",51,32
 1-138-18791-7 //|| pg. 208 para. 2 sent. 3 word 22,1-138-18791-7 //|| p. 208 § 2 phr. 3 mot 22,50,43
 1-156-40111-9 //// pg. 591 para. 2 sent. 2 word 34,1-156-40111-9 //// p. 591 § 2 phr. 2 mot 34,50,43
 Alright that's a wrap. Best of luck moving forward,Bon c'est plié. Bonne chance pour la suite,50,42
@@ -2162,7 +2162,7 @@ Okay I got the payment. This is for you [URL],Ok j'ai reçu le paiement. C'est p
 lol you couldn't stop that hack. EZ [DOS] DOS,lol t'as pas pu stopper ce hack. EZ [DOS] DOS,45,45
 pleasure doing business that'll be all for me,"plaisir de faire affaire, ça sera tout pour moi",45,47
 NOPE wrong URL moron. I'm waiting for [SITE],NAN mauvaise URL crétin. J'attends [SITE],44,41
-"Oh P2W pussy can't handle a little hack, huh","Oh la poule mouillée P2W tient pas un petit hack, hein",44,54
+"Oh P2W pussy can't handle a little hack, huh","Oh la tafiole P2W tient pas un petit hack, hein",44,47
 Running out of time fucko. Pay me or I'm out,"Le temps presse, connard. Paie-moi ou je me casse",44,49
 about ready to block you and close this chat,à deux doigts de te bloquer et de fermer ce chat,44,48
 "had my doubts but you made it happen, thanks","j'avais des doutes mais t'as géré, merci",44,40
@@ -2175,7 +2175,7 @@ writing me is only going to lead to a block,m'écrire va juste mener à un bloca
 "appreciate it, good doing business with ya","merci, content d'avoir fait affaire avec toi",42,44
 too easy lol. Fuck I wish I had a backdoor,trop facile lol. Putain j'aimerais avoir une backdoor,42,53
 Keep your money. Who do you want to doxx?,Garde ton fric. Qui tu veux dox ?,41,33
-"Nice firewall, pussy. You're soooooo good","Joli firewall, poule mouillée. T'es teeeeellement fort",41,54
+"Nice firewall, pussy. You're soooooo good","Joli firewall, tafiole. T'es teeeeellement fort",41,47
 ??? The fuck are you doing? Payment NOW!,??? Qu'est-ce que tu fous ? Paiement MAINTENANT !,40,49
 Did you get the OK from mommy to pay me?,T'as eu l'OK de maman pour me payer ?,40,37
 "I just found a key, this is way too easy","Je viens de trouver une clé, c'est beaucoup trop facile",40,55
@@ -2262,3 +2262,66 @@ don't speak...,parle pas...,14,12
 you the best,t'es le meilleur,12,16
 hey thanks,hey merci,10,9
 THANK YOU,MERCI,9,5
+!!!!---!!!! MONEY MAKING OPPORTUNITY !!!!---!!!! A SMALL INVESTMENT OF 500 DOS Coin CAN EARN YOU 200% RETURNS IN ONLY 10 MINUTES!!!! CONTACT FOR ADDITIONAL DETAILS,!!!!---!!!! OPPORTUNITÉ DE FRIC !!!!---!!!! UN PETIT INVESTISSEMENT DE 500 DOS Coin PEUT TE RAPPORTER 200% EN 10 MINUTES!!!! CONTACTE POUR PLUS DE DÉTAILS,163,154
+"=======================================================
+ SYSTEM CLEARED CHAT
+=======================================================","=======================================================
+ LE SYSTÈME A VIDÉ LE CHAT
+=======================================================",134,140
+Can anyone here tell me how I can add a seller as a friend? Are friends lists even a thing on this app?,Quelqu'un peut me dire comment ajouter un vendeur en ami ? Y a même des listes d'amis sur cette appli ?,103,103
+Do people actually talk to each other here or is it mostly about buying or selling?,Les gens se parlent vraiment ici ou c'est surtout du buy/sell ?,83,63
+Does rep ever expire? Sorry if that's a stupid question.,La rep expire un jour ? Désolé si c'est une question conne.,56,59
+GUYS! GUYS! GUYS! you'll never believe it that crazy murdershow called The Game is happening... TONIGHT! This is actually how some of you sound and it's pathetic,"LES GARS ! LES GARS ! vous allez jamais le croire, ce show de meurtres dingue appelé The Game a lieu... CE SOIR ! C'est vraiment comme ça que certains d'entre vous sonnent et c'est pathétique",161,191
+Hacking services for sale. Ping me for rates. Tier 1,Services de hack à vendre. Pingue-moi pour les tarifs. Tier 1,52,61
+Hacking services for sale. Ping me for rates. Tier 2,Services de hack à vendre. Pingue-moi pour les tarifs. Tier 2,52,61
+Hacking services for sale. Ping me for rates. Tier 3,Services de hack à vendre. Pingue-moi pour les tarifs. Tier 3,52,61
+Hey how can I easily figure out if a deal is good or not? Everyone seems to hide their prices behind a ping.,"Hey, comment savoir facilement si une offre est bonne ? Tout le monde cache les prix derrière un ping.",108,102
+High level hacker. Tier 3. Connect to coordinate an attack against the others.,Hacker haut niveau. Tier 3. Connecte-toi pour coordonner une attaque contre les autres.,78,87
+How long do I have to wait before I can sell something?,Je dois attendre combien de temps avant de pouvoir vendre un truc ?,55,67
+"I joined this chat because a friend told me it was filled with people selling fucked up stuff, but apparently I need DOS Coin to buy anything?","J'ai rejoint ce chat parce qu'un pote m'a dit que ça vendait de la merde chelou, mais il faut des DOS Coin pour acheter quoi que ce soit ?",142,138
+I was told this chat clears. What does that mean?,On m'a dit que ce chat « clears ». Ça veut dire quoi ?,49,54
+I'm a first time buyer and for a sketchy chat people round here are pretty okay,"Je suis un premier acheteur et pour un chat foireux, les gens ici sont plutôt OK",79,80
+I've been here the past couple days and haven't seen a single username I recognize. Is that normal? Anonymous thing or constant influx of new people rolling through?,Je suis là depuis quelques jours et je reconnais aucun pseudo. C'est normal ? Anonymat ou flux constant de nouveaux ?,165,117
+Is it normal for the users selling stuff to be very forward? I asked for a moment while I checked the price of something and got yelled at,C'est normal que les vendeurs soient aussi pressants ? J'ai demandé une seconde pour vérifier un prix et on m'a gueulé dessus,138,125
+Is there any new user FAQ that could be linked to me? I tried asking questions in here before and no one responded to me...,Y a une FAQ nouveaux users qu'on peut me linker ? J'ai déjà posé des questions ici et personne m'a répondu...,123,109
+Just tried to buy and got rejected because I lack rep???,J'ai essayé d'acheter et refusé parce que j'ai pas assez de rep ???,56,67
+LAST CHANCE! Roll the dice by entering to win 3000 DOS Coin! Be the 36th participant to win! One entry per user. 50 DOS Coin to enter.,DERNIÈRE CHANCE ! Tente de gagner 3000 DOS Coin ! Sois le 36e participant ! Une inscription / user. 50 DOS Coin pour entrer.,134,124
+LOWEST PRICES ON THE MARKET GUARANTEED. FULFILLED THROUGH SYNDICATE CONNECTIONS OTHERS SIMPLY DO NOT HAVE. BEING A LARGE GROUP ALLOWS FOR WIDER MARGINS. MEANING CHEAPER FOR YOU IS OKAY WITH US. BUY TODAY!,"LES PRIX LES PLUS BAS DU MARCHÉ GARANTIS. VIA DES CONNEXIONS SYNDICAT QUE LES AUTRES N'ONT PAS. GROS GROUPE = PLUS DE MARGE. DONC MOINS CHER POUR TOI, ÇA NOUS VA. ACHÈTE AUJOURD'HUI !",204,183
+Offering a significant monetary reward to whoever kills [USER] and provides photo proof. Hope you're in chat fuckface :),Grosse récompense en fric pour qui bute [USER] avec preuve photo. J'espère que t'es dans le chat enfoiré :),120,107
+Okay so you're telling me a real person decided it was wise to block the purchase of certain goods unless they traded back and forth with others a set number of times. Am I understanding that correctly?,Ok donc tu me dis qu'une vraie personne a décidé que c'était malin de bloquer l'achat de certains trucs tant que t'as pas trade un certain nombre de fois avec d'autres. Je comprends bien ?,202,188
+"Please can someone please find a specific website for me? I think it sold a product, maybe it was a video sharing platform, or it could have been a simplistic page with nothing really on it.","S'il te plaît quelqu'un peut trouver un site précis pour moi ? Je crois que ça vendait un produit, peut-être une plateforme vidéo, ou juste une page simpliste avec presque rien dessus.",190,184
+"Requesting participants for our computer based survey system. Simply download our software and run it, then copy and paste the results in our private chat. Free to join, Payment of 50 DOS Coin on completion.","On cherche des participants pour notre enquête ordi. Télécharge le soft, lance-le, colle les résultats en MP. Gratuit, paiement 50 DOS Coin à la fin.",207,149
+Secure a DOS Coin loan in seconds. A small fee to confirm the funds can transfer our ONLY requirement.,Obtiens un prêt en DOS Coin en quelques secondes. Un petit frais pour confirmer le transfert est NOTRE SEULE exigence.,102,118
+Selling Tier 1 Hacking Services - Ping for more details,Vends services de hack Tier 1 - Ping pour plus de détails,55,57
+Selling Tier 2 Hacking Services - Ping for more details,Vends services de hack Tier 2 - Ping pour plus de détails,55,57
+Selling Tier 3 Hacking Services - Ping for more details,Vends services de hack Tier 3 - Ping pour plus de détails,55,57
+"The game is pre-recorded trash, full stop. Before the nerds emerge and respond, ""oh well then what about the news articles, bla bla bla"", remember that anyone with money can buy their way into the news. So shut the fuck up with that","The Game c'est de la merde préenregistrée, point. Avant que les nerds sortent « ah et les articles de presse bla bla », rappelez-vous que n'importe qui avec du fric peut acheter sa place dans les news. Alors ferme-la avec ça",232,224
+"Tier 1 Hacker here, hit me up to get your hack on.","Hacker Tier 1 ici, contacte-moi pour te faire hacker des gens.",50,62
+"Tier 2 Hacker here, hit me up to get your hack on.","Hacker Tier 2 ici, contacte-moi pour te faire hacker des gens.",50,62
+"Tier 3 Hacker here, hit me up to get your hack on.","Hacker Tier 3 ici, contacte-moi pour te faire hacker des gens.",50,62
+Tried selling a dang torture video last night and none of yall pinged. Unless pinging aint part of this program?,J'ai essayé de vendre une putain de vidéo de torture hier soir et aucun de vous a ping. À moins que le ping fasse pas partie de ce programme ?,112,142
+Very surprised by the level of professionalism in a back room chat like this,Vraiment surpris par le niveau de professionnalisme dans un chat de backroom comme ça,76,85
+WANT EZ REP? QUICK TRADES IS OUR GAME. LIGHTNING FAST. UNLOCK WHAT YOU WANT IN MINUTES.,ENVIE DE REP FACILE ? LES TRADES RAPIDES C'EST NOTRE TRUC. ULTRA RAPIDE. DÉBLOQUE CE QUE TU VEUX EN QUELQUES MINUTES.,87,117
+"WOW another one of those ""games"" is happening again, so cool wow yeah. Let me guess, this time people are going to die if they don't solve a fucking puzzle. WHAAAT?!? that's exactly what it is, no way...","WOW encore un de ces « jeux », trop cool ouais. Laisse-moi deviner, cette fois les gens vont mourir s'ils résolvent pas un putain de puzzle. WHAAAT ?!? c'est exactement ça, nan mais...",203,184
+"Well this place is a fucking joke... Talked with [USER], confirmed all the details, paid, then got blocked. Looks like there's no recourse so I guess I'll just go fuck myself","Bon cet endroit est une putain de blague... Parlé avec [USER], confirmé tous les détails, payé, puis bloqué. On dirait qu'y a aucun recours donc je vais aller me faire foutre",174,174
+What's this about ping people? How you do that?,C'est quoi ce truc de pinguer des gens ? Comment on fait ?,47,58
+[USER] you're a fucking pussy. I'm placing a bounty on [USER]. First person to post their personal details in this chat gets rewarded. You have to be a fucking idiot to think you'd get away with that,[USER] t'es une putain de tafiole. Je mets une prime sur [USER]. Le premier qui poste leurs infos perso dans ce chat est récompensé. Faut être un putain d'idiot pour croire que tu t'en tirerais comme ça,199,202
+"because I'm a massive supporter of the game I believe I deserve some memorabilia. My request is to receive the underwear [PLAYER] wore in tonight's game. Please fulfill this game master, thank you dearly.","parce que je suis un énorme supporter de The Game je mérite un souvenir. Ma demande : recevoir le caleçon que [PLAYER] portait dans la partie de ce soir. S'il te plaît game master, accomplis ça, merci infiniment.",204,212
+everyone do me a favor and ignore [USER]. They're a confirmed scammer with no morals or care for any person other then themselves. Shun this shitbag. You can't do shit like that and get away unscathed,tout le monde rendez-moi service et ignorez [USER]. C'est un arnaqueur confirmé sans morale ni considération pour qui que ce soit d'autre. Blacklistez ce sac à merde. Tu peux pas faire ça et t'en tirer sans dégâts,200,213
+hearing a bunch of whining about chat clearing itself. First off grow the fuck up. Second it's helping people see your messages. Third if I read a message and the user who posted it is AFK that's annoying. Chat clear completely removes that possibility cause you know they just posted.,j'entends plein de geignards sur le chat qui se vide. D'abord grandis un peu. Ensuite ça aide les gens à voir tes messages. Ensuite si je lis un message et que le user qui l'a posté est AFK c'est chiant. Le chat clear enlève totalement ce risque parce que tu sais qu'ils viennent de poster.,285,290
+hey im trying to impress this girl in another chat. can somebody here let me borrow 1000 DOS Coin? ill give it back after. she just thinks i have a lot of money cause i told her that. im serious,hey j'essaie d'impressionner une meuf dans un autre chat. quelqu'un peut me prêter 1000 DOS Coin ? je rembourse après. elle croit que je suis riche parce que je lui ai dit. sérieux,194,180
+holy fucking shit the sellers in the chat deserve 5stars. Last month I paid for a blackmailing job on my dickhead supervisor. I come to you all today as the newly promoted supervisor of a fortune 500 company.,putain les vendeurs du chat méritent 5 étoiles. Le mois dernier j'ai payé un job de chantage sur mon connard de chef. Je reviens vers vous aujourd'hui en tant que nouveau superviseur promu d'une boîte du fortune 500.,208,216
+how to make people in a chatroom like you or think you are cool?,comment faire pour que les gens d'un chat t'aiment ou te trouvent cool ?,64,72
+how to tell your partner you have an std tips for people with an std std help hello hgello hello,comment dire à ton partenaire que t'as une MST conseils pour gens avec MST aide hello hgello hello,96,98
+my deepest thanks to whoever added the rep system. After dealing with utter garbage in other chats it's great to see something deterring them from entering here to repeat that same behavior,"mes plus grands mercis à celui qui a ajouté le système de rep. Après avoir galéré avec de la pure merde dans d'autres chats, c'est top de voir quelque chose qui les dissuade d'entrer ici pour recommencer la même chose",189,217
+"proud to say that all my wishes have come true thanks to the criminal intellectuals who've made what I dreamed a reality. No specifics from me, just know if there's something you want you can likely get it here","fier de dire que tous mes vœux se sont réalisés grâce aux intellectuels criminels qui ont rendu mes rêves réels. Pas de détails de ma part, sache juste que s'il y a un truc que tu veux tu peux probablement l'avoir ici",210,217
+quit before things get worse. the people in this chatroom only want one thing and one thing only. they want to see you cry and beg. dont give them what they want.,arrête avant que ça empire. les gens de ce salon veulent une seule chose. ils veulent te voir pleurer et supplier. leur donne pas ce qu'ils veulent.,162,148
+swear on my life there was a man who just walked behind this dude in the game. I'm dead serious. If you see this make sure all those doors are locked and you're alone. I am not going to help you again,je jure sur ma vie y avait un mec qui vient de passer derrière ce type dans The Game. Je suis mortellement sérieux. Si tu vois ça assure-toi que toutes les portes sont verrouillées et que t'es seul. Je vais pas t'aider une deuxième fois,200,236
+"the chat's pretty civilized, can't imagine what the mods have to banish on the live feed to keep it this way","le chat est plutôt civilisé, j'imagine même pas ce que les modos doivent ban sur le live feed pour le garder comme ça",108,117
+"the game thing is fake as fuck. It's a bunch of special effects wannabes who have no real talent or anything better to do, trying to fool people that are even larger losers than themselves.","ce truc de The Game c'est du fake de ouf. C'est une bande de wannabes effets spéciaux sans talent qui ont rien de mieux à faire, pour niquer des gens encore plus loosers qu'eux.",189,177
+there's a fake call in bomb threat service someone could use to screw with one of The Game players. I'm not gonna do it. But imagine how funny it would be for one of them to get swatted on camera lol,y a un service de faux appel à la bombe que quelqu'un pourrait utiliser pour niquer un joueur de The Game. Je vais pas le faire. Mais imagine à quel point ce serait drôle qu'un d'eux se fasse swatter en caméra lol,199,213
+"to anyone watching this bullshit ""game"", nothing is going to happen. There's no way a bunch of people signed up and are now risking their lives...","à tous ceux qui regardent cette merde de « jeu », y a rien qui va se passer. Y a aucune chance qu'une bande de gens se soient inscrits et risquent vraiment leur vie...",146,167
+"while the new people are welcomed to the game I'm going to be welcoming them to getting scammed haha. Go ahead and report me to your low IQ friends, this is clearly an alt","pendant que les nouveaux sont accueillis dans The Game je vais les accueillir en se faisant arnaquer haha. Allez-y reportez-moi à vos potes QI bas, c'est clairement un alt",171,171
+"yo the rep system actually means shit. Did business with one of these absolute gs with mad rep and had a firstclass experience. Sure I was only buying weed for me and my girl, but these motherfuckers really care.","yo le système de rep veut vraiment dire un truc. J'ai deal avec un de ces absolute gs avec une dinguerie de rep et expérience first class. Certes j'achetais juste de la weed pour moi et ma meuf, mais ces enfoirés en ont vraiment quelque chose à faire.",212,251
+Hack others for a small price and cause a little chaos. Tier 1 hacker. Ping me,Hack les autres pour pas cher et sème un peu le chaos. Hacker Tier 1. Pingue-moi,78,80
+Hack others for a small price and cause a little chaos. Tier 2 hacker. Ping me,Hack les autres pour pas cher et sème un peu le chaos. Hacker Tier 2. Pingue-moi,78,80

@@ -42,7 +42,7 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
 - HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)
-- **Steam :** le pack Release (v1.2.3+) est buildé depuis l’extract Steam — ne pas overlay un build Desktop sur Steam
+- **Steam :** le pack Release (v1.2.4+) est buildé depuis l’extract Steam — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 
 ## Structure du code

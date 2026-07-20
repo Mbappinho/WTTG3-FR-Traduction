@@ -112,8 +112,12 @@ Regénérer la map ACRS/CryptChat (qualité + accents) :
 
 ```powershell
 # Éditer / ajouter des lots FR dans work\acrs_batches\fr_*.json
+# (ex. fr_lobby_gap.json pour topics salon trouvés dans l’extract Steam)
 python scripts\merge_acrs_fr_batches.py --write --strict
 python scripts\build_ui_uassetgui_patch.py
+# Optionnel : scan EN non mappés après re-extract Steam
+# python scripts\scan_acrs_unmapped_en.py
+# python scripts\qa_acrs_cryptchat.py
 ```
 
 `mt_acrs_cryptchat.py` (Google + strip d'accents) est **déprécié** — ne plus l'utiliser pour le livrable.
@@ -165,6 +169,7 @@ Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentati
 | EN | FR | Où |
 |----|----|-----|
 | `BUY` | `ACHETER` | DarkDrop |
+| Noms produits DarkDrop | Libellés **courts** (≤ EN) pour ne pas chevaucher le prix — ex. `Boost signal`, `Capteur mvt`, `Pare-feu II`, `Montage VM III` | Liste achat |
 | `Confirm` / `Connect` / `Checkout` | `Confirmer` / `Connecter` / `Commander` | DAREDash |
 | `BACK` / `CANCEL` / `GO BACK` / `RETURN HOME` | `RETOUR` / `ANNULER` / … | Settings / DARE |
 | `Hide` | `Se cacher` | Pawns (casier / chariot) |
@@ -189,7 +194,7 @@ Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentati
 2. Pause / réglages en FR (Paramètres graphiques / audio…)
 3. Tutoriel Ronald + Key Finding en FR (wrap-up complet + Good luck)
 4. CryptChat ODDroot/Goggin : message de paiement **et** message avec lien ShadowFetch
-5. DarkDrop : descriptions VirtMesh / ShadowFetch + bouton **ACHETER**
+5. DarkDrop : noms courts sans chevauchement prix (`Boost signal`, `Capteur mvt`…) + bouton **ACHETER** + descriptions VirtMesh / ShadowFetch
 6. DAREDash : **Confirmer** / **Commander** / **Annuler** / **Retour**
 7. Inventaire : Lettre d'expulsion + descriptions items
 8. Interactions monde : **Ouvrir / Déverrouiller**, **Allumer / Éteindre**, **Se cacher**, **Regarder**, etc.

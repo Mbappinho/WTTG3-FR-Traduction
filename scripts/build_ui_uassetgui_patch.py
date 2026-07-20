@@ -192,11 +192,11 @@ RAW: dict[str, str] = {
     ),
     "DOSCoin Balance": "Solde DOSCoin",
     "YoloYen Balance": "Solde YoloYen",
-    "Firewall Tier I": "Pare-feu niveau I",
+    "Firewall Tier I": "Pare-feu I",
     "0 Hacks Blocked": "0 hacks bloqués",
-    "Backdoor Hacks": "Hacks backdoor",
+    "Backdoor Hacks": "Backdoors",
     "Network Status": "État du réseau",
-    "Signal Booster Strength": "Force de l'amplificateur",
+    "Signal Booster Strength": "Force du boost",
     "Quick Switch To Virtual Desktop": "Basculer vers le bureau virtuel",
     "Quick Switch To Desktop": "Basculer vers le bureau",
     "Key Finding": "Recherche de clés",
@@ -215,7 +215,7 @@ RAW: dict[str, str] = {
     "User Info:": "Infos utilisateur :",
     " SYSTEM CLEARED CHAT": " LE SYSTÈME A VIDÉ LE CHAT",
     "Internet Connection Lost": "Connexion internet perdue",
-    "Source Code Viewer": "Visionneuse de code source",
+    "Source Code Viewer": "Visionneuse code",
     "Fetch URL...": "URL Fetch...",
     "Enter Fetch URL...": "Entrer l'URL Fetch...",
     "Enter Dealer ID": "Entrer l'ID vendeur",
@@ -397,24 +397,24 @@ RAW: dict[str, str] = {
         "Écouteurs intra-auriculaires qui augmentent la portée audible de tous les sons. Utile si tu as des soucis de sécurité.\r\n\r\n"
         "Appuie sur [R] pour allumer / éteindre."
     ),
-    "Backdoor Hack": "Hack backdoor",
+    "Backdoor Hack": "Backdoor",
     "Want a way to get back at those pesky hackers?! The Backdoor Hack is what you need! Defeating a hack will steal DOS Coin from the hacker! Each time you're hacked one will be auto-consumed.": (
-        "Envie de te venger de ces satânés hackers ?! Le Hack backdoor est ce qu'il te faut ! "
+        "Envie de te venger de ces satânés hackers ?! Le Backdoor est ce qu'il te faut ! "
         "Battre un hack vole des DOS Coin au hacker ! A chaque hack subi, un exemplaire est consommé automatiquement."
     ),
     "Want a way to get back at those pesky hackers?! Then the Backdoor Hack is what you need! Each time you are hacked, it will auto consume, if you defeat the hack you will steal DOS Coin from the hacker!": (
-        "Envie de te venger de ces satânés hackers ?! Le Hack backdoor est ce qu'il te faut ! "
+        "Envie de te venger de ces satânés hackers ?! Le Backdoor est ce qu'il te faut ! "
         "A chaque hack subi il se consomme ; si tu gagnes, tu voles des DOS Coin au hacker !"
     ),
     "DAREDash": "DAREDash",
     "Convenient app to purchase drugs off the Dark Net. Quickly access drug dealer inventories, make a selection, then order for delivery.": (
         "Appli pratique pour acheter de la drogue sur le Dark Net. Accède vite aux stocks des dealers, choisis, puis commande en livraison."
     ),
-    "Firewall Tier I": "Pare-feu niveau I",
-    "Firewall Tier II": "Pare-feu niveau II",
-    "Firewall Tier III": "Pare-feu niveau III",
-    "Firewall Tier IV": "Pare-feu niveau IV",
-    "Firewall Tier V": "Pare-feu niveau V",
+    "Firewall Tier I": "Pare-feu I",
+    "Firewall Tier II": "Pare-feu II",
+    "Firewall Tier III": "Pare-feu III",
+    "Firewall Tier IV": "Pare-feu IV",
+    "Firewall Tier V": "Pare-feu V",
     "Passively prevents incoming hacks with a 20% success rate. Can be turned on / off by clicking on the taskbar icon and checking / unchecking the box.": (
         "Bloque passivement les hacks entrants avec 20% de réussite. Active / désactive via l'icone de la barre des taches."
     ),
@@ -445,18 +445,18 @@ RAW: dict[str, str] = {
     "Interested in gaining more help with key hashes? When loaded onto the specific website page which contains one the key icon near the top right of A.N.N. browser will change from white to a gold color.": (
         "Envie d'encore plus d'aide pour les hash de clés ? Sur la page exacte qui en contient une, l'icône clé en haut a droite d'A.N.N. passe du blanc au doré."
     ),
-    "Motion Alert": "Alerte mouvement",
+    "Motion Alert": "Alerte mvt",
     "Software that provides visual & audio notifications when a placed motion sensor is triggered. Perfect for the person who's focused on other tasks when unexpected motion arrives.\r\n\r\nClicking on the motion alert taskbar icon will reveal the named location and status of all placed motion sensors.": (
-        "Logiciel qui envoie des alertes visuelles et sonores quand un détecteur de mouvement placé se déclenche. Idéal quand tu es concentré ailleurs.\r\n\r\n"
-        "Clique l'icone d'alerte dans la barre des taches pour voir le lieu et l'état de tous les détecteurs placés."
+        "Logiciel qui envoie des alertes visuelles et sonores quand un Capteur mvt placé se déclenche. Idéal quand tu es concentré ailleurs.\r\n\r\n"
+        "Clique l'icone d'alerte dans la barre des taches pour voir le lieu et l'état de tous les capteurs placés."
     ),
-    "Motion Sensor": "Détecteur de mouvement",
+    "Motion Sensor": "Capteur mvt",
     "Portable battery-powered sensor that detects nearby motion. Requires separate purchase of Motion Alert to receive visual and sound based notifications on your computer when a sensor is triggered.": (
-        "Capteur portable à piles qui detecte le mouvement à proximité. Nécessite l'achat separe d'Alerte mouvement pour les notifications sur ton PC."
+        "Capteur portable à piles qui detecte le mouvement à proximité. Nécessite l'achat separe d'Alerte mvt pour les notifications sur ton PC."
     ),
     "NOP Sled": "NOP Sled",
     "Want to skip an incoming hack? The NOP Sled is your answer! Upon activation you'll immediately break free. (Backdoor Hacks are not consumed).\r\n\r\nPress [Middle Mouse Button] during a hack to activate.": (
-        "Envie de zapper un hack entrant ? Le NOP Sled est la réponse ! A l'activation tu te libères tout de suite. (Les Hacks backdoor ne sont pas consommés).\r\n\r\n"
+        "Envie de zapper un hack entrant ? Le NOP Sled est la réponse ! A l'activation tu te libères tout de suite. (Les Backdoors ne sont pas consommés).\r\n\r\n"
         "Appuie sur [Clic molette] pendant un hack pour l'activer."
     ),
     "Find yourself in a hack you don't want to deal with? Then the NOPSled is what you want! By simply pressing the middle mouse button you break free from the hack!(Does not consume any Backdoors)": (
@@ -471,31 +471,31 @@ RAW: dict[str, str] = {
     "Monitor your placed GO CAM camera feeds with this app. Navigate between cameras using the on-screen buttons or press [A] / [D].": (
         "Surveille tes flux GO CAM avec cette appli. Change de camera avec les boutons à l'écran ou [A] / [D]."
     ),
-    "Signal Booster": "Amplificateur de signal",
+    "Signal Booster": "Boost signal",
     "Temporarily increase internet speed by placing this device in an *optimal location. View on-device section labled \"Signal Strength\" to see quality of speed boost.\r\n\r\n*Over time device may need to be moved to maintain full speed boost.": (
         "Augmente temporairement la vitesse internet en placant cet appareil a un endroit *optimal. "
         "Regarde la section \"Signal Strength\" sur l'appareil pour la qualité du boost.\r\n\r\n"
         "*Avec le temps, tu devras peut-être le deplacer pour garder le boost max."
     ),
-    "Sig.Boost Monitor": "Moniteur amplif.",
+    "Sig.Boost Monitor": "Moniteur boost",
     "Track your Signal Booster's internet speed increase through a desktop taskbar icon. The icon will display the current boost strength.": (
-        "Suis le boost de vitesse de ton Amplificateur via une icône de barre des taches. L'icone affiche la force actuelle."
+        "Suis le boost de vitesse de ton Boost signal via une icône de barre des taches. L'icone affiche la force actuelle."
     ),
-    "VM Cyrpto Miner": "Mineur crypto VM",
+    "VM Cyrpto Miner": "Mineur VM",
     "Purchase a *single-use script that turns a hacked computer in VirtMesh to a crypto miner for passive money generation.\r\n\r\n*Choosing to unmine a hacked computer will destroy the script. It can be mined again, but will require another script to do so.": (
         "Achete un script *à usage unique qui transforme un PC piraté dans VirtMesh en mineur crypto pour gagner passivement.\r\n\r\n"
         "*Déminer un PC détruit le script. Tu pourras reminer, mais il faudra un autre script."
     ),
-    "VM Grid Tier II": "Grille VM niveau II",
-    "VM Grid Tier III": "Grille VM niveau III",
+    "VM Grid Tier II": "Grille VM II",
+    "VM Grid Tier III": "Grille VM III",
     "Expand access within VirtMesh to higher quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.": (
         "Élargit l'accès VirtMesh à des PC de meilleure qualité : plus d'uptime avant compromission et meilleur potentiel de minage."
     ),
     "Expand access within VirtMesh to highest quality computers, both in increased uptime before active connection is compromised and in crypto mining potential.": (
         "Élargit l'accès VirtMesh aux meilleurs PC : plus d'uptime avant compromission et meilleur potentiel de minage."
     ),
-    "VM Mount Tier II": "Montage VM niveau II",
-    "VM Mount Tier III": "Montage VM niveau III",
+    "VM Mount Tier II": "Montage VM II",
+    "VM Mount Tier III": "Montage VM III",
     "Increase maximum mounted computers in VirtMesh from 2 -> 4. Mounted computers can access A.N.N. web browser.": (
         "Passe le max de PC montés dans VirtMesh de 2 à 4. Les PC montés peuvent utiliser le navigateur A.N.N."
     ),

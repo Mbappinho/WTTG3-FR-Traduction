@@ -7,6 +7,7 @@
 - Settings restants : `Master Audio`, `Browser & Files` / Resolution / FPS / GPU Acceleration / Requires Restart.
 - Difficulté : bullets Normal+ (`Same as Normal` / `Perma Death` / `Experimental`) + `Challenging`.
 - **Crash Steam post-MAJ** (`LeetMode2` Bad export index, 2026-07-20) : re-extract `legacy_ui_steam` + rebuild FR_P (cook a changé, ex. LeetMode2 3406→3410).
+- **Crash Steam post-MAJ** (2026-07-21) : base `WTTGSD-Windows.*` plus récente que `FR_P` → même fix (re-extract + rebuild + PDF FR réappliqués).
 - **Bug fix** : `Threats/index.html` avait été traduit en `Menaces/index.html` (Agent_Goggin / ACRS) → PDF Threats en `ERR_FILE_NOT_FOUND`. Remis à `Threats/index.html` ; garde-fou chemins `*.html` dans merge + build.
 - Labels Contestants (PLAYER NAME, LOCATION, etc.).
 - Achievements (27) dans `work/achievements_fr.json`.
@@ -17,6 +18,9 @@
   **MAJ Steam future** : même risque si le cook change → re-extract + rebuild (pas seulement réinstaller l’ancien zip). Voir `docs/UI_PATCH_CRASH.md`.
 - **Prompts monde EN après rebuild Steam** : casse dossier `Blueprints` vs `BluePrints` excluait GameActors/Pawns du pak ; filtre case-insensitive + `PawnSwitchers` / `Enter Desk`.
 - **HUD mouvement** (`Move`/`Run`/`Inventory`/`Pick Up`/`Crouch`) : **confirmé non patchable** — labels dérivés des noms `IA_Default_*` (Enhanced Input), pas de FString. CSV annotés `unpatchable_inputaction`. Pas de rename IA (casse les références IMC).
+- **DarkDrop noms trop longs** : titres FR raccourcis pour ne plus chevaucher le prix (`Boost signal`, `Capteur mvt`, `Pare-feu II`, `Montage VM III`, etc.).
+- **ACRS polish QA** : `en pagne`→`en pagaille`, calques, `backdoor` harmonisé (EN), `pussy`→`tafiole` ; glossaire mis à jour.
+- **Lobby ACRS EN oublié** : ~59 topics/spam présents dans l’extract Steam mais absents de `acrs_cryptchat_fr.json` (étaient seulement dans `ui_gameplay_fr.csv`, non injecté). Ajoutés via `work/acrs_batches/fr_lobby_gap.json` + merge.
 
 ## P1
 

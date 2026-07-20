@@ -30,6 +30,12 @@ work/acrs_batches/status_*.json
 work/acrs_batches/ui.json
 work/acrs_mt_cache.json
 work/acrs_mt_cache.json.deprecated
+work/acrs_steam_en_dump.json
+work/acrs_new_en_unmapped.json
+work/acrs_new_en_candidates.json
+work/acrs_identity_en.json
+work/acrs_truly_new_en.json
+work/acrs_qa_report.json
 build/uassetgui_json/
 build/uassetgui_patched/
 

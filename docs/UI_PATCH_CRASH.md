@@ -43,7 +43,7 @@ Les `.uasset` de ces widgets différaient aussi (pas seulement le `.uexp`).
 
 ### Symptômes possibles après une maj du jeu
 
-- Crash au lancement : `ObjectSerializationError` / `Bad export index` (Titles/Settings **ou** DataAssets, ex. `LeetMode2` après maj 2026-07-20)
+- Crash au lancement : `ObjectSerializationError` / `Bad export index` (Titles/Settings **ou** DataAssets, ex. `LeetMode2` après maj 2026-07-20 ; **nouveau cook Steam 2026-07-21** → même procédure re-extract + rebuild)
 - Ou, plus rare : jeu qui boote mais trad partielle / textes EN revenus sur des écrans
 
 ### Diagnostic rapide

@@ -85,7 +85,11 @@
     "rep": "rep",
     "master key": "master key",
     "plaintext": "texte clair",
-    "hash": "hash"
+    "hash": "hash",
+    "backdoor": "backdoor",
+    "porte dérobée": "backdoor",
+    "pussy": "tafiole",
+    "pat on the back": "félicite-toi"
   },
   "tone": "Horreur / darknet / chat underground. Tutoiement pour le joueur et le RP salon. Français correct avec accents. Spam argotique OK. Ne jamais traduire les placeholders [MAJUSCULES]. Garder DOS Coin, The Game, noms d'agents et d'apps.",
   "rules": [
@@ -94,6 +98,7 @@
     "Préserver \\r\\n dans les chaînes multi-lignes.",
     "Pas de Google Trad littéral (éviter « pièce DOS », « hachage » pour key hash, « bonjour » pour hella).",
     "hash de clé / index de clé ; déchiffrer (pas « décrypter » sauf jargon volontaire rare).",
-    "Tutoiement par défaut dans CryptChat/ACRS."
+    "Tutoiement par défaut dans CryptChat/ACRS.",
+    "backdoor : garder l'anglais (pas « porte dérobée »). pussy → tafiole (registre stable)."
   ]
 }

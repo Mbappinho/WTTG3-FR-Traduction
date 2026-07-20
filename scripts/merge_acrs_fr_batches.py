@@ -129,10 +129,13 @@ def main() -> None:
         print("ERROR:", e)
 
     if args.write:
-        # Only write keys we care about (union of EN lists + any batch extras used)
+        # EN lists first, then any extra batch keys (e.g. lobby gaps found in Steam extract)
         out_map = {k: fr[k] for k in en_keys if k in fr and fr[k].strip()}
+        for k, v in fr.items():
+            if k not in out_map and isinstance(v, str) and v.strip():
+                out_map[k] = v
         OUT.write_text(json.dumps(out_map, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print("Wrote", OUT, "entries", len(out_map))
+        print("Wrote", OUT, "entries", len(out_map), "batch_extras", len(out_map) - len(en_keys))
 
     if args.strict and errors:
         sys.exit(1)
