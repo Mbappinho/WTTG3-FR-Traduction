@@ -36,6 +36,7 @@ work/acrs_new_en_candidates.json
 work/acrs_identity_en.json
 work/acrs_truly_new_en.json
 work/acrs_qa_report.json
+work/cryptchat_dialogs_qa_report.json
 build/uassetgui_json/
 build/uassetgui_patched/
 

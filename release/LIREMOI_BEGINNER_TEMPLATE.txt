@@ -1,10 +1,18 @@
 WTTG3 - Traduction francaise (pack debutant)
 ============================================
 
+COMPATIBILITE STEAM (v1.2.5)
+- Jeu : Welcome to the Game III (Steam officiel)
+- AppID : 3869850
+- BuildID Steam cible : 24303741
+  (fichier steamapps\appmanifest_3869850.acf → "buildid")
+- Si ton BuildID est DIFFERENT : DESINSTALLER, puis attends / installe
+  une release FR rebuildée pour ta maj (sinon crash possible)
+
 CONTENU
 - Menus / UI / CryptChat / ACRS / inventaire / DarkDrop (mod FR_P, accents FR)
 - Boutons patchables : ACHETER, Confirmer, Commander, Se cacher, etc.
-- PDF in-game en francais
+- PDF in-game en francais (dont fiches Contestants)
 - Achievements FR si le dossier steam_settings existe
 
 INSTALLER (premiere fois)
@@ -47,7 +55,7 @@ NOTES
 - Les sites web Dark Net restent en anglais (volontaire).
 - Si Windows bloque le .bat : "Plus d'infos" > "Executer quand meme"
 - Si erreur "jeu ouvert" : ferme WTTGSD dans le Gestionnaire des taches
-- Pack v1.2.4+ : buildé pour le jeu Steam officiel (pas une copie Desktop / autre dump)
+- Pack v1.2.5+ : buildé pour le jeu Steam officiel (pas une copie Desktop / autre dump)
 - Apres une MAJ Steam :
   1. Trad / PDF disparus sans crash → desinstaller puis reinstaller la derniere release
   2. CRASH (Bad export index / ObjectSerializationError) → DESINSTALLER, puis

@@ -8,6 +8,16 @@ Fan patch de localisation francaise **non officiel** pour *Welcome to the Game I
 
 Ce depot contient le **code source du pipeline de traduction** (scripts, docs, dictionnaires FR), **pas** le jeu.
 
+## Compatibilite Steam (importante)
+
+| | |
+|--|--|
+| **Pack actuel** | **v1.2.5** |
+| **Steam BuildID** | **`24303741`** (AppID `3869850`) |
+| Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
+
+Si ton BuildID Steam est different → crash possible → `DESINSTALLER.bat` puis attendre / installer une release FR pour **ce** build. Details : [docs/STEAM_COMPAT.md](docs/STEAM_COMPAT.md).
+
 ## Mise a jour du mod (joueurs) — a lire
 
 Apres **chaque mise a jour Steam** du jeu, la trad peut casser (textes EN, PDF EN, ou **crash** au lancement).
@@ -38,11 +48,11 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 - Prompts interaction monde (Ouvrir, Déverrouiller, Allumer, Se cacher, etc.)
 - Prompts `[RMB]` (Quitter / Se lever du bureau / Quitter l'ordinateur)
 - CryptChat + ACRS (salon + dialogues agents, FR soigné avec accents)
-- PDF in-game (chemins `Threats/index.html` etc. **non traduits** — sinon 404)
+- PDF in-game dont Contestants (lieux / métiers / infos) ; chemins `Threats/index.html` etc. **non traduits** — sinon 404
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
 - HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)
-- **Steam :** le pack Release (v1.2.4+) est buildé depuis l’extract Steam — ne pas overlay un build Desktop sur Steam
+- **Steam :** pack buildé depuis l’extract officiel — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 
 ## Structure du code

@@ -20,6 +20,7 @@
 - **HUD mouvement** (`Move`/`Run`/`Inventory`/`Pick Up`/`Crouch`) : **confirmé non patchable** — labels dérivés des noms `IA_Default_*` (Enhanced Input), pas de FString. CSV annotés `unpatchable_inputaction`. Pas de rename IA (casse les références IMC).
 - **DarkDrop noms trop longs** : titres FR raccourcis pour ne plus chevaucher le prix (`Boost signal`, `Capteur mvt`, `Pare-feu II`, `Montage VM III`, etc.).
 - **ACRS polish QA** : `en pagne`→`en pagaille`, calques, `backdoor` harmonisé (EN), `pussy`→`tafiole` ; glossaire mis à jour.
+- **CryptChat polish** : `ton idée`, `délai de carence`, `Threats/index.html` dans extras, casse The Game/Game Master (Ronald), 1× vous→tu.
 - **Lobby ACRS EN oublié** : ~59 topics/spam présents dans l’extract Steam mais absents de `acrs_cryptchat_fr.json` (étaient seulement dans `ui_gameplay_fr.csv`, non injecté). Ajoutés via `work/acrs_batches/fr_lobby_gap.json` + merge.
 
 ## P1
@@ -34,7 +35,8 @@
 
 ## P2
 
-- Textes libres Contestants (ADDITIONAL INFO, couleurs de cheveux, métiers) : encore largement EN — faible priorité.
+- PDF Contestants : lieux, métiers, couleurs, ADDITIONAL INFO traduits (2026-07-21) ; noms / coords / MAC / IP / téléphones conservés.
+- **Compat Steam documentée** : BuildID `24303741` (AppID 3869850) pour pack v1.2.5 — `docs/STEAM_COMPAT.md`.
 - Overlay Steam officiel : non modifiable sans Steamworks ; fichier local steam_settings mis à jour pour usage perso.
 - Entrées `ui_fr.csv` sans FString correspondante (Apply, Yes/No génériques, etc.) : **ne peuvent pas** être injectées telles quelles.
 

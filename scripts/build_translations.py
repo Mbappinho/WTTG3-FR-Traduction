@@ -495,6 +495,7 @@ CONTESTANT_LABELS = [
     ("(collection completed in", "(collecte terminée en"),
     ("seconds)", "secondes)"),
     ("####-----LOG START-----####", "####-----DÉBUT DU LOG-----####"),
+    ("####-----LOG END-----####", "####-----FIN DU LOG-----####"),
     ("PLAYER NAME: ", "PSEUDO JOUEUR : "),
     ("REAL NAME: ", "NOM RÉEL : "),
     ("LOCATION:", "POSITION :"),
@@ -508,6 +509,114 @@ CONTESTANT_LABELS = [
     ("MAC ADDRESS:", "ADRESSE MAC :"),
     ("IP ADDRESS:", "ADRESSE IP :"),
     ("ADDITIONAL INFO:", "INFOS SUPPLÉMENTAIRES :"),
+    # --- valeurs libres (lieux / métiers / traits) ---
+    # Lieux
+    (
+        "(33.41012, -91.06177) - Hotel - Waterway Inn. Room 415. Small amount of staff working tonight",
+        "(33.41012, -91.06177) - Hôtel - Waterway Inn. Chambre 415. Peu de personnel ce soir",
+    ),
+    (
+        "(42.4251, -71.06616) - Used car dealership - 5-Star Quality Auto. Inside back financial office",
+        "(42.4251, -71.06616) - Concession auto d'occasion - 5-Star Quality Auto. Bureau financier à l'arrière",
+    ),
+    (
+        "(52.57583, 6.61944) - City government building. Outdated security system. Target occupying conference room on floor 10",
+        "(52.57583, 6.61944) - Bâtiment administratif municipal. Sécurité obsolète. Cible dans une salle de conférence au 10e étage",
+    ),
+    (
+        "(50.08541, 8.44468) - Bank, manager's office. High security",
+        "(50.08541, 8.44468) - Banque, bureau du directeur. Haute sécurité",
+    ),
+    (
+        "(-37.90228, 145.16253) - Corporate building. Keycard access necessary. Take elevator or steps to floor 8. Target is not alone",
+        "(-37.90228, 145.16253) - Immeuble d'entreprise. Accès badge requis. Ascenseur ou escaliers jusqu'au 8e. La cible n'est pas seule",
+    ),
+    (
+        "(47.64995, -117.23991) - Parking lot, playing inside converted sprinter van. License plate: AMO9910",
+        "(47.64995, -117.23991) - Parking, joue dans un Sprinter aménagé. Plaque : AMO9910",
+    ),
+    (
+        "(34.95303, -120.43572) - Inside apartment 303",
+        "(34.95303, -120.43572) - Dans l'appartement 303",
+    ),
+    (
+        '(45.51667, 4.86667) - Ground floor, inside storage room with blue "Stockage" sign',
+        '(45.51667, 4.86667) - Rez-de-chaussée, dans un local de stockage avec panneau bleu « Stockage »',
+    ),
+    # Couleurs
+    ("Light Brown", "Châtain clair"),
+    ("Blonde", "Blonds"),
+    ("Black", "Noirs"),
+    ("Brown", "Bruns"),
+    ("Green", "Verts"),
+    ("Blue", "Bleus"),
+    ("Hazel", "Noisette"),
+    # Métiers
+    ("Estate manager/land agent", "Gestionnaire immobilier / agent foncier"),
+    ("IT consultant", "Consultant informatique"),
+    ("Engineer, biomedical", "Ingénieur biomédical"),
+    ("Senior operations processor", "Chargé d'opérations senior"),
+    ("Patent attorney", "Avocat en brevets"),
+    ("Lexicographer", "Lexicographe"),
+    ("Designer, multimedia", "Designer multimédia"),
+    ("Teacher, primary school", "Enseignant en primaire"),
+    # Infos supplémentaires
+    ("Nothing noteworthy", "Rien de notable"),
+    ("Average across the board", "Moyen sur toute la ligne"),
+    (
+        "Strongly believes networking with people is the path to success",
+        "Convaincu que le réseautage est la voie du succès",
+    ),
+    ("Very skilled at uncovering secrets", "Très doué pour découvrir des secrets"),
+    (
+        "Very careless when it comes to personal security",
+        "Très négligent sur sa sécurité personnelle",
+    ),
+    (
+        "Strongly believes earning more money will solve every problem",
+        "Convaincu que gagner plus d'argent règlera tous les problèmes",
+    ),
+    (
+        "Terrible at finding secrets and will arrogantly avoid seeking help",
+        "Nul pour trouver des secrets et refuse arrogamment de demander de l'aide",
+    ),
+    ("Dislikes communicating with others", "N'aime pas communiquer avec les autres"),
+    ("Poor multi-tasking skill", "Mauvaise capacité à faire plusieurs choses à la fois"),
+    ("Extremely paranoid", "Extrêmement parano"),
+    (
+        "Strong reaction time, typing ability, and puzzle solving skills",
+        "Temps de réaction, frappe et résolution de puzzles excellents",
+    ),
+    ("Slow, but steady", "Lent, mais régulier"),
+    (
+        "Has inside connections to access hitman services",
+        "A des contacts internes pour accéder à des services de tueur à gages",
+    ),
+    ("Decently paranoid", "Assez parano"),
+    ("Prioritizes revenge", "Priorise la vengeance"),
+    (
+        "Poor reaction time, typing ability, and puzzle solving skills",
+        "Temps de réaction, frappe et résolution de puzzles médiocres",
+    ),
+    (
+        "Average reaction time, typing ability, and puzzle solving skills",
+        "Temps de réaction, frappe et résolution de puzzles moyens",
+    ),
+    (
+        "Prefers to target the underdog and no one else",
+        "Préfère cibler le plus faible et personne d'autre",
+    ),
+    (
+        "Careless when it comes to personal security",
+        "Négligent sur sa sécurité personnelle",
+    ),
+    ("Enjoys playing mindgames", "Aime jouer à des jeux d'esprit / manipulations"),
+    (
+        "Superior reaction time, typing ability, and puzzle solving skills",
+        "Temps de réaction, frappe et résolution de puzzles supérieurs",
+    ),
+    ("Not money driven", "Pas motivé par l'argent"),
+    ("Waits to find the best deal", "Attend de trouver la meilleure affaire"),
 ]
 
 
