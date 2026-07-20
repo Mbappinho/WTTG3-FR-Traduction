@@ -9,6 +9,7 @@
 - **Accents UI** : dict `RAW` avec accents ; patch en FString **UTF-16** (pas cp1252 — les glyphes disparaissaient in-game).
 - **Boutons / HUD interaction** : `BUY`→ACHETER ; DARE Confirm/Connect/Checkout ; `Hide`→Se cacher ; portes Open/Close/Lock/Unlock ; Turn On/Off ; Peep, Repair, Attempt Defusal, Enter Panic Mode, Head To Work (`BluePrints\GameActors`) ; VirtMesh `MONTER`/`DÉMONTER`/`MINER`/`DÉMINER`/`PIRATER`/`Entrer`.
 - **Prompts [RMB]** : `[RMB] Exit` / `- Exit` → `[Clic droit] Quitter` ; Get Up From Desk ; Leave Computer ; `Exit To VertMesh` → Passer à VirtMesh.
+- **Crash Steam** (`Bad export index`) : extract Desktop ≠ cook Steam (ex. Settings 10081 vs 11249). Fix = `source/legacy_ui_steam` + rebuild. Voir `docs/UI_PATCH_CRASH.md`.
 - **HUD mouvement** (`Move`/`Run`/`Inventory`/`Pick Up`/`Crouch`) : **confirmé non patchable** — labels dérivés des noms `IA_Default_*` (Enhanced Input), pas de FString. CSV annotés `unpatchable_inputaction`. Pas de rename IA (casse les références IMC).
 
 ## P1

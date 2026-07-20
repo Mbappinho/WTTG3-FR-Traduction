@@ -6,7 +6,7 @@
 |---------|--------|
 | PDF in-game (`RawFiles/PDFS`) | Traduits → `apply_patch.ps1` |
 | Achievements | Traduits (steam_settings local) |
-| UI Unreal | Mod IoStore `_P` via **usmap + UAssetGUI** (longueurs FR libres) |
+| UI Unreal | Mod IoStore `_P` via **usmap + UAssetGUI** ; **base = extract Steam** (`legacy_ui_steam`) |
 | DarkDrop / Products | Inclus (`Data/DataAssets/Products`) |
 | Inventaire items | Inclus (`Data/DataAssets/PlayerItems`) |
 | ACRS (UI + salon + pubs agents) | Inclus (`UI/.../WBP_ACRSApp` + `Data/DataAssets/ACRS` + status agents) |
@@ -23,13 +23,23 @@
 
 ## Build
 
+**Important :** le cook Steam ≠ copie Desktop. Extraire depuis le jeu cible :
+
+```powershell
+tools\retoc\retoc.exe to-legacy --version UE5_6 `
+  "C:\Steam\steamapps\common\Welcome to the Game III\WTTGSD\Content\Paks" `
+  source\legacy_ui_steam
+```
+
+Puis :
+
 ```powershell
 # Depuis la racine du depot
 python scripts\build_translations.py
 python scripts\build_ui_uassetgui_patch.py
 ```
 
-Configure le chemin du jeu dans les scripts (`GameRoot` / variable) avant apply.
+`build_ui_uassetgui_patch.py` préfère `source/legacy_ui_steam` s’il existe.
 
 ## Pack debutant (recommande pour partager)
 

@@ -23,7 +23,10 @@ from pathlib import Path
 
 from game_paths import ROOT, paks_dir
 
-LEGACY = ROOT / "source" / "legacy_ui" / "WTTGSD" / "Content"
+# Prefer Steam extract when present (Desktop extract ≠ Steam cook → Bad export index)
+_LEGACY_STEAM = ROOT / "source" / "legacy_ui_steam" / "WTTGSD" / "Content"
+_LEGACY_DESKTOP = ROOT / "source" / "legacy_ui" / "WTTGSD" / "Content"
+LEGACY = _LEGACY_STEAM if _LEGACY_STEAM.exists() else _LEGACY_DESKTOP
 STAGED = ROOT / "build" / "uassetgui_patched" / "WTTGSD" / "Content"
 JSON_DIR = ROOT / "build" / "uassetgui_json"
 RETOC = ROOT / "tools" / "retoc" / "retoc.exe"
@@ -47,6 +50,10 @@ COPY_PREFIXES = (
     "BluePrints\\Pawns",
     "BluePrints\\GameActors",
 )
+
+# Previously excluded when overlaying Desktop extract onto Steam.
+# With Steam-matched legacy_ui_steam, Settings/Pause can be patched again.
+EXCLUDE_FROM_PAK: set[str] = set()
 
 # Extra ACRS / CryptChat maps (generated): work/acrs_cryptchat_fr.json
 EXTRA_MAP = ROOT / "work" / "acrs_cryptchat_fr.json"
@@ -636,6 +643,9 @@ def recalculate_offsets(asset: dict) -> None:
 
 def should_copy(rel: Path) -> bool:
     s = str(rel).replace("/", "\\")
+    stem = s[: -len(rel.suffix)] if rel.suffix else s
+    if stem in EXCLUDE_FROM_PAK:
+        return False
     return any(s == p or s.startswith(p + "\\") for p in COPY_PREFIXES)
 
 
@@ -717,7 +727,7 @@ def stage_and_patch(pairs: list[tuple[str, str]]) -> tuple[int, int]:
         for p in LEGACY.rglob("*.uasset")
         if should_copy(p.relative_to(LEGACY)) and asset_needs_patch(p, pairs)
     ]
-    print(f"assets_with_text={len(uassets)}")
+    print(f"assets_with_text={len(uassets)} (excluded_settings={len(EXCLUDE_FROM_PAK)})")
 
     files = 0
     reps = 0
@@ -807,6 +817,9 @@ def main() -> None:
     if not UASSETGUI.exists():
         print("Missing", UASSETGUI, file=sys.stderr)
         sys.exit(1)
+    print(f"LEGACY={LEGACY}")
+    if not LEGACY.exists():
+        raise SystemExit(f"Legacy Content missing: {LEGACY}")
     pairs = write_map_csv()
     print(f"pairs={len(pairs)}")
     files, reps = stage_and_patch(pairs)

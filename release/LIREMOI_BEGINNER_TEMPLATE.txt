@@ -32,6 +32,7 @@ NOTES
 - Si Windows bloque le .bat : "Plus d'infos" > "Executer quand meme"
 - Si erreur "jeu ouvert" : ferme WTTGSD dans le Gestionnaire des taches
 - Apres une MAJ Steam, reinstalle le pack si la trad disparait
+- v1.2.2+ : pack compatible Steam officiel (corrige le crash Bad export index)
 
 IMPORTANT
 Garde ce dossier entier. Ne separe pas INSTALLER.bat du dossier fichiers\
