@@ -1,4 +1,4 @@
-# Remove French patch for WTTG3 (beginner-friendly).
+﻿# Remove French patch for WTTG3 (beginner-friendly).
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "beginner_common.ps1")
 

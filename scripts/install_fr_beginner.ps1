@@ -1,4 +1,4 @@
-# Install French patch for WTTG3 (beginner-friendly).
+﻿# Install French patch for WTTG3 (beginner-friendly).
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "beginner_common.ps1")
 
@@ -19,7 +19,7 @@ try {
     if ($compat.Status -eq "Mismatch") {
         Write-Host ""
         $force = Read-Host "Installer QUAND MEME malgre le mauvais BuildID ? (O/N)"
-        if ($force -notmatch '^[oOyY]') { throw "Annule — telecharge une release FR pour ton BuildID Steam." }
+        if ($force -notmatch '^[oOyY]') { throw "Annule - telecharge une release FR pour ton BuildID Steam." }
         Write-Host "Installation forcee (risque de crash)." -ForegroundColor Yellow
     } elseif ($compat.Status -eq "Unknown") {
         Write-Host ""

@@ -1,4 +1,4 @@
-# Shared helpers for beginner install / uninstall (French prompts).
+﻿# Shared helpers for beginner install / uninstall (French prompts).
 $ErrorActionPreference = "Stop"
 
 function Write-Title([string]$Text) {
@@ -194,7 +194,7 @@ function Show-SteamBuildCheck([hashtable]$Info) {
     Write-Host "Compatibilite Steam (BuildID)" -ForegroundColor Cyan
     Write-Host ("  Pack FR          : v{0}" -f $Info.PackVersion)
     Write-Host ("  BuildID attendu  : {0}" -f $(if ($Info.Expected) { $Info.Expected } else { "(inconnu dans le pack)" }))
-    Write-Host ("  BuildID detecte  : {0}" -f $(if ($Info.Installed) { $Info.Installed } else { "(introuvable — copie non Steam ?)" }))
+    Write-Host ("  BuildID detecte  : {0}" -f $(if ($Info.Installed) { $Info.Installed } else { "(introuvable - copie non Steam ?)" }))
     if ($Info.Manifest) {
         Write-Host ("  Manifest         : {0}" -f $Info.Manifest)
     }
@@ -202,16 +202,16 @@ function Show-SteamBuildCheck([hashtable]$Info) {
     switch ($Info.Status) {
         "Match" {
             Write-Host ""
-            Write-Host "OK — Version du jeu compatible avec ce pack." -ForegroundColor Green
+            Write-Host "OK - Version du jeu compatible avec ce pack." -ForegroundColor Green
         }
         "Mismatch" {
             Write-Host ""
-            Write-Host "ATTENTION — BuildID different : ce pack peut CRASH au lancement." -ForegroundColor Yellow
-            Write-Host "Telecharge une release FR rebuildée pour ta maj Steam, ou desinstalle si ca plante." -ForegroundColor Yellow
+            Write-Host "ATTENTION - BuildID different : ce pack peut CRASH au lancement." -ForegroundColor Yellow
+            Write-Host "Telecharge une release FR rebuildee pour ta maj Steam, ou desinstalle si ca plante." -ForegroundColor Yellow
         }
         default {
             Write-Host ""
-            Write-Host "INFO — Impossible de verifier le BuildID (pas de manifest Steam trouve)." -ForegroundColor Yellow
+            Write-Host "INFO - Impossible de verifier le BuildID (pas de manifest Steam trouve)." -ForegroundColor Yellow
             Write-Host "Si ce n'est pas l'install Steam officielle, le risque de crash est plus eleve." -ForegroundColor Yellow
         }
     }
