@@ -49,6 +49,8 @@ COPY_PREFIXES = (
     "BluePrints\\Cinema",
     "BluePrints\\Pawns",
     "BluePrints\\GameActors",
+    "BluePrints\\PawnSwitchers",
+    "BluePrints\\PlayerItems",
 )
 
 # Previously excluded when overlaying Desktop extract onto Steam.
@@ -114,6 +116,7 @@ RAW: dict[str, str] = {
     "Repair": "Réparer",
     "Attempt Defusal": "Tenter désamorçage",
     "Enter Panic Mode": "Mode panique",
+    "Enter Desk": "S'asseoir au bureau",
     "Head To Work": "Aller au travail",
     "Equip": "Équiper",
     "Flashlight": "Lampe torche",
@@ -137,6 +140,13 @@ RAW: dict[str, str] = {
     "Pause Music": "Musique en pause",
     "Game Audio": "Audio du jeu",
     "Title Music": "Musique du titre",
+    "Master Audio": "Audio principal",
+    "Browser & Files": "Navigateur et fichiers",
+    "Browser Resolution": "Résolution navigateur",
+    "Browser FPS": "FPS navigateur",
+    "GPU Acceleration": "Accélération GPU",
+    "(Requires Restart)": "(Redémarrage requis)",
+    "Pick Up": "Ramasser",
     "Quality": "Qualité",
     "Effects": "Effets",
     "Shading": "Ombrage",
@@ -298,23 +308,25 @@ RAW: dict[str, str] = {
     "Here is some DOS Coin to get you started.": "Voici un peu de DOS Coin pour commencer.",
     "Ok, I got them installed. Now what?": "Ok, c'est installé. Et maintenant ?",
     "Take this fetch link [VMFETCHURL] and put it into ShadowFetch to download a file onto your desktop. It'll breakdown how VirtMesh works.": (
-        "Prends ce lien fetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Il explique le fonctionnement de VirtMesh."
+        "Prends ce lien ShadowFetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. "
+        "Ça explique comment VirtMesh fonctionne."
     ),
     "Or you can open up VirtMesh and try to figure it out yourself.": (
         "Ou tu peux ouvrir VirtMesh et essayer de comprendre par toi-même."
     ),
     "Through VirtMesh hack, mount, then enter a computer. Once you get that done switch over to this desktop and I'll share a link to a Wiki Page that has all types of websites on it.": (
-        "Via VirtMesh : hack, monte, puis entre dans un ordinateur. Une fois fait, reviens sur ce bureau et je te partagerai un lien vers une page Wiki avec toutes sortes de sites."
+        "Via VirtMesh : pirater, monter, puis entre dans un ordinateur. Une fois fait, reviens sur ce bureau "
+        "et je te partagerai un lien vers une page Wiki avec toutes sortes de sites."
     ),
     "If what I'm saying doesn't make sense download and look at that document from the fetch link above.": (
-        "Si ce que je dis n'est pas clair, télécharge et lis le document du lien fetch ci-dessus."
+        "Si ce que je dis n'est pas clair, télécharge et lis le document du lien ShadowFetch ci-dessus."
     ),
     # Ronald wrap-up — FStrings combines exactes (une seule chaine par asset)
     "Alright. If you're still connected to that computer I'd urge you to disconnect from it.\r\n\r\nStaying connected to a hacked computer will eventually lock you out of it permanently. From here the easiest way to disconnect would be opening up VirtMesh through the app icon, then double clicking the circle in the center of the screen to exit it.\r\n\r\nLater on you'll be better off switching between multiple computers to avoid permanent lockouts.": (
         "Bon. Si tu es encore connecté à cet ordinateur, je te conseille fortement de te déconnecter.\r\n\r\n"
         "Rester connecté à un ordinateur piraté finit par t'en exclure définitivement. Le plus simple ici : "
         "ouvre VirtMesh via l'icône de l'appli, puis double-clique le cercle au centre de l'écran pour en sortir.\r\n\r\n"
-        "Plus tard, tu auras intérêt à alterner entre plusieurs ordinateurs pour éviter les blocages definitifs."
+        "Plus tard, tu auras intérêt à alterner entre plusieurs ordinateurs pour éviter les blocages définitifs."
     ),
     "This is the first Wiki Page:\r\n[WIKI]\r\n\r\nPut that link into A.N.N. to access a bunch of different Dark Net websites.": (
         "Voici la première page Wiki :\r\n[WIKI]\r\n\r\n"
@@ -325,12 +337,12 @@ RAW: dict[str, str] = {
         "Je te conseille fortement de le lire avant d'aller sur le Dark Net."
     ),
     "I reached out to some people who will contact you soon in CryptChat with more information, but unlike me they'll charge you for it.\r\n\r\nODDroot - Has information on hacks you'll face. \r\n\r\nGoggin - Has information on the people who will be trying to kill you tonight.\r\n\r\nAfter you've collected, then decrypted all 8 keys, send me the master key (each decrypted key placed in order by its index number, assembled together as a single key) to beat tonight's game. \r\n\r\nBut let's be real.. You are more than likely dead as fuck lol. \r\n\r\nGood luck! ": (
-        "J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement a moi ils te feront payer.\r\n\r\n"
-        "ODDroot - A des infos sur les hacks que tu vas rencontrer. \r\n\r\n"
+        "J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement à moi ils te feront payer.\r\n\r\n"
+        "ODDroot - A des infos sur les hacks que tu vas croiser. \r\n\r\n"
         "Goggin - A des infos sur les gens qui vont essayer de te tuer ce soir.\r\n\r\n"
-        "Quand tu auras collecté puis déchiffré les 8 clés, envoie-moi la master key "
-        "(chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule cle) pour gagner la partie de ce soir. \r\n\r\n"
-        "Mais soyons honnêtes.. T'es probablement deja mort a chier lol. \r\n\r\n"
+        "Une fois que t'as collecté puis déchiffré les 8 clés, envoie-moi la master key "
+        "(chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule clé) pour finir la partie de ce soir. \r\n\r\n"
+        "Mais soyons réalistes.. T'es très probablement déjà mort lol. \r\n\r\n"
         "Bonne chance ! "
     ),
     "I know who's coming for you tonight. Pay me [PRICE] DOS Coin and I'll link a file you can download off ShadowFetch that'll give you a fighting chance.": (
@@ -542,7 +554,10 @@ RAW: dict[str, str] = {
     # Difficulte
     "Must Complete Normal Mode": "Terminer le mode Normal d'abord",
     "- Perma Death\r\n- Good Luck": "- Mort permanente\r\n- Bonne chance",
-    "- No Perma Death\r\n- Challenging": "- Pas de mort permanente\r\n- Challenging",
+    "- No Perma Death\r\n- Challenging": "- Pas de mort permanente\r\n- Difficile",
+    "- Same as Normal \r\n- Perma Death\r\n- Experimental": (
+        "- Identique au Normal\r\n- Mort permanente\r\n- Expérimental"
+    ),
     # Cinema / messages hacker
     "I can't believe that fucking degenerate gambler won...": (
         "J'arrive pas a croire que ce putain de joueur dégénéré ait gagné..."
@@ -642,11 +657,14 @@ def recalculate_offsets(asset: dict) -> None:
 
 
 def should_copy(rel: Path) -> bool:
+    # Steam extract uses "Blueprints"; Desktop dump used "BluePrints".
+    # Compare case-insensitively so GameActors/Pawns are not skipped on Steam.
     s = str(rel).replace("/", "\\")
+    sl = s.lower()
     stem = s[: -len(rel.suffix)] if rel.suffix else s
-    if stem in EXCLUDE_FROM_PAK:
+    if any(stem.lower() == x.lower() for x in EXCLUDE_FROM_PAK):
         return False
-    return any(s == p or s.startswith(p + "\\") for p in COPY_PREFIXES)
+    return any(sl == p.lower() or sl.startswith(p.lower() + "\\") for p in COPY_PREFIXES)
 
 
 def run_gui(args: list[str]) -> None:

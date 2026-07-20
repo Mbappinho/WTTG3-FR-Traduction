@@ -8,6 +8,30 @@ Fan patch de localisation francaise **non officiel** pour *Welcome to the Game I
 
 Ce depot contient le **code source du pipeline de traduction** (scripts, docs, dictionnaires FR), **pas** le jeu.
 
+## Mise a jour du mod (joueurs) — a lire
+
+Apres **chaque mise a jour Steam** du jeu, la trad peut casser (textes EN, PDF EN, ou **crash** au lancement).
+
+### Mise a jour propre (recommandee)
+
+1. Ferme le jeu completement.
+2. Telecharge la **derniere** release sur GitHub (pas une vieille v1.2.x si une plus recente existe).
+3. `DESINSTALLER.bat` (meme dossier de jeu) — retire l’ancien `FR_P` + restaure les PDF EN.
+4. `INSTALLER.bat` avec le **nouveau** zip.
+5. Relance le jeu.
+
+Ne te contente pas de recopier un vieux zip par-dessus : apres une maj du jeu, l’ancien pak FR peut etre **incompatible**.
+
+### Si le jeu crash au lancement
+
+1. `DESINSTALLER.bat` **immediatement** (ou supprime `WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*`).
+2. Verifie que le jeu **vanilla** (sans mod) demarre.
+3. Installe uniquement la **derniere** release FR rebuildée pour cette maj Steam.  
+   Reinstaller un vieux pack ne suffit en general **pas**.
+4. Si aucune release a jour n’existe encore : joue sans mod jusqu’a ce qu’elle sorte.
+
+Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/INSTALL.md](docs/INSTALL.md)
+
 ## Contenu traduit (pack Release)
 
 - Menus / UI / inventaire / DarkDrop (accents FR via FString UTF-16)
@@ -18,7 +42,8 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
 - HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)
-- **Steam :** le pack Release est buildé depuis l’extract Steam (v1.2.2+) — ne pas overlay un build Desktop sur Steam
+- **Steam :** le pack Release (v1.2.3+) est buildé depuis l’extract Steam — ne pas overlay un build Desktop sur Steam
+- **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 
 ## Structure du code
 
@@ -44,7 +69,7 @@ Details : [docs/INSTALL.md](docs/INSTALL.md)
 
 ## Build local (avance)
 
-Prerequis : Python 3, .NET 8 (UAssetGUI), `tools/retoc`, `tools/UAssetGUI`, `source/Mappings.usmap`, extracts dans `source/legacy_ui`.
+Prerequis : Python 3, .NET 8 (UAssetGUI), `tools/retoc`, `tools/UAssetGUI`, `source/Mappings.usmap`, extract **Steam** dans `source/legacy_ui_steam` (voir `docs/INSTALL.md`).
 
 ```powershell
 pip install -r requirements.txt

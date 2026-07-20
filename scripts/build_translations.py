@@ -132,7 +132,8 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ("Breakdown", "Analyse"),
     ("Instructions", "Instructions"),
     ("SUBJECT: ", "SUJET : "),
-    ("TEST HACK", "TESTER LE HACK"),
+    # Keep EN label: game bridge may require exact "TEST HACK" to launch the minigame.
+    # ("TEST HACK", "TESTER LE HACK"),
     ("The Kidnapper", "The Kidnapper"),
     ("The Breather", "The Breather"),
     # VirtMesh

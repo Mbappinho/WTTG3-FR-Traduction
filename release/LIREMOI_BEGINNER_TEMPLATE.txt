@@ -7,18 +7,34 @@ CONTENU
 - PDF in-game en francais
 - Achievements FR si le dossier steam_settings existe
 
-INSTALLER
+INSTALLER (premiere fois)
 1. Ferme le jeu completement.
 2. Double-clique sur INSTALLER.bat
 3. Choisis le dossier du jeu (ou colle le chemin)
 4. Confirme avec O
 5. Relance le jeu
 
-DESINSTALLER (bug / retour anglais)
+METTRE A JOUR LE MOD (proprement)
+1. Ferme le jeu.
+2. Telecharge la DERNIERE release sur GitHub
+   (https://github.com/Mbappinho/WTTG3-FR-Traduction/releases)
+3. Double-clique sur DESINSTALLER.bat (ancien pack ou celui-ci)
+4. Double-clique sur INSTALLER.bat du NOUVEAU zip
+5. Relance le jeu
+Ne te contente pas de coller un vieux zip par-dessus apres une MAJ Steam.
+
+DESINSTALLER (bug / retour anglais / crash)
 1. Ferme le jeu.
 2. Double-clique sur DESINSTALLER.bat
 3. Meme dossier de jeu
 4. Confirme avec O
+
+SI LE JEU CRASH AU LANCEMENT
+1. DESINSTALLER.bat tout de suite (ou supprime WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*)
+2. Verifie que le jeu sans mod demarre
+3. Installe uniquement la derniere release FR (rebuild pour la maj Steam actuelle)
+   Reinstaller un vieux pack ne suffit en general PAS
+4. Si aucune release a jour : joue sans mod en attendant
 
 OU TROUVER LE DOSSIER DU JEU
 Steam : clic droit sur le jeu > Gerer > Parcourir les fichiers locaux
@@ -31,8 +47,11 @@ NOTES
 - Les sites web Dark Net restent en anglais (volontaire).
 - Si Windows bloque le .bat : "Plus d'infos" > "Executer quand meme"
 - Si erreur "jeu ouvert" : ferme WTTGSD dans le Gestionnaire des taches
-- Apres une MAJ Steam, reinstalle le pack si la trad disparait
-- v1.2.2+ : pack compatible Steam officiel (corrige le crash Bad export index)
+- Pack v1.2.3+ : buildé pour le jeu Steam officiel (pas une copie Desktop / autre dump)
+- Apres une MAJ Steam :
+  1. Trad / PDF disparus sans crash → desinstaller puis reinstaller la derniere release
+  2. CRASH (Bad export index / ObjectSerializationError) → DESINSTALLER, puis
+     attendre / installer une nouvelle release FR rebuildée (pas le vieux zip)
 
 IMPORTANT
 Garde ce dossier entier. Ne separe pas INSTALLER.bat du dossier fichiers\

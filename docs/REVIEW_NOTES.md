@@ -3,13 +3,19 @@
 ## P0 (fait, à revalider in-game)
 
 - PDF VirtMesh / Hacks / Threats : traduits ; noms techniques (INJ3KT-R, K3RN3LC0MP1L3R, sujets) **conservés**.
+- **TEST HACK** (PDF) : bug **vanilla** confirmé (même sans mod FR) — pas un souci de trad.
+- Settings restants : `Master Audio`, `Browser & Files` / Resolution / FPS / GPU Acceleration / Requires Restart.
+- Difficulté : bullets Normal+ (`Same as Normal` / `Perma Death` / `Experimental`) + `Challenging`.
+- **Crash Steam post-MAJ** (`LeetMode2` Bad export index, 2026-07-20) : re-extract `legacy_ui_steam` + rebuild FR_P (cook a changé, ex. LeetMode2 3406→3410).
 - **Bug fix** : `Threats/index.html` avait été traduit en `Menaces/index.html` (Agent_Goggin / ACRS) → PDF Threats en `ERR_FILE_NOT_FOUND`. Remis à `Threats/index.html` ; garde-fou chemins `*.html` dans merge + build.
 - Labels Contestants (PLAYER NAME, LOCATION, etc.).
 - Achievements (27) dans `work/achievements_fr.json`.
 - **Accents UI** : dict `RAW` avec accents ; patch en FString **UTF-16** (pas cp1252 — les glyphes disparaissaient in-game).
 - **Boutons / HUD interaction** : `BUY`→ACHETER ; DARE Confirm/Connect/Checkout ; `Hide`→Se cacher ; portes Open/Close/Lock/Unlock ; Turn On/Off ; Peep, Repair, Attempt Defusal, Enter Panic Mode, Head To Work (`BluePrints\GameActors`) ; VirtMesh `MONTER`/`DÉMONTER`/`MINER`/`DÉMINER`/`PIRATER`/`Entrer`.
 - **Prompts [RMB]** : `[RMB] Exit` / `- Exit` → `[Clic droit] Quitter` ; Get Up From Desk ; Leave Computer ; `Exit To VertMesh` → Passer à VirtMesh.
-- **Crash Steam** (`Bad export index`) : extract Desktop ≠ cook Steam (ex. Settings 10081 vs 11249). Fix = `source/legacy_ui_steam` + rebuild. Voir `docs/UI_PATCH_CRASH.md`.
+- **Crash Steam** (`Bad export index`) : extract Desktop ≠ cook Steam. Fix = `legacy_ui_steam` + rebuild (v1.2.2).  
+  **MAJ Steam future** : même risque si le cook change → re-extract + rebuild (pas seulement réinstaller l’ancien zip). Voir `docs/UI_PATCH_CRASH.md`.
+- **Prompts monde EN après rebuild Steam** : casse dossier `Blueprints` vs `BluePrints` excluait GameActors/Pawns du pak ; filtre case-insensitive + `PawnSwitchers` / `Enter Desk`.
 - **HUD mouvement** (`Move`/`Run`/`Inventory`/`Pick Up`/`Crouch`) : **confirmé non patchable** — labels dérivés des noms `IA_Default_*` (Enhanced Input), pas de FString. CSV annotés `unpatchable_inputaction`. Pas de rename IA (casse les références IMC).
 
 ## P1

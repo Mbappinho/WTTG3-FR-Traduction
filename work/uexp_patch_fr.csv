@@ -30,6 +30,7 @@ Peep,Regarder,4,8
 Repair,Réparer,6,7
 Attempt Defusal,Tenter désamorçage,15,18
 Enter Panic Mode,Mode panique,16,12
+Enter Desk,S'asseoir au bureau,10,19
 Head To Work,Aller au travail,12,16
 Equip,Équiper,5,7
 Flashlight,Lampe torche,10,12
@@ -53,6 +54,13 @@ View Distance,Distance d'affichage,13,20
 Pause Music,Musique en pause,11,16
 Game Audio,Audio du jeu,10,12
 Title Music,Musique du titre,11,16
+Master Audio,Audio principal,12,15
+Browser & Files,Navigateur et fichiers,15,22
+Browser Resolution,Résolution navigateur,18,21
+Browser FPS,FPS navigateur,11,14
+GPU Acceleration,Accélération GPU,16,16
+(Requires Restart),(Redémarrage requis),18,20
+Pick Up,Ramasser,7,8
 Quality,Qualité,7,7
 Effects,Effets,7,6
 Shading,Ombrage,7,7
@@ -208,10 +216,10 @@ Open Dark Drop to download both VirtMesh and ShadowFetch.,Ouvre Dark Drop pour t
 "Oh, wait, that's right. Wade did tell me you have a gambling problem, and you probably have no DOSCoin. ","Ah oui, c'est vrai. Wade m'a dit que tu as un problème de jeu, et que tu n'as probablement pas de DOSCoin. ",104,107
 Here is some DOS Coin to get you started.,Voici un peu de DOS Coin pour commencer.,41,40
 "Ok, I got them installed. Now what?","Ok, c'est installé. Et maintenant ?",35,35
-Take this fetch link [VMFETCHURL] and put it into ShadowFetch to download a file onto your desktop. It'll breakdown how VirtMesh works.,Prends ce lien fetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Il explique le fonctionnement de VirtMesh.,135,148
+Take this fetch link [VMFETCHURL] and put it into ShadowFetch to download a file onto your desktop. It'll breakdown how VirtMesh works.,Prends ce lien ShadowFetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Ça explique comment VirtMesh fonctionne.,135,152
 Or you can open up VirtMesh and try to figure it out yourself.,Ou tu peux ouvrir VirtMesh et essayer de comprendre par toi-même.,62,65
-"Through VirtMesh hack, mount, then enter a computer. Once you get that done switch over to this desktop and I'll share a link to a Wiki Page that has all types of websites on it.","Via VirtMesh : hack, monte, puis entre dans un ordinateur. Une fois fait, reviens sur ce bureau et je te partagerai un lien vers une page Wiki avec toutes sortes de sites.",178,171
-If what I'm saying doesn't make sense download and look at that document from the fetch link above.,"Si ce que je dis n'est pas clair, télécharge et lis le document du lien fetch ci-dessus.",99,88
+"Through VirtMesh hack, mount, then enter a computer. Once you get that done switch over to this desktop and I'll share a link to a Wiki Page that has all types of websites on it.","Via VirtMesh : pirater, monter, puis entre dans un ordinateur. Une fois fait, reviens sur ce bureau et je te partagerai un lien vers une page Wiki avec toutes sortes de sites.",178,175
+If what I'm saying doesn't make sense download and look at that document from the fetch link above.,"Si ce que je dis n'est pas clair, télécharge et lis le document du lien ShadowFetch ci-dessus.",99,94
 "Alright. If you're still connected to that computer I'd urge you to disconnect from it.
 
 Staying connected to a hacked computer will eventually lock you out of it permanently. From here the easiest way to disconnect would be opening up VirtMesh through the app icon, then double clicking the circle in the center of the screen to exit it.
@@ -220,7 +228,7 @@ Later on you'll be better off switching between multiple computers to avoid perm
 
 Rester connecté à un ordinateur piraté finit par t'en exclure définitivement. Le plus simple ici : ouvre VirtMesh via l'icône de l'appli, puis double-clique le cercle au centre de l'écran pour en sortir.
 
-Plus tard, tu auras intérêt à alterner entre plusieurs ordinateurs pour éviter les blocages definitifs.",439,406
+Plus tard, tu auras intérêt à alterner entre plusieurs ordinateurs pour éviter les blocages définitifs.",439,406
 "This is the first Wiki Page:
 [WIKI]
 
@@ -239,17 +247,17 @@ After you've collected, then decrypted all 8 keys, send me the master key (each 
 
 But let's be real.. You are more than likely dead as fuck lol. 
 
-Good luck! ","J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement a moi ils te feront payer.
+Good luck! ","J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement à moi ils te feront payer.
 
-ODDroot - A des infos sur les hacks que tu vas rencontrer. 
+ODDroot - A des infos sur les hacks que tu vas croiser. 
 
 Goggin - A des infos sur les gens qui vont essayer de te tuer ce soir.
 
-Quand tu auras collecté puis déchiffré les 8 clés, envoie-moi la master key (chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule cle) pour gagner la partie de ce soir. 
+Une fois que t'as collecté puis déchiffré les 8 clés, envoie-moi la master key (chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule clé) pour finir la partie de ce soir. 
 
-Mais soyons honnêtes.. T'es probablement deja mort a chier lol. 
+Mais soyons réalistes.. T'es très probablement déjà mort lol. 
 
-Bonne chance ! ",542,544
+Bonne chance ! ",542,541
 I know who's coming for you tonight. Pay me [PRICE] DOS Coin and I'll link a file you can download off ShadowFetch that'll give you a fighting chance.,Je sais qui vient te chercher ce soir. Paie-moi [PRICE] DOS Coin et je te file un lien ShadowFetch qui te donnera une chance de t'en sortir.,150,140
 If you want information on the hacks you'll need to counter pay me [PRICE] DOS Coin and I'll link a file you can download off ShadowFetch,"Si tu veux des infos sur les hacks a contrer, paie-moi [PRICE] DOS Coin et je te file un lien à télécharger sur ShadowFetch",137,123
 Was that a tip? Doesn't matter if it wasn't you're not getting that back.,"C'était un pourboire ? Peu importe, tu ne récupères pas ca.",73,59
@@ -410,7 +418,12 @@ Must Complete Normal Mode,Terminer le mode Normal d'abord,25,31
 - Bonne chance",26,33
 "- No Perma Death
 - Challenging","- Pas de mort permanente
-- Challenging",31,39
+- Difficile",31,37
+"- Same as Normal 
+- Perma Death
+- Experimental","- Identique au Normal
+- Mort permanente
+- Expérimental",48,56
 I can't believe that fucking degenerate gambler won...,J'arrive pas a croire que ce putain de joueur dégénéré ait gagné...,54,67
 Pay off the rent he owes and make sure the payment's in his name. Keeping him in that shithole will make it easy to find him if we're given a reason,Paie le loyer qu'il doit et assure-toi que le paiement est à son nom. Le garder dans ce trou a rats facilitera de le retrouver si on a une raison,148,145
 "Also, you can cut surveillance to focus on the big task. I assume you know what...","Aussi, tu peux couper la surveillance pour te concentrer sur la grosse tâche. Je suppose que tu vois ce que...",82,110
@@ -432,15 +445,15 @@ Once you have found both hashes and decrypted them into the key fragments, you m
 
 Pour être un joueur dans le jeu principal, tu dois terminer la session d'essai de ce soir, et ce sera pas une promenade de santé !
 
-Voici le lien vers ta page wiki :
+Voici le lien vers ta page Wiki :
 
 [WIKI]
 
-Tu dois parcourir les sites de ce wiki et trouver deux hashes cachés, mais les choses sont différentes de ce que tu as pu entendre. Au lieu de juste trouver les hashes et me les donner directement, tu dois les déchiffrer en fragment de clé.
+Tu dois parcourir les sites de ce wiki et trouver deux hashes cachés, mais les choses sont différentes de ce que tu as pu entendre. Au lieu de juste trouver les hashes et me les donner directement, tu dois les déchiffrer en fragments de clé.
 
-Pour déchiffrer les hashes en clés, un agent spécial s'en chargera pour toi.. et ils sont pas donnés ! Normalement tu devrais trouver ces agents toi-même, mais ce soir j'ai déjà choisi un agent qui va te contacter directement. Tu devrais avoir de ses nouvelles bientôt. 
+Pour déchiffrer les hashes en clés, un agent spécial s'en chargera pour toi.. et c'est pas donné ! Normalement tu devrais trouver ces agents toi-même, mais ce soir j'ai déjà choisi un agent qui va te contacter directement. Tu devrais avoir de ses nouvelles bientôt. 
 
-Une fois que tu auras trouvé les deux hashes et les auras déchiffrés en fragments de clé, tu dois les combiner selon l'association de leur index. Envoie-moi la clé compilée et tu gagnes !",940,951
+Une fois que tu auras trouvé les deux hashes et les auras déchiffrés en fragments de clé, tu dois les combiner selon l'ordre de leur index. Envoie-moi la clé assemblée et tu gagnes !",940,943
 I'm working to find a video that got scrubbed from the internet about a decade ago. In it this scientist worked out a device to capture and recycle the excess heat and kinetic motions of his custom 3D printer. It would recharge an external battery bank in the process of a normal print. It was so efficient at doing so no additional power source was needed. Reports claimed the government killed him. A few believe he's still out there. Some are cognizant enough to pick up on this being entirely fake and improbable because they have a grade level education. Today might have been a day where you learned something about yourself ;),Je cherche une vidéo effacée du net y a environ dix ans. Dedans un scientifique avait inventé un appareil pour capturer et recycler la chaleur et le mouvement cinétique de son imprimante 3D custom. Ça rechargeait une batterie externe pendant une impression normale. Tellement efficace qu'aucune autre source d'énergie n'était nécessaire. Des rapports disent que le gouvernement l'a tué. Certains croient qu'il est encore dehors. D'autres ont assez de cervelle pour voir que c'est entièrement faux et improbable parce qu'ils ont un niveau scolaire de base. Aujourd'hui t'as peut-être appris un truc sur toi ;),633,608
 "The dispatched hitman was unable to eliminate [TARGET]. Those running The Game force us to follow a fair play standard, which disallows our deployed hitman from hunting your target indefinitely.
 
@@ -667,9 +680,9 @@ Si tu veux doxer un de ces autres joueurs, je pourrai t'aider dans un moment. Ç
 "NEWSFLASH: leave your friendly demeanor at the door when you enter this chat. No one gives a fuck about manners, pleasantries, or any of that ""thank you so much"" bullshit. Typing anything even close to that will put a big fucking mark on your back. I made the mistake, avoid doing the same","FLASH INFO : laisse ta politesse à la porte en entrant dans ce chat. Personne en a rien à foutre des manières, des politesses, ou de ce genre de « merci beaucoup » de merde. Taper quoi que ce soit dans le genre te mettra une grosse cible dans le dos. J'ai fait l'erreur, évite de faire pareil",289,292
 "If you have their private info we can kill em. Assuming you've obtained a player's private information through doxxing we're able to deploy one of our many hitmen to eliminate their existence. 
 
-Price of doing so will cost [PRICE] DOS Coin. Secure our service by sending the money over.","Si t'as leurs infos privées on peut les buter. En supposant que t'as obtenu les infos privées d'un joueur via un dox, on peut déployer un de nos nombreux tueurs à gages pour éliminer leur existence. 
+Price of doing so will cost [PRICE] DOS Coin. Secure our service by sending the money over.","Si t'as leurs infos privées on peut les buter. En supposant que t'as obtenu les infos privées d'un joueur via un dox, on peut déployer un de nos nombreux tueurs à gages pour les faire disparaître. 
 
-Le prix pour ça coûtera [PRICE] DOS Coin. Sécurise notre service en envoyant le fric.",288,288
+Ça te coûtera [PRICE] DOS Coin. Envoie le fric pour confirmer.",288,263
 "This rep thing has to be funneling money back to the owner. It doesn't make any sense otherwise. Oh here's this thing I want, whooops can't buy it, you haven't dumped enough money in yet. Buy a bunch of stuff you don't need first to unlock access to BUY what you do. lol so fucking stupid","Ce truc de rep doit forcément renvoyer du fric au proprio. Ça a aucun sens autrement. Oh voilà le truc que je veux, oupsi tu peux pas l'acheter, t'as pas encore assez déversé de fric. Achète d'abord un tas de trucs dont t'as pas besoin pour débloquer l'accès à ACHETER ce que tu veux. lol tellement con",288,302
 "I hope researchers study the fans behind ""The Game"" one day. Would be very compelling to learn about these idiots and what positions they hold in their community. Imagine someone as intelligent as a neurosurgeon happened to be among the other losers rooting this trash programming on lol",J'espère que des chercheurs étudieront un jour les fans derrière « The Game ». Ce serait captivant d'apprendre qui sont ces idiots et quelles places ils tiennent dans leur communauté. Imagine qu'un type aussi intelligent qu'un neurochirurgien soit parmi les autres losers qui encouragent cette daube lol,287,303
 "My friends jokingly bought and downloaded some kind of brainwashing video the government created from this chat. It could be that I'm just paranoid, but I've been having really strange thoughts since then and my dreams are more vivid then they've ever been. make of that what you will","Mes potes ont acheté et téléchargé pour de rire une espèce de vidéo de lavage de cerveau créée par le gouvernement depuis ce chat. Peut-être que je suis juste parano, mais j'ai des pensées vraiment bizarres depuis et mes rêves sont plus vifs que jamais. faites-en ce que vous voulez",284,282
@@ -688,9 +701,9 @@ Sauf que ton deal avec Wade a envoyé tout ce paiement sur son portefeuille séc
 Tu devrais aller le voir. Il t'attend sur le parking devant.",282,285
 "Through VirtMesh hack, mount, then enter a computer. Once you get that done switch over to this desktop and I'll share a link to a Wiki Page that has all types of websites on it.
 
-If what I'm saying doesn't make sense download and look at that document from the fetch link above.","Via VirtMesh, hack, MONTER, puis entre dans un ordi. Une fois que c'est fait, repasse sur ce bureau et je te partagerai un lien vers une Wiki Page avec toutes sortes de sites.
+If what I'm saying doesn't make sense download and look at that document from the fetch link above.","Via VirtMesh : pirater, monter, puis entre dans un ordi. Une fois que c'est fait, repasse sur ce bureau et je te partagerai un lien vers une page Wiki avec toutes sortes de sites.
 
-Si ce que je dis a pas de sens, télécharge et lis ce document via le lien fetch ci-dessus.",281,269
+Si ce que je dis a pas de sens, télécharge et lis ce document via le lien ShadowFetch ci-dessus.",281,279
 ====== FULL SERVICE STOP ====== WE HAVE EVERYTHING YOU COULD POSSIBLY EVER NEED IN ONE SPOT ====== NO MINIMUM REP REQUIRED ====== EXTREMELY LOW PRICES FOR QUALITY PRODUCTS ====== ALWAYS SPEEDY TRANSACTION ====== PROOF AVAILABLE UPON REQUEST ====== PAID MEMBERSHIP REQUIRED ====== ,====== HALTE SERVICE COMPLET ====== ON A TOUT CE DONT TU POURRAIS AVOIR BESOIN AU MÊME ENDROIT ====== AUCUNE REP MINIMALE REQUISE ====== PRIX EXTRÊMEMENT BAS POUR DES PRODUITS DE QUALITÉ ====== TOUJOURS TRANSACTION RAPIDE ====== PREUVES DISPO SUR DEMANDE ====== ABONNEMENT PAYANT REQUIS ====== ,280,294
 "Cleaned up all the details I pulled on [TARGET] and put them in a single file. Retrieve the file through this fetch url.
 
@@ -745,9 +758,9 @@ this is going to sound fake but it's 100% true. I had considered paying to have 
 "this is the first chatroom I've seen where the chat gets routinely cleaned. while there's a loud minority of you that find it annoying it's something I think is great. Each time it clears I have to confirm to reconnect, don't you guys want active users in chat?","c'est le premier salon que je vois où le chat se clean régulièrement. même s'il y a une minorité bruyante qui trouve ça chiant je pense que c'est génial. À chaque clear je dois confirmer pour reconnecter, vous voulez pas des users actifs dans le chat ?",261,252
 "Courtesy of The Game, killing someone couldn't be cheaper. As long as you have their doxxed details one of our hitman can permanently pause the trouble their causing you.
 
-Your confirmation is required, specifically in the form of a [PRICE] DOS Coin payment.","Courtoisie de The Game : tuer quelqu'un n'a jamais été aussi bon marché. Tant que t'as leurs détails doxés, un de nos tueurs à gages peut mettre définitivement en pause les emmerdes qu'ils te causent.
+Your confirmation is required, specifically in the form of a [PRICE] DOS Coin payment.","Merci The Game : tuer quelqu'un n'a jamais été aussi bon marché. Tant que t'as leurs détails doxés, un de nos tueurs à gages peut régler définitivement les emmerdes qu'ils te causent.
 
-Ta confirmation est requise, sous la forme précise d'un paiement de [PRICE] DOS Coin.",260,289
+Ta confirmation est requise, sous la forme précise d'un paiement de [PRICE] DOS Coin.",260,272
 Just learned that one of the frequent users here is truly vile piece of shit that deserves to be exiled. I'm posting this from a throwaway account and will only reveal my identity to proven staff members. Either this person gets removed or I permanently leave.,"Je viens d'apprendre qu'un des habitués d'ici est vraiment une merde vile qui mérite l'exil. Je poste depuis un throwaway et je révélerai mon identité uniquement à du staff prouvé. Soit cette personne est virée, soit je me casse pour de bon.",260,241
 Desperate to finally meet my true love after searching far and wide myself for her location I paid for assistance to finally see her beautiful skin in person. Needless to say we're most certainly in love and she's beginning to understand what our future holds,"Désespéré de enfin rencontrer mon vrai amour après l'avoir cherchée partout, j'ai payé pour de l'aide et enfin voir sa belle peau en vrai. Inutile de dire qu'on est clairement amoureux et qu'elle commence à comprendre ce que notre avenir réserve",259,245
 "I'm not going to green light that hit, since [TARGET] is already contending with another hitman. It's just not something that we do. So choose any other player to kill or hold off for now and check back in with their doxxed details again, assuming they live.","Je vais pas valider ce hit, puisque [TARGET] est déjà aux prises avec un autre tueur à gages. C'est juste pas un truc qu'on fait. Donc choisis n'importe quel autre joueur à tuer ou attends pour l'instant et reviens avec leurs détails doxés, en supposant qu'ils survivent.",258,271
@@ -839,9 +852,9 @@ Il te faudra attendre un moment avant de pouvoir lancer un autre contrat via not
 my first time on the dark net and came here to try and find a site to buy guns. About a minute after I posted there had to be 20 or more messages in my inbox with options for different sites. Don't sleep on asking for stuff in here,ma première fois sur le dark net et je suis venu ici pour trouver un site pour acheter des armes. Environ une minute après mon post y avait forcément 20 messages ou plus dans ma boîte avec des options de sites différents. Dormez pas sur le fait de demander des trucs ici,231,270
 "There's nothing wrong with paying your way through The Game. A preferred hitman will be connected to your request via the doxxed player details you send us. 
 
-Prior to sharing those details send a payment of [PRICE] DOS Coin.","Y a rien de mal à se payer un passage dans The Game. Un tueur à gages privilégié sera relié à ta demande via les détails doxés du joueur que tu nous envoies. 
+Prior to sharing those details send a payment of [PRICE] DOS Coin.","Y a rien de mal à se payer un passage dans The Game. Un tueur à gages sera assigné à ta demande via les détails doxés du joueur que tu nous envoies. 
 
-Avant de partager ces détails, envoie un paiement de [PRICE] DOS Coin.",227,232
+Avant de partager ces détails, envoie un paiement de [PRICE] DOS Coin.",227,223
 "If you haven't heard I'm donating my entire 10,000+ dark net video collection to one lucky user. It's very easy to enter. This collection has made me a millionaire many times over and YOU can do the same. Contact me to enter.",Si t'as pas entendu je donne toute ma collection de +10 000 vidéos dark net à un user chanceux. C'est très simple de participer. Cette collection m'a rendu millionnaire plusieurs fois et TOI tu peux faire pareil. Contacte-moi pour entrer.,225,238
 QUICK I AM GIVING THE FIRST PERSON TO SEND ME mackUNLOAD_005.mp4 EVERYTHING I HAVE IN MY WALLET. THIS IS NOT A DRILL. I WILL LITERALLY GIVE YOU ZERO DOS COIN. I AM UNSURE YOU HAVE THE ABILITY TO COMPLETE THIS TASK. GOOD LUCK.,VITE JE DONNE À LA PREMIÈRE PERSONNE QUI M'ENVOIE mackUNLOAD_005.mp4 TOUT CE QUE J'AI DANS MON WALLET. C'EST PAS UN EXERCICE. JE TE DONNERAI LITTÉRALEMENT ZÉRO DOS COIN. JE SUIS PAS SÛR QUE TU AIES LA CAPACITÉ DE FAIRE ÇA. BONNE CHANCE.,225,236
 "Sincerely from the bottom of my heart, thank you. I can't wait to let my son know that a mouth breathing, button mashing buffoon couldn't get him the dark net video he wanted for his birthday. Either send [VIDEO] or fuck off.","Sincèrement, du fond du cœur, merci. J'ai hâte de dire à mon fils qu'un clown bouche ouverte qui spam des boutons a pas pu lui dénicher la vidéo dark net qu'il voulait pour son anniv. Soit tu envoies [VIDEO], soit tu te casses.",225,227
@@ -892,7 +905,7 @@ Paiement nécessaire d'avance, [PRICE] DOS Coin.",211,229
 "Wrong. The cost is [PRICE] DOS Coin to decrypt, transfer it at once. If you lack the ability to do so I may also allow you to send a separate key. Maybe then its decryption price will be satisfactory to us both.","Non. Le coût pour déchiffrer c'est [PRICE] DOS Coin, vire-les tout de suite. Si tu peux pas, je peux aussi t'autoriser à envoyer une autre clé. Peut-être que son prix de déchiffrement nous arrangera tous les deux.",211,213
 "A friend showed me a video long ago that I can still remember years later. Its name escapes me, but if you have a bunch of files already send them to me and if it's there I'll tell you to get fucked idiot HAHA","Un pote m'a montré une vidéo y a longtemps et je m'en souviens encore des années après. Le nom m'échappe, mais si t'as déjà un tas de fichiers envoie-les-moi et si elle est dedans je te dirai d'aller te faire foutre idiot HAHA",209,226
 Decrypt key hashes with my service in 3 steps. 1) Send key 2) Pay price 3) Receive decrypted key. Service cost dependent on encryption strength. Only select encryption styles are compatible with my skill set.,Déchiffre des hashes de clé en 3 étapes. 1) Envoie la clé 2) Paie le prix 3) Reçois la clé déchiffrée. Tarif selon la force du chiffrement. Seuls certains types sont compatibles avec mon savoir-faire.,208,200
-"Okay, this is not what I asked you for. My side of things is frozen until you forward [PRICE] DOS Coin. Either do that or you can post some other key and that can be the one which gets decrypted. Your choice.","Ok, c'est pas ce que je t'ai demandé. Mon côté est gelé tant que tu m'envoies pas [PRICE] DOS Coin. Soit tu le fais, soit tu postes une autre clé et ce sera celle-là qui sera déchiffrée. À toi de voir.",208,201
+"Okay, this is not what I asked you for. My side of things is frozen until you forward [PRICE] DOS Coin. Either do that or you can post some other key and that can be the one which gets decrypted. Your choice.","Ok, c'est pas ce que je t'ai demandé. De mon côté c'est bloqué tant que tu m'envoies pas [PRICE] DOS Coin. Soit tu le fais, soit tu postes une autre clé et ce sera celle-là qui sera déchiffrée. À toi de voir.",208,208
 "Choose one of the hack options I have here. Whatever you pick will be used against a player and if it's more expensive that's because it's a more complicated hack. Send me money to select one.
 
 [HACK_LIST]","Choisis une des options de hack que j'ai ici. Ce que tu choisis sera utilisé contre un joueur, et si c'est plus cher c'est parce que le hack est plus complexe. Envoie-moi du fric pour en sélectionner un.
@@ -907,9 +920,9 @@ THIS IS NOT ENOUGH TO PURCHASE [SITE]. A SINGULAR PAYMENT OF [PRICE] IS NECESSAR
 ADMINISTRATION IS NOW REQUIRING EVERYONE VALIDATE THROUGH A SMALL TRANSACTION TO THIS ACCOUNT. FAILING TO VALIDATE WILL RESULT IN REMOVAL FROM THIS CHAT ROOM. IF REMOVED YOU WILL NOT BE ABLE TO REJOIN.,L'ADMINISTRATION EXIGE DÉSORMAIS QUE TOUT LE MONDE SE VALIDE VIA UNE PETITE TRANSACTION VERS CE COMPTE. SANS VALIDATION = EXPULSION DU SALON. SI T'ES VIRÉ TU POURRAS PAS REVENIR.,201,178
 "Take this fetch link [VMFETCHURL] and put it into ShadowFetch to download a file onto your desktop. It'll breakdown how VirtMesh works.
 
-Or you can open up VirtMesh and try to figure it out yourself.","Prends ce lien fetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Ça explique comment VirtMesh fonctionne.
+Or you can open up VirtMesh and try to figure it out yourself.","Prends ce lien ShadowFetch [VMFETCHURL] et mets-le dans ShadowFetch pour télécharger un fichier sur ton bureau. Ça explique comment VirtMesh fonctionne.
 
-Ou tu peux ouvrir VirtMesh et essayer de comprendre tout seul.",201,212
+Ou tu peux ouvrir VirtMesh et essayer de comprendre tout seul.",201,218
 "Thank you kindly for the gift. As said before it's [PRICE] to purchase [SITE]. There's no multiple payment stuff here, the full asking price must be transferred in a single go. Try again or move along.","Merci bien pour le cadeau. Comme dit avant, c'est [PRICE] pour acheter [SITE]. Pas de paiements multiples ici, le prix demandé doit être transféré d'un seul coup. Réessaie ou passe ton chemin.",201,192
 so it's been brought to my attention that there's a paid plug-in which filters out all the scammers from this chat and it's updated regularly. they really came up with a way to make a CHATROOM p2w lamo,donc on m'a dit qu'y a un plug-in payant qui filtre tous les arnaqueurs de ce chat et qu'il est mis à jour régulièrement. ils ont vraiment trouvé un moyen de rendre un SALON p2w mdr,201,181
 "I do indeed possess the tools necessary to decrypt that key. Firstly, transfer [PRICE] DOS Coin to me, then wait, the steps will take me a moment. I'll initiate when the funds have reached my wallet.","Je possède bien les outils nécessaires pour déchiffrer cette clé. D'abord, transfère-moi [PRICE] DOS Coin, puis attends, les étapes me prendront un moment. Je lance quand les fonds auront atteint mon portefeuille.",199,213
@@ -1811,7 +1824,7 @@ Thank you so much for the free DOSCoin. Now send the URL to [SITE] like I asked 
 are you dumb? I need a PDF file containing information on the player you want killed,t'es con ? J'ai besoin d'un fichier PDF avec les infos du joueur que tu veux faire tuer,84,87
 trouble sport manager admit someone mean describe citizen far walk always not weight,trouble sport manager admets quelqu'un méchant décrire citoyen loin marche toujours pas poids,84,93
 $$$$ EZ MONEY $$$$ SEND 20 DOS Coin -> WAIT ... -> GET 50 DOS Coin. SIMPLE. GO NOW!,$$$$ ARGENT FACILE $$$$ ENVOIE 20 DOS Coin -> ATTENDS ... -> REÇOIS 50 DOS Coin. SIMPLE. GO MAINTENANT !,83,104
-Got it all. I will share a fetch link in a bit that has all their personal details.,J'ai tout. Je partagerai un lien fetch dans un moment avec tous leurs détails perso.,83,84
+Got it all. I will share a fetch link in a bit that has all their personal details.,J'ai tout. Je partagerai un lien ShadowFetch dans un moment avec tous leurs détails perso.,83,90
 How do you give rep to people? Does it happen automatically and can I write a note?,Comment on donne de la rep aux gens ? C'est auto et on peut écrire une note ?,83,77
 I've got it. The process has started. Once complete the decrypted key will be sent.,"Je l'ai. Le processus a démarré. Une fois terminé, la clé déchiffrée sera envoyée.",83,82
 If you don't have [PRICE] DOS Coin to send don't even bother trying to buy from me.,"Si t'as pas [PRICE] DOS Coin à envoyer, même pas la peine d'essayer d'acheter chez moi.",83,87

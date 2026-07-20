@@ -41,6 +41,16 @@ python scripts\build_ui_uassetgui_patch.py
 
 `build_ui_uassetgui_patch.py` préfère `source/legacy_ui_steam` s’il existe.
 
+## MAJ Steam (maintenance — lire avant de paniquer)
+
+Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
+
+- **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
+- **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
+- Détail + historique : [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md)
+
+Ne pas mélanger : pack buildé Desktop sur Steam (ou l’inverse) = même famille de crash.
+
 ## Pack debutant (recommande pour partager)
 
 Apres un build UI + PDF, genere le dossier a zipper :
@@ -58,6 +68,20 @@ Sortie : `release\WTTG3-FR-Beginner\`
 | `DESINSTALLER.bat` | Double-clic = retirer FR / PDF EN |
 
 Le script demande le dossier du jeu (detection auto si possible). Fermer le jeu avant.
+
+## Mise a jour du pack (joueurs)
+
+Procedure propre apres une **MAJ Steam** ou une **nouvelle release FR** :
+
+1. Fermer le jeu.
+2. `DESINSTALLER.bat` (retire `FR_P` + remet les PDF EN de backup).
+3. Telecharger / dezipper la **derniere** release GitHub.
+4. `INSTALLER.bat` (repose `FR_P` + PDF FR + achievements si presents).
+5. Relancer.
+
+**Crash au boot ?** → desinstaller tout de suite (`DESINSTALLER.bat`), confirmer que vanilla marche, puis installer **seulement** une release rebuildée pour la maj en cours. Un vieux zip ne “répare” en general pas un cook Steam change. Voir aussi [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md).
+
+**PDF revenus en anglais sans crash ?** → Steam a souvent ecrase `RawFiles/PDFS` : reinstaller la derniere release (etape desinstall + install ci-dessus).
 
 ## Appliquer (dev / avance)
 
@@ -101,6 +125,12 @@ Les dialogues CryptChat doivent matcher la **FString exacte** du `.uexp` (souven
 Les FString du type `Threats/index.html`, `Hacks/index.html` sont des **chemins** vers `RawFiles/PDFS/…`.  
 Les traduire (ex. `Menaces/index.html`) provoque `ERR_FILE_NOT_FOUND` in-game.  
 Le merge ACRS et `build_ui_uassetgui_patch.py` forcent l’identité EN=FR pour ces chemins.
+
+## PDF Hacks — bouton `TEST HACK`
+
+Le bouton appelle `HackClick` → `LaunchHackClicked`.  
+Traduire le libellé n’a **pas** été la cause : le mini-jeu de test **ne marche pas non plus en vanilla** (confirmé 2026-07-20).  
+On laisse le libellé en **`TEST HACK`** (EN) par prudence ; ce n’est pas un bug du mod FR.
 
 ## Limites connues (pas de FString extractible)
 
