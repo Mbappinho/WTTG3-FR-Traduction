@@ -13,6 +13,20 @@ try {
     $pack = Get-PackRoot
     $game = Select-GameRoot
 
+    $compat = Test-SteamBuildCompatibility $game $pack
+    Show-SteamBuildCheck $compat
+
+    if ($compat.Status -eq "Mismatch") {
+        Write-Host ""
+        $force = Read-Host "Installer QUAND MEME malgre le mauvais BuildID ? (O/N)"
+        if ($force -notmatch '^[oOyY]') { throw "Annule — telecharge une release FR pour ton BuildID Steam." }
+        Write-Host "Installation forcee (risque de crash)." -ForegroundColor Yellow
+    } elseif ($compat.Status -eq "Unknown") {
+        Write-Host ""
+        $cont = Read-Host "Continuer sans verification BuildID ? (O/N)"
+        if ($cont -notmatch '^[oOyY]') { throw "Annule." }
+    }
+
     $paksSrc = Join-Path $pack "fichiers\paks"
     $paksDst = Join-Path $game "WTTGSD\Content\Paks"
     $pdfSrc = Join-Path $pack "fichiers\pdfs"
@@ -25,7 +39,7 @@ try {
     Write-Host "Installation vers :" -ForegroundColor Green
     Write-Host "  $game"
     Write-Host ""
-    $ok = Read-Host "Confirmer ? (O/N)"
+    $ok = Read-Host "Confirmer l'installation ? (O/N)"
     if ($ok -notmatch '^[oOyY]') { throw "Annule." }
 
     Write-Host "Copie du mod UI (FR_P)..."

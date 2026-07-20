@@ -65,8 +65,9 @@ Sortie : `release\WTTG3-FR-Beginner\`
 | Fichier | Role |
 |---------|------|
 | `LIREMOI.txt` | Mode d'emploi |
-| `INSTALLER.bat` | Double-clic = installer FR |
+| `INSTALLER.bat` | Double-clic = installer FR (+ check BuildID Steam) |
 | `DESINSTALLER.bat` | Double-clic = retirer FR / PDF EN |
+| `fichiers/steam_target.json` | BuildID Steam cible du pack (généré depuis `release/steam_target.json`) |
 
 Le script demande le dossier du jeu (detection auto si possible). Fermer le jeu avant.
 

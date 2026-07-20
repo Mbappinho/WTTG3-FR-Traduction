@@ -16,7 +16,8 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 | **Steam BuildID** | **`24303741`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
-Si ton BuildID Steam est different → crash possible → `DESINSTALLER.bat` puis attendre / installer une release FR pour **ce** build. Details : [docs/STEAM_COMPAT.md](docs/STEAM_COMPAT.md).
+`INSTALLER.bat` **detecte automatiquement** ton BuildID et indique si le pack est compatible.  
+Si different → crash possible → telecharge une release FR pour **ce** build. Details : [docs/STEAM_COMPAT.md](docs/STEAM_COMPAT.md).
 
 ## Mise a jour du mod (joueurs) — a lire
 

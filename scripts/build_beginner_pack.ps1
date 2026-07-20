@@ -30,6 +30,12 @@ Copy-Item (Join-Path $pdfEn "*") (Join-Path $out "fichiers\pdfs_en_backup") -Rec
 if (Test-Path $achFr) { Copy-Item $achFr (Join-Path $out "fichiers\achievements_fr.json") -Force }
 if (Test-Path $achEn) { Copy-Item $achEn (Join-Path $out "fichiers\achievements_en.json") -Force }
 
+$steamTarget = Join-Path $LocRoot "release\steam_target.json"
+if (-not (Test-Path $steamTarget)) {
+    throw "steam_target.json manquant : release\steam_target.json (BuildID Steam du pack)"
+}
+Copy-Item $steamTarget (Join-Path $out "fichiers\steam_target.json") -Force
+
 Copy-Item (Join-Path $LocRoot "scripts\beginner_common.ps1") (Join-Path $out "scripts") -Force
 Copy-Item (Join-Path $LocRoot "scripts\install_fr_beginner.ps1") (Join-Path $out "scripts") -Force
 Copy-Item (Join-Path $LocRoot "scripts\uninstall_fr_beginner.ps1") (Join-Path $out "scripts") -Force

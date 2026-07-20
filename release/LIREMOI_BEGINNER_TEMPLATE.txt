@@ -5,9 +5,10 @@ COMPATIBILITE STEAM (v1.2.5)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24303741
-  (fichier steamapps\appmanifest_3869850.acf → "buildid")
-- Si ton BuildID est DIFFERENT : DESINSTALLER, puis attends / installe
-  une release FR rebuildée pour ta maj (sinon crash possible)
+- INSTALLER.bat DETECTE automatiquement ton BuildID et indique
+  si c'est compatible (OK) ou non (risque de crash)
+- Si BuildID different : telecharge une release FR a jour, ou
+  n'installe pas (sinon crash possible)
 
 CONTENU
 - Menus / UI / CryptChat / ACRS / inventaire / DarkDrop (mod FR_P, accents FR)

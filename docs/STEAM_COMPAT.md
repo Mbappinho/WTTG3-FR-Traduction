@@ -16,7 +16,16 @@ Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam install
 
 Si ton `buildid` dans `appmanifest_3869850.acf` est **différent**, désinstalle le mod ou attends / installe une release FR rebuildée pour ce build.
 
-## Comment vérifier ton BuildID
+## Détection automatique (pack débutant)
+
+`INSTALLER.bat` lit `fichiers/steam_target.json` (BuildID du pack) et le compare à
+`appmanifest_3869850.acf` de ton install Steam :
+
+- **OK** — BuildID identique → installation normale  
+- **ATTENTION** — BuildID différent → avertissement + confirmation pour forcer (déconseillé)  
+- **INFO** — manifest introuvable (copie non Steam) → confirmation manuelle  
+
+## Vérifier ton BuildID à la main
 
 Ouvre (chemins typiques) :
 
@@ -28,6 +37,8 @@ Cherche la ligne :
 ```
 "buildid"		"........"
 ```
+
+Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de publier une release.
 
 ## Historique packs ↔ builds
 
