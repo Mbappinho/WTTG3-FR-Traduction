@@ -74,6 +74,8 @@ Sortie Nexus : `release\WTTG3-FR-Beginner-Nexus\` → zip `WTTG3-FR-Traduction-N
 
 **Nexus Mods :** uploader uniquement le zip **Nexus** (pas le Full). Le Full redistribue `pdfs_en_backup` (fichiers vanilla) → non conforme. Avec le pack Nexus, `DESINSTALLER.bat` retire `FR_P` ; pour les PDF EN, utiliser **Verifier l'integrite des fichiers** Steam.
 
+Automatisation des maj Nexus depuis les releases GitHub : [NEXUS_AUTOMATION.md](NEXUS_AUTOMATION.md).
+
 Le script demande le dossier du jeu (detection auto si possible). Fermer le jeu avant.
 
 ## Mise a jour du pack (joueurs)

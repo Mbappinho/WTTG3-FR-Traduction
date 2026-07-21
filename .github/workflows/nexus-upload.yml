@@ -1,0 +1,107 @@
+# Upload the Nexus zip from a GitHub Release to Nexus Mods.
+#
+# Setup (once):
+# 1. Nexus API key → GitHub secret NEXUSMODS_API_KEY
+#    https://www.nexusmods.com/settings/api-keys
+# 2. File ID (Files tab → API Info) → GitHub variable NEXUSMODS_FILE_ID
+# 3. Publish a GitHub Release that includes asset:
+#    WTTG3-FR-Traduction-Nexus.zip
+#
+# Manual run: Actions → Upload to Nexus Mods → Run workflow
+name: Upload to Nexus Mods
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "GitHub release tag (e.g. v1.2.6). Leave empty to use the latest release."
+        required: false
+        type: string
+      dry_run:
+        description: "Download + validate only (do not upload to Nexus)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve release tag
+        id: tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_TAG: ${{ inputs.tag }}
+          EVENT_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          if [ -n "${INPUT_TAG:-}" ]; then
+            TAG="$INPUT_TAG"
+          elif [ -n "${EVENT_TAG:-}" ]; then
+            TAG="$EVENT_TAG"
+          else
+            TAG="$(gh release view --json tagName -q .tagName)"
+          fi
+          VERSION="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Resolved tag=$TAG version=$VERSION"
+
+      - name: Download Nexus zip from GitHub Release
+        id: asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          set -euo pipefail
+          ASSET="WTTG3-FR-Traduction-Nexus.zip"
+          gh release download "$TAG" --pattern "$ASSET"
+          test -f "$ASSET"
+          echo "filename=$ASSET" >> "$GITHUB_OUTPUT"
+          ls -lh "$ASSET"
+
+      - name: Check Nexus secrets / vars
+        env:
+          HAS_KEY: ${{ secrets.NEXUSMODS_API_KEY != '' }}
+          FILE_ID: ${{ vars.NEXUSMODS_FILE_ID }}
+        run: |
+          set -euo pipefail
+          if [ "$HAS_KEY" != "true" ]; then
+            echo "::error::Missing GitHub secret NEXUSMODS_API_KEY (Nexus Settings → API keys)."
+            exit 1
+          fi
+          if [ -z "${FILE_ID:-}" ]; then
+            echo "::error::Missing GitHub variable NEXUSMODS_FILE_ID (Nexus Files tab → API Info)."
+            exit 1
+          fi
+          echo "Nexus file_id is set."
+
+      - name: Upload to Nexus Mods
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != true }}
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.9
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ vars.NEXUSMODS_FILE_ID }}
+          filename: ${{ steps.asset.outputs.filename }}
+          version: ${{ steps.tag.outputs.version }}
+          display_name: WTTG3 FR Traduction Nexus
+          description: |
+            French fan translation pack (Nexus build, no EN vanilla backups).
+            GitHub release: ${{ steps.tag.outputs.tag }}
+            Source: https://github.com/Mbappinho/WTTG3-FR-Traduction
+          category: main
+          archive_existing_version: true
+          update_mod_version: true
+          allow_mod_manager_download: true
+          primary_mod_manager_download: true
+          show_requirements_pop_up: false
+
+      - name: Dry-run summary
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == true }}
+        run: |
+          echo "Dry-run OK. Would upload ${{ steps.asset.outputs.filename }} as version ${{ steps.tag.outputs.version }} to file_id ${{ vars.NEXUSMODS_FILE_ID }}."

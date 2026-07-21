@@ -6,6 +6,7 @@ Fan patch de localisation francaise **non officiel** pour *Welcome to the Game I
 > [Releases](https://github.com/Mbappinho/WTTG3-FR-Traduction/releases)
 > (`WTTG3-FR-Traduction.zip` → `INSTALLER.bat` / `DESINSTALLER.bat`).
 > Pour **Nexus Mods**, utiliser `WTTG3-FR-Traduction-Nexus.zip` (sans fichiers EN vanilla).
+> Maj auto Nexus : [docs/NEXUS_AUTOMATION.md](docs/NEXUS_AUTOMATION.md).
 
 Ce depot contient le **code source du pipeline de traduction** (scripts, docs, dictionnaires FR), **pas** le jeu.
 
