@@ -23,8 +23,9 @@
 - **CryptChat polish** : `ton idée`, `délai de carence`, `Threats/index.html` dans extras, casse The Game/Game Master (Ronald), 1× vous→tu.
 - **Lobby ACRS EN oublié** : ~59 topics/spam présents dans l’extract Steam mais absents de `acrs_cryptchat_fr.json` (étaient seulement dans `ui_gameplay_fr.csv`, non injecté). Ajoutés via `work/acrs_batches/fr_lobby_gap.json` + merge.
 - **UI v1.2.6** : titre Tanner raccourci (`Scène crime Tanner`) + page costumes ; skip ciné ; BitHit ; participants ; `SEND`→`ENVOYER` ; `Default`→`Défaut` ; `BUY` déjà mappé.
-- **v1.2.7** : `Enter Desk` a **deux contextes** (même clé EN) — `BP_BlankPawnSwitcher` → `S'asseoir au bureau` ; `BP_DeskToMonitor` → `Accéder au bureau` (desktop écran). Override par asset dans `PAIR_OVERRIDES_BY_ASSET`.
-- **Gaps runtime (non FString dans extract)** : DarkDrop `OWNED` ; ShadowFetch prompts download ; simulation `ONLINE` / `AFK` / `MINED` / `Using …`.
+- **v1.2.7+** : `Enter Desk` dual — `BP_BlankPawnSwitcher` → `S'asseoir au bureau` ; desk→écran → `Sur bureau` (aussi override **Maps/Motel.uexp**, sinon le niveau force l’EN).
+- **v1.2.8** : BitHit `Wallet`→`Solde` (anti-overflow) ; `230 Seconds`→`230 sec.` ; gaps DarkDrop `INSTALLING`/`INSTALLED!`/`OWNED` **absents des FStrings** cookées (probablement runtime/C++).
+- **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE`/`AFK`/`MINED`/`Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).
 
 ## P1
 

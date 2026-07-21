@@ -86,10 +86,11 @@ PAN VIEW,DÉPLACER,8,8
 RESET VIEW,RESET,10,5
 Press,Appuyez,5,7
 To Skip,pour passer,7,11
-Wallet,Portefeuille,6,12
+Wallet,Solde,6,5
 Amount,Montant,6,7
 Result,Résultat,6,8
 Free,Gratuit,4,7
+230 Seconds,230 sec.   ,11,11
 KEYS,CLÉS,4,4
 REP LV.,REP NIV.,7,8
 IDLE,INACTIF,4,7

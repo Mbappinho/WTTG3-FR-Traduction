@@ -63,12 +63,19 @@ EXCLUDE_FROM_PAK: set[str] = set()
 # BP_DeskToMonitor     = entrer sur le bureau/desktop de l'ecran PC
 PAIR_OVERRIDES_BY_ASSET: dict[str, dict[str, str]] = {
     "BluePrints\\PawnSwitchers\\BP_DeskToMonitor": {
-        "Enter Desk": "Accéder au bureau",
+        # Keep ASCII length <= EN when possible; map Motel also overrides this prompt.
+        "Enter Desk": "Sur bureau",
     },
     "Blueprints\\PawnSwitchers\\BP_DeskToMonitor": {
-        "Enter Desk": "Accéder au bureau",
+        "Enter Desk": "Sur bureau",
     },
 }
+
+# Level instance overrides (same EN key) live in .uexp next to .umap — patch same-length ASCII only.
+MAP_FSTRING_PATCHES: list[tuple[str, str, str]] = [
+    # Maps/Motel.uexp embeds Enter Desk on the desk→monitor switcher instance.
+    ("Maps\\Motel.uexp", "Enter Desk", "Sur bureau"),
+]
 
 # Extra ACRS / CryptChat maps (generated): work/acrs_cryptchat_fr.json
 EXTRA_MAP = ROOT / "work" / "acrs_cryptchat_fr.json"
@@ -189,10 +196,11 @@ RAW: dict[str, str] = {
     # ZOOM kept EN (short / universal)
     "Press": "Appuyez",
     "To Skip": "pour passer",
-    "Wallet": "Portefeuille",
+    "Wallet": "Solde",
     "Amount": "Montant",
     "Result": "Résultat",
     "Free": "Gratuit",
+    "230 Seconds": "230 sec.   ",
     "KEYS": "CLÉS",
     "REP LV.": "REP NIV.",
     "IDLE": "INACTIF",
@@ -836,6 +844,44 @@ def write_map_csv() -> list[tuple[str, str]]:
     return pairs
 
 
+def patch_map_fstrings() -> int:
+    """
+    Patch FStrings embedded in level .uexp (instance overrides).
+    Same ASCII length only — avoids breaking map serial offsets without UAssetGUI.
+    """
+    n = 0
+    for rel, en, fr in MAP_FSTRING_PATCHES:
+        if len(en) != len(fr) or not en.isascii() or not fr.isascii():
+            raise RuntimeError(f"MAP_FSTRING_PATCHES requires same-length ASCII: {en!r} -> {fr!r}")
+        src = LEGACY / rel
+        if not src.exists():
+            print(f"WARN map patch missing: {rel}")
+            continue
+        data = src.read_bytes()
+        src_fs, dst_fs = fstring_bytes(en), fstring_bytes(fr)
+        c = data.count(src_fs)
+        if not c:
+            print(f"WARN map patch no hit: {rel} {en!r}")
+            continue
+        out = data.replace(src_fs, dst_fs)
+        dst = STAGED / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes(out)
+        # Copy sibling map headers / bulks so retoc packs a coherent map.
+        stem = src.with_suffix("")
+        for ext in (".umap", ".ubulk", ".uptnl"):
+            sib = stem.with_suffix(ext)
+            if sib.exists():
+                shutil.copy2(sib, dst.with_suffix(ext))
+        # Some maps use .umap as primary (no .uasset)
+        umap = src.with_suffix(".umap")
+        if umap.exists() and not (STAGED / rel).with_suffix(".umap").exists():
+            shutil.copy2(umap, (STAGED / rel).with_suffix(".umap"))
+        print(f"patched map {rel} replacements={c} ({en!r} -> {fr!r})")
+        n += c
+    return n
+
+
 def pack_and_apply() -> None:
     out_dir = ROOT / "build" / "pak"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -894,6 +940,8 @@ def main() -> None:
     print(f"files_patched={files} replacements={reps}")
     if reps == 0:
         raise RuntimeError("No replacements made")
+    map_reps = patch_map_fstrings()
+    print(f"map_replacements={map_reps}")
     verify_sample()
     pack_and_apply()
     print("done — UAssetGUI free-length FR mod installed")
