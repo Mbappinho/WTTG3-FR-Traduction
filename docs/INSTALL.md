@@ -45,7 +45,7 @@ python scripts\build_ui_uassetgui_patch.py
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.2.5) :** BuildID **`24303741`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.2.6) :** BuildID **`24303741`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
 - Détail + historique : [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md)
@@ -179,7 +179,10 @@ Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentati
 
 | EN | FR | Où |
 |----|----|-----|
-| `BUY` | `ACHETER` | DarkDrop |
+| `BUY` | `ACHETER` | DarkDrop (si EN : redeploy FR_P) |
+| `SEND` | `ENVOYER` | CryptChat envoi DOS |
+| `Tanner's Crime Scene` | `Scène crime Tanner` | Titre menu (anti-overflow) |
+| `OWNED` / prompts ShadowFetch download / `ONLINE`/`MINED`/`Using` | — | **Gaps** : pas de FString dans l’extract |
 | Noms produits DarkDrop | Libellés **courts** (≤ EN) pour ne pas chevaucher le prix — ex. `Boost signal`, `Capteur mvt`, `Pare-feu II`, `Montage VM III` | Liste achat |
 | `Confirm` / `Connect` / `Checkout` | `Confirmer` / `Connecter` / `Commander` | DAREDash |
 | `BACK` / `CANCEL` / `GO BACK` / `RETURN HOME` | `RETOUR` / `ANNULER` / … | Settings / DARE |

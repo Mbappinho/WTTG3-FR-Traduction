@@ -78,7 +78,24 @@ OVERWRITE?,ÉCRASER ?,10,9
 Select Your Difficulty:,Choisissez votre difficulté :,23,29
 This will overwrite your current save file.,Ceci écrasera votre sauvegarde actuelle.,43,40
 Are you sure?,Êtes-vous sûr ?,13,15
-Tanner's Crime Scene,Scène de crime de Tanner,20,24
+Tanner's Crime Scene,Scène crime Tanner,20,18
+TANNER'S CRIME SCENE,SCÈNE CRIME TANNER,20,18
+Selected outfit will be used by Tanner during the game,La tenue choisie sera utilisée par Tanner en jeu,54,48
+ROTATE VIEW,TOURNER,11,7
+PAN VIEW,DÉPLACER,8,8
+RESET VIEW,RESET,10,5
+Press,Appuyez,5,7
+To Skip,pour passer,7,11
+Wallet,Portefeuille,6,12
+Amount,Montant,6,7
+Result,Résultat,6,8
+Free,Gratuit,4,7
+KEYS,CLÉS,4,4
+REP LV.,REP NIV.,7,8
+IDLE,INACTIF,4,7
+DEAD,MORT,4,4
+SEND,ENVOYER,4,7
+Default,Défaut,7,6
 THANKS FOR PLAYING!,MERCI D'AVOIR JOUÉ !,19,20
 PRESS [ESC] TO EXIT,APPUYEZ SUR [ESC] POUR QUITTER,19,30
 GAME DEVELOPERS,DÉVELOPPEURS,15,12
