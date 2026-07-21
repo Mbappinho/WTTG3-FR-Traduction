@@ -5,6 +5,7 @@ Fan patch de localisation francaise **non officiel** pour *Welcome to the Game I
 > **Joueur / debutant :** telecharge le pack pret a l'emploi dans
 > [Releases](https://github.com/Mbappinho/WTTG3-FR-Traduction/releases)
 > (`WTTG3-FR-Traduction.zip` → `INSTALLER.bat` / `DESINSTALLER.bat`).
+> Pour **Nexus Mods**, utiliser `WTTG3-FR-Traduction-Nexus.zip` (sans fichiers EN vanilla).
 
 Ce depot contient le **code source du pipeline de traduction** (scripts, docs, dictionnaires FR), **pas** le jeu.
 
@@ -74,7 +75,8 @@ Non versionne (trop gros / contenus jeu) : `source/` (extracts), `tools/` (retoc
 2. Obtenir un **usmap** UE 5.6 (voir `docs/DUMP_USMAP.md`)
 3. Patcher les FStrings via **UAssetGUI** JSON + dictionnaire FR (`scripts/build_ui_uassetgui_patch.py`)
 4. Empaqueter en IoStore `_P` avec `retoc to-zen`
-5. Generer le pack debutant : `scripts/build_beginner_pack.ps1`
+5. Generer le pack debutant : `scripts/build_beginner_pack.ps1`  
+   (variante Nexus : `-Distribution Nexus`)
 
 Details : [docs/INSTALL.md](docs/INSTALL.md)
 
