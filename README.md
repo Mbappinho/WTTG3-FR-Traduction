@@ -14,7 +14,7 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.2.6** |
+| **Pack actuel** | **v1.2.7** |
 | **Steam BuildID** | **`24303741`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 

@@ -56,6 +56,7 @@
   ],
   "preferred": {
     "Enter Desk": "S'asseoir au bureau",
+    "_Enter Desk (BP_DeskToMonitor)": "Accéder au bureau",
     "Inventory": "Inventaire",
     "Mount": "MONTER",
     "Mine": "MINER",

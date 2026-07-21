@@ -78,7 +78,7 @@ TRANSLATIONS: dict[str, str] = {
     "Load Game": "Charger",
     "Save Game": "Sauvegarder",
     "Inventory": "Inventaire",
-    "Enter Desk": "S'asseoir",
+    "Enter Desk": "S'asseoir au bureau",
     "[TAB] Inventory": "[TAB] Inventaire",
     "[SHIFT] Run": "[SHIFT] Courir",
     "[W,A,S,D] Move": "[Z,Q,S,D] Bouger",

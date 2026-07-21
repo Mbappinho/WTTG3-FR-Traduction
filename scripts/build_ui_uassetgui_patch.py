@@ -58,6 +58,18 @@ COPY_PREFIXES = (
 # With Steam-matched legacy_ui_steam, Settings/Pause can be patched again.
 EXCLUDE_FROM_PAK: set[str] = set()
 
+# Same EN FString, different contexts — override by asset path (under Content/).
+# BP_BlankPawnSwitcher = s'asseoir au bureau physique
+# BP_DeskToMonitor     = entrer sur le bureau/desktop de l'ecran PC
+PAIR_OVERRIDES_BY_ASSET: dict[str, dict[str, str]] = {
+    "BluePrints\\PawnSwitchers\\BP_DeskToMonitor": {
+        "Enter Desk": "Accéder au bureau",
+    },
+    "Blueprints\\PawnSwitchers\\BP_DeskToMonitor": {
+        "Enter Desk": "Accéder au bureau",
+    },
+}
+
 # Extra ACRS / CryptChat maps (generated): work/acrs_cryptchat_fr.json
 EXTRA_MAP = ROOT / "work" / "acrs_cryptchat_fr.json"
 
@@ -699,8 +711,24 @@ def run_gui(args: list[str]) -> None:
         raise RuntimeError(f"UAssetGUI failed {args[:3]}: {r.stderr or r.stdout}")
 
 
+def pairs_for_asset(rel: Path, base_pairs: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """Apply per-asset FR overrides (same EN key, different contexts)."""
+    stem = str(rel.with_suffix("")).replace("/", "\\")
+    overrides: dict[str, str] | None = None
+    for key, ov in PAIR_OVERRIDES_BY_ASSET.items():
+        if stem.lower() == key.lower():
+            overrides = ov
+            break
+    if not overrides:
+        return base_pairs
+    merged = dict(base_pairs)
+    merged.update(overrides)
+    return list(merged.items())
+
+
 def process_asset(src_uasset: Path, pairs: list[tuple[str, str]]) -> int:
     rel = src_uasset.relative_to(LEGACY)
+    pairs = pairs_for_asset(rel, pairs)
     dst_uasset = STAGED / rel
     dst_uasset.parent.mkdir(parents=True, exist_ok=True)
     json_path = JSON_DIR / rel.with_suffix(".json")

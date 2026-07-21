@@ -2,7 +2,7 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.2.6)
+## Version validée (pack v1.2.7)
 
 | Champ | Valeur |
 |-------|--------|
@@ -44,6 +44,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.2.7 | `24303741` | `Enter Desk` dual : s'asseoir (BlankPawn) + Accéder au bureau (DeskToMonitor) |
 | v1.2.6 | `24303741` | Tanner/Skip/BitHit/participants/SEND + overflow titre ; BUY/Enter Desk reconfirmés |
 | v1.2.5 | `24303741` | Rebuild post-MAJ 2026-07-21 + Contestants PDF + polish CryptChat |
 | v1.2.4 | cook Steam 2026-07-21 (même famille) | Rebuild crash post-MAJ |
