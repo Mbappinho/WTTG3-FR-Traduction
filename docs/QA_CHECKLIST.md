@@ -34,7 +34,7 @@
 
 ## Limites connues (encore EN attendu)
 
-- [ ] Intro Simon Zhao (texte introuvable en asset)
+- [x] Intro Simon Zhao (texture `AptLoadingScreen` FR dans `FR_P`)
 - [ ] Prompts `[W,A,S,D] Move` / `[SHIFT] Run` / `[TAB] Inventory` / `Pick Up`
 
 ## Rollback

@@ -2,7 +2,7 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.2.8)
+## Version validée (pack v1.2.9)
 
 | Champ | Valeur |
 |-------|--------|
@@ -44,6 +44,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.2.9 | `24303741` | Intro Simon (texture AptLoadingScreen FR) ; PDF Hacks = vanilla + trad seule |
 | v1.2.8 | `24303741` | Motel Enter Desk override + BitHit Solde ; gaps INSTALLING/OWNED documentés |
 | v1.2.7 | `24303741` | `Enter Desk` dual : s'asseoir (BlankPawn) + Sur bureau (DeskToMonitor/Motel) |
 | v1.2.6 | `24303741` | Tanner/Skip/BitHit/participants/SEND + overflow titre ; BUY/Enter Desk reconfirmés |

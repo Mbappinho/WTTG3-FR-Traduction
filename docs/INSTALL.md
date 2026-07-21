@@ -45,7 +45,7 @@ python scripts\build_ui_uassetgui_patch.py
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.2.8) :** BuildID **`24303741`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.2.9) :** BuildID **`24303741`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
 - Détail + historique : [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md)
@@ -143,13 +143,18 @@ Le merge ACRS et `build_ui_uassetgui_patch.py` forcent l’identité EN=FR pour 
 
 ## PDF Hacks — bouton `TEST HACK`
 
-Le bouton appelle `HackClick` → `LaunchHackClicked`.  
-Traduire le libellé n’a **pas** été la cause : le mini-jeu de test **ne marche pas non plus en vanilla** (confirmé 2026-07-20).  
-On laisse le libellé en **`TEST HACK`** (EN) par prudence ; ce n’est pas un bug du mod FR.
+Le bouton appelle `HackClick` → `LaunchHackClicked` (via `PDFS/Global/Basic.js`).
+
+**Politique 2026-07-21 :** **traduction FR uniquement** — on conserve le comportement vanilla du dev (`Basic.js` inclus, 5 boutons, indices d’origine, `visibility`+`fixed`). Pas de bouton unique / remap d’indices dans le pack courant.
+
+**Aside (expérimental, non déployé) :** [`work/aside_test_hack_2026-07-21/`](../work/aside_test_hack_2026-07-21/) — essais bouton unique / indices `4`↔`5`.
+
+Référence vanilla Steam : [`work/vanilla_pdfs_reference/`](../work/vanilla_pdfs_reference/).  
+Libellé bouton laissé en **`TEST HACK`** (EN).
 
 ## Limites connues (pas de FString extractible)
 
-- Intro Simon (« You are Simon Zhao… ») : introuvable dans les assets / exe (ni ASCII ni UTF-16) — probablement texture, séquence ou génération runtime.
+- Intro Simon (« You are Simon Zhao… ») : texture baked `Images/UI/HUD/AptLoadingScreen` (pas une FString). **FR** via PNG → BGRA injecté dans `FR_P` (`work/simon_intro_texture/`, `stage_apt_loading_screen_fr`).
 - Boutons « génériques » de `work/ui_fr.csv` **sans FString UI** (ex. Apply, Yes/No génériques, Credits menu, Install, Next…) : **non patchables** par cette méthode. Yes/No n’apparaissent que sur des assets Dark Net (`dontwasteit_*`, hors périmètre).
 
 ### HUD mouvement / Enhanced Input (bilan confirmé)

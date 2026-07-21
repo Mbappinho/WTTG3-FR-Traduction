@@ -882,6 +882,33 @@ def patch_map_fstrings() -> int:
     return n
 
 
+def stage_apt_loading_screen_fr() -> None:
+    """Replace AptLoadingScreen texture (baked Simon intro EN text) with FR pixels."""
+    from PIL import Image
+
+    src_uasset = LEGACY / "Images" / "UI" / "HUD" / "AptLoadingScreen.uasset"
+    src_uexp = LEGACY / "Images" / "UI" / "HUD" / "AptLoadingScreen.uexp"
+    fr_png = ROOT / "work" / "simon_intro_texture" / "AptLoadingScreen_FR.png"
+    if not src_uexp.exists() or not fr_png.exists():
+        print("WARN skip AptLoadingScreen FR: missing source or PNG")
+        return
+    uexp = src_uexp.read_bytes()
+    w, h = struct.unpack_from("<II", uexp, 8)
+    hdr = len(uexp) - w * h * 4
+    if hdr != 151:
+        raise RuntimeError(f"AptLoadingScreen unexpected header size {hdr}")
+    im = Image.open(fr_png).convert("RGBA")
+    if im.size != (w, h):
+        raise RuntimeError(f"AptLoadingScreen FR size {im.size} != {(w, h)}")
+    r, g, b, a = im.split()
+    bgra = Image.merge("RGBA", (b, g, r, a)).tobytes()
+    dst_dir = STAGED / "Images" / "UI" / "HUD"
+    dst_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src_uasset, dst_dir / src_uasset.name)
+    (dst_dir / src_uexp.name).write_bytes(uexp[:hdr] + bgra)
+    print("staged AptLoadingScreen FR texture", w, h)
+
+
 def pack_and_apply() -> None:
     out_dir = ROOT / "build" / "pak"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -942,6 +969,7 @@ def main() -> None:
         raise RuntimeError("No replacements made")
     map_reps = patch_map_fstrings()
     print(f"map_replacements={map_reps}")
+    stage_apt_loading_screen_fr()
     verify_sample()
     pack_and_apply()
     print("done — UAssetGUI free-length FR mod installed")

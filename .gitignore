@@ -10,8 +10,21 @@ Engine.csv
 
 # Built beginner pack binaries + zip (published via GitHub Releases)
 release/WTTG3-FR-Beginner/
+release/WTTG3-FR-Beginner-Nexus/
 release/WTTG3-FR-Traduction.zip
+release/WTTG3-FR-Traduction-Nexus.zip
 release/github-repo/
+
+# Simon intro texture: keep FR PNG + scripts, ignore exploration junk
+work/simon_intro_texture/candidates/
+work/simon_intro_texture/cooked/
+work/simon_intro_texture/*.json
+work/simon_intro_texture/*_jpg_*.jpg
+work/simon_intro_texture/TitleLogo*
+work/simon_intro_texture/uassetgui_*
+work/simon_intro_texture/AptLoadingScreen_FR_roundtrip.png
+work/aside_test_hack_*/
+work/vanilla_pdfs_reference/
 
 # Local / temp
 __pycache__/

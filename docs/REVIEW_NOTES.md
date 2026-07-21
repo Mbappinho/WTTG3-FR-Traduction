@@ -3,7 +3,7 @@
 ## P0 (fait, à revalider in-game)
 
 - PDF VirtMesh / Hacks / Threats : traduits ; noms techniques (INJ3KT-R, K3RN3LC0MP1L3R, sujets) **conservés**.
-- **TEST HACK** (PDF) : bug **vanilla** confirmé (même sans mod FR) — pas un souci de trad.
+- **Intro Simon Zhao** : texte EN dans texture `AptLoadingScreen` (1064×810 BGRA). **Patché FR** dans `FR_P` (2026-07-21). Note : `TitleLogoA/B` = logo W3LCM3, pas l’intro.
 - Settings restants : `Master Audio`, `Browser & Files` / Resolution / FPS / GPU Acceleration / Requires Restart.
 - Difficulté : bullets Normal+ (`Same as Normal` / `Perma Death` / `Experimental`) + `Challenging`.
 - **Crash Steam post-MAJ** (`LeetMode2` Bad export index, 2026-07-20) : re-extract `legacy_ui_steam` + rebuild FR_P (cook a changé, ex. LeetMode2 3406→3410).
@@ -25,6 +25,7 @@
 - **UI v1.2.6** : titre Tanner raccourci (`Scène crime Tanner`) + page costumes ; skip ciné ; BitHit ; participants ; `SEND`→`ENVOYER` ; `Default`→`Défaut` ; `BUY` déjà mappé.
 - **v1.2.7+** : `Enter Desk` dual — `BP_BlankPawnSwitcher` → `S'asseoir au bureau` ; desk→écran → `Sur bureau` (aussi override **Maps/Motel.uexp**, sinon le niveau force l’EN).
 - **v1.2.8** : BitHit `Wallet`→`Solde` (anti-overflow) ; `230 Seconds`→`230 sec.` ; gaps DarkDrop `INSTALLING`/`INSTALLED!`/`OWNED` **absents des FStrings** cookées (probablement runtime/C++).
+- **v1.2.9** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE`/`AFK`/`MINED`/`Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).
 
 ## P1
