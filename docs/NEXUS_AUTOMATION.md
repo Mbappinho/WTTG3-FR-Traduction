@@ -33,7 +33,8 @@ Sur https://github.com/Mbappinho/WTTG3-FR-Traduction :
 2. Cree / mets a jour une GitHub Release (`vX.Y.Z`) avec l’asset
    `WTTG3-FR-Traduction-Nexus.zip` (et le zip Full si tu veux).
 3. Le workflow **Upload to Nexus Mods** demarre sur `release: published`
-   et envoie le zip Nexus avec la version = tag sans le `v` (`v1.2.6` → `1.2.6`).
+   et envoie le zip Nexus avec la version = tag sans le `v` (`v1.2.6` → `1.2.6`, `1.3` → `1.3`).
+   Le job definit `GH_REPO` (pas de checkout) pour que `gh release download` fonctionne.
 
 ### Manuel
 

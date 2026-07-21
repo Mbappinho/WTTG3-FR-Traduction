@@ -31,6 +31,9 @@ permissions:
 jobs:
   upload:
     runs-on: ubuntu-latest
+    env:
+      # gh CLI needs an explicit repo when there is no git checkout
+      GH_REPO: ${{ github.repository }}
     steps:
       - name: Resolve release tag
         id: tag
