@@ -58,16 +58,21 @@ Apres un build UI + PDF, genere le dossier a zipper :
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1
+# Variante Nexus (sans backup PDF EN / achievements EN) :
+powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1 -Distribution Nexus
 ```
 
-Sortie : `release\WTTG3-FR-Beginner\`
+Sortie Full : `release\WTTG3-FR-Beginner\` → zip GitHub `WTTG3-FR-Traduction.zip`  
+Sortie Nexus : `release\WTTG3-FR-Beginner-Nexus\` → zip `WTTG3-FR-Traduction-Nexus.zip`
 
 | Fichier | Role |
 |---------|------|
 | `LIREMOI.txt` | Mode d'emploi |
 | `INSTALLER.bat` | Double-clic = installer FR (+ check BuildID Steam) |
-| `DESINSTALLER.bat` | Double-clic = retirer FR / PDF EN |
+| `DESINSTALLER.bat` | Double-clic = retirer FR (+ PDF EN si pack Full) |
 | `fichiers/steam_target.json` | BuildID Steam cible du pack (généré depuis `release/steam_target.json`) |
+
+**Nexus Mods :** uploader uniquement le zip **Nexus** (pas le Full). Le Full redistribue `pdfs_en_backup` (fichiers vanilla) → non conforme. Avec le pack Nexus, `DESINSTALLER.bat` retire `FR_P` ; pour les PDF EN, utiliser **Verifier l'integrite des fichiers** Steam.
 
 Le script demande le dossier du jeu (detection auto si possible). Fermer le jeu avant.
 

@@ -1,10 +1,15 @@
-# Assemble a double-click beginner pack under release\WTTG3-FR-Beginner
+﻿# Assemble a double-click beginner pack under release\WTTG3-FR-Beginner
+# -Distribution Full  : zip GitHub (inclut backup PDF EN pour desinstall complete)
+# -Distribution Nexus : zip Nexus (sans fichiers vanilla EN redistribues)
 param(
-    [string]$LocRoot = (Split-Path $PSScriptRoot -Parent)
+    [string]$LocRoot = (Split-Path $PSScriptRoot -Parent),
+    [ValidateSet("Full", "Nexus")]
+    [string]$Distribution = "Full"
 )
 
 $ErrorActionPreference = "Stop"
-$out = Join-Path $LocRoot "release\WTTG3-FR-Beginner"
+$outName = if ($Distribution -eq "Nexus") { "WTTG3-FR-Beginner-Nexus" } else { "WTTG3-FR-Beginner" }
+$out = Join-Path $LocRoot "release\$outName"
 $pakSrc = Join-Path $LocRoot "build\pak"
 $pdfFr = Join-Path $LocRoot "build\pdfs"
 $pdfEn = Join-Path $LocRoot "backup\PDFS"
@@ -15,20 +20,24 @@ if (-not (Test-Path (Join-Path $pakSrc "WTTGSD-Windows_FR_P.ucas"))) {
     throw "Mod FR manquant dans build\pak - lance d'abord build_ui_uassetgui_patch.py"
 }
 if (-not (Test-Path $pdfFr)) { throw "PDF FR manquants : build\pdfs" }
-if (-not (Test-Path $pdfEn)) { throw "Backup PDF EN manquant : backup\PDFS" }
+if ($Distribution -eq "Full" -and -not (Test-Path $pdfEn)) {
+    throw "Backup PDF EN manquant : backup\PDFS"
+}
 
 if (Test-Path $out) { Remove-Item $out -Recurse -Force }
 New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\paks") | Out-Null
 New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\pdfs") | Out-Null
-New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\pdfs_en_backup") | Out-Null
 New-Item -ItemType Directory -Force -Path (Join-Path $out "scripts") | Out-Null
 
 Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_P.*") (Join-Path $out "fichiers\paks") -Force
 Copy-Item (Join-Path $pdfFr "*") (Join-Path $out "fichiers\pdfs") -Recurse -Force
-Copy-Item (Join-Path $pdfEn "*") (Join-Path $out "fichiers\pdfs_en_backup") -Recurse -Force
 
-if (Test-Path $achFr) { Copy-Item $achFr (Join-Path $out "fichiers\achievements_fr.json") -Force }
-if (Test-Path $achEn) { Copy-Item $achEn (Join-Path $out "fichiers\achievements_en.json") -Force }
+if ($Distribution -eq "Full") {
+    New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\pdfs_en_backup") | Out-Null
+    Copy-Item (Join-Path $pdfEn "*") (Join-Path $out "fichiers\pdfs_en_backup") -Recurse -Force
+    if (Test-Path $achFr) { Copy-Item $achFr (Join-Path $out "fichiers\achievements_fr.json") -Force }
+    if (Test-Path $achEn) { Copy-Item $achEn (Join-Path $out "fichiers\achievements_en.json") -Force }
+}
 
 $steamTarget = Join-Path $LocRoot "release\steam_target.json"
 if (-not (Test-Path $steamTarget)) {
@@ -67,12 +76,20 @@ $uninstallerBat = @(
 ) -join "`r`n"
 Set-Content -Path (Join-Path $out "DESINSTALLER.bat") -Value $uninstallerBat -Encoding ASCII
 
-$readmePath = Join-Path $LocRoot "release\LIREMOI_BEGINNER_TEMPLATE.txt"
+$readmePath = if ($Distribution -eq "Nexus") {
+    Join-Path $LocRoot "release\LIREMOI_NEXUS_TEMPLATE.txt"
+} else {
+    Join-Path $LocRoot "release\LIREMOI_BEGINNER_TEMPLATE.txt"
+}
 if (-not (Test-Path $readmePath)) {
-    throw "Template LIREMOI manquant : release\LIREMOI_BEGINNER_TEMPLATE.txt"
+    throw "Template LIREMOI manquant : $readmePath"
 }
 Copy-Item $readmePath (Join-Path $out "LIREMOI.txt") -Force
 
-Write-Host "Pack pret : $out"
-Write-Host "Tu peux zipper ce dossier et le donner a quelqu'un."
+Write-Host "Pack pret ($Distribution) : $out"
+if ($Distribution -eq "Nexus") {
+    Write-Host "Zip Nexus recommande : release\WTTG3-FR-Traduction-Nexus.zip"
+} else {
+    Write-Host "Tu peux zipper ce dossier et le donner a quelqu'un."
+}
 Get-ChildItem $out | Select-Object Name, Length

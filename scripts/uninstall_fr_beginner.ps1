@@ -5,7 +5,9 @@ $ErrorActionPreference = "Stop"
 try {
     Write-Title "WTTG3 - Retirer la traduction FR"
     Write-Host "Ferme le jeu avant de continuer."
-    Write-Host "Cet outil supprime le mod FR et remet les PDF anglais."
+    Write-Host "Cet outil supprime le mod FR."
+    Write-Host "Si le pack contient un backup PDF EN, il sera restaure."
+    Write-Host "Sinon : utilise Verifier l'integrite des fichiers Steam pour les PDF."
     Write-Host ""
 
     Assert-GameClosed
@@ -15,6 +17,7 @@ try {
     $paksDst = Join-Path $game "WTTGSD\Content\Paks"
     $pdfSrc = Join-Path $pack "fichiers\pdfs_en_backup"
     $pdfDst = Join-Path $game "WTTGSD\Content\RawFiles\PDFS"
+    $hasPdfBackup = Test-Path $pdfSrc
 
     Write-Host ""
     Write-Host "Desinstallation depuis :" -ForegroundColor Yellow
@@ -32,12 +35,13 @@ try {
         Write-Host "  Aucun fichier FR_P trouve (deja retire ?)"
     }
 
-    if (Test-Path $pdfSrc) {
+    if ($hasPdfBackup) {
         if (-not (Test-Path $pdfDst)) { throw "Dossier PDFS introuvable : $pdfDst" }
         Write-Host "Restauration des PDF anglais..."
         Copy-Item (Join-Path $pdfSrc "*") -Destination $pdfDst -Recurse -Force
     } else {
-        Write-Host "Pas de backup PDF EN dans le pack - PDF laisses tels quels."
+        Write-Host "Pack sans backup PDF EN (ex. Nexus) : PDF FR laisses en place." -ForegroundColor Yellow
+        Write-Host "Pour l'anglais : Steam > Proprietes > Fichiers installes > Verifier l'integrite." -ForegroundColor Yellow
     }
 
     $achSrc = Join-Path $pack "fichiers\achievements_en.json"
@@ -48,7 +52,11 @@ try {
     }
 
     Write-Host ""
-    Write-Host "OK - Traduction retiree. Le jeu devrait etre en anglais." -ForegroundColor Green
+    if ($hasPdfBackup) {
+        Write-Host "OK - Traduction retiree. Le jeu devrait etre en anglais." -ForegroundColor Green
+    } else {
+        Write-Host "OK - Mod FR_P retire. Verifie l'integrite Steam si tu veux les PDF EN." -ForegroundColor Green
+    }
     Pause-Exit 0
 }
 catch {
