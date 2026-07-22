@@ -63,6 +63,13 @@ powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1 -Distribution Nexus
 ```
 
+**Textes joueur (a tenir a jour a chaque release) :**
+- Full : [`release/LIREMOI_BEGINNER_TEMPLATE.txt`](../release/LIREMOI_BEGINNER_TEMPLATE.txt) → copié en `LIREMOI.txt`
+- Nexus : [`release/LIREMOI_NEXUS_TEMPLATE.txt`](../release/LIREMOI_NEXUS_TEMPLATE.txt)
+- Corps GitHub Release : [`release/RELEASE_NOTES_TEMPLATE.md`](../release/RELEASE_NOTES_TEMPLATE.md) (install + maj auto/manuel)
+
+Toujours y documenter : premiere install, maj propre (auto-update Full / manuel / Nexus), crash / maj Steam.
+
 Sortie Full : `release\WTTG3-FR-Beginner\` → zip GitHub `WTTG3-FR-Traduction.zip`  
 Sortie Nexus : `release\WTTG3-FR-Beginner-Nexus\` → zip `WTTG3-FR-Traduction-Nexus.zip`
 

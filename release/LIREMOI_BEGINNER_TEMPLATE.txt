@@ -1,70 +1,93 @@
-WTTG3 - Traduction francaise (pack debutant)
-============================================
+WTTG3 - Traduction francaise (pack GitHub Full)
+===============================================
 
-COMPATIBILITE STEAM (v1.4.1)
+COMPATIBILITE STEAM (v1.4.2)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24327711
-- INSTALLER.bat DETECTE automatiquement ton BuildID et indique
-  si c'est compatible (OK) ou non (risque de crash)
+- Fichier fichiers\steam_target.json = version du pack + BuildID cible
+- INSTALLER.bat DETECTE ton BuildID Steam (OK / ATTENTION crash)
 - INSTALLER.bat peut TELECHARGER la derniere release GitHub
-  si une version plus recente / mieux adaptee a ton BuildID existe
-  (consentement O/N ; internet requis)
-- Si BuildID different : telecharge une release FR a jour, ou
-  n'installe pas (sinon crash possible)
+  (version plus recente ou mieux adaptee a ton BuildID)
+  → demande O/N ; internet requis
+- Si BuildID different et pas de maj GitHub : n'installe PAS
+  (sinon crash possible au lancement)
 
 CONTENU
-- Menus / UI / CryptChat / ACRS / inventaire / DarkDrop (mod FR_P, accents FR)
-- Boutons patchables : ACHETER, Confirmer, Commander, Se cacher, etc.
-- PDF in-game en francais (dont fiches Contestants)
+- Menus / UI / CryptChat / ACRS / inventaire / DarkDrop (mod FR_P)
+- PDF in-game FR (Contestants, Hacks, Threats, VirtMesh, etc.)
 - Achievements FR si le dossier steam_settings existe
+- Auto-update GitHub via INSTALLER.bat (pack Full uniquement)
 
+------------------------------------------------
 INSTALLER (premiere fois)
+------------------------------------------------
 1. Ferme le jeu completement.
-2. Double-clique sur INSTALLER.bat
-3. Choisis le dossier du jeu (ou colle le chemin)
-4. Confirme avec O
-5. Relance le jeu
+2. Dezippe CE pack quelque part (garde le dossier entier).
+3. Double-clique sur INSTALLER.bat
+4. Indique le dossier du jeu si non detecte
+   (Steam > clic droit > Gerer > Parcourir les fichiers locaux)
+   Exemples :
+     C:\Program Files (x86)\Steam\steamapps\common\Welcome to the Game III
+     C:\Steam\steamapps\common\Welcome to the Game III
+5. Si l'installeur propose une maj GitHub plus recente : reponds O
+6. Confirme l'installation avec O
+7. Relance le jeu
 
+------------------------------------------------
 METTRE A JOUR LE MOD (proprement)
+------------------------------------------------
+
+Methode A — recommandee (auto-update, depuis v1.4.1+)
 1. Ferme le jeu.
-2. Telecharge la DERNIERE release sur GitHub
-   (https://github.com/Mbappinho/WTTG3-FR-Traduction/releases)
-3. Double-clique sur DESINSTALLER.bat (ancien pack ou celui-ci)
-4. Double-clique sur INSTALLER.bat du NOUVEAU zip
+2. Relance INSTALLER.bat de TON pack actuel (meme vieux zip 1.4.1+).
+3. Quand il affiche "Une version plus recente..." → reponds O
+4. Confirme l'installation du pack telecharge → O
 5. Relance le jeu
-Ne te contente pas de coller un vieux zip par-dessus apres une MAJ Steam.
+Pas besoin de desinstaller avant si tu restes sur la meme famille
+de BuildID Steam.
 
-DESINSTALLER (bug / retour anglais / crash)
+Methode B — manuelle (nouveau zip telecharge a la main)
 1. Ferme le jeu.
-2. Double-clique sur DESINSTALLER.bat
-3. Meme dossier de jeu
-4. Confirme avec O
+2. Telecharge la DERNIERE release Full :
+   https://github.com/Mbappinho/WTTG3-FR-Traduction/releases
+   Asset : WTTG3-FR-Traduction.zip
+3. DESINSTALLER.bat (ancien pack) — propre
+4. INSTALLER.bat du NOUVEAU zip
+5. Relance le jeu
 
+Apres une MAJ Steam du jeu :
+- Si l'installeur dit BuildID OK → Methode A suffit souvent
+- Si CRASH au lancement → DESINSTALLER tout de suite, puis
+  installe UNIQUEMENT une release FR rebuildée pour le nouveau BuildID
+  (un vieux zip ne suffit en general PAS)
+- Ne colle pas un vieux FR_P par-dessus apres une maj Steam
+
+------------------------------------------------
+DESINSTALLER
+------------------------------------------------
+1. Ferme le jeu.
+2. DESINSTALLER.bat
+3. Meme dossier de jeu → confirme O
+(ou supprime WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*)
+
+------------------------------------------------
 SI LE JEU CRASH AU LANCEMENT
-1. DESINSTALLER.bat tout de suite (ou supprime WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*)
-2. Verifie que le jeu sans mod demarre
-3. Installe uniquement la derniere release FR (rebuild pour la maj Steam actuelle)
-   Reinstaller un vieux pack ne suffit en general PAS
+------------------------------------------------
+1. DESINSTALLER.bat immediatement
+2. Verifie que le jeu SANS mod demarre
+3. Installe la derniere release FR compatible (BuildID)
 4. Si aucune release a jour : joue sans mod en attendant
 
-OU TROUVER LE DOSSIER DU JEU
-Steam : clic droit sur le jeu > Gerer > Parcourir les fichiers locaux
-Le dossier utile contient WTTGSD\Content\Paks
-
-Exemple Steam :
-  C:\Program Files (x86)\Steam\steamapps\common\<Nom du jeu>
-
+------------------------------------------------
 NOTES
-- Les sites web Dark Net restent en anglais (volontaire).
-- Si Windows bloque le .bat : "Plus d'infos" > "Executer quand meme"
-- Si erreur "jeu ouvert" : ferme WTTGSD dans le Gestionnaire des taches
-- Pack v1.4.1+ : buildé pour le jeu Steam officiel (pas une copie Desktop / autre dump)
-- Apres une MAJ Steam :
-  1. Relance INSTALLER.bat : il propose souvent la maj GitHub auto
-  2. Trad / PDF disparus sans crash → desinstaller puis reinstaller la derniere release
-  3. CRASH (Bad export index / ObjectSerializationError) → DESINSTALLER, puis
-     attendre / installer une nouvelle release FR rebuildée (pas le vieux zip)
+------------------------------------------------
+- Sites web Dark Net = anglais (volontaire)
+- Windows bloque le .bat → "Plus d'infos" > "Executer quand meme"
+- Erreur "jeu ouvert" → ferme WTTGSD dans le Gestionnaire des taches
+- Pack Nexus (sans .bat) = autre zip, drop-in manuel, PAS d'auto-update
+- steam_target.json sur la release GitHub = meta legere pour l'auto-update
+  (ne remplace pas le zip Full)
 
 IMPORTANT
-Garde ce dossier entier. Ne separe pas INSTALLER.bat du dossier fichiers\
+Garde ce dossier entier. Ne separe pas INSTALLER.bat de fichiers\ et scripts\

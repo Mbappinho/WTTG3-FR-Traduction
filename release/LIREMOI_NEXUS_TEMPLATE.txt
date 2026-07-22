@@ -1,51 +1,78 @@
 WTTG3 - Traduction francaise (pack Nexus drop-in)
 =================================================
 
-COMPATIBILITE STEAM (v1.4.1)
+COMPATIBILITE STEAM (v1.4.2)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24327711
-- Verifie ton BuildID dans steamapps\appmanifest_3869850.acf
-  (ligne "buildid"). S'il differe : risque de crash → attends une
+- Verifie ton BuildID : steamapps\appmanifest_3869850.acf (ligne "buildid")
+  S'il differe du BuildID ci-dessus → risque de crash ; attends une
   release FR a jour.
-- Fichier steam_target.json (a la racine du zip) = BuildID du pack
-- Pour maj auto (telecharge la derniere release) : utiliser le pack
-  GitHub Full avec INSTALLER.bat (ce zip Nexus est drop-in manuel)
+- steam_target.json (racine du zip) = version du pack + BuildID cible
+- PAS d'auto-update dans ce zip Nexus (pas de .bat/.ps1)
+  Pour maj auto : pack GitHub Full → WTTG3-FR-Traduction.zip + INSTALLER.bat
+  https://github.com/Mbappinho/WTTG3-FR-Traduction/releases
 
-CONTENU (aucun .bat / .ps1)
+CONTENU (aucun .bat / .ps1 — regles Nexus)
 - Mod UI FR : WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*
 - PDF in-game FR : WTTGSD\Content\RawFiles\PDFS\...
-- PAS de fichiers anglais d'origine redistribues (regles Nexus)
+- PAS de fichiers anglais d'origine redistribues
 
-INSTALLER (drop-in)
+------------------------------------------------
+INSTALLER (premiere fois — drop-in)
+------------------------------------------------
 1. Ferme le jeu completement.
 2. Steam > clic droit sur le jeu > Gerer > Parcourir les fichiers locaux
-   (= dossier qui contient WTTGSD et WTTG3.exe)
+   (= dossier qui contient WTTGSD)
+   Exemples :
+     C:\Program Files (x86)\Steam\steamapps\common\Welcome to the Game III
+     C:\Steam\steamapps\common\Welcome to the Game III
 3. Dezippe CE pack DANS ce dossier (fusionne avec WTTGSD existant).
    Tu dois voir / ecraser :
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.pak / .ucas / .utoc
      WTTGSD\Content\RawFiles\PDFS\...
 4. Relance le jeu.
 
+------------------------------------------------
+METTRE A JOUR (proprement — Nexus)
+------------------------------------------------
+1. Ferme le jeu.
+2. Telecharge la derniere WTTG3-FR-Traduction-Nexus.zip
+   https://github.com/Mbappinho/WTTG3-FR-Traduction/releases
+   (ou Fichiers sur Nexus Mods si tu suis la page Nexus)
+3. Verifie steam_target.json : BuildID = ton jeu
+4. Re-dezippe par-dessus le meme dossier jeu (ecrase les 3 FR_P + PDF)
+5. Relance le jeu
+
+Apres une MAJ Steam :
+- Si BuildID change → attends / installe une release FR rebuildée
+- Si CRASH → desinstalle (ci-dessous) puis Verifier l'integrite Steam
+
+Alternative maj auto : passe au pack GitHub Full (INSTALLER.bat).
+
+------------------------------------------------
 DESINSTALLER
+------------------------------------------------
 1. Ferme le jeu.
 2. Supprime ces 3 fichiers :
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.pak
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.ucas
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.utoc
-3. Remettre les PDF en anglais :
+3. Remettre les PDF EN :
    Steam > Proprietes > Fichiers installes > Verifier l'integrite
-   des fichiers du jeu
 
+------------------------------------------------
 SI LE JEU CRASH AU LANCEMENT
-1. Desinstalle tout de suite (etape DESINSTALLER ci-dessus)
+------------------------------------------------
+1. Desinstalle (etape ci-dessus)
 2. Verifie l'integrite Steam
 3. Confirme que le jeu sans mod demarre
-4. Installe uniquement une release FR rebuildée pour ta maj Steam
+4. Installe uniquement une release FR compatible BuildID
 
+------------------------------------------------
 NOTES
+------------------------------------------------
 - Fan translation non officielle, non affiliee a Reflect Studios
-- Les sites web Dark Net restent en anglais (volontaire)
-- Source / mises a jour : https://github.com/Mbappinho/WTTG3-FR-Traduction
-- Pack GitHub avec INSTALLER.bat : meme repo > Releases
-  (WTTG3-FR-Traduction.zip)
+- Sites web Dark Net = anglais (volontaire)
+- Source / releases : https://github.com/Mbappinho/WTTG3-FR-Traduction
+- Pack Full (installeur + auto-update) : WTTG3-FR-Traduction.zip
