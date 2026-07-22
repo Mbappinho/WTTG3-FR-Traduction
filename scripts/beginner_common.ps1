@@ -216,3 +216,154 @@ function Show-SteamBuildCheck([hashtable]$Info) {
         }
     }
 }
+
+# --- Auto-update from GitHub Releases (Full pack only) ---
+
+$script:Wttg3FrGitHubRepo = "Mbappinho/WTTG3-FR-Traduction"
+$script:Wttg3FrZipAsset = "WTTG3-FR-Traduction.zip"
+$script:Wttg3FrTargetAsset = "steam_target.json"
+
+function ConvertTo-PackVersion([string]$Raw) {
+    if (-not $Raw) { return [version]"0.0.0" }
+    $v = $Raw.Trim().TrimStart("v", "V")
+    if ($v -notmatch '^\d+(\.\d+){0,3}$') { return [version]"0.0.0" }
+    # Normalize 1.4 -> 1.4.0 for [version]
+    $parts = $v.Split(".")
+    while ($parts.Count -lt 2) { $parts += "0" }
+    try { return [version]($parts -join ".") } catch { return [version]"0.0.0" }
+}
+
+function Get-GitHubLatestReleaseInfo {
+    $uri = "https://api.github.com/repos/$script:Wttg3FrGitHubRepo/releases/latest"
+    try {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        $rel = Invoke-RestMethod -Uri $uri -Headers @{
+            "User-Agent" = "WTTG3-FR-Installer"
+            "Accept"     = "application/vnd.github+json"
+        } -TimeoutSec 30
+        return $rel
+    } catch {
+        return $null
+    }
+}
+
+function Find-ReleaseAssetUrl($Release, [string]$AssetName) {
+    if (-not $Release -or -not $Release.assets) { return $null }
+    foreach ($a in $Release.assets) {
+        if ([string]$a.name -eq $AssetName) { return [string]$a.browser_download_url }
+    }
+    return $null
+}
+
+function Get-RemoteSteamTarget($Release) {
+    $url = Find-ReleaseAssetUrl $Release $script:Wttg3FrTargetAsset
+    if (-not $url) { return $null }
+    try {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        $tmp = Join-Path $env:TEMP ("wttg3_fr_steam_target_{0}.json" -f [guid]::NewGuid().ToString("N"))
+        Invoke-WebRequest -Uri $url -OutFile $tmp -UseBasicParsing -Headers @{ "User-Agent" = "WTTG3-FR-Installer" } -TimeoutSec 30
+        $obj = Get-Content -Raw -Encoding UTF8 $tmp | ConvertFrom-Json
+        Remove-Item $tmp -Force -ErrorAction SilentlyContinue
+        return $obj
+    } catch {
+        return $null
+    }
+}
+
+function Expand-FrPackZip([string]$ZipPath, [string]$DestDir) {
+    if (Test-Path $DestDir) { Remove-Item $DestDir -Recurse -Force }
+    New-Item -ItemType Directory -Force -Path $DestDir | Out-Null
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    [IO.Compression.ZipFile]::ExtractToDirectory($ZipPath, $DestDir)
+    # Zip may contain files at root (LIREMOI, fichiers\, ...) or a single top folder
+    if (Test-Path (Join-Path $DestDir "fichiers\paks")) { return $DestDir }
+    $sub = Get-ChildItem $DestDir -Directory | Select-Object -First 1
+    if ($sub -and (Test-Path (Join-Path $sub.FullName "fichiers\paks"))) { return $sub.FullName }
+    throw "Zip telecharge invalide (fichiers\paks manquant)."
+}
+
+<#
+.SYNOPSIS
+  Optionally download the latest Full pack from GitHub if newer / better BuildID match.
+.OUTPUTS
+  New pack root path (may be same as input).
+#>
+function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
+    Write-Host ""
+    Write-Host "Mise a jour automatique (GitHub)" -ForegroundColor Cyan
+    Write-Host ("  Repo : https://github.com/{0}/releases" -f $script:Wttg3FrGitHubRepo)
+
+    $rel = Get-GitHubLatestReleaseInfo
+    if (-not $rel) {
+        Write-Host "  Impossible de joindre GitHub (hors ligne ?). On continue avec ce pack." -ForegroundColor Yellow
+        return $PackRoot
+    }
+
+    $tag = [string]$rel.tag_name
+    $remoteTarget = Get-RemoteSteamTarget $rel
+    $remoteVerStr = if ($remoteTarget -and $remoteTarget.pack_version) { [string]$remoteTarget.pack_version } else { $tag.TrimStart("v", "V") }
+    $remoteBuild = if ($remoteTarget) { [string]$remoteTarget.steam_buildid } else { $null }
+    $localVer = ConvertTo-PackVersion $Compat.PackVersion
+    $remoteVer = ConvertTo-PackVersion $remoteVerStr
+    $playerBuild = $Compat.Installed
+
+    Write-Host ("  Derniere release : {0} (pack v{1})" -f $tag, $remoteVerStr)
+    if ($remoteBuild) {
+        Write-Host ("  BuildID distant  : {0}" -f $remoteBuild)
+    } else {
+        Write-Host "  BuildID distant  : (pas de steam_target.json sur la release)"
+    }
+
+    $newer = $remoteVer -gt $localVer
+    $betterMatch = $false
+    if ($playerBuild -and $remoteBuild) {
+        if ($Compat.Status -eq "Mismatch" -and $remoteBuild -eq $playerBuild) { $betterMatch = $true }
+        if ($remoteBuild -eq $playerBuild -and $newer) { $betterMatch = $true }
+    } elseif ($Compat.Status -eq "Mismatch" -and $newer) {
+        $betterMatch = $true
+    }
+
+    if (-not $newer -and -not $betterMatch) {
+        Write-Host "  Deja a jour (ou pas de meilleure release pour ton BuildID)." -ForegroundColor Green
+        return $PackRoot
+    }
+
+    $reason = if ($betterMatch -and $Compat.Status -eq "Mismatch") {
+        "Ce pack ne matche pas ton BuildID Steam ; une release GitHub semble meilleure."
+    } elseif ($newer) {
+        "Une version plus recente du pack FR est disponible."
+    } else {
+        "Une mise a jour est disponible."
+    }
+    Write-Host ""
+    Write-Host $reason -ForegroundColor Yellow
+    $ans = Read-Host "Telecharger et utiliser la derniere release GitHub ? (O/N)"
+    if ($ans -notmatch '^[oOyY]') {
+        Write-Host "  OK - on garde ce pack local."
+        return $PackRoot
+    }
+
+    $zipUrl = Find-ReleaseAssetUrl $rel $script:Wttg3FrZipAsset
+    if (-not $zipUrl) {
+        Write-Host ("  Asset {0} introuvable sur la release. Abandon maj." -f $script:Wttg3FrZipAsset) -ForegroundColor Yellow
+        return $PackRoot
+    }
+
+    $work = Join-Path $env:TEMP ("WTTG3-FR-update-" + [guid]::NewGuid().ToString("N"))
+    $zipPath = Join-Path $work $script:Wttg3FrZipAsset
+    New-Item -ItemType Directory -Force -Path $work | Out-Null
+    try {
+        Write-Host "  Telechargement..."
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath -UseBasicParsing -Headers @{ "User-Agent" = "WTTG3-FR-Installer" } -TimeoutSec 600
+        Write-Host "  Extraction..."
+        $extractRoot = Join-Path $work "extracted"
+        $newPack = Expand-FrPackZip $zipPath $extractRoot
+        Write-Host ("  Pack distant pret : {0}" -f $newPack) -ForegroundColor Green
+        return $newPack
+    } catch {
+        Write-Host ("  Echec maj auto : {0}" -f $_.Exception.Message) -ForegroundColor Yellow
+        Write-Host "  On continue avec ce pack local."
+        return $PackRoot
+    }
+}

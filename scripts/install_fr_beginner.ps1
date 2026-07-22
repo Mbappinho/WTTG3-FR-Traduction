@@ -7,6 +7,7 @@ try {
     Write-Host "Ferme le jeu avant de continuer."
     Write-Host "Cet outil copie le mod FR + les PDF traduits."
     Write-Host "Les sites web Dark Net ne sont PAS modifies."
+    Write-Host "Si une maj GitHub existe, l'installeur peut la telecharger."
     Write-Host ""
 
     Assert-GameClosed
@@ -15,6 +16,13 @@ try {
 
     $compat = Test-SteamBuildCompatibility $game $pack
     Show-SteamBuildCheck $compat
+
+    $packBefore = $pack
+    $pack = Update-PackFromGitHubIfNeeded $pack $compat
+    if ($pack -ne $packBefore) {
+        $compat = Test-SteamBuildCompatibility $game $pack
+        Show-SteamBuildCheck $compat
+    }
 
     if ($compat.Status -eq "Mismatch") {
         Write-Host ""
