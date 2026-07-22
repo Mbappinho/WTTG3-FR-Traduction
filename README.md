@@ -5,7 +5,7 @@ Fan patch de localisation francaise **non officiel** pour *Welcome to the Game I
 > **Joueur / debutant :** telecharge le pack pret a l'emploi dans
 > [Releases](https://github.com/Mbappinho/WTTG3-FR-Traduction/releases)
 > (`WTTG3-FR-Traduction.zip` → `INSTALLER.bat` / `DESINSTALLER.bat`).
-> Pour **Nexus Mods**, utiliser `WTTG3-FR-Traduction-Nexus.zip` (sans fichiers EN vanilla).
+> Pour **Nexus Mods**, utiliser `WTTG3-FR-Traduction-Nexus.zip` (**drop-in** sans `.bat`/`.ps1` : dézipper dans le dossier du jeu).
 > Maj auto Nexus : [docs/NEXUS_AUTOMATION.md](docs/NEXUS_AUTOMATION.md).
 
 Ce depot contient le **code source du pipeline de traduction** (scripts, docs, dictionnaires FR), **pas** le jeu.
@@ -14,8 +14,8 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.3** |
-| **Steam BuildID** | **`24303741`** (AppID `3869850`) |
+| **Pack actuel** | **v1.4** |
+| **Steam BuildID** | **`24327711`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
 `INSTALLER.bat` **detecte automatiquement** ton BuildID et indique si le pack est compatible.  

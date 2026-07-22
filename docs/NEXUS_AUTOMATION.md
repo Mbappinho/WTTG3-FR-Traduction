@@ -46,8 +46,9 @@ Actions → **Upload to Nexus Mods** → Run workflow
 
 - Ne cree **pas** la page mod ; met a jour un **fichier existant**.
 - Ne reecrit pas toute la description longue de la page (seulement la note de version fichier).
-- Si le fichier est encore en quarantaine, l’upload d’une nouvelle version peut echouer
-  jusqu’a validation par un modo Nexus.
+- Le pack Nexus est un **drop-in** (structure `WTTGSD\...`, **sans** `.bat`/`.ps1`) pour limiter
+  la quarantaine « Some suspicious files ». Si une version est quand meme bloquee,
+  contacter support@nexusmods.com (ne pas supprimer le fichier).
 - L’action est encore en beta : le workflow pin `v1.0.0-beta.9`.
 
 ## Depannage

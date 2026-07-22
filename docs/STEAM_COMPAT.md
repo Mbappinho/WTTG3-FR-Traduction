@@ -2,13 +2,13 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.3)
+## Version validée (pack v1.4)
 
 | Champ | Valeur |
 |-------|--------|
 | Jeu | Welcome to the Game III (Steam) |
 | AppID Steam | `3869850` |
-| **BuildID** | **`24303741`** |
+| **BuildID** | **`24327711`** |
 | Depot | `3869851` |
 | Manifest depot | `3484320614349195729` |
 | Dernière maj Steam (locale) | 2026-07-21 ~00:31 (heure locale) |
@@ -44,6 +44,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.4 | `24327711` | Rebuild post-MAJ Steam ; Nexus = drop-in sans scripts |
 | v1.3 | `24303741` | Même contenu que v1.2.9 (intro Simon + PDF Hacks vanilla) ; renommage version |
 | v1.2.9 | `24303741` | Intro Simon (texture AptLoadingScreen FR) ; PDF Hacks = vanilla + trad seule |
 | v1.2.8 | `24303741` | Motel Enter Desk override + BitHit Solde ; gaps INSTALLING/OWNED documentés |

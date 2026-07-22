@@ -25,6 +25,7 @@
 - **UI v1.2.6** : titre Tanner raccourci (`Scène crime Tanner`) + page costumes ; skip ciné ; BitHit ; participants ; `SEND`→`ENVOYER` ; `Default`→`Défaut` ; `BUY` déjà mappé.
 - **v1.2.7+** : `Enter Desk` dual — `BP_BlankPawnSwitcher` → `S'asseoir au bureau` ; desk→écran → `Sur bureau` (aussi override **Maps/Motel.uexp**, sinon le niveau force l’EN).
 - **v1.2.8** : BitHit `Wallet`→`Solde` (anti-overflow) ; `230 Seconds`→`230 sec.` ; gaps DarkDrop `INSTALLING`/`INSTALLED!`/`OWNED` **absents des FStrings** cookées (probablement runtime/C++).
+- **v1.4** : rebuild post-MAJ Steam (BuildID `24327711`) ; pack Nexus **drop-in** sans `.bat`/`.ps1` (évite quarantaine « suspicious files »).
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE`/`AFK`/`MINED`/`Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).
 

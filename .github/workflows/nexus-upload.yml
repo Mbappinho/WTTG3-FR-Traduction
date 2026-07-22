@@ -94,7 +94,8 @@ jobs:
           version: ${{ steps.tag.outputs.version }}
           display_name: WTTG3 FR Traduction Nexus
           description: |
-            French fan translation pack (Nexus build, no EN vanilla backups).
+            French fan translation pack (Nexus drop-in, no .bat/.ps1).
+            Unzip into the Steam game folder (merge WTTGSD).
             GitHub release: ${{ steps.tag.outputs.tag }}
             Source: https://github.com/Mbappinho/WTTG3-FR-Traduction
           category: main

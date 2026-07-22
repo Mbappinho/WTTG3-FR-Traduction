@@ -45,7 +45,7 @@ python scripts\build_ui_uassetgui_patch.py
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.3) :** BuildID **`24303741`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.4) :** BuildID **`24327711`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
 - Détail + historique : [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md)
@@ -65,14 +65,19 @@ powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1 -Distri
 Sortie Full : `release\WTTG3-FR-Beginner\` → zip GitHub `WTTG3-FR-Traduction.zip`  
 Sortie Nexus : `release\WTTG3-FR-Beginner-Nexus\` → zip `WTTG3-FR-Traduction-Nexus.zip`
 
-| Fichier | Role |
+| Pack | Contenu | Install |
+|------|---------|---------|
+| **Full (GitHub)** | `INSTALLER.bat` / `DESINSTALLER.bat` + backup PDF EN | Double-clic |
+| **Nexus** | Drop-in `WTTGSD\...` + `LIREMOI.txt` (**aucun** `.bat`/`.ps1`) | Dézipper dans le dossier du jeu |
+
+| Fichier (Full) | Role |
 |---------|------|
 | `LIREMOI.txt` | Mode d'emploi |
 | `INSTALLER.bat` | Double-clic = installer FR (+ check BuildID Steam) |
 | `DESINSTALLER.bat` | Double-clic = retirer FR (+ PDF EN si pack Full) |
 | `fichiers/steam_target.json` | BuildID Steam cible du pack (généré depuis `release/steam_target.json`) |
 
-**Nexus Mods :** uploader uniquement le zip **Nexus** (pas le Full). Le Full redistribue `pdfs_en_backup` (fichiers vanilla) → non conforme. Avec le pack Nexus, `DESINSTALLER.bat` retire `FR_P` ; pour les PDF EN, utiliser **Verifier l'integrite des fichiers** Steam.
+**Nexus Mods :** uploader uniquement le zip **Nexus** (pas le Full). Le Full redistribue `pdfs_en_backup` (fichiers vanilla) → non conforme. Pack Nexus = structure jeu prête à fusionner ; désinstall = supprimer `WTTGSD-Windows_FR_P.*` puis **Verifier l'integrite des fichiers** Steam pour les PDF.
 
 Automatisation des maj Nexus depuis les releases GitHub : [NEXUS_AUTOMATION.md](NEXUS_AUTOMATION.md).
 
