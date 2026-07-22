@@ -60,6 +60,7 @@ Browser Resolution,Résolution navigateur,18,21
 Browser FPS,FPS navigateur,11,14
 GPU Acceleration,Accélération GPU,16,16
 (Requires Restart),(Redémarrage requis),18,20
+Tweak if having issues with freezing webpages or PDFs not rendering correctly,À ajuster si les pages web figent ou si les PDF s'affichent mal,77,63
 Pick Up,Ramasser,7,8
 Quality,Qualité,7,7
 Effects,Effets,7,6
@@ -115,10 +116,28 @@ WRITERS,AUTEURS,7,7
 Enter Computer,Entrer dans l'ordinateur,14,24
 NO CAMERAS DETECTED,AUCUNE CAMÉRA DÉTECTÉE,19,22
 CONNECTING,CONNEXION,10,9
+[CONNECTING],[CONNEXION],12,11
+Online,En ligne,6,8
 ARMED,ARMÉ,5,4
 DISARMED,DÉSARMÉ,8,7
 STREAM,FLUX,6,4
 OFFLINE,HORS LIGNE,7,10
+Uploading...,Envoi...,12,8
+Processing,Traitement,10,10
+Status:,Statut :,7,8
+Total:,Total :,6,7
+Items:,Articles :,6,10
+ETA:,Arrivée :,4,9
+QTY,QTÉ,3,3
+Qty: 99,Qté : 99,7,8
+Unknown,Inconnu,7,7
+Price,Prix,5,4
+2 - 4 mins,2 - 4 min,10,9
+pay up,paie,6,4
+Payment???,Le paiement ???,10,15
+"Upload to 
+X","Envoyer vers
+X",13,15
 "Every time you are prompted, hold/release [SPACEBAR] to keep the ring between the bands","Quand on vous le demande, maintenez/relâchez [ESPACE] pour garder l'anneau entre les bandes",87,91
 DOSCoin Balance,Solde DOSCoin,15,13
 YoloYen Balance,Solde YoloYen,15,13
@@ -135,6 +154,8 @@ STARTING UP,DÉMARRAGE,11,9
 SHUTTING DOWN,ARRÊT EN COURS,13,14
 A.C.R.S - Anon Chat Relay Service,A.C.R.S - Relais de chat anonyme,33,32
 Not Enough Rep - Required Rep Level 3,Pas assez de rep - Niveau requis : 3,37,36
+Next Rep Level:,Niveau de réputation suivant :,15,30
+<Bold>SomeAgent</> Sent <XP>1500</> Rep,<Bold>SomeAgent</> a envoyé <XP>1500</> de rép,39,46
 Not Enough Rep To Message This User,Pas assez de rep pour écrire à cet utilisateur,35,46
 This user has blocked you.,Cet utilisateur vous a bloqué.,26,30
 You seem to be offline...,Tu sembles être hors ligne...,25,29
@@ -164,6 +185,7 @@ RETURN HOME,RETOUR ACCUEIL,11,14
 GO BACK,RETOUR,7,6
 EXCHANGE,ÉCHANGER,8,8
 Exchange Processing,Échange en cours,19,16
+"999,999.00 DOS Coin For 999,999.00.00 YoloYen","999,999.00 DOS Coin pour 999,999.00.00 YoloYen",45,46
 Estimated waiting time:,Temps d'attente estimé :,23,24
 Gas Fee:,Frais de gas :,8,14
 Time Remaining: 230 seconds,Temps restant : 230 secondes,27,28
@@ -2343,3 +2365,7 @@ there's a fake call in bomb threat service someone could use to screw with one o
 "yo the rep system actually means shit. Did business with one of these absolute gs with mad rep and had a firstclass experience. Sure I was only buying weed for me and my girl, but these motherfuckers really care.","yo le système de rep veut vraiment dire un truc. J'ai deal avec un de ces absolute gs avec une dinguerie de rep et expérience first class. Certes j'achetais juste de la weed pour moi et ma meuf, mais ces enfoirés en ont vraiment quelque chose à faire.",212,251
 Hack others for a small price and cause a little chaos. Tier 1 hacker. Ping me,Hack les autres pour pas cher et sème un peu le chaos. Hacker Tier 1. Pingue-moi,78,80
 Hack others for a small price and cause a little chaos. Tier 2 hacker. Ping me,Hack les autres pour pas cher et sème un peu le chaos. Hacker Tier 2. Pingue-moi,78,80
+What's up mother fuckers?,Quoi de neuf les enculeurs ?,25,28
+I'm here,Je suis là,8,10
+Hi,Salut,2,5
+Tier 1 hacker for hire. Fair rates. More details shared after ping.,Hacker Tier 1 à louer. Tarifs justes. Détails après ping.,67,57

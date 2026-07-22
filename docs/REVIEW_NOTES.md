@@ -28,9 +28,11 @@
 - **v1.4** : rebuild post-MAJ Steam (BuildID `24327711`) ; pack Nexus **drop-in** sans `.bat`/`.ps1` (évite quarantaine « suspicious files »).
 - **HUD / système (lot post-v1.4, rebuild local)** : `Next Rep Level:` ; `[CONNECTING]` ; `Online` (Title Case, FString) ; `Uploading...` ; `Processing` ; `Status:` / `Total:` / `Items:` / `ETA:` / `QTY` / `Qty: 99` ; popup rep `<Bold>…</> Sent <XP>…</> Rep` ; BitHit `DOS Coin For … YoloYen` ; tip settings PDF/pages web. Voir `work/competitor_gap_analysis/README.md`.
 - **v1.4.1** : lot map `pay up` / `Payment???` / `Upload to \r\nX` / `Price` / `2 - 4 mins` ; **auto-update GitHub** dans `INSTALLER.bat` (Full) via `steam_target.json` + zip release.
+- **v1.4.2** : saluts ACRS Difficulty `What's up mother fuckers?` / `I'm here` / `Hi` ; pub hacker `Tier 1 hacker for hire. Fair rates…` (Tier 3 déjà OK ; Tier 2 non ajouté). Gaps ACRS `Online`/`Offline`/`Not Enough Rep…%d` documentés comme écrasement exe.
 - **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; **1** oubli flagrant (dialogue NOPSled quasi non traduit). Pas de gap HUD massif de leur côté.
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
-- **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable). `Online` Title Case est patchable (ACRS) ; ne pas confondre avec `ONLINE`.
+- **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).
+- **ACRS panneau user (confirmé exe, BuildID `24327711`)** : `Online` / `Offline` et `Not Enough Rep - Required Rep Level %d` sont des littéraux **C++** dans `WTTGSD-Win64-Shipping.exe` (à côté de `PingPress` / `UserNameClickAction`). Le `FR_P` patch bien les FString défaut du widget (`En ligne`, `Pas assez…`) mais le runtime les **écrase**. Pas corrigeable via pak seul (il faudrait patch exe ou UE4SS). Ne pas confondre avec `ONLINE` simulation.
 
 ## P1
 

@@ -45,7 +45,7 @@ python scripts\build_ui_uassetgui_patch.py
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.4.1) :** BuildID **`24327711`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.4.2) :** BuildID **`24327711`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
@@ -197,8 +197,8 @@ Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentati
 | `INSTALLING` / `INSTALLED!` / `OWNED` | — | **Gap** : absents du cook (runtime) |
 | `Tanner's Crime Scene` | `Scène crime Tanner` | Titre menu (anti-overflow) |
 | `Next Rep Level:` | `Niveau de réputation suivant :` | Tooltip HUD réputation |
-| `Online` | `En ligne` | Statut (Title Case FString ; ≠ `ONLINE` runtime) |
-| `[CONNECTING]` | `[CONNEXION]` | Navigateur VM / connexion |
+| `Online` / `Offline` (panneau user ACRS) | — | **Gap exe** : littéraux C++ (`Online`/`Offline` + `Not Enough Rep - Required Rep Level %d`) dans `WTTGSD-Win64-Shipping.exe` ; le FR_P patch le défaut widget mais le runtime écrase |
+| `Online` (ailleurs Title Case) / `[CONNECTING]` | `En ligne` / `[CONNEXION]` | FString cookée si non écrasée ; ≠ `ONLINE` ALL CAPS simulation |
 | `OWNED` / prompts ShadowFetch download / `ONLINE`/`MINED`/`Using` | — | **Gaps** : `ONLINE` ALL CAPS + autres absents du cook |
 | Noms produits DarkDrop | Libellés **courts** (≤ EN) pour ne pas chevaucher le prix — ex. `Boost signal`, `Capteur mvt`, `Pare-feu II`, `Montage VM III` | Liste achat |
 | `Confirm` / `Connect` / `Checkout` | `Confirmer` / `Connecter` / `Commander` | DAREDash |
