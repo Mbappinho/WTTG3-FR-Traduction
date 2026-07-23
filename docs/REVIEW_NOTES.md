@@ -32,6 +32,7 @@
 - **Doc release** : templates `LIREMOI_*` + `RELEASE_NOTES_TEMPLATE.md` — install / maj auto (Full) / manuel / Nexus a tenir a jour a chaque upload.
 - **v1.5.0** : rebuild post-MAJ Steam BuildID `24359942` ; **11 labels rôles** CryptChat dans `WBP_CryptChatMessageTab` (Hacker, Doxeur, Dealer, Courtier de tueurs, …) ; dialogue Ronald wrap-up + ligne `4AM Tonight` ; `GAME MASTER` (AgentTag). Rapport : `work/maj_24359942/RAPPORT.md`.
 - **v1.5.1** : Normal+ 2 bullets (sans Experimental) ; tooltip résolution navigateur combiné ; DAREDash footer Sessions/Access + **catalogue Drugs** ; accents clé employé.
+- **v1.5.2** : auto-update — après téléchargement, **sync du dossier pack local** + stamp `WTTGSD-Windows_FR_P.steam_target.json` dans Paks (évite de re-proposer l'ancienne version au relancement).
 - **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; **1** oubli flagrant (dialogue NOPSled quasi non traduit). Pas de gap HUD massif de leur côté.
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).

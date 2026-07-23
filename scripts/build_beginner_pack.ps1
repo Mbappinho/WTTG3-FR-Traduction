@@ -42,6 +42,7 @@ if ($Distribution -eq "Nexus") {
     Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_P.*") $pakDst -Force
     Copy-Item (Join-Path $pdfFr "*") $pdfDst -Recurse -Force
     Copy-Item $steamTarget (Join-Path $out "steam_target.json") -Force
+    Copy-Item $steamTarget (Join-Path $pakDst "WTTGSD-Windows_FR_P.steam_target.json") -Force
 } else {
     New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\paks") | Out-Null
     New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\pdfs") | Out-Null
@@ -56,6 +57,8 @@ if ($Distribution -eq "Nexus") {
     if (Test-Path $achEn) { Copy-Item $achEn (Join-Path $out "fichiers\achievements_en.json") -Force }
 
     Copy-Item $steamTarget (Join-Path $out "fichiers\steam_target.json") -Force
+    # Copie aussi sous le glob FR_P.* pour que l'installeur (meme ancien) pose un stamp version dans Paks/
+    Copy-Item $steamTarget (Join-Path $out "fichiers\paks\WTTGSD-Windows_FR_P.steam_target.json") -Force
 
     Copy-Item (Join-Path $LocRoot "scripts\beginner_common.ps1") (Join-Path $out "scripts") -Force
     Copy-Item (Join-Path $LocRoot "scripts\install_fr_beginner.ps1") (Join-Path $out "scripts") -Force

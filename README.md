@@ -14,8 +14,8 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.4.1** |
-| **Steam BuildID** | **`24327711`** (AppID `3869850`) |
+| **Pack actuel** | **v1.5.2** |
+| **Steam BuildID** | **`24359942`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
 `INSTALLER.bat` **detecte automatiquement** ton BuildID et indique si le pack est compatible.  
@@ -27,14 +27,15 @@ Apres **chaque mise a jour Steam** du jeu, la trad peut casser (textes EN, PDF E
 
 ### Mise a jour propre (recommandee)
 
-Tu as deja INSTALLER.bat (Full v1.4.1 ou v1.4.2 uniquement)
+Tu as deja INSTALLER.bat (Full **v1.4.1+**)
 Tu n'as pas besoin de retelecharger manuellement ni de desinstaller :
 
 Ferme le jeu
-Relance INSTALLER.bat de ton pack 1.4.1 ou 1.4.2
-Accepte la maj GitHub (O) quand il propose la v1.5.0
+Relance INSTALLER.bat de ton pack actuel
+Accepte la maj GitHub (O) quand il propose une version plus recente
 Confirme l'installation → relance le jeu
-(L'auto-update n'existe que depuis ces deux releases Full. Les packs plus vieux ou Nexus drop-in n'ont pas ce script.)
+(Depuis **v1.5.2**, le dossier pack local est synchronise apres maj : un 2e lancement doit dire « Deja a jour ».
+Si ton pack est <= v1.5.1 : telecharge UNE FOIS le zip v1.5.2 pour avoir les nouveaux scripts.)
 
 Nexus / premiere install / pack sans .bat
 Full : telecharger WTTG3-FR-Traduction.zip → INSTALLER.bat

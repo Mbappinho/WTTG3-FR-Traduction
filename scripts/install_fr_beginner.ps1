@@ -17,10 +17,11 @@ try {
     $compat = Test-SteamBuildCompatibility $game $pack
     Show-SteamBuildCheck $compat
 
-    $packBefore = $pack
+    $packVerBefore = [string]$compat.PackVersion
     $pack = Update-PackFromGitHubIfNeeded $pack $compat
-    if ($pack -ne $packBefore) {
-        $compat = Test-SteamBuildCompatibility $game $pack
+    # Toujours rafraichir : la maj peut synchroniser le meme dossier (chemin inchange)
+    $compat = Test-SteamBuildCompatibility $game $pack
+    if ([string]$compat.PackVersion -ne $packVerBefore) {
         Show-SteamBuildCheck $compat
     }
 
@@ -52,6 +53,7 @@ try {
 
     Write-Host "Copie du mod UI (FR_P)..."
     Copy-Item (Join-Path $paksSrc "WTTGSD-Windows_FR_P.*") -Destination $paksDst -Force
+    Write-InstalledPackStamp $game $pack
 
     if (Test-Path $pdfSrc) {
         if (-not (Test-Path $pdfDst)) { throw "Dossier PDFS introuvable : $pdfDst" }

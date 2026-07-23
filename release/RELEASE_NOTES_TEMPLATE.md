@@ -7,7 +7,7 @@ Mettre à jour `pack_version` dans `release/steam_target.json` avant le pack.
 
 ## Summary
 - (1–3 puces : ce qui change pour le joueur)
-- BuildID Steam : `24327711`
+- BuildID Steam : `24359942`
 
 ## Install (premiere fois)
 **GitHub Full** (`WTTG3-FR-Traduction.zip`)
@@ -23,7 +23,7 @@ Mettre à jour `pack_version` dans `release/steam_target.json` avant le pack.
 
 ## Mettre a jour (proprement)
 **Auto-update (Full v1.4.1+)** — recommande
-Si tu as deja le zip Full avec `INSTALLER.bat` (**v1.4.1**, **v1.4.2**, **v1.5.0**, …) :
+Si tu as deja le zip Full avec `INSTALLER.bat` (**v1.4.1+**, dont **v1.5.2**) :
 1. Relancer `INSTALLER.bat` de ton pack actuel
 2. Si « version plus recente » → O
 3. Confirmer l'install → O

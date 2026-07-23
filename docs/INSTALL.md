@@ -45,7 +45,7 @@ python scripts\build_ui_uassetgui_patch.py
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.5.1) :** BuildID **`24359942`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.5.2) :** BuildID **`24359942`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).

@@ -115,6 +115,56 @@ function Get-SteamTarget([string]$PackRoot) {
     return (Get-Content -Raw -Encoding UTF8 $path | ConvertFrom-Json)
 }
 
+function Get-InstalledPackTarget([string]$GameRoot) {
+    if (-not $GameRoot) { return $null }
+    $path = Join-Path $GameRoot "WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.steam_target.json"
+    if (-not (Test-Path -LiteralPath $path)) { return $null }
+    try {
+        return (Get-Content -LiteralPath $path -Raw -Encoding UTF8 | ConvertFrom-Json)
+    } catch {
+        return $null
+    }
+}
+
+function Get-HigherPackTarget($a, $b) {
+    if (-not $a) { return $b }
+    if (-not $b) { return $a }
+    $va = ConvertTo-PackVersion ([string]$a.pack_version)
+    $vb = ConvertTo-PackVersion ([string]$b.pack_version)
+    if ($vb -gt $va) { return $b }
+    return $a
+}
+
+function Sync-LocalPackFromDownloaded([string]$LocalPackRoot, [string]$DownloadedPackRoot) {
+    if (-not $LocalPackRoot -or -not $DownloadedPackRoot) { return }
+    if ($LocalPackRoot -eq $DownloadedPackRoot) { return }
+    foreach ($rel in @("fichiers", "scripts")) {
+        $src = Join-Path $DownloadedPackRoot $rel
+        $dst = Join-Path $LocalPackRoot $rel
+        if (-not (Test-Path $src)) { continue }
+        if (Test-Path $dst) { Remove-Item $dst -Recurse -Force }
+        Copy-Item $src $dst -Recurse -Force
+    }
+    foreach ($name in @("LIREMOI.txt", "INSTALLER.bat", "DESINSTALLER.bat")) {
+        $src = Join-Path $DownloadedPackRoot $name
+        if (Test-Path $src) {
+            Copy-Item $src (Join-Path $LocalPackRoot $name) -Force
+        }
+    }
+}
+
+function Write-InstalledPackStamp([string]$GameRoot, [string]$PackRoot) {
+    if (-not $GameRoot -or -not $PackRoot) { return }
+    $src = Join-Path $PackRoot "fichiers\steam_target.json"
+    if (-not (Test-Path $src)) {
+        $src = Join-Path $PackRoot "fichiers\paks\WTTGSD-Windows_FR_P.steam_target.json"
+    }
+    if (-not (Test-Path $src)) { return }
+    $dstDir = Join-Path $GameRoot "WTTGSD\Content\Paks"
+    if (-not (Test-Path $dstDir)) { return }
+    Copy-Item $src (Join-Path $dstDir "WTTGSD-Windows_FR_P.steam_target.json") -Force
+}
+
 function Find-SteamAppManifest([string]$GameRoot, [string]$AppId) {
     if (-not $AppId) { $AppId = "3869850" }
     $name = "appmanifest_$AppId.acf"
@@ -166,7 +216,10 @@ function Get-SteamBuildIdFromManifest([string]$ManifestPath) {
   Hashtable: Status = Match | Mismatch | Unknown ; Installed ; Expected ; Manifest
 #>
 function Test-SteamBuildCompatibility([string]$GameRoot, [string]$PackRoot) {
-    $target = Get-SteamTarget $PackRoot
+    $packTarget = Get-SteamTarget $PackRoot
+    $installedTarget = Get-InstalledPackTarget $GameRoot
+    $target = Get-HigherPackTarget $packTarget $installedTarget
+
     $expected = if ($target) { [string]$target.steam_buildid } else { $null }
     $appId = if ($target) { [string]$target.steam_appid } else { "3869850" }
     $packVer = if ($target) { [string]$target.pack_version } else { "?" }
@@ -180,12 +233,14 @@ function Test-SteamBuildCompatibility([string]$GameRoot, [string]$PackRoot) {
     }
 
     return @{
-        Status     = $status
-        Installed  = $installed
-        Expected   = $expected
-        Manifest   = $manifest
+        Status      = $status
+        Installed   = $installed
+        Expected    = $expected
+        Manifest    = $manifest
         PackVersion = $packVer
-        AppId      = $appId
+        AppId       = $appId
+        PackTarget  = $packTarget
+        GameStamp   = $installedTarget
     }
 }
 
@@ -303,10 +358,20 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
     $remoteTarget = Get-RemoteSteamTarget $rel
     $remoteVerStr = if ($remoteTarget -and $remoteTarget.pack_version) { [string]$remoteTarget.pack_version } else { $tag.TrimStart("v", "V") }
     $remoteBuild = if ($remoteTarget) { [string]$remoteTarget.steam_buildid } else { $null }
+    # Compat.PackVersion = max(pack local, stamp dans Paks du jeu)
     $localVer = ConvertTo-PackVersion $Compat.PackVersion
     $remoteVer = ConvertTo-PackVersion $remoteVerStr
     $playerBuild = $Compat.Installed
+    $packOnlyTarget = Get-SteamTarget $PackRoot
+    $packOnlyVer = if ($packOnlyTarget -and $packOnlyTarget.pack_version) {
+        ConvertTo-PackVersion ([string]$packOnlyTarget.pack_version)
+    } else {
+        [version]"0.0.0"
+    }
+    # Dossier pack encore ancien alors que le jeu / stamp est deja a jour → resync scripts+fichiers
+    $folderBehind = $remoteVer -gt $packOnlyVer
 
+    Write-Host ("  Pack local       : v{0}" -f $(if ($packOnlyTarget -and $packOnlyTarget.pack_version) { $packOnlyTarget.pack_version } else { "?" }))
     Write-Host ("  Derniere release : {0} (pack v{1})" -f $tag, $remoteVerStr)
     if ($remoteBuild) {
         Write-Host ("  BuildID distant  : {0}" -f $remoteBuild)
@@ -323,13 +388,15 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
         $betterMatch = $true
     }
 
-    if (-not $newer -and -not $betterMatch) {
+    if (-not $newer -and -not $betterMatch -and -not $folderBehind) {
         Write-Host "  Deja a jour (ou pas de meilleure release pour ton BuildID)." -ForegroundColor Green
         return $PackRoot
     }
 
     $reason = if ($betterMatch -and $Compat.Status -eq "Mismatch") {
         "Ce pack ne matche pas ton BuildID Steam ; une release GitHub semble meilleure."
+    } elseif ($folderBehind -and -not $newer) {
+        "Ton dossier pack local est ancien ; synchronisation recommandee pour les prochains lancements."
     } elseif ($newer) {
         "Une version plus recente du pack FR est disponible."
     } else {
@@ -359,8 +426,16 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
         Write-Host "  Extraction..."
         $extractRoot = Join-Path $work "extracted"
         $newPack = Expand-FrPackZip $zipPath $extractRoot
-        Write-Host ("  Pack distant pret : {0}" -f $newPack) -ForegroundColor Green
-        return $newPack
+        Write-Host "  Synchronisation du pack local (pour les prochains lancements)..."
+        Sync-LocalPackFromDownloaded $PackRoot $newPack
+        $syncedVer = "?"
+        try {
+            $t = Get-SteamTarget $PackRoot
+            if ($t -and $t.pack_version) { $syncedVer = [string]$t.pack_version }
+        } catch {}
+        Write-Host ("  Pack local a jour : v{0}" -f $syncedVer) -ForegroundColor Green
+        # Prefer local synced root so install + next run use the same folder
+        return $PackRoot
     } catch {
         Write-Host ("  Echec maj auto : {0}" -f $_.Exception.Message) -ForegroundColor Yellow
         Write-Host "  On continue avec ce pack local."

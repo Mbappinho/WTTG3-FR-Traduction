@@ -1,10 +1,14 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.5.1)
+COMPATIBILITE STEAM (v1.5.2)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24359942
+- Auto-update : apres telechargement, le dossier pack local est synchronise
+  (fichiers + scripts). Relancer INSTALLER.bat doit afficher "Deja a jour".
+- Si ton pack Full est <= v1.5.1 : telecharge UNE FOIS le zip v1.5.2
+  et remplace ton dossier (les anciens scripts ne synchronisaient pas).
 - Fichier fichiers\steam_target.json = version du pack + BuildID cible
 - INSTALLER.bat DETECTE ton BuildID Steam (OK / ATTENTION crash)
 - INSTALLER.bat peut TELECHARGER la derniere release GitHub
