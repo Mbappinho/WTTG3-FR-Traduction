@@ -27,13 +27,18 @@ Apres **chaque mise a jour Steam** du jeu, la trad peut casser (textes EN, PDF E
 
 ### Mise a jour propre (recommandee)
 
-1. Ferme le jeu completement.
-2. Telecharge la **derniere** release sur GitHub (pas une vieille v1.2.x si une plus recente existe).
-3. `DESINSTALLER.bat` (meme dossier de jeu) — retire l’ancien `FR_P` + restaure les PDF EN.
-4. `INSTALLER.bat` avec le **nouveau** zip.
-5. Relance le jeu.
+Tu as deja INSTALLER.bat (Full v1.4.1 ou v1.4.2 uniquement)
+Tu n'as pas besoin de retelecharger manuellement ni de desinstaller :
 
-Ne te contente pas de recopier un vieux zip par-dessus : apres une maj du jeu, l’ancien pak FR peut etre **incompatible**.
+Ferme le jeu
+Relance INSTALLER.bat de ton pack 1.4.1 ou 1.4.2
+Accepte la maj GitHub (O) quand il propose la v1.5.0
+Confirme l'installation → relance le jeu
+(L'auto-update n'existe que depuis ces deux releases Full. Les packs plus vieux ou Nexus drop-in n'ont pas ce script.)
+
+Nexus / premiere install / pack sans .bat
+Full : telecharger WTTG3-FR-Traduction.zip → INSTALLER.bat
+Nexus : telecharger WTTG3-FR-Traduction-Nexus.zip → dezipper dans le dossier du jeu (ecrase FR_P + PDF)
 
 ### Si le jeu crash au lancement
 
