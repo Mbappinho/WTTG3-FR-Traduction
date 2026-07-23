@@ -2,16 +2,16 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.4.2)
+## Version validée (pack v1.5.0)
 
 | Champ | Valeur |
 |-------|--------|
 | Jeu | Welcome to the Game III (Steam) |
 | AppID Steam | `3869850` |
-| **BuildID** | **`24327711`** |
+| **BuildID** | **`24359942`** |
 | Depot | `3869851` |
-| Manifest depot | `3484320614349195729` |
-| Dernière maj Steam (locale) | 2026-07-21 ~00:31 (heure locale) |
+| Manifest depot | `3958003346115020289` |
+| Dernière maj Steam (locale) | 2026-07-23 ~22:18 (heure locale) |
 | Source | `steamapps/appmanifest_3869850.acf` |
 
 Si ton `buildid` dans `appmanifest_3869850.acf` est **différent**, désinstalle le mod ou attends / installe une release FR rebuildée pour ce build.
@@ -44,6 +44,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.5.0 | `24359942` | Rebuild post-MAJ Steam ; labels rôles CryptChat (Hacker/Doxeur/…) |
 | v1.4.2 | `24327711` | Saluts ACRS Difficulty + Tier 1 hacker for hire ; gaps Online/Rep exe documentés |
 | v1.4.1 | `24327711` | HUD polish (pay up, Payment, Upload to, Price, DARE mins) ; auto-update GitHub dans INSTALLER.bat |
 | v1.4 | `24327711` | Rebuild post-MAJ Steam ; Nexus = drop-in sans scripts |

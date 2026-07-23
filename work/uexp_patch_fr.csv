@@ -118,6 +118,18 @@ NO CAMERAS DETECTED,AUCUNE CAMÉRA DÉTECTÉE,19,22
 CONNECTING,CONNEXION,10,9
 [CONNECTING],[CONNEXION],12,11
 Online,En ligne,6,8
+Hacker,Hacker,6,6
+Doxxer,Doxeur,6,6
+Drug Dealer,Dealer,11,6
+Game Master,Game Master,11,11
+GAME MASTER,GAME MASTER,11,11
+Hitman Broker,Courtier de tueurs,13,18
+Informant,Informateur,9,11
+Key Decryptor,Déchiffreur,13,11
+Opponent,Adversaire,8,10
+Site Seeker,Chercheur de sites,11,18
+Video Seeker,Chercheur de vidéos,12,19
+Wiki Seller,Vendeur Wiki,11,12
 ARMED,ARMÉ,5,4
 DISARMED,DÉSARMÉ,8,7
 STREAM,FLUX,6,4
@@ -277,6 +289,31 @@ Put that link into A.N.N. to access a bunch of different Dark Net websites.","Vo
 
 Mets ce lien dans A.N.N. pour accéder à plein de sites du Dark Net.",115,108
 "It's very important to know what you're looking for. I downloaded a guide onto your desktop, which breaks that down. I'd highly recommend checking that out before going onto the Dark Net.",Il est très important de savoir ce que tu cherches. J'ai téléchargé un guide sur ton bureau qui explique tout. Je te conseille fortement de le lire avant d'aller sur le Dark Net.,187,178
+"I reached out to some people who will contact you soon in CryptChat with more information, but unlike me they'll charge you for it.
+
+ODDroot - Has information on hacks you'll face. 
+
+Goggin - Has information on the people who will be trying to kill you tonight.
+
+After you've collected, then decrypted all 8 keys, send me the master key (each decrypted key placed in order by its index number, assembled together as a single key) to beat tonight's game. 
+
+You have to 4AM Tonight to beat the game!!
+
+But let's be real.. You are more than likely dead as fuck lol. 
+
+Good luck! ","J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement à moi ils te feront payer.
+
+ODDroot - A des infos sur les hacks que tu vas croiser. 
+
+Goggin - A des infos sur les gens qui vont essayer de te tuer ce soir.
+
+Une fois que t'as collecté puis déchiffré les 8 clés, envoie-moi la master key (chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule clé) pour finir la partie de ce soir. 
+
+Tu dois tenir jusqu'à 4AM Tonight pour battre le jeu !!
+
+Mais soyons réalistes.. T'es très probablement déjà mort lol. 
+
+Bonne chance ! ",588,600
 "I reached out to some people who will contact you soon in CryptChat with more information, but unlike me they'll charge you for it.
 
 ODDroot - Has information on hacks you'll face. 
@@ -2365,6 +2402,7 @@ there's a fake call in bomb threat service someone could use to screw with one o
 "yo the rep system actually means shit. Did business with one of these absolute gs with mad rep and had a firstclass experience. Sure I was only buying weed for me and my girl, but these motherfuckers really care.","yo le système de rep veut vraiment dire un truc. J'ai deal avec un de ces absolute gs avec une dinguerie de rep et expérience first class. Certes j'achetais juste de la weed pour moi et ma meuf, mais ces enfoirés en ont vraiment quelque chose à faire.",212,251
 Hack others for a small price and cause a little chaos. Tier 1 hacker. Ping me,Hack les autres pour pas cher et sème un peu le chaos. Hacker Tier 1. Pingue-moi,78,80
 Hack others for a small price and cause a little chaos. Tier 2 hacker. Ping me,Hack les autres pour pas cher et sème un peu le chaos. Hacker Tier 2. Pingue-moi,78,80
+You have to 4AM Tonight to beat the game!!,Tu dois tenir jusqu'à 4AM Tonight pour battre le jeu !!,42,55
 What's up mother fuckers?,Quoi de neuf les enculeurs ?,25,28
 I'm here,Je suis là,8,10
 Hi,Salut,2,5

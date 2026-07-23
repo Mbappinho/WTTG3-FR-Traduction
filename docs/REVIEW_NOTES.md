@@ -30,6 +30,7 @@
 - **v1.4.1** : lot map `pay up` / `Payment???` / `Upload to \r\nX` / `Price` / `2 - 4 mins` ; **auto-update GitHub** dans `INSTALLER.bat` (Full) via `steam_target.json` + zip release.
 - **v1.4.2** : saluts ACRS Difficulty + Tier 1 hacker for hire ; gaps Online/Rep exe documentés.
 - **Doc release** : templates `LIREMOI_*` + `RELEASE_NOTES_TEMPLATE.md` — install / maj auto (Full) / manuel / Nexus a tenir a jour a chaque upload.
+- **v1.5.0** : rebuild post-MAJ Steam BuildID `24359942` ; **11 labels rôles** CryptChat dans `WBP_CryptChatMessageTab` (Hacker, Doxeur, Dealer, Courtier de tueurs, …) ; dialogue Ronald wrap-up + ligne `4AM Tonight` ; `GAME MASTER` (AgentTag). Rapport : `work/maj_24359942/RAPPORT.md`.
 - **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; **1** oubli flagrant (dialogue NOPSled quasi non traduit). Pas de gap HUD massif de leur côté.
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).

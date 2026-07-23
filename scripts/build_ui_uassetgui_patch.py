@@ -230,6 +230,19 @@ RAW: dict[str, str] = {
     "CONNECTING": "CONNEXION",
     "[CONNECTING]": "[CONNEXION]",
     "Online": "En ligne",
+    # CryptChat message tab roles (new FStrings as of Steam BuildID 24359942)
+    "Hacker": "Hacker",
+    "Doxxer": "Doxeur",
+    "Drug Dealer": "Dealer",
+    "Game Master": "Game Master",
+    "GAME MASTER": "GAME MASTER",
+    "Hitman Broker": "Courtier de tueurs",
+    "Informant": "Informateur",
+    "Key Decryptor": "Déchiffreur",
+    "Opponent": "Adversaire",
+    "Site Seeker": "Chercheur de sites",
+    "Video Seeker": "Chercheur de vidéos",
+    "Wiki Seller": "Vendeur Wiki",
     "ARMED": "ARMÉ",
     "DISARMED": "DÉSARMÉ",
     "STREAM": "FLUX",
@@ -400,6 +413,17 @@ RAW: dict[str, str] = {
         "Il est très important de savoir ce que tu cherches. J'ai téléchargé un guide sur ton bureau qui explique tout. "
         "Je te conseille fortement de le lire avant d'aller sur le Dark Net."
     ),
+    "I reached out to some people who will contact you soon in CryptChat with more information, but unlike me they'll charge you for it.\r\n\r\nODDroot - Has information on hacks you'll face. \r\n\r\nGoggin - Has information on the people who will be trying to kill you tonight.\r\n\r\nAfter you've collected, then decrypted all 8 keys, send me the master key (each decrypted key placed in order by its index number, assembled together as a single key) to beat tonight's game. \r\n\r\nYou have to 4AM Tonight to beat the game!!\r\n\r\nBut let's be real.. You are more than likely dead as fuck lol. \r\n\r\nGood luck! ": (
+        "J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement à moi ils te feront payer.\r\n\r\n"
+        "ODDroot - A des infos sur les hacks que tu vas croiser. \r\n\r\n"
+        "Goggin - A des infos sur les gens qui vont essayer de te tuer ce soir.\r\n\r\n"
+        "Une fois que t'as collecté puis déchiffré les 8 clés, envoie-moi la master key "
+        "(chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule clé) pour finir la partie de ce soir. \r\n\r\n"
+        "Tu dois tenir jusqu'à 4AM Tonight pour battre le jeu !!\r\n\r\n"
+        "Mais soyons réalistes.. T'es très probablement déjà mort lol. \r\n\r\n"
+        "Bonne chance ! "
+    ),
+    # Legacy (pre-24359942) without 4AM line — keep for older extracts
     "I reached out to some people who will contact you soon in CryptChat with more information, but unlike me they'll charge you for it.\r\n\r\nODDroot - Has information on hacks you'll face. \r\n\r\nGoggin - Has information on the people who will be trying to kill you tonight.\r\n\r\nAfter you've collected, then decrypted all 8 keys, send me the master key (each decrypted key placed in order by its index number, assembled together as a single key) to beat tonight's game. \r\n\r\nBut let's be real.. You are more than likely dead as fuck lol. \r\n\r\nGood luck! ": (
         "J'ai contacté des gens qui vont bientôt t'écrire sur CryptChat avec plus d'infos, mais contrairement à moi ils te feront payer.\r\n\r\n"
         "ODDroot - A des infos sur les hacks que tu vas croiser. \r\n\r\n"

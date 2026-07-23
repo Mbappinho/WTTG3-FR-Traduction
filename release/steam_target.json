@@ -1,7 +1,7 @@
 {
-    "pack_version": "1.4.2",
+    "pack_version": "1.5.0",
     "steam_appid": "3869850",
-    "steam_buildid": "24327711",
+    "steam_buildid": "24359942",
     "game_name": "Welcome to the Game III",
     "notes": "Mettre a jour steam_buildid apres chaque rebuild post-MAJ Steam."
 }

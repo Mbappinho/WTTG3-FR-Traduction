@@ -1,10 +1,10 @@
 WTTG3 - Traduction francaise (pack Nexus drop-in)
 =================================================
 
-COMPATIBILITE STEAM (v1.4.2)
+COMPATIBILITE STEAM (v1.5.0)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
-- BuildID Steam cible : 24327711
+- BuildID Steam cible : 24359942
 - Verifie ton BuildID : steamapps\appmanifest_3869850.acf (ligne "buildid")
   S'il differe du BuildID ci-dessus → risque de crash ; attends une
   release FR a jour.

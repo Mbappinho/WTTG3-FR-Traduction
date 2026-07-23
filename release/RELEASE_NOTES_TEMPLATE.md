@@ -22,10 +22,16 @@ Mettre à jour `pack_version` dans `release/steam_target.json` avant le pack.
 3. Relancer
 
 ## Mettre a jour (proprement)
-**Auto-update (Full v1.4.1+)** — recommande
+**Auto-update (Full v1.4.1 et v1.4.2 uniquement)** — recommande
+Si tu as deja le zip Full avec `INSTALLER.bat` des **deux dernieres releases**
+avant celle-ci (`1.4.1` / `1.4.2`) :
 1. Relancer `INSTALLER.bat` de ton pack actuel
 2. Si « version plus recente » → O
 3. Confirmer l'install → O
+(Pas besoin de desinstaller avant pour une maj normale / post-Steam si le script propose la bonne release.)
+
+Les packs **sans** ce `INSTALLER.bat` (Nexus drop-in, ou Full avant 1.4.1) doivent
+telecharger le nouveau zip a la main (Methode manuelle ci-dessous).
 
 **Manuel Full**
 1. Telecharger la derniere `WTTG3-FR-Traduction.zip`

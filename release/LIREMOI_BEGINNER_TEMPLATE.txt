@@ -1,10 +1,10 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.4.2)
+COMPATIBILITE STEAM (v1.5.0)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
-- BuildID Steam cible : 24327711
+- BuildID Steam cible : 24359942
 - Fichier fichiers\steam_target.json = version du pack + BuildID cible
 - INSTALLER.bat DETECTE ton BuildID Steam (OK / ATTENTION crash)
 - INSTALLER.bat peut TELECHARGER la derniere release GitHub
@@ -38,14 +38,17 @@ INSTALLER (premiere fois)
 METTRE A JOUR LE MOD (proprement)
 ------------------------------------------------
 
-Methode A — recommandee (auto-update, depuis v1.4.1+)
+Methode A — recommandee (auto-update)
+Disponible UNIQUEMENT si ton pack a deja INSTALLER.bat avec maj GitHub
+(= releases Full **v1.4.1** et **v1.4.2** ; les packs plus vieux n'ont PAS l'auto-update).
 1. Ferme le jeu.
-2. Relance INSTALLER.bat de TON pack actuel (meme vieux zip 1.4.1+).
+2. Relance INSTALLER.bat de TON pack actuel (1.4.1 ou 1.4.2).
 3. Quand il affiche "Une version plus recente..." → reponds O
 4. Confirme l'installation du pack telecharge → O
 5. Relance le jeu
-Pas besoin de desinstaller avant si tu restes sur la meme famille
-de BuildID Steam.
+Apres une maj Steam : si BuildID OK / maj GitHub proposee, Methode A suffit
+souvent (pas besoin de DESINSTALLER avant).
+Packs sans INSTALLER.bat (Nexus drop-in, ou Full avant 1.4.1) → Methode B.
 
 Methode B — manuelle (nouveau zip telecharge a la main)
 1. Ferme le jeu.
