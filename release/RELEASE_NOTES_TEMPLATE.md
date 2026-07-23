@@ -22,9 +22,8 @@ Mettre à jour `pack_version` dans `release/steam_target.json` avant le pack.
 3. Relancer
 
 ## Mettre a jour (proprement)
-**Auto-update (Full v1.4.1 et v1.4.2 uniquement)** — recommande
-Si tu as deja le zip Full avec `INSTALLER.bat` des **deux dernieres releases**
-avant celle-ci (`1.4.1` / `1.4.2`) :
+**Auto-update (Full v1.4.1+)** — recommande
+Si tu as deja le zip Full avec `INSTALLER.bat` (**v1.4.1**, **v1.4.2**, **v1.5.0**, …) :
 1. Relancer `INSTALLER.bat` de ton pack actuel
 2. Si « version plus recente » → O
 3. Confirmer l'install → O

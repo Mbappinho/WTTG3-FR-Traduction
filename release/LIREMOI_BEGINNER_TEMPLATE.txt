@@ -1,7 +1,7 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.5.0)
+COMPATIBILITE STEAM (v1.5.1)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24359942
@@ -40,9 +40,9 @@ METTRE A JOUR LE MOD (proprement)
 
 Methode A — recommandee (auto-update)
 Disponible UNIQUEMENT si ton pack a deja INSTALLER.bat avec maj GitHub
-(= releases Full **v1.4.1** et **v1.4.2** ; les packs plus vieux n'ont PAS l'auto-update).
+(= releases Full **v1.4.1**, **v1.4.2**, **v1.5.0** ; les packs plus vieux n'ont PAS l'auto-update).
 1. Ferme le jeu.
-2. Relance INSTALLER.bat de TON pack actuel (1.4.1 ou 1.4.2).
+2. Relance INSTALLER.bat de TON pack actuel (1.4.1 / 1.4.2 / 1.5.0).
 3. Quand il affiche "Une version plus recente..." → reponds O
 4. Confirme l'installation du pack telecharge → O
 5. Relance le jeu

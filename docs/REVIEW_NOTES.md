@@ -5,7 +5,7 @@
 - PDF VirtMesh / Hacks / Threats : traduits ; noms techniques (INJ3KT-R, K3RN3LC0MP1L3R, sujets) **conservés**.
 - **Intro Simon Zhao** : texte EN dans texture `AptLoadingScreen` (1064×810 BGRA). **Patché FR** dans `FR_P` (2026-07-21). Note : `TitleLogoA/B` = logo W3LCM3, pas l’intro.
 - Settings restants : `Master Audio`, `Browser & Files` / Resolution / FPS / GPU Acceleration / Requires Restart.
-- Difficulté : bullets Normal+ (`Same as Normal` / `Perma Death` / `Experimental`) + `Challenging`.
+- **Difficulté** : bullets Normal+ — maj `24359942` a retiré `Experimental` ; clé à 2 lignes remappée (`Same as Normal` / `Perma Death`).
 - **Crash Steam post-MAJ** (`LeetMode2` Bad export index, 2026-07-20) : re-extract `legacy_ui_steam` + rebuild FR_P (cook a changé, ex. LeetMode2 3406→3410).
 - **Crash Steam post-MAJ** (2026-07-21) : base `WTTGSD-Windows.*` plus récente que `FR_P` → même fix (re-extract + rebuild + PDF FR réappliqués).
 - **Bug fix** : `Threats/index.html` avait été traduit en `Menaces/index.html` (Agent_Goggin / ACRS) → PDF Threats en `ERR_FILE_NOT_FOUND`. Remis à `Threats/index.html` ; garde-fou chemins `*.html` dans merge + build.
@@ -31,6 +31,7 @@
 - **v1.4.2** : saluts ACRS Difficulty + Tier 1 hacker for hire ; gaps Online/Rep exe documentés.
 - **Doc release** : templates `LIREMOI_*` + `RELEASE_NOTES_TEMPLATE.md` — install / maj auto (Full) / manuel / Nexus a tenir a jour a chaque upload.
 - **v1.5.0** : rebuild post-MAJ Steam BuildID `24359942` ; **11 labels rôles** CryptChat dans `WBP_CryptChatMessageTab` (Hacker, Doxeur, Dealer, Courtier de tueurs, …) ; dialogue Ronald wrap-up + ligne `4AM Tonight` ; `GAME MASTER` (AgentTag). Rapport : `work/maj_24359942/RAPPORT.md`.
+- **v1.5.1** : Normal+ 2 bullets (sans Experimental) ; tooltip résolution navigateur combiné ; DAREDash footer Sessions/Access + **catalogue Drugs** ; accents clé employé.
 - **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; **1** oubli flagrant (dialogue NOPSled quasi non traduit). Pas de gap HUD massif de leur côté.
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).

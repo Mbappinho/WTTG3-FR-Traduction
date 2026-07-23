@@ -61,6 +61,12 @@ Browser FPS,FPS navigateur,11,14
 GPU Acceleration,Accélération GPU,16,16
 (Requires Restart),(Redémarrage requis),18,20
 Tweak if having issues with freezing webpages or PDFs not rendering correctly,À ajuster si les pages web figent ou si les PDF s'affichent mal,77,63
+"Tweak if having issues with freezing webpages or PDFs not rendering correctly
+
+You may also lower this if you want to make text on the websites or PDFs larger and easier to read","À ajuster si les pages web figent ou si les PDF s'affichent mal
+
+Tu peux aussi baisser cette valeur pour agrandir le texte des sites / PDF et le rendre plus lisible",179,166
+You may also lower this if you want to make text on the websites or PDFs larger and easier to read,Tu peux aussi baisser cette valeur pour agrandir le texte des sites / PDF et le rendre plus lisible,98,99
 Pick Up,Ramasser,7,8
 Quality,Qualité,7,7
 Effects,Effets,7,6
@@ -190,9 +196,15 @@ Active Order Detected,Commande active détectée,21,24
 Dealer will share details directly,Le vendeur enverra les détails directement,34,42
 Sessions are temporary.,Les sessions sont temporaires.,23,30
 Access expires after order is placed.,L'accès expire après la commande.,37,33
+"Sessions are temporary.
+Access expires after order is placed.","Les sessions sont temporaires.
+L'accès expire après la commande.",62,65
 Authorized Vendor Access,Accès vendeur autorisé,24,22
 Proceed with this order?,Confirmer cette commande ?,24,26
 Est. Delivery:,Livraison estimée :,14,19
+Stock,Stock,5,5
+Product,Produit,7,7
+TOTAL,TOTAL,5,5
 RETURN HOME,RETOUR ACCUEIL,11,14
 GO BACK,RETOUR,7,6
 EXCHANGE,ÉCHANGER,8,8
@@ -452,7 +464,7 @@ Appuie sur [F] pour allumer / éteindre.",60,69
 Electrical Room Key,Clé de la salle électrique,19,26
 This key unlocks the inner electrical room door.,Cette clé ouvre la porte interieure de la salle électrique.,48,59
 Employee Key,Clé employé,12,11
-This key unlocks the employee back doors.,Cette clé ouvre les portes arrière reservees aux employes.,41,58
+This key unlocks the employee back doors.,Cette clé ouvre les portes arrière réservées aux employés.,41,58
 Motel Master Key,Passe-partout du motel,16,22
 This key locks / unlocks the motel room doors.,Cette clé ferme / ouvre les portes des chambres du motel.,46,57
 Crank'd,Crank'd,7,7
@@ -461,18 +473,22 @@ Crank'd,Crank'd,7,7
 I've heard stories of people having sudden heart attacks after consuming these drinks.","Boisson énergétique interdite qui prétend booster tes capacités physiques.
 
 J'ai entendu parler de gens qui font des crises cardiaques après en avoir bu.",160,155
+Banned energy drink that will amplify your physical capabilities.,Boisson énergétique interdite qui amplifie tes capacités physiques.,65,67
 Krystal King,Krystal King,12,12
+Krystal King ,Krystal King ,13,13
 "Baggie of crushed methamphetamine.
 
 No way I'm trying that shit.","Sachet de méthamphétamine écrasée.
 
 Pas question que j'y touche.",66,66
+Purest meth on the market. Each order gets you a 2 gram baggie.,La meth la plus pure du marché. Chaque commande = un sachet de 2 grammes.,63,73
 Zannac,Zannac,6,6
 "Low-dosage prescription grade anxiety medication.
 
 Taking everything in the pill bottle will calm my nerves.","Anxiolytique de prescription à faible dose.
 
 Avaler tout le flacon devrait calmer mes nerfs.",110,94
+Relax your mind with a little instant-release pill. Each order contains 10 pills (0.25 mg/pill).,"Détends-toi avec une petite pilule à libération instantanée. Chaque commande = 10 pilules (0,25 mg/pilule).",96,107
 I can't hold anymore of these...,Je ne peux plus en tenir davantage...,32,37
 It's locked...,C'est fermé à clé...,14,20
 Shit... I gotta get to work...,Merde... Je dois aller bosser...,30,32
@@ -496,6 +512,9 @@ Must Complete Normal Mode,Terminer le mode Normal d'abord,25,31
 "- No Perma Death
 - Challenging","- Pas de mort permanente
 - Difficile",31,37
+"- Same as Normal 
+- Perma Death","- Identique au Normal
+- Mort permanente",32,40
 "- Same as Normal 
 - Perma Death
 - Experimental","- Identique au Normal

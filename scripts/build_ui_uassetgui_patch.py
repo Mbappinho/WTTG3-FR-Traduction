@@ -41,6 +41,7 @@ COPY_PREFIXES = (
     "Data\\DataAssets\\Agents",
     "Data\\DataAssets\\Products",
     "Data\\DataAssets\\PlayerItems",
+    "Data\\DataAssets\\Drugs",
     "Data\\DataAssets\\SimonThoughts",
     "Data\\DataAssets\\ChoiceTrees",
     "Data\\DataAssets\\Difficulty",
@@ -168,6 +169,13 @@ RAW: dict[str, str] = {
     "(Requires Restart)": "(Redémarrage requis)",
     "Tweak if having issues with freezing webpages or PDFs not rendering correctly": (
         "À ajuster si les pages web figent ou si les PDF s'affichent mal"
+    ),
+    "Tweak if having issues with freezing webpages or PDFs not rendering correctly\r\n\r\nYou may also lower this if you want to make text on the websites or PDFs larger and easier to read": (
+        "À ajuster si les pages web figent ou si les PDF s'affichent mal\r\n\r\n"
+        "Tu peux aussi baisser cette valeur pour agrandir le texte des sites / PDF et le rendre plus lisible"
+    ),
+    "You may also lower this if you want to make text on the websites or PDFs larger and easier to read": (
+        "Tu peux aussi baisser cette valeur pour agrandir le texte des sites / PDF et le rendre plus lisible"
     ),
     "Pick Up": "Ramasser",
     "Quality": "Qualité",
@@ -303,9 +311,15 @@ RAW: dict[str, str] = {
     "Dealer will share details directly": "Le vendeur enverra les détails directement",
     "Sessions are temporary.": "Les sessions sont temporaires.",
     "Access expires after order is placed.": "L'accès expire après la commande.",
+    "Sessions are temporary.\r\nAccess expires after order is placed.": (
+        "Les sessions sont temporaires.\r\nL'accès expire après la commande."
+    ),
     "Authorized Vendor Access": "Accès vendeur autorisé",
     "Proceed with this order?": "Confirmer cette commande ?",
     "Est. Delivery:": "Livraison estimée :",
+    "Stock": "Stock",
+    "Product": "Produit",
+    "TOTAL": "TOTAL",
     "RETURN HOME": "RETOUR ACCUEIL",
     "GO BACK": "RETOUR",
     "EXCHANGE": "ÉCHANGER",
@@ -605,7 +619,9 @@ RAW: dict[str, str] = {
     "Electrical Room Key": "Clé de la salle électrique",
     "This key unlocks the inner electrical room door.": "Cette clé ouvre la porte interieure de la salle électrique.",
     "Employee Key": "Clé employé",
-    "This key unlocks the employee back doors.": "Cette clé ouvre les portes arrière reservees aux employes.",
+    "This key unlocks the employee back doors.": (
+        "Cette clé ouvre les portes arrière réservées aux employés."
+    ),
     "Motel Master Key": "Passe-partout du motel",
     "This key locks / unlocks the motel room doors.": "Cette clé ferme / ouvre les portes des chambres du motel.",
     "Crank'd": "Crank'd",
@@ -613,13 +629,24 @@ RAW: dict[str, str] = {
         "Boisson énergétique interdite qui prétend booster tes capacités physiques.\r\n\r\n"
         "J'ai entendu parler de gens qui font des crises cardiaques après en avoir bu."
     ),
+    # DAREDash shop catalog (DataAssets/Drugs) — descriptions distinctes de l'inventaire
+    "Banned energy drink that will amplify your physical capabilities.": (
+        "Boisson énergétique interdite qui amplifie tes capacités physiques."
+    ),
     "Krystal King": "Krystal King",
+    "Krystal King ": "Krystal King ",
     "Baggie of crushed methamphetamine.\r\n\r\nNo way I'm trying that shit.": (
         "Sachet de méthamphétamine écrasée.\r\n\r\nPas question que j'y touche."
+    ),
+    "Purest meth on the market. Each order gets you a 2 gram baggie.": (
+        "La meth la plus pure du marché. Chaque commande = un sachet de 2 grammes."
     ),
     "Zannac": "Zannac",
     "Low-dosage prescription grade anxiety medication.\r\n\r\nTaking everything in the pill bottle will calm my nerves.": (
         "Anxiolytique de prescription à faible dose.\r\n\r\nAvaler tout le flacon devrait calmer mes nerfs."
+    ),
+    "Relax your mind with a little instant-release pill. Each order contains 10 pills (0.25 mg/pill).": (
+        "Détends-toi avec une petite pilule à libération instantanée. Chaque commande = 10 pilules (0,25 mg/pilule)."
     ),
     # Pensees Simon
     "I can't hold anymore of these...": "Je ne peux plus en tenir davantage...",
@@ -643,6 +670,11 @@ RAW: dict[str, str] = {
     "Must Complete Normal Mode": "Terminer le mode Normal d'abord",
     "- Perma Death\r\n- Good Luck": "- Mort permanente\r\n- Bonne chance",
     "- No Perma Death\r\n- Challenging": "- Pas de mort permanente\r\n- Difficile",
+    # Steam BuildID 24359942+ : Experimental retiré de Normal+
+    "- Same as Normal \r\n- Perma Death": (
+        "- Identique au Normal\r\n- Mort permanente"
+    ),
+    # Legacy (avec Experimental)
     "- Same as Normal \r\n- Perma Death\r\n- Experimental": (
         "- Identique au Normal\r\n- Mort permanente\r\n- Expérimental"
     ),
