@@ -1,4 +1,4 @@
-# WTTG3 - Traduction francaise
+# WTTG3 - Traduction francaise [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T1P023QR7T)
 
 Fan patch de localisation francaise **non officiel** pour *Welcome to the Game III*.
 
