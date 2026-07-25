@@ -1,4 +1,4 @@
-# WTTG3 - Traduction francaise [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T1P023QR7T)
+# WTTG3 - Traduction francaise <a href='https://ko-fi.com/T1P023QR7T' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 Fan patch de localisation francaise **non officiel** pour *Welcome to the Game III*.
 
