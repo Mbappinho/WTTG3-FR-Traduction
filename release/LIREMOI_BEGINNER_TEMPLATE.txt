@@ -1,12 +1,13 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.5.3)
+COMPATIBILITE STEAM (v1.6.0)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24415407
 - Auto-update : apres telechargement, le dossier pack local est synchronise
-  (fichiers + scripts). Relancer INSTALLER.bat doit afficher "Deja a jour".
+  (fichiers + scripts) puis l'installeur a jour est RELANCE automatiquement
+  (un seul INSTALLER.bat suffit pour les nouveautes, dont AZERTY injecteur).
 - Si ton pack Full est <= v1.5.1 : telecharge UNE FOIS un zip v1.5.2+
   et remplace ton dossier (les anciens scripts ne synchronisaient pas).
 - Fichier fichiers\steam_target.json = version du pack + BuildID cible
@@ -22,8 +23,11 @@ CONTENU
 - PDF in-game FR (Contestants, Hacks, Threats, VirtMesh, etc.)
 - Achievements FR si le dossier steam_settings existe
 - Auto-update GitHub via INSTALLER.bat (pack Full uniquement)
-- Option AZERTY (ZQSD) : INSTALLER demande O/N → pak FR_AZERTY_P
-  (avancer = Z, gauche = Q ; Windows reste en AZERTY ; saisie texte inchangee)
+- Option AZERTY (ZQSD) : INSTALLER demande O/N
+  → pak FR_AZERTY_P + runtime UE4SS/AutoHotkey (mini-jeux hack)
+  → hacks clavier : MemDealloc + ShiftSEQ (swap + focus auto) ; StackPusher/TOKENINE = souris
+  → antivirus peut signaler dwmapi.dll (injecteur) ; KernalCompiler non remappe
+  (Windows reste en AZERTY ; saisie chat inchangee)
 
 ------------------------------------------------
 INSTALLER (premiere fois)
@@ -38,8 +42,13 @@ INSTALLER (premiere fois)
      C:\Steam\steamapps\common\Welcome to the Game III
 5. Si l'installeur propose une maj GitHub plus recente : reponds O
 6. Confirme l'installation avec O
-7. Optionnel : Activer remap AZERTY (ZQSD) ? → O ou N
+7. Optionnel : Activer remap AZERTY complet ? → O ou N
 8. Relance le jeu
+
+Note maj depuis un pack <= v1.5.3 vers v1.6.0+ :
+  le 1er INSTALLER telecharge/sync ; le script EN MEMOIRE est encore l'ancien.
+  Si le runtime mini-jeux (UE4SS) n'est pas propose/installe : relance
+  INSTALLER.bat UNE 2e fois (ensuite les maj futures = 1 seul clic).
 
 ------------------------------------------------
 METTRE A JOUR LE MOD (proprement)

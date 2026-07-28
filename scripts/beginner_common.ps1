@@ -341,7 +341,9 @@ function Expand-FrPackZip([string]$ZipPath, [string]$DestDir) {
 .SYNOPSIS
   Optionally download the latest Full pack from GitHub if newer / better BuildID match.
 .OUTPUTS
-  New pack root path (may be same as input).
+  Hashtable @{ PackRoot = string; Updated = bool }
+  Updated=$true when fichiers/scripts were synced from GitHub (caller must re-launch
+  the new install_fr_beginner.ps1 so one INSTALLER.bat run picks up new features).
 #>
 function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
     Write-Host ""
@@ -351,7 +353,7 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
     $rel = Get-GitHubLatestReleaseInfo
     if (-not $rel) {
         Write-Host "  Impossible de joindre GitHub (hors ligne ?). On continue avec ce pack." -ForegroundColor Yellow
-        return $PackRoot
+        return @{ PackRoot = $PackRoot; Updated = $false }
     }
 
     $tag = [string]$rel.tag_name
@@ -390,7 +392,7 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
 
     if (-not $newer -and -not $betterMatch -and -not $folderBehind) {
         Write-Host "  Deja a jour (ou pas de meilleure release pour ton BuildID)." -ForegroundColor Green
-        return $PackRoot
+        return @{ PackRoot = $PackRoot; Updated = $false }
     }
 
     $reason = if ($betterMatch -and $Compat.Status -eq "Mismatch") {
@@ -407,13 +409,13 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
     $ans = Read-Host "Telecharger et utiliser la derniere release GitHub ? (O/N)"
     if ($ans -notmatch '^[oOyY]') {
         Write-Host "  OK - on garde ce pack local."
-        return $PackRoot
+        return @{ PackRoot = $PackRoot; Updated = $false }
     }
 
     $zipUrl = Find-ReleaseAssetUrl $rel $script:Wttg3FrZipAsset
     if (-not $zipUrl) {
         Write-Host ("  Asset {0} introuvable sur la release. Abandon maj." -f $script:Wttg3FrZipAsset) -ForegroundColor Yellow
-        return $PackRoot
+        return @{ PackRoot = $PackRoot; Updated = $false }
     }
 
     $work = Join-Path $env:TEMP ("WTTG3-FR-update-" + [guid]::NewGuid().ToString("N"))
@@ -435,10 +437,33 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
         } catch {}
         Write-Host ("  Pack local a jour : v{0}" -f $syncedVer) -ForegroundColor Green
         # Prefer local synced root so install + next run use the same folder
-        return $PackRoot
+        return @{ PackRoot = $PackRoot; Updated = $true }
     } catch {
         Write-Host ("  Echec maj auto : {0}" -f $_.Exception.Message) -ForegroundColor Yellow
         Write-Host "  On continue avec ce pack local."
-        return $PackRoot
+        return @{ PackRoot = $PackRoot; Updated = $false }
     }
+}
+
+function Restart-InstallScriptAfterPackUpdate([string]$PackRoot, [string]$GameRoot) {
+    <#
+    After GitHub sync, the in-memory script is still the OLD version.
+    Re-launch the synced install_fr_beginner.ps1 so AZERTY/injector logic runs in one INSTALLER.bat click.
+    #>
+    $newScript = Join-Path $PackRoot "scripts\install_fr_beginner.ps1"
+    if (-not (Test-Path -LiteralPath $newScript)) {
+        Write-Host "WARN: nouveau install_fr_beginner.ps1 introuvable apres maj — continue avec ce script." -ForegroundColor Yellow
+        return $false
+    }
+    Write-Host ""
+    Write-Host "Maj telechargee : relance de l'installeur a jour (meme session)..." -ForegroundColor Cyan
+    $argList = @(
+        "-NoProfile",
+        "-ExecutionPolicy", "Bypass",
+        "-File", $newScript,
+        "-SkipGitHubUpdate",
+        "-GameRoot", $GameRoot
+    )
+    $p = Start-Process -FilePath "powershell.exe" -ArgumentList $argList -WorkingDirectory $PackRoot -Wait -PassThru -NoNewWindow
+    exit $(if ($null -ne $p.ExitCode) { [int]$p.ExitCode } else { 0 })
 }

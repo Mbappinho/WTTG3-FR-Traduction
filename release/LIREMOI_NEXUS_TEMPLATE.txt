@@ -1,7 +1,7 @@
 WTTG3 - Traduction francaise (pack Nexus drop-in)
 =================================================
 
-COMPATIBILITE STEAM (v1.5.3)
+COMPATIBILITE STEAM (v1.6.0)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24415407
@@ -10,7 +10,8 @@ COMPATIBILITE STEAM (v1.5.3)
   release FR a jour.
 - steam_target.json (racine du zip) = version du pack + BuildID cible
 - PAS d'auto-update dans ce zip Nexus (pas de .bat/.ps1)
-  Pour maj auto : pack GitHub Full → WTTG3-FR-Traduction.zip + INSTALLER.bat
+  Pour maj auto + AZERTY mini-jeux (injecteur) : pack GitHub Full
+  → WTTG3-FR-Traduction.zip + INSTALLER.bat
   https://github.com/Mbappinho/WTTG3-FR-Traduction/releases
 
 CONTENU (aucun .bat / .ps1 — regles Nexus)
@@ -44,7 +45,7 @@ Pour avancer avec Z / gauche avec Q (Windows reste en AZERTY) :
    vers WTTGSD\Content\Paks\
 2. Relance le jeu
 Desactiver : supprime ces 3 fichiers FR_AZERTY_P.* dans Paks.
-La saisie texte (chat) n'est pas modifiee.
+MINI-JEUX DE HACK : non inclus ici (injecteur). Pack GitHub Full requis.
 
 ------------------------------------------------
 METTRE A JOUR (proprement — Nexus)

@@ -1,0 +1,17 @@
+AZERTY runtime — WTTG3 FR (pack Full)
+=====================================
+
+Contenu deploye par INSTALLER.bat si "Activer remap AZERTY complet" = O :
+
+- Pak FR_AZERTY_P (Enhanced Input ZQSD) — separe, dans fichiers\paks
+- UE4SS (dwmapi.dll + ue4ss\) — detection mini-jeux -> minigame.flag
+- AutoHotkey64.exe + WTTG3-Menu-Touches.ahk — swap clavier pendant hacks
+
+Attribution :
+- Detection / swap mini-jeux inspires du mod communautaire
+  "WTTG3 AZERTY Rebind" (UE4SS + AutoHotkey).
+- UE4SS : https://github.com/UE4SS-RE/RE-UE4SS (voir LICENSE)
+- AutoHotkey v2 : https://www.autohotkey.com/
+
+KernalCompiler : ne pas activer le swap (saisie texte).
+Nexus : ce runtime n'est PAS inclus (pack GitHub Full uniquement).

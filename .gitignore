@@ -14,6 +14,11 @@ release/WTTG3-FR-Beginner-Nexus/
 release/WTTG3-FR-Traduction.zip
 release/WTTG3-FR-Traduction-Nexus.zip
 release/github-repo/
+# Assembled AZERTY runtime binaries (rebuild: scripts\build_azerty_runtime.ps1)
+release/azerty_runtime/AutoHotkey64.exe
+release/azerty_runtime/ue4ss_core/UE4SS.dll
+release/azerty_runtime/ue4ss_core/dwmapi.dll
+
 
 # Simon intro texture: keep FR PNG + scripts, ignore exploration junk
 work/simon_intro_texture/candidates/

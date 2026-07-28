@@ -44,6 +44,28 @@ try {
         Write-Host "  Aucun fichier FR_AZERTY_P trouve."
     }
 
+    Write-Host "Desactivation runtime AZERTY (UE4SS / AHK) s'il est present..."
+    $win64 = Join-Path $game "WTTGSD\Binaries\Win64"
+    $dwmapi = Join-Path $win64 "dwmapi.dll"
+    if (Test-Path -LiteralPath $dwmapi) {
+        $off = Join-Path $win64 "dwmapi.dll.off"
+        if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
+        Rename-Item -LiteralPath $dwmapi -NewName "dwmapi.dll.off" -Force
+        Write-Host "  dwmapi.dll -> dwmapi.dll.off"
+    }
+    $azertyMod = Join-Path $win64 "ue4ss\Mods\AzertyRemap"
+    if (Test-Path -LiteralPath $azertyMod) {
+        Remove-Item -LiteralPath $azertyMod -Recurse -Force
+        Write-Host "  AzertyRemap retire"
+    }
+    foreach ($name in @("WTTG3-Menu-Touches.ahk", "WTTG3-Menu.ini", "AutoHotkey64.exe", "WTTG3-AZERTY-Menu.cmd")) {
+        $p = Join-Path $game $name
+        if (Test-Path -LiteralPath $p) {
+            Remove-Item -LiteralPath $p -Force
+            Write-Host ("  Retire : {0}" -f $name)
+        }
+    }
+
     if ($hasPdfBackup) {
         if (-not (Test-Path $pdfDst)) { throw "Dossier PDFS introuvable : $pdfDst" }
         Write-Host "Restauration des PDF anglais..."

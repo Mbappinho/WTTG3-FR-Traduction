@@ -8,6 +8,7 @@ Mettre à jour `pack_version` dans `release/steam_target.json` avant le pack.
 ## Summary
 - (1–3 puces : ce qui change pour le joueur)
 - BuildID Steam : `24415407`
+- Pack **v1.6.0** : AZERTY complet (pak + UE4SS/AHK mini-jeux) ; INSTALLER relance apres maj
 
 ## Install (premiere fois)
 **GitHub Full** (`WTTG3-FR-Traduction.zip`)
@@ -49,10 +50,10 @@ telecharger le nouveau zip a la main (Methode manuelle ci-dessous).
 - Crash au lancement → supprimer `WTTGSD-Windows_FR_P.*` (+ `FR_AZERTY_P.*` si present) / desinstaller, puis release a jour
 
 ## Option AZERTY
-- Full : prompt O/N dans `INSTALLER.bat` → pak `WTTGSD-Windows_FR_AZERTY_P`
-- Nexus : dossier `optionnel_azerty\` (non active par defaut)
-- Effet : W→Z, A↔Q sur les IMC Enhanced Input (ZQSD) ; saisie texte inchangee
-- Rebuild : `python scripts\build_azerty_imc_patch.py` (meme extract Steam que FR_P)
+- Full : prompt O/N → pak `FR_AZERTY_P` + runtime `fichiers/azerty_runtime` (UE4SS + AHK)
+- Apres maj GitHub : l'installeur **relance** le nouveau script (un seul INSTALLER.bat)
+- Nexus : `optionnel_azerty\` pak seul ; mini-jeux = pack Full
+- Rebuild : `build_azerty_imc_patch.py` + `build_azerty_runtime.ps1`
 
 ## Fichiers de la release
 - `WTTG3-FR-Traduction.zip` — Full (INSTALLER + auto-update)

@@ -47,7 +47,7 @@ python scripts\build_azerty_imc_patch.py   # optionnel : pak FR_AZERTY_P (ZQSD)
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.5.3) :** BuildID **`24415407`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.6.0) :** BuildID **`24415407`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
@@ -195,25 +195,25 @@ Ces `.uexp` sont quasi vides (pas de `DisplayName` cooked). Un rename casserait 
 
 Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentation seule, pas injectées par le build).
 
-### Option AZERTY (remap IMC — pak séparé)
+### Option AZERTY (remap IMC + runtime mini-jeux)
 
-Vanilla : avancer = **W** (sous Windows AZERTY, Z ne marche pas ; beaucoup passent le layout en QWERTY).
+Vanilla : avancer = **W** (sous Windows AZERTY, Z ne marche pas).
 
-Pak optionnel `WTTGSD-Windows_FR_AZERTY_P` : réécrit les FNames lettres des `IMC_*` (NameMap) pour les positions physiques AZERTY :
+| Couche | Role |
+|--------|------|
+| Pak `WTTGSD-Windows_FR_AZERTY_P` | NameMap IMC `W→Z`, `A↔Q` (monde, ShiftSEQ, …) |
+| UE4SS `AzertyRemap` | Detection mini-jeux → `minigame.flag` + tentative `SetKeyboardFocus` sur le widget (meme si la camera ne regarde pas le PC) |
+| AutoHotkey portable | Swap + focus clic auto pour **MemDealloc / ShiftSEQ**. StackPusher / TOKENINE = souris (OFF). KernalCompiler OFF. F1 = opt-in/out. |
 
-| QWERTY | AZERTY |
-|--------|--------|
-| W | Z |
-| A | Q |
-| Q | A |
+Build :
+```powershell
+python scripts\build_azerty_imc_patch.py
+powershell -ExecutionPolicy Bypass -File scripts\build_azerty_runtime.ps1
+```
 
-Build : `python scripts\build_azerty_imc_patch.py` (même extract Steam + usmap que le FR_P).  
-Assets touchés typiquement : `IMC_Default`, `IMC_Inventory`, `IMC_SecCam`, `IMC_ShfitSeq`.
-
-- **Full** : `INSTALLER.bat` demande `Activer remap AZERTY (ZQSD) ? (O/N)`
-- **Nexus** : dossier `optionnel_azerty\` (non copié dans Paks par défaut)
-- **Désinstall** : retire aussi `FR_AZERTY_P.*`
-- **Hors scope** : libellés HUD `Move`/`Run` (toujours noms `IA_*`) ; saisie texte chat (layout Windows)
+- **Full** : `INSTALLER.bat` → O/N AZERTY complet ; apres maj GitHub, **relance auto** du nouvel installeur
+- **Nexus** : `optionnel_azerty\` = pak seul ; mini-jeux = pack Full
+- **DESINSTALLER** : retire `FR_AZERTY_P` + desactive `dwmapi.dll` + AHK
 
 ## Boutons / prompts interaction patchés
 

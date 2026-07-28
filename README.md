@@ -14,7 +14,7 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.5.3** |
+| **Pack actuel** | **v1.6.0** |
 | **Steam BuildID** | **`24415407`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
@@ -61,7 +61,12 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
 - HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)
-- **Option AZERTY (ZQSD)** : pak optionnel `WTTGSD-Windows_FR_AZERTY_P` (remap IMC lettres W→Z, A↔Q). Full : prompt O/N dans INSTALLER ; Nexus : dossier `optionnel_azerty\`. Saisie texte inchangée. Build : `python scripts\build_azerty_imc_patch.py`
+- **Option AZERTY (ZQSD)** : pack Full — prompt O/N dans INSTALLER.
+  - Pak `WTTGSD-Windows_FR_AZERTY_P` (Enhanced Input)
+  - Runtime UE4SS + AutoHotkey (mini-jeux hack : MemDealloc, ShiftSEQ, …)
+  - Une maj GitHub via INSTALLER.bat **relance** le nouvel installeur (un seul clic)
+  - Nexus : pak optionnel seulement ; mini-jeux = pack Full
+  - Build : `build_azerty_imc_patch.py` + `build_azerty_runtime.ps1`
 - **Steam :** pack buildé depuis l’extract officiel — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 
@@ -103,6 +108,7 @@ pip install -r requirements.txt
 python scripts\build_translations.py
 python scripts\build_ui_uassetgui_patch.py
 python scripts\build_azerty_imc_patch.py
+powershell -ExecutionPolicy Bypass -File scripts\build_azerty_runtime.ps1
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1
 ```
 
