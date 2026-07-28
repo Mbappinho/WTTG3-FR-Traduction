@@ -2,16 +2,16 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.5.2)
+## Version validée (pack v1.5.3)
 
 | Champ | Valeur |
 |-------|--------|
 | Jeu | Welcome to the Game III (Steam) |
 | AppID Steam | `3869850` |
-| **BuildID** | **`24359942`** |
+| **BuildID** | **`24415407`** |
 | Depot | `3869851` |
-| Manifest depot | `3958003346115020289` |
-| Dernière maj Steam (locale) | 2026-07-23 ~22:18 (heure locale) |
+| Manifest depot | `4737090859503521207` |
+| Dernière maj Steam (locale) | 2026-07-27+ (paks base) / BuildID lu 2026-07-28 |
 | Source | `steamapps/appmanifest_3869850.acf` |
 
 Si ton `buildid` dans `appmanifest_3869850.acf` est **différent**, désinstalle le mod ou attends / installe une release FR rebuildée pour ce build.
@@ -44,6 +44,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.5.3 | `24415407` | Rebuild post-MAJ Steam + option AZERTY (`FR_AZERTY_P`, ZQSD) |
 | v1.5.2 | `24359942` | Auto-update : sync pack local + stamp version dans Paks (plus de fausse maj au 2e lancement) |
 | v1.5.1 | `24359942` | Fix Normal+ / tooltip résolution / DAREDash footer+catalogue Drugs / accents clé employé |
 | v1.5.0 | `24359942` | Rebuild post-MAJ Steam ; labels rôles CryptChat (Hacker/Doxeur/…) |

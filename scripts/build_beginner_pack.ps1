@@ -19,6 +19,11 @@ $achEn = Join-Path $LocRoot "source\achievements_en.json"
 if (-not (Test-Path (Join-Path $pakSrc "WTTGSD-Windows_FR_P.ucas"))) {
     throw "Mod FR manquant dans build\pak - lance d'abord build_ui_uassetgui_patch.py"
 }
+$azertyPak = Join-Path $pakSrc "WTTGSD-Windows_FR_AZERTY_P.ucas"
+$hasAzerty = Test-Path $azertyPak
+if (-not $hasAzerty) {
+    Write-Host "WARN: pak AZERTY absent (build\pak\WTTGSD-Windows_FR_AZERTY_P.*) — lance build_azerty_imc_patch.py pour l'option ZQSD." -ForegroundColor Yellow
+}
 if (-not (Test-Path $pdfFr)) { throw "PDF FR manquants : build\pdfs" }
 if ($Distribution -eq "Full" -and -not (Test-Path $pdfEn)) {
     throw "Backup PDF EN manquant : backup\PDFS"
@@ -43,12 +48,36 @@ if ($Distribution -eq "Nexus") {
     Copy-Item (Join-Path $pdfFr "*") $pdfDst -Recurse -Force
     Copy-Item $steamTarget (Join-Path $out "steam_target.json") -Force
     Copy-Item $steamTarget (Join-Path $pakDst "WTTGSD-Windows_FR_P.steam_target.json") -Force
+
+    # Optional AZERTY: not in default Paks (would force remap). Drop-in folder + LIREMOI.
+    if ($hasAzerty) {
+        $azertyOpt = Join-Path $out "optionnel_azerty"
+        New-Item -ItemType Directory -Force -Path $azertyOpt | Out-Null
+        Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_AZERTY_P.*") $azertyOpt -Force
+        $azertyReadme = @(
+            "Option AZERTY (ZQSD) — Welcome to the Game III FR",
+            "",
+            "Par defaut ce pack Nexus n'active PAS le remap clavier.",
+            "Pour avancer avec Z / gauche avec Q (Windows reste en AZERTY) :",
+            "  1. Copie tous les fichiers WTTGSD-Windows_FR_AZERTY_P.*",
+            "     de ce dossier vers :",
+            "     <dossier du jeu>\WTTGSD\Content\Paks\",
+            "  2. Relance le jeu.",
+            "",
+            "Pour desactiver : supprime WTTGSD-Windows_FR_AZERTY_P.* dans Paks.",
+            "La saisie texte (chat) n'est pas modifiee."
+        ) -join "`r`n"
+        Set-Content -Path (Join-Path $azertyOpt "LIREMOI_AZERTY.txt") -Value $azertyReadme -Encoding UTF8
+    }
 } else {
     New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\paks") | Out-Null
     New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\pdfs") | Out-Null
     New-Item -ItemType Directory -Force -Path (Join-Path $out "scripts") | Out-Null
 
     Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_P.*") (Join-Path $out "fichiers\paks") -Force
+    if ($hasAzerty) {
+        Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_AZERTY_P.*") (Join-Path $out "fichiers\paks") -Force
+    }
     Copy-Item (Join-Path $pdfFr "*") (Join-Path $out "fichiers\pdfs") -Recurse -Force
 
     New-Item -ItemType Directory -Force -Path (Join-Path $out "fichiers\pdfs_en_backup") | Out-Null

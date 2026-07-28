@@ -1,10 +1,10 @@
 WTTG3 - Traduction francaise (pack Nexus drop-in)
 =================================================
 
-COMPATIBILITE STEAM (v1.5.2)
+COMPATIBILITE STEAM (v1.5.3)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
-- BuildID Steam cible : 24359942
+- BuildID Steam cible : 24415407
 - Verifie ton BuildID : steamapps\appmanifest_3869850.acf (ligne "buildid")
   S'il differe du BuildID ci-dessus → risque de crash ; attends une
   release FR a jour.
@@ -16,6 +16,8 @@ COMPATIBILITE STEAM (v1.5.2)
 CONTENU (aucun .bat / .ps1 — regles Nexus)
 - Mod UI FR : WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*
 - PDF in-game FR : WTTGSD\Content\RawFiles\PDFS\...
+- Option AZERTY (desactivee par defaut) : dossier optionnel_azerty\
+  (voir LIREMOI_AZERTY.txt dedans)
 - PAS de fichiers anglais d'origine redistribues
 
 ------------------------------------------------
@@ -32,6 +34,17 @@ INSTALLER (premiere fois — drop-in)
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.pak / .ucas / .utoc
      WTTGSD\Content\RawFiles\PDFS\...
 4. Relance le jeu.
+
+------------------------------------------------
+OPTION AZERTY (ZQSD) — optionnel
+------------------------------------------------
+Par defaut le drop-in N'ACTIVE PAS le remap clavier.
+Pour avancer avec Z / gauche avec Q (Windows reste en AZERTY) :
+1. Copie WTTGSD-Windows_FR_AZERTY_P.* depuis optionnel_azerty\
+   vers WTTGSD\Content\Paks\
+2. Relance le jeu
+Desactiver : supprime ces 3 fichiers FR_AZERTY_P.* dans Paks.
+La saisie texte (chat) n'est pas modifiee.
 
 ------------------------------------------------
 METTRE A JOUR (proprement — Nexus)
@@ -58,6 +71,7 @@ DESINSTALLER
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.pak
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.ucas
      WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.utoc
+   et s'ils existent : WTTGSD-Windows_FR_AZERTY_P.pak / .ucas / .utoc
 3. Remettre les PDF EN :
    Steam > Proprietes > Fichiers installes > Verifier l'integrite
 

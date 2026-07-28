@@ -23,7 +23,8 @@
 
 ## Build
 
-**Important :** le cook Steam ≠ copie Desktop. Extraire depuis le jeu cible :
+**Important :** le cook Steam ≠ copie Desktop. Extraire depuis le jeu cible.
+**Avant `to-legacy` :** déplacer hors de `Paks` tout `WTTGSD-Windows_FR*` (sinon l’extract est incomplet / pollué par les overlays).
 
 ```powershell
 tools\retoc\retoc.exe to-legacy --version UE5_6 `
@@ -37,6 +38,7 @@ Puis :
 # Depuis la racine du depot
 python scripts\build_translations.py
 python scripts\build_ui_uassetgui_patch.py
+python scripts\build_azerty_imc_patch.py   # optionnel : pak FR_AZERTY_P (ZQSD)
 ```
 
 `build_ui_uassetgui_patch.py` préfère `source/legacy_ui_steam` s’il existe.
@@ -45,7 +47,7 @@ python scripts\build_ui_uassetgui_patch.py
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.5.2) :** BuildID **`24359942`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.5.3) :** BuildID **`24415407`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
@@ -75,8 +77,8 @@ Sortie Nexus : `release\WTTG3-FR-Beginner-Nexus\` → zip `WTTG3-FR-Traduction-N
 
 | Pack | Contenu | Install |
 |------|---------|---------|
-| **Full (GitHub)** | `INSTALLER.bat` / `DESINSTALLER.bat` + backup PDF EN | Double-clic |
-| **Nexus** | Drop-in `WTTGSD\...` + `LIREMOI.txt` (**aucun** `.bat`/`.ps1`) | Dézipper dans le dossier du jeu |
+| **Full (GitHub)** | `INSTALLER.bat` / `DESINSTALLER.bat` + backup PDF EN + prompt AZERTY | Double-clic |
+| **Nexus** | Drop-in `WTTGSD\...` + `LIREMOI.txt` + `optionnel_azerty\` (**aucun** `.bat`/`.ps1`) | Dézipper dans le dossier du jeu |
 
 | Fichier (Full) | Role |
 |---------|------|
@@ -96,9 +98,9 @@ Le script demande le dossier du jeu (detection auto si possible). Fermer le jeu 
 Procedure propre apres une **MAJ Steam** ou une **nouvelle release FR** :
 
 1. Fermer le jeu.
-2. `DESINSTALLER.bat` (retire `FR_P` + remet les PDF EN de backup).
+2. `DESINSTALLER.bat` (retire `FR_P` + `FR_AZERTY_P` + remet les PDF EN de backup).
 3. Telecharger / dezipper la **derniere** release GitHub.
-4. `INSTALLER.bat` (repose `FR_P` + PDF FR + achievements si presents).
+4. `INSTALLER.bat` (repose `FR_P` + PDF FR + achievements si presents ; demande AZERTY O/N).
 5. Relancer.
 
 **Crash au boot ?** → desinstaller tout de suite (`DESINSTALLER.bat`), confirmer que vanilla marche, puis installer **seulement** une release rebuildée pour la maj en cours. Un vieux zip ne “répare” en general pas un cook Steam change. Voir aussi [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md).
@@ -192,6 +194,26 @@ Ces `.uexp` sont quasi vides (pas de `DisplayName` cooked). Un rename casserait 
 `Crouch` dans l’exe = API CharacterMovement (`IsCrouching`, etc.), pas un prompt HUD de ce jeu.
 
 Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentation seule, pas injectées par le build).
+
+### Option AZERTY (remap IMC — pak séparé)
+
+Vanilla : avancer = **W** (sous Windows AZERTY, Z ne marche pas ; beaucoup passent le layout en QWERTY).
+
+Pak optionnel `WTTGSD-Windows_FR_AZERTY_P` : réécrit les FNames lettres des `IMC_*` (NameMap) pour les positions physiques AZERTY :
+
+| QWERTY | AZERTY |
+|--------|--------|
+| W | Z |
+| A | Q |
+| Q | A |
+
+Build : `python scripts\build_azerty_imc_patch.py` (même extract Steam + usmap que le FR_P).  
+Assets touchés typiquement : `IMC_Default`, `IMC_Inventory`, `IMC_SecCam`, `IMC_ShfitSeq`.
+
+- **Full** : `INSTALLER.bat` demande `Activer remap AZERTY (ZQSD) ? (O/N)`
+- **Nexus** : dossier `optionnel_azerty\` (non copié dans Paks par défaut)
+- **Désinstall** : retire aussi `FR_AZERTY_P.*`
+- **Hors scope** : libellés HUD `Move`/`Run` (toujours noms `IA_*`) ; saisie texte chat (layout Windows)
 
 ## Boutons / prompts interaction patchés
 

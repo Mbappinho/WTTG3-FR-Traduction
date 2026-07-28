@@ -7,19 +7,22 @@ Mettre à jour `pack_version` dans `release/steam_target.json` avant le pack.
 
 ## Summary
 - (1–3 puces : ce qui change pour le joueur)
-- BuildID Steam : `24359942`
+- BuildID Steam : `24415407`
 
 ## Install (premiere fois)
 **GitHub Full** (`WTTG3-FR-Traduction.zip`)
 1. Fermer le jeu
 2. Dezipper → `INSTALLER.bat`
 3. Indiquer le dossier Steam du jeu si besoin
-4. Confirmer O → relancer le jeu
+4. Confirmer O
+5. Optionnel : Activer remap AZERTY (ZQSD) ? O/N
+6. Relancer le jeu
 
 **Nexus** (`WTTG3-FR-Traduction-Nexus.zip`)
 1. Fermer le jeu
 2. Dezipper **dans** le dossier du jeu (celui qui contient `WTTGSD`)
 3. Relancer
+4. Option AZERTY : copier `optionnel_azerty\WTTGSD-Windows_FR_AZERTY_P.*` vers `WTTGSD\Content\Paks\` (voir LIREMOI)
 
 ## Mettre a jour (proprement)
 **Auto-update (Full v1.4.1+)** — recommande
@@ -43,7 +46,13 @@ telecharger le nouveau zip a la main (Methode manuelle ci-dessous).
 
 ## Apres une maj Steam
 - BuildID change → il faut une **release FR rebuildée** (pas un vieux zip)
-- Crash au lancement → supprimer `WTTGSD-Windows_FR_P.*` / desinstaller, puis release a jour
+- Crash au lancement → supprimer `WTTGSD-Windows_FR_P.*` (+ `FR_AZERTY_P.*` si present) / desinstaller, puis release a jour
+
+## Option AZERTY
+- Full : prompt O/N dans `INSTALLER.bat` → pak `WTTGSD-Windows_FR_AZERTY_P`
+- Nexus : dossier `optionnel_azerty\` (non active par defaut)
+- Effet : W→Z, A↔Q sur les IMC Enhanced Input (ZQSD) ; saisie texte inchangee
+- Rebuild : `python scripts\build_azerty_imc_patch.py` (meme extract Steam que FR_P)
 
 ## Fichiers de la release
 - `WTTG3-FR-Traduction.zip` — Full (INSTALLER + auto-update)

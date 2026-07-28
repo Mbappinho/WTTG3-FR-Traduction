@@ -55,6 +55,26 @@ try {
     Copy-Item (Join-Path $paksSrc "WTTGSD-Windows_FR_P.*") -Destination $paksDst -Force
     Write-InstalledPackStamp $game $pack
 
+    # Optional AZERTY keyboard remap (separate pak; does not overlap FR_P assets)
+    $azertyGlob = Join-Path $paksSrc "WTTGSD-Windows_FR_AZERTY_P.*"
+    $azertyFiles = @(Get-ChildItem $azertyGlob -ErrorAction SilentlyContinue)
+    # Remove any previous AZERTY pak first (toggle off if user declines)
+    Get-ChildItem (Join-Path $paksDst "WTTGSD-Windows_FR_AZERTY_P.*") -ErrorAction SilentlyContinue |
+        Remove-Item -Force
+    if ($azertyFiles.Count -gt 0) {
+        Write-Host ""
+        Write-Host "Option clavier AZERTY (ZQSD) :" -ForegroundColor Cyan
+        Write-Host "  Avancer = Z, gauche = Q (layout Windows AZERTY, sans passer en QWERTY)."
+        Write-Host "  Ne change pas la saisie texte (chat). Desactiveable via DESINSTALLER ou reinstall N."
+        $azerty = Read-Host "Activer remap AZERTY (ZQSD) ? (O/N)"
+        if ($azerty -match '^[oOyY]') {
+            Write-Host "Copie du mod AZERTY (FR_AZERTY_P)..."
+            Copy-Item $azertyGlob -Destination $paksDst -Force
+        } else {
+            Write-Host "Remap AZERTY non installe (WASD / touches QWERTY)."
+        }
+    }
+
     if (Test-Path $pdfSrc) {
         if (-not (Test-Path $pdfDst)) { throw "Dossier PDFS introuvable : $pdfDst" }
         Write-Host "Copie des PDF FR..."

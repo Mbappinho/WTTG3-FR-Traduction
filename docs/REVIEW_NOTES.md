@@ -18,6 +18,7 @@
   **MAJ Steam future** : même risque si le cook change → re-extract + rebuild (pas seulement réinstaller l’ancien zip). Voir `docs/UI_PATCH_CRASH.md`.
 - **Prompts monde EN après rebuild Steam** : casse dossier `Blueprints` vs `BluePrints` excluait GameActors/Pawns du pak ; filtre case-insensitive + `PawnSwitchers` / `Enter Desk`.
 - **HUD mouvement** (`Move`/`Run`/`Inventory`/`Pick Up`/`Crouch`) : **confirmé non patchable** — labels dérivés des noms `IA_Default_*` (Enhanced Input), pas de FString. CSV annotés `unpatchable_inputaction`. Pas de rename IA (casse les références IMC).
+- **Option AZERTY (ZQSD)** : pak séparé `WTTGSD-Windows_FR_AZERTY_P` via `scripts/build_azerty_imc_patch.py` — NameMap IMC `W→Z`, `A↔Q`. Vanilla = W ; avec le pak + Windows AZERTY = Z avance. Full = prompt O/N ; Nexus = `optionnel_azerty\`. Saisie texte inchangée. **Validé in-game** (2026-07-28).
 - **DarkDrop noms trop longs** : titres FR raccourcis pour ne plus chevaucher le prix (`Boost signal`, `Capteur mvt`, `Pare-feu II`, `Montage VM III`, etc.).
 - **ACRS polish QA** : `en pagne`→`en pagaille`, calques, `backdoor` harmonisé (EN), `pussy`→`tafiole` ; glossaire mis à jour.
 - **CryptChat polish** : `ton idée`, `délai de carence`, `Threats/index.html` dans extras, casse The Game/Game Master (Ronald), 1× vous→tu.
@@ -33,6 +34,7 @@
 - **v1.5.0** : rebuild post-MAJ Steam BuildID `24359942` ; **11 labels rôles** CryptChat dans `WBP_CryptChatMessageTab` (Hacker, Doxeur, Dealer, Courtier de tueurs, …) ; dialogue Ronald wrap-up + ligne `4AM Tonight` ; `GAME MASTER` (AgentTag). Rapport : `work/maj_24359942/RAPPORT.md`.
 - **v1.5.1** : Normal+ 2 bullets (sans Experimental) ; tooltip résolution navigateur combiné ; DAREDash footer Sessions/Access + **catalogue Drugs** ; accents clé employé.
 - **v1.5.2** : auto-update — après téléchargement, **sync du dossier pack local** + stamp `WTTGSD-Windows_FR_P.steam_target.json` dans Paks (évite de re-proposer l'ancienne version au relancement).
+- **v1.5.3** : rebuild post-MAJ Steam BuildID **`24415407`** + **option AZERTY** (`WTTGSD-Windows_FR_AZERTY_P`, ZQSD ; Full prompt O/N ; Nexus `optionnel_azerty\`). Extract retoc **sans** overlays `FR_*` dans Paks.
 - **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; **1** oubli flagrant (dialogue NOPSled quasi non traduit). Pas de gap HUD massif de leur côté.
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).

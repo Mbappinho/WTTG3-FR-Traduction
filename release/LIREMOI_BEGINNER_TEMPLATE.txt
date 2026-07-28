@@ -1,13 +1,13 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.5.2)
+COMPATIBILITE STEAM (v1.5.3)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
-- BuildID Steam cible : 24359942
+- BuildID Steam cible : 24415407
 - Auto-update : apres telechargement, le dossier pack local est synchronise
   (fichiers + scripts). Relancer INSTALLER.bat doit afficher "Deja a jour".
-- Si ton pack Full est <= v1.5.1 : telecharge UNE FOIS le zip v1.5.2
+- Si ton pack Full est <= v1.5.1 : telecharge UNE FOIS un zip v1.5.2+
   et remplace ton dossier (les anciens scripts ne synchronisaient pas).
 - Fichier fichiers\steam_target.json = version du pack + BuildID cible
 - INSTALLER.bat DETECTE ton BuildID Steam (OK / ATTENTION crash)
@@ -22,6 +22,8 @@ CONTENU
 - PDF in-game FR (Contestants, Hacks, Threats, VirtMesh, etc.)
 - Achievements FR si le dossier steam_settings existe
 - Auto-update GitHub via INSTALLER.bat (pack Full uniquement)
+- Option AZERTY (ZQSD) : INSTALLER demande O/N → pak FR_AZERTY_P
+  (avancer = Z, gauche = Q ; Windows reste en AZERTY ; saisie texte inchangee)
 
 ------------------------------------------------
 INSTALLER (premiere fois)
@@ -36,7 +38,8 @@ INSTALLER (premiere fois)
      C:\Steam\steamapps\common\Welcome to the Game III
 5. Si l'installeur propose une maj GitHub plus recente : reponds O
 6. Confirme l'installation avec O
-7. Relance le jeu
+7. Optionnel : Activer remap AZERTY (ZQSD) ? → O ou N
+8. Relance le jeu
 
 ------------------------------------------------
 METTRE A JOUR LE MOD (proprement)
@@ -76,7 +79,8 @@ DESINSTALLER
 1. Ferme le jeu.
 2. DESINSTALLER.bat
 3. Meme dossier de jeu → confirme O
-(ou supprime WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*)
+(ou supprime WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*
+ et WTTGSD-Windows_FR_AZERTY_P.* s'il est present)
 
 ------------------------------------------------
 SI LE JEU CRASH AU LANCEMENT
@@ -95,6 +99,8 @@ NOTES
 - Pack Nexus (sans .bat) = autre zip, drop-in manuel, PAS d'auto-update
 - steam_target.json sur la release GitHub = meta legere pour l'auto-update
   (ne remplace pas le zip Full)
+- Remap AZERTY : repondre N a l'installeur (ou supprimer FR_AZERTY_P.*)
+  pour garder les binds QWERTY (W/A/S/D)
 
 IMPORTANT
 Garde ce dossier entier. Ne separe pas INSTALLER.bat de fichiers\ et scripts\

@@ -35,6 +35,15 @@ try {
         Write-Host "  Aucun fichier FR_P trouve (deja retire ?)"
     }
 
+    Write-Host "Suppression du remap AZERTY (FR_AZERTY_P) s'il est present..."
+    $azertyMods = Get-ChildItem (Join-Path $paksDst "WTTGSD-Windows_FR_AZERTY_P.*") -ErrorAction SilentlyContinue
+    if ($azertyMods) {
+        $azertyMods | Remove-Item -Force
+        Write-Host ("  Supprime : {0} fichier(s)" -f @($azertyMods).Count)
+    } else {
+        Write-Host "  Aucun fichier FR_AZERTY_P trouve."
+    }
+
     if ($hasPdfBackup) {
         if (-not (Test-Path $pdfDst)) { throw "Dossier PDFS introuvable : $pdfDst" }
         Write-Host "Restauration des PDF anglais..."

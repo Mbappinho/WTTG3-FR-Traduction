@@ -14,8 +14,8 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.5.2** |
-| **Steam BuildID** | **`24359942`** (AppID `3869850`) |
+| **Pack actuel** | **v1.5.3** |
+| **Steam BuildID** | **`24415407`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
 `INSTALLER.bat` **detecte automatiquement** ton BuildID et indique si le pack est compatible.  
@@ -35,7 +35,7 @@ Relance INSTALLER.bat de ton pack actuel
 Accepte la maj GitHub (O) quand il propose une version plus recente
 Confirme l'installation → relance le jeu
 (Depuis **v1.5.2**, le dossier pack local est synchronise apres maj : un 2e lancement doit dire « Deja a jour ».
-Si ton pack est <= v1.5.1 : telecharge UNE FOIS le zip v1.5.2 pour avoir les nouveaux scripts.)
+Si ton pack est <= v1.5.1 : telecharge UNE FOIS un zip **v1.5.2+** pour avoir les nouveaux scripts.)
 
 Nexus / premiere install / pack sans .bat
 Full : telecharger WTTG3-FR-Traduction.zip → INSTALLER.bat
@@ -61,6 +61,7 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
 - HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)
+- **Option AZERTY (ZQSD)** : pak optionnel `WTTGSD-Windows_FR_AZERTY_P` (remap IMC lettres W→Z, A↔Q). Full : prompt O/N dans INSTALLER ; Nexus : dossier `optionnel_azerty\`. Saisie texte inchangée. Build : `python scripts\build_azerty_imc_patch.py`
 - **Steam :** pack buildé depuis l’extract officiel — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 
@@ -87,6 +88,12 @@ Non versionne (trop gros / contenus jeu) : `source/` (extracts), `tools/` (retoc
 
 Details : [docs/INSTALL.md](docs/INSTALL.md)
 
+## Multi-langues (zh / ja / ko) — en cours
+
+Inventaire EN (perimetre FR) pret pour traduction parallele :
+`python scripts\export_i18n_inventory.py` → `work/i18n_export/`  
+Doc : [docs/I18N_MULTI_LANG.md](docs/I18N_MULTI_LANG.md). Packs cibles separes : ZH-CN / ZH-TW / JA / KO.
+
 ## Build local (avance)
 
 Prerequis : Python 3, .NET 8 (UAssetGUI), `tools/retoc`, `tools/UAssetGUI`, `source/Mappings.usmap`, extract **Steam** dans `source/legacy_ui_steam` (voir `docs/INSTALL.md`).
@@ -95,8 +102,15 @@ Prerequis : Python 3, .NET 8 (UAssetGUI), `tools/retoc`, `tools/UAssetGUI`, `sou
 pip install -r requirements.txt
 python scripts\build_translations.py
 python scripts\build_ui_uassetgui_patch.py
+python scripts\build_azerty_imc_patch.py
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1
 ```
+
+## Handoff autre jeu (Scrutinized)
+
+Kit agent (savoir-faire + glossaire) exporte vers
+`C:\Users\kaoth\Projects\Scrutinized-FR` — details :
+[docs/HANDOFF_SCRUTINIZED.md](docs/HANDOFF_SCRUTINIZED.md).
 
 ## Disclaimer
 
