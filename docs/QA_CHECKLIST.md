@@ -38,19 +38,17 @@
 - [ ] Prompts `[W,A,S,D] Move` / `[SHIFT] Run` / `[TAB] Inventory` / `Pick Up`
   (libellés IA_* non patchables ; avec option AZERTY les **binds** deviennent ZQSD)
 
-## Option AZERTY (`FR_AZERTY_P` + runtime Full)
+## Option AZERTY (`FR_AZERTY_P` pak seul, v1.6.1+)
 
-Prérequis : `build_azerty_imc_patch.py` + `build_azerty_runtime.ps1` ; pack Full.
-Windows reste en **AZERTY**.
+Prérequis : `build_azerty_imc_patch.py` ; pack Full/Nexus.
+Windows reste en **AZERTY**. Pas d'injecteur.
 
 - [x] Sans `FR_AZERTY_P` : W avance
 - [x] Avec `FR_AZERTY_P` : **Z** avance, **Q** gauche, S/D inchangés
-- [ ] MemDealloc / ShiftSEQ : swap AHK pendant le hack (flag UE4SS)
-- [ ] KernalCompiler : swap **off** (saisie OK)
-- [ ] Full INSTALLER : prompt O/N ; N n’installe pas pak ni runtime
-- [ ] DESINSTALLER retire `FR_AZERTY_P.*` + desactive dwmapi / AHK
-- [ ] Maj GitHub depuis ancien pack : **un** INSTALLER.bat → nouveau script (relance)
-- [ ] Inventaire : touche **A** (remap de Q) si applicable
+- [ ] Mini-jeux : toujours W/A (doc joueur) — pas de swap auto
+- [ ] Full INSTALLER : prompt O/N ; N n’installe pas le pak
+- [ ] INSTALLER retire dwmapi/AHK restants d’un vieux 1.6.0
+- [ ] DESINSTALLER retire `FR_AZERTY_P.*` + nettoie injecteur restant
 - [ ] Saisie CryptChat : layout Windows intact
 
 ## Rollback

@@ -44,7 +44,7 @@ try {
         Write-Host "  Aucun fichier FR_AZERTY_P trouve."
     }
 
-    Write-Host "Desactivation runtime AZERTY (UE4SS / AHK) s'il est present..."
+    Write-Host "Nettoyage ancien injecteur AZERTY (v1.6.0, si present)..."
     $win64 = Join-Path $game "WTTGSD\Binaries\Win64"
     $dwmapi = Join-Path $win64 "dwmapi.dll"
     if (Test-Path -LiteralPath $dwmapi) {

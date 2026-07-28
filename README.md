@@ -14,7 +14,7 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.6.0** |
+| **Pack actuel** | **v1.6.1** |
 | **Steam BuildID** | **`24415407`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
@@ -61,12 +61,10 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 - Sites web Dark Net : **exclus** (volontaire)
 - Doublage audio : exclus
 - HUD mouvement (`Move` / `Run` / `Inventory`) : **non patchable** (noms Enhanced Input `IA_Default_*`)
-- **Option AZERTY (ZQSD)** : pack Full — prompt O/N dans INSTALLER.
-  - Pak `WTTGSD-Windows_FR_AZERTY_P` (Enhanced Input)
-  - Runtime UE4SS + AutoHotkey (mini-jeux hack : MemDealloc, ShiftSEQ, …)
-  - Une maj GitHub via INSTALLER.bat **relance** le nouvel installeur (un seul clic)
-  - Nexus : pak optionnel seulement ; mini-jeux = pack Full
-  - Build : `build_azerty_imc_patch.py` + `build_azerty_runtime.ps1`
+- **Option AZERTY (ZQSD)** : pack Full — prompt O/N dans INSTALLER (**pak seul**, pas d'injecteur).
+  - Monde = ZQSD ; mini-jeux hack = toujours W/A → soit tu joues en touches QWERTY sur les hacks, soit tu refuses le mod AZERTY
+  - v1.6.0 injecteur retiré en **v1.6.1** (fatal errors) ; INSTALLER nettoie dwmapi/AHK restants
+  - Nexus : `optionnel_azerty\` ; Build : `build_azerty_imc_patch.py`
 - **Steam :** pack buildé depuis l’extract officiel — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 

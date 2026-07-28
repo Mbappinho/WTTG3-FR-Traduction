@@ -1,7 +1,7 @@
 WTTG3 - Traduction francaise (pack Nexus drop-in)
 =================================================
 
-COMPATIBILITE STEAM (v1.6.0)
+COMPATIBILITE STEAM (v1.6.1)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24415407
@@ -10,15 +10,14 @@ COMPATIBILITE STEAM (v1.6.0)
   release FR a jour.
 - steam_target.json (racine du zip) = version du pack + BuildID cible
 - PAS d'auto-update dans ce zip Nexus (pas de .bat/.ps1)
-  Pour maj auto + AZERTY mini-jeux (injecteur) : pack GitHub Full
-  → WTTG3-FR-Traduction.zip + INSTALLER.bat
+  Pour maj auto : pack GitHub Full → WTTG3-FR-Traduction.zip + INSTALLER.bat
   https://github.com/Mbappinho/WTTG3-FR-Traduction/releases
 
 CONTENU (aucun .bat / .ps1 — regles Nexus)
 - Mod UI FR : WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*
 - PDF in-game FR : WTTGSD\Content\RawFiles\PDFS\...
 - Option AZERTY (desactivee par defaut) : dossier optionnel_azerty\
-  (voir LIREMOI_AZERTY.txt dedans)
+  (voir LIREMOI_AZERTY.txt dedans) — pak ZQSD seulement, pas d'injecteur
 - PAS de fichiers anglais d'origine redistribues
 
 ------------------------------------------------
@@ -27,13 +26,7 @@ INSTALLER (premiere fois — drop-in)
 1. Ferme le jeu completement.
 2. Steam > clic droit sur le jeu > Gerer > Parcourir les fichiers locaux
    (= dossier qui contient WTTGSD)
-   Exemples :
-     C:\Program Files (x86)\Steam\steamapps\common\Welcome to the Game III
-     C:\Steam\steamapps\common\Welcome to the Game III
 3. Dezippe CE pack DANS ce dossier (fusionne avec WTTGSD existant).
-   Tu dois voir / ecraser :
-     WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.pak / .ucas / .utoc
-     WTTGSD\Content\RawFiles\PDFS\...
 4. Relance le jeu.
 
 ------------------------------------------------
@@ -45,49 +38,37 @@ Pour avancer avec Z / gauche avec Q (Windows reste en AZERTY) :
    vers WTTGSD\Content\Paks\
 2. Relance le jeu
 Desactiver : supprime ces 3 fichiers FR_AZERTY_P.* dans Paks.
-MINI-JEUX DE HACK : non inclus ici (injecteur). Pack GitHub Full requis.
+
+MINI-JEUX DE HACK (MemDealloc, ShiftSEQ, etc.) :
+  Le jeu lit toujours W/A/S/D. Avec le pak AZERTY :
+  → utilise les touches W/A (positions QWERTY) pour ces hacks,
+  → OU ne copie pas le pak pour garder WASD partout.
+  Pas d'injecteur (retire — fatal errors).
+
+Si tu avais installe le Full v1.6.0 avec injecteur et le jeu crash :
+  supprime / renomme WTTGSD\Binaries\Win64\dwmapi.dll
+  et les fichiers WTTG3-Menu* / AutoHotkey64.exe a la racine du jeu,
+  ou utilise le pack Full v1.6.1+ (INSTALLER nettoie tout seul).
 
 ------------------------------------------------
 METTRE A JOUR (proprement — Nexus)
 ------------------------------------------------
 1. Ferme le jeu.
 2. Telecharge la derniere WTTG3-FR-Traduction-Nexus.zip
-   https://github.com/Mbappinho/WTTG3-FR-Traduction/releases
-   (ou Fichiers sur Nexus Mods si tu suis la page Nexus)
 3. Verifie steam_target.json : BuildID = ton jeu
-4. Re-dezippe par-dessus le meme dossier jeu (ecrase les 3 FR_P + PDF)
+4. Re-dezippe par-dessus le meme dossier jeu
 5. Relance le jeu
-
-Apres une MAJ Steam :
-- Si BuildID change → attends / installe une release FR rebuildée
-- Si CRASH → desinstalle (ci-dessous) puis Verifier l'integrite Steam
-
-Alternative maj auto : passe au pack GitHub Full (INSTALLER.bat).
 
 ------------------------------------------------
 DESINSTALLER
 ------------------------------------------------
 1. Ferme le jeu.
-2. Supprime ces 3 fichiers :
-     WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.pak
-     WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.ucas
-     WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.utoc
-   et s'ils existent : WTTGSD-Windows_FR_AZERTY_P.pak / .ucas / .utoc
-3. Remettre les PDF EN :
-   Steam > Proprietes > Fichiers installes > Verifier l'integrite
+2. Supprime FR_P.* (+ FR_AZERTY_P.* si present) dans WTTGSD\Content\Paks\
+3. Remettre les PDF EN : Steam > Verifier l'integrite
 
 ------------------------------------------------
 SI LE JEU CRASH AU LANCEMENT
 ------------------------------------------------
-1. Desinstalle (etape ci-dessus)
-2. Verifie l'integrite Steam
-3. Confirme que le jeu sans mod demarre
-4. Installe uniquement une release FR compatible BuildID
-
-------------------------------------------------
-NOTES
-------------------------------------------------
-- Fan translation non officielle, non affiliee a Reflect Studios
-- Sites web Dark Net = anglais (volontaire)
-- Source / releases : https://github.com/Mbappinho/WTTG3-FR-Traduction
-- Pack Full (installeur + auto-update) : WTTG3-FR-Traduction.zip
+1. Desinstalle (ci-dessus) + retire dwmapi.dll s'il reste un vieux 1.6.0
+2. Verifie que le jeu sans mod demarre
+3. Installe la derniere release FR compatible

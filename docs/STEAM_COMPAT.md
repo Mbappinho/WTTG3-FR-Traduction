@@ -2,7 +2,7 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.6.0)
+## Version validée (pack v1.6.1)
 
 | Champ | Valeur |
 |-------|--------|
@@ -44,7 +44,8 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
-| v1.6.0 | `24415407` | AZERTY complet Full : pak IMC + UE4SS/AHK mini-jeux ; INSTALLER relance apres maj GitHub |
+| v1.6.1 | `24415407` | Retrait injecteur AZERTY (fatal errors) ; pak ZQSD seul + doc mini-jeux W/A |
+| v1.6.0 | `24415407` | ~~UE4SS/AHK mini-jeux~~ retire en 1.6.1 ; INSTALLER relance apres maj GitHub |
 | v1.5.3 | `24415407` | Rebuild post-MAJ Steam + option AZERTY (`FR_AZERTY_P`, ZQSD) |
 | v1.5.2 | `24359942` | Auto-update : sync pack local + stamp version dans Paks (plus de fausse maj au 2e lancement) |
 | v1.5.1 | `24359942` | Fix Normal+ / tooltip résolution / DAREDash footer+catalogue Drugs / accents clé employé |

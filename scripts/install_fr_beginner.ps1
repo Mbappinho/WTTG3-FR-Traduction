@@ -6,20 +6,20 @@ param(
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "beginner_common.ps1")
 
-function Remove-AzertyRuntime([string]$GameRoot) {
+# Cleanup leftovers from withdrawn v1.6.0 UE4SS/AHK injector (fatal errors).
+function Remove-AzertyRuntimeLeftovers([string]$GameRoot) {
     $win64 = Join-Path $GameRoot "WTTGSD\Binaries\Win64"
     $dwmapi = Join-Path $win64 "dwmapi.dll"
     $dwmapiOff = Join-Path $win64 "dwmapi.dll.off"
     if (Test-Path -LiteralPath $dwmapi) {
-        # Prefer rename to .off (same as dump workflow) so Steam verify is less noisy
         if (Test-Path -LiteralPath $dwmapiOff) { Remove-Item -LiteralPath $dwmapiOff -Force }
         Rename-Item -LiteralPath $dwmapi -NewName "dwmapi.dll.off" -Force
-        Write-Host "  UE4SS desactive (dwmapi.dll -> .off)"
+        Write-Host "  Ancien injecteur desactive (dwmapi.dll -> .off)"
     }
     $azertyMod = Join-Path $win64 "ue4ss\Mods\AzertyRemap"
     if (Test-Path -LiteralPath $azertyMod) {
         Remove-Item -LiteralPath $azertyMod -Recurse -Force
-        Write-Host "  Mod AzertyRemap retire"
+        Write-Host "  Ancien mod AzertyRemap retire"
     }
     foreach ($name in @("WTTG3-Menu-Touches.ahk", "WTTG3-Menu.ini", "AutoHotkey64.exe", "WTTG3-AZERTY-Menu.cmd")) {
         $p = Join-Path $GameRoot $name
@@ -28,60 +28,6 @@ function Remove-AzertyRuntime([string]$GameRoot) {
             Write-Host ("  Retire : {0}" -f $name)
         }
     }
-}
-
-function Install-AzertyRuntime([string]$GameRoot, [string]$PackRoot) {
-    $src = Join-Path $PackRoot "fichiers\azerty_runtime"
-    if (-not (Test-Path -LiteralPath $src)) {
-        Write-Host "WARN: fichiers\azerty_runtime absent — pak AZERTY seul (pas de mini-jeux)." -ForegroundColor Yellow
-        return
-    }
-    $win64 = Join-Path $GameRoot "WTTGSD\Binaries\Win64"
-    if (-not (Test-Path -LiteralPath $win64)) {
-        throw "Binaries Win64 introuvable : $win64"
-    }
-
-    # UE4SS core (dwmapi proxy + ue4ss folder)
-    $ue4ssSrc = Join-Path $src "ue4ss_core"
-    if (Test-Path -LiteralPath $ue4ssSrc) {
-        $dwmapiSrc = Join-Path $ue4ssSrc "dwmapi.dll"
-        if (Test-Path -LiteralPath $dwmapiSrc) {
-            $off = Join-Path $win64 "dwmapi.dll.off"
-            if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
-            Copy-Item $dwmapiSrc (Join-Path $win64 "dwmapi.dll") -Force
-        }
-        $ue4ssDst = Join-Path $win64 "ue4ss"
-        New-Item -ItemType Directory -Force -Path $ue4ssDst | Out-Null
-        # Copy settings + DLL if present
-        foreach ($name in @("UE4SS.dll", "UE4SS-settings.ini", "LICENSE")) {
-            $f = Join-Path $ue4ssSrc $name
-            if (Test-Path -LiteralPath $f) { Copy-Item $f (Join-Path $ue4ssDst $name) -Force }
-        }
-        $sigSrc = Join-Path $ue4ssSrc "UE4SS_Signatures"
-        if (Test-Path -LiteralPath $sigSrc) {
-            $sigDst = Join-Path $ue4ssDst "UE4SS_Signatures"
-            if (Test-Path $sigDst) { Remove-Item $sigDst -Recurse -Force }
-            Copy-Item $sigSrc $sigDst -Recurse -Force
-        }
-        $modsSrc = Join-Path $ue4ssSrc "Mods"
-        $modsDst = Join-Path $ue4ssDst "Mods"
-        New-Item -ItemType Directory -Force -Path $modsDst | Out-Null
-        # Keybinds + shared stubs + our AzertyRemap + mods.txt
-        if (Test-Path -LiteralPath $modsSrc) {
-            Copy-Item (Join-Path $modsSrc "*") $modsDst -Recurse -Force
-        }
-        Write-Host "  UE4SS deploye (dwmapi.dll + ue4ss)"
-    }
-
-    # Overlay AHK + portable interpreter at game root
-    foreach ($name in @("WTTG3-Menu-Touches.ahk", "AutoHotkey64.exe", "WTTG3-AZERTY-Menu.cmd", "WTTG3-Menu.ini")) {
-        $f = Join-Path $src $name
-        if (Test-Path -LiteralPath $f) {
-            Copy-Item $f (Join-Path $GameRoot $name) -Force
-        }
-    }
-    Write-Host "  Menu mini-jeux AHK deploye (racine du jeu)"
-    Write-Host "  Note: antivirus peut signaler dwmapi.dll (injecteur UE4SS)." -ForegroundColor Yellow
 }
 
 try {
@@ -110,11 +56,9 @@ try {
         if ($upd -is [hashtable]) {
             $pack = [string]$upd.PackRoot
             if ($upd.Updated) {
-                # Old script still in memory — hand off to synced installer (one INSTALLER.bat click).
                 Restart-InstallScriptAfterPackUpdate $pack $game
             }
         } else {
-            # Backward compat if an ancient beginner_common is somehow mixed
             $pack = [string]$upd
         }
         $compat = Test-SteamBuildCompatibility $game $pack
@@ -155,38 +99,29 @@ try {
     Copy-Item (Join-Path $paksSrc "WTTGSD-Windows_FR_P.*") -Destination $paksDst -Force
     Write-InstalledPackStamp $game $pack
 
-    # Optional AZERTY: pak IMC + UE4SS/AHK runtime for hack minigames
+    # Always strip withdrawn injector if present (v1.6.0)
+    Write-Host "Nettoyage ancien injecteur AZERTY (si present)..."
+    Remove-AzertyRuntimeLeftovers $game
+
+    # Optional AZERTY: pak IMC only (no UE4SS / AutoHotkey)
     $azertyGlob = Join-Path $paksSrc "WTTGSD-Windows_FR_AZERTY_P.*"
     $azertyFiles = @(Get-ChildItem $azertyGlob -ErrorAction SilentlyContinue)
     Get-ChildItem (Join-Path $paksDst "WTTGSD-Windows_FR_AZERTY_P.*") -ErrorAction SilentlyContinue |
         Remove-Item -Force
-    # Always clear previous AZERTY runtime when (re)installing; re-enable only if user says O
-    Write-Host "Nettoyage runtime AZERTY precedent (si present)..."
-    Remove-AzertyRuntime $game
 
-    if ($azertyFiles.Count -gt 0 -or (Test-Path (Join-Path $pack "fichiers\azerty_runtime"))) {
+    if ($azertyFiles.Count -gt 0) {
         Write-Host ""
-        $pakAlready = @(Get-ChildItem (Join-Path $paksDst "WTTGSD-Windows_FR_AZERTY_P.ucas") -ErrorAction SilentlyContinue)
-        $runtimeMissing = -not (Test-Path -LiteralPath (Join-Path $game "WTTGSD\Binaries\Win64\dwmapi.dll"))
-        if ($pakAlready.Count -gt 0 -and $runtimeMissing -and (Test-Path (Join-Path $pack "fichiers\azerty_runtime"))) {
-            Write-Host "Detecte : pak AZERTY deja pose, mais runtime mini-jeux ABSENT." -ForegroundColor Yellow
-            Write-Host "  (Typique apres maj 1.5.3 -> 1.6.x : l'ancien INSTALLER n'installe que le pak.)" -ForegroundColor Yellow
-            Write-Host "  Reponds O ci-dessous pour deployer UE4SS + AutoHotkey maintenant." -ForegroundColor Yellow
-            Write-Host ""
-        }
-        Write-Host "Option clavier AZERTY (ZQSD) :" -ForegroundColor Cyan
-        Write-Host "  - Pak : deplacement / ShiftSEQ (Enhanced Input)"
-        Write-Host "  - Runtime UE4SS + AutoHotkey : mini-jeux hack (MemDealloc, ShiftSEQ)"
-        Write-Host "  Windows reste en AZERTY. KernalCompiler (saisie) non remappe."
-        Write-Host "  Antivirus peut signaler dwmapi.dll (injecteur). Desinstaller = DESINSTALLER ou N."
-        $azerty = Read-Host "Activer remap AZERTY complet (pak + mini-jeux) ? (O/N)"
+        Write-Host "Option clavier AZERTY (ZQSD) — pak uniquement :" -ForegroundColor Cyan
+        Write-Host "  OK : deplacement monde avec ZQSD (Windows reste en AZERTY)."
+        Write-Host "  Mini-jeux de hack (MemDealloc, ShiftSEQ, etc.) :" -ForegroundColor Yellow
+        Write-Host "    le jeu lit toujours les touches W/A/S/D (pas patchable sans injecteur)."
+        Write-Host "    → soit tu joues ces hacks avec les touches W/A (positions QWERTY),"
+        Write-Host "    → soit tu refuses ce mod AZERTY (N) et tu gardes WASD partout."
+        Write-Host "  La saisie texte (chat) n'est pas modifiee."
+        $azerty = Read-Host "Activer remap AZERTY (ZQSD monde) ? (O/N)"
         if ($azerty -match '^[oOyY]') {
-            if ($azertyFiles.Count -gt 0) {
-                Write-Host "Copie du mod AZERTY (FR_AZERTY_P)..."
-                Copy-Item $azertyGlob -Destination $paksDst -Force
-            }
-            Write-Host "Deploiement runtime AZERTY (UE4SS + menu mini-jeux)..."
-            Install-AzertyRuntime $game $pack
+            Write-Host "Copie du mod AZERTY (FR_AZERTY_P)..."
+            Copy-Item $azertyGlob -Destination $paksDst -Force
         } else {
             Write-Host "Remap AZERTY non installe (WASD / touches QWERTY)."
         }

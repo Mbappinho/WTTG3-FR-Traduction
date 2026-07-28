@@ -24,15 +24,6 @@ $hasAzerty = Test-Path $azertyPak
 if (-not $hasAzerty) {
     Write-Host "WARN: pak AZERTY absent (build\pak\WTTGSD-Windows_FR_AZERTY_P.*) — lance build_azerty_imc_patch.py pour l'option ZQSD." -ForegroundColor Yellow
 }
-$azertyRuntime = Join-Path $LocRoot "release\azerty_runtime"
-$hasAzertyRuntime = Test-Path (Join-Path $azertyRuntime "ue4ss_core\Mods\AzertyRemap\Scripts\main.lua")
-if ($Distribution -eq "Full" -and -not $hasAzertyRuntime) {
-    Write-Host "WARN: release\azerty_runtime incomplet — lance scripts\build_azerty_runtime.ps1 pour mini-jeux." -ForegroundColor Yellow
-}
-if ($Distribution -eq "Full" -and $hasAzertyRuntime -and -not (Test-Path (Join-Path $azertyRuntime "AutoHotkey64.exe"))) {
-    Write-Host "WARN: AutoHotkey64.exe manquant — lance scripts\build_azerty_runtime.ps1" -ForegroundColor Yellow
-    $hasAzertyRuntime = $false
-}
 if (-not (Test-Path $pdfFr)) { throw "PDF FR manquants : build\pdfs" }
 if ($Distribution -eq "Full" -and -not (Test-Path $pdfEn)) {
     throw "Backup PDF EN manquant : backup\PDFS"
@@ -76,9 +67,10 @@ if ($Distribution -eq "Nexus") {
             "Pour desactiver : supprime WTTGSD-Windows_FR_AZERTY_P.* dans Paks.",
             "La saisie texte (chat) n'est pas modifiee.",
             "",
-            "MINI-JEUX DE HACK (MemDealloc, etc.) :",
-            "  Non inclus sur Nexus (injecteur UE4SS / AutoHotkey).",
-            "  Utilise le pack GitHub Full (INSTALLER.bat) pour AZERTY complet."
+            "MINI-JEUX DE HACK (MemDealloc, ShiftSEQ, etc.) :",
+            "  Le jeu lit toujours W/A/S/D (pas de remap via ce pak).",
+            "  Avec AZERTY active : utilise les touches W/A (positions QWERTY)",
+            "  pour ces hacks, OU ne copie pas ce pak pour garder WASD partout."
         ) -join "`r`n"
         Set-Content -Path (Join-Path $azertyOpt "LIREMOI_AZERTY.txt") -Value $azertyReadme -Encoding UTF8
     }
@@ -90,11 +82,6 @@ if ($Distribution -eq "Nexus") {
     Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_P.*") (Join-Path $out "fichiers\paks") -Force
     if ($hasAzerty) {
         Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_AZERTY_P.*") (Join-Path $out "fichiers\paks") -Force
-    }
-    if ($hasAzertyRuntime) {
-        $rtDst = Join-Path $out "fichiers\azerty_runtime"
-        New-Item -ItemType Directory -Force -Path $rtDst | Out-Null
-        Copy-Item (Join-Path $azertyRuntime "*") $rtDst -Recurse -Force
     }
     Copy-Item (Join-Path $pdfFr "*") (Join-Path $out "fichiers\pdfs") -Recurse -Force
 

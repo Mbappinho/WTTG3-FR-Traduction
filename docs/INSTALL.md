@@ -47,7 +47,7 @@ python scripts\build_azerty_imc_patch.py   # optionnel : pak FR_AZERTY_P (ZQSD)
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.6.0) :** BuildID **`24415407`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.6.1) :** BuildID **`24415407`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
@@ -195,26 +195,21 @@ Ces `.uexp` sont quasi vides (pas de `DisplayName` cooked). Un rename casserait 
 
 Les lignes CSV concernées sont marquées `unpatchable_inputaction` (documentation seule, pas injectées par le build).
 
-### Option AZERTY (remap IMC + runtime mini-jeux)
+### Option AZERTY (pak IMC uniquement)
 
 Vanilla : avancer = **W** (sous Windows AZERTY, Z ne marche pas).
 
 | Couche | Role |
 |--------|------|
-| Pak `WTTGSD-Windows_FR_AZERTY_P` | NameMap IMC `W→Z`, `A↔Q` (monde, ShiftSEQ, …) |
-| UE4SS `AzertyRemap` | Detection mini-jeux → `minigame.flag` + tentative `SetKeyboardFocus` sur le widget (meme si la camera ne regarde pas le PC) |
-| AutoHotkey portable | Swap + focus clic auto pour **MemDealloc / ShiftSEQ**. StackPusher / TOKENINE = souris (OFF). KernalCompiler OFF. F1 = opt-in/out. |
+| Pak `WTTGSD-Windows_FR_AZERTY_P` | NameMap IMC `W→Z`, `A↔Q` (deplacement monde, etc.) |
 
-Build :
-```powershell
-python scripts\build_azerty_imc_patch.py
-powershell -ExecutionPolicy Bypass -File scripts\build_azerty_runtime.ps1
-```
+**Pas d'injecteur** (UE4SS / AutoHotkey retires en **v1.6.1** — fatal errors). Les mini-jeux de hack lisent W/A/S/D en natif : avec le pak AZERTY, utilise les touches W/A (positions QWERTY) pour ces hacks, **ou** refuse le mod AZERTY pour garder WASD partout.
 
-- **Full** : `INSTALLER.bat` → O/N AZERTY complet ; apres maj GitHub depuis **1.6.0+**, **relance auto** du nouvel installeur
-- **Maj depuis 1.5.3** : l'ancien INSTALLER telecharge 1.6.x mais n'installe que le pak AZERTY dans la meme session → **relancer INSTALLER.bat une 2e fois** puis O (runtime mini-jeux)
-- **Nexus** : `optionnel_azerty\` = pak seul ; mini-jeux = pack Full
-- **DESINSTALLER** : retire `FR_AZERTY_P` + desactive `dwmapi.dll` + AHK
+Build : `python scripts\build_azerty_imc_patch.py`
+
+- **Full** : `INSTALLER.bat` → O/N AZERTY (pak) ; nettoie tout seul un vieux injecteur 1.6.0 s'il reste
+- **Nexus** : `optionnel_azerty\`
+- **DESINSTALLER** : retire `FR_AZERTY_P` + desactive `dwmapi.dll` / AHK restants
 
 ## Boutons / prompts interaction patchés
 

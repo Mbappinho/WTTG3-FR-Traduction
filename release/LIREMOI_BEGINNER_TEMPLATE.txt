@@ -1,13 +1,13 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.6.0)
+COMPATIBILITE STEAM (v1.6.1)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24415407
 - Auto-update : apres telechargement, le dossier pack local est synchronise
   (fichiers + scripts) puis l'installeur a jour est RELANCE automatiquement
-  (un seul INSTALLER.bat suffit pour les nouveautes, dont AZERTY injecteur).
+  (un seul INSTALLER.bat suffit pour les nouveautes — depuis v1.6.0+).
 - Si ton pack Full est <= v1.5.1 : telecharge UNE FOIS un zip v1.5.2+
   et remplace ton dossier (les anciens scripts ne synchronisaient pas).
 - Fichier fichiers\steam_target.json = version du pack + BuildID cible
@@ -23,14 +23,16 @@ CONTENU
 - PDF in-game FR (Contestants, Hacks, Threats, VirtMesh, etc.)
 - Achievements FR si le dossier steam_settings existe
 - Auto-update GitHub via INSTALLER.bat (pack Full uniquement)
-- Option AZERTY (ZQSD) : INSTALLER demande O/N
-  → pak FR_AZERTY_P + runtime UE4SS/AutoHotkey (mini-jeux hack)
-  → hacks clavier : MemDealloc + ShiftSEQ (swap + focus auto) ; StackPusher/TOKENINE = souris
-  → antivirus peut signaler dwmapi.dll (injecteur) ; KernalCompiler non remappe
-  (Windows reste en AZERTY ; saisie chat inchangee)
-- IMPORTANT si tu mets a jour depuis v1.5.3 via l'ancien INSTALLER :
-  l'ancien script ne deploie PAS le runtime mini-jeux dans la meme session.
-  → Relance INSTALLER.bat UNE 2e fois (dossier deja synchronise en 1.6.x) → O a AZERTY.
+- Option AZERTY (ZQSD) : INSTALLER demande O/N — PAK UNIQUEMENT
+  → deplacement monde = ZQSD (Windows reste en AZERTY)
+  → PAS d'injecteur UE4SS / AutoHotkey (retire en v1.6.1 : fatal errors)
+  → Mini-jeux de hack (MemDealloc, ShiftSEQ, etc.) :
+      le jeu lit toujours W/A/S/D.
+      SOIT tu utilises les touches W/A (positions QWERTY) pour ces hacks,
+      SOIT tu refuses le mod AZERTY (N) pour garder WASD partout.
+  → saisie texte (chat) inchangee
+- Si tu avais installe v1.6.0 avec injecteur : INSTALLER/DESINSTALLER
+  desactive automatiquement dwmapi.dll / AHK (reste de l'ancien plan).
 
 ------------------------------------------------
 INSTALLER (premiere fois)
@@ -45,13 +47,9 @@ INSTALLER (premiere fois)
      C:\Steam\steamapps\common\Welcome to the Game III
 5. Si l'installeur propose une maj GitHub plus recente : reponds O
 6. Confirme l'installation avec O
-7. Optionnel : Activer remap AZERTY complet ? → O ou N
+7. Optionnel : Activer remap AZERTY (ZQSD monde) ? → O ou N
+   (lis l'avertissement mini-jeux avant de choisir)
 8. Relance le jeu
-
-Note maj depuis un pack <= v1.5.3 vers v1.6.0+ :
-  le 1er INSTALLER telecharge/sync ; le script EN MEMOIRE est encore l'ancien.
-  Si le runtime mini-jeux (UE4SS) n'est pas propose/installe : relance
-  INSTALLER.bat UNE 2e fois (ensuite les maj futures = 1 seul clic).
 
 ------------------------------------------------
 METTRE A JOUR LE MOD (proprement)
@@ -59,14 +57,12 @@ METTRE A JOUR LE MOD (proprement)
 
 Methode A — recommandee (auto-update)
 Disponible UNIQUEMENT si ton pack a deja INSTALLER.bat avec maj GitHub
-(= releases Full **v1.4.1**, **v1.4.2**, **v1.5.0** ; les packs plus vieux n'ont PAS l'auto-update).
+(= releases Full **v1.4.1+**).
 1. Ferme le jeu.
-2. Relance INSTALLER.bat de TON pack actuel (1.4.1 / 1.4.2 / 1.5.0).
+2. Relance INSTALLER.bat de TON pack actuel.
 3. Quand il affiche "Une version plus recente..." → reponds O
 4. Confirme l'installation du pack telecharge → O
 5. Relance le jeu
-Apres une maj Steam : si BuildID OK / maj GitHub proposee, Methode A suffit
-souvent (pas besoin de DESINSTALLER avant).
 Packs sans INSTALLER.bat (Nexus drop-in, ou Full avant 1.4.1) → Methode B.
 
 Methode B — manuelle (nouveau zip telecharge a la main)
@@ -83,7 +79,6 @@ Apres une MAJ Steam du jeu :
 - Si CRASH au lancement → DESINSTALLER tout de suite, puis
   installe UNIQUEMENT une release FR rebuildée pour le nouveau BuildID
   (un vieux zip ne suffit en general PAS)
-- Ne colle pas un vieux FR_P par-dessus apres une maj Steam
 
 ------------------------------------------------
 DESINSTALLER
@@ -92,7 +87,8 @@ DESINSTALLER
 2. DESINSTALLER.bat
 3. Meme dossier de jeu → confirme O
 (ou supprime WTTGSD\Content\Paks\WTTGSD-Windows_FR_P.*
- et WTTGSD-Windows_FR_AZERTY_P.* s'il est present)
+ et WTTGSD-Windows_FR_AZERTY_P.* s'il est present ;
+ et dwmapi.dll / AHK s'il reste un vieux 1.6.0)
 
 ------------------------------------------------
 SI LE JEU CRASH AU LANCEMENT
@@ -101,6 +97,8 @@ SI LE JEU CRASH AU LANCEMENT
 2. Verifie que le jeu SANS mod demarre
 3. Installe la derniere release FR compatible (BuildID)
 4. Si aucune release a jour : joue sans mod en attendant
+5. Si tu avais v1.6.0 : le fatal error venait souvent de l'injecteur —
+   v1.6.1+ le retire automatiquement a l'install
 
 ------------------------------------------------
 NOTES
@@ -109,10 +107,7 @@ NOTES
 - Windows bloque le .bat → "Plus d'infos" > "Executer quand meme"
 - Erreur "jeu ouvert" → ferme WTTGSD dans le Gestionnaire des taches
 - Pack Nexus (sans .bat) = autre zip, drop-in manuel, PAS d'auto-update
-- steam_target.json sur la release GitHub = meta legere pour l'auto-update
-  (ne remplace pas le zip Full)
-- Remap AZERTY : repondre N a l'installeur (ou supprimer FR_AZERTY_P.*)
-  pour garder les binds QWERTY (W/A/S/D)
+- Remap AZERTY : O = ZQSD monde + hacks en W/A ; N = WASD partout
 
 IMPORTANT
 Garde ce dossier entier. Ne separe pas INSTALLER.bat de fichiers\ et scripts\
