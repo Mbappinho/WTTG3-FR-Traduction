@@ -166,9 +166,17 @@ try {
 
     if ($azertyFiles.Count -gt 0 -or (Test-Path (Join-Path $pack "fichiers\azerty_runtime"))) {
         Write-Host ""
+        $pakAlready = @(Get-ChildItem (Join-Path $paksDst "WTTGSD-Windows_FR_AZERTY_P.ucas") -ErrorAction SilentlyContinue)
+        $runtimeMissing = -not (Test-Path -LiteralPath (Join-Path $game "WTTGSD\Binaries\Win64\dwmapi.dll"))
+        if ($pakAlready.Count -gt 0 -and $runtimeMissing -and (Test-Path (Join-Path $pack "fichiers\azerty_runtime"))) {
+            Write-Host "Detecte : pak AZERTY deja pose, mais runtime mini-jeux ABSENT." -ForegroundColor Yellow
+            Write-Host "  (Typique apres maj 1.5.3 -> 1.6.x : l'ancien INSTALLER n'installe que le pak.)" -ForegroundColor Yellow
+            Write-Host "  Reponds O ci-dessous pour deployer UE4SS + AutoHotkey maintenant." -ForegroundColor Yellow
+            Write-Host ""
+        }
         Write-Host "Option clavier AZERTY (ZQSD) :" -ForegroundColor Cyan
         Write-Host "  - Pak : deplacement / ShiftSEQ (Enhanced Input)"
-        Write-Host "  - Runtime UE4SS + AutoHotkey : mini-jeux hack (MemDealloc, StackPusher, ...)"
+        Write-Host "  - Runtime UE4SS + AutoHotkey : mini-jeux hack (MemDealloc, ShiftSEQ)"
         Write-Host "  Windows reste en AZERTY. KernalCompiler (saisie) non remappe."
         Write-Host "  Antivirus peut signaler dwmapi.dll (injecteur). Desinstaller = DESINSTALLER ou N."
         $azerty = Read-Host "Activer remap AZERTY complet (pak + mini-jeux) ? (O/N)"

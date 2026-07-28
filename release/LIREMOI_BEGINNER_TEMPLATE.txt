@@ -28,6 +28,9 @@ CONTENU
   → hacks clavier : MemDealloc + ShiftSEQ (swap + focus auto) ; StackPusher/TOKENINE = souris
   → antivirus peut signaler dwmapi.dll (injecteur) ; KernalCompiler non remappe
   (Windows reste en AZERTY ; saisie chat inchangee)
+- IMPORTANT si tu mets a jour depuis v1.5.3 via l'ancien INSTALLER :
+  l'ancien script ne deploie PAS le runtime mini-jeux dans la meme session.
+  → Relance INSTALLER.bat UNE 2e fois (dossier deja synchronise en 1.6.x) → O a AZERTY.
 
 ------------------------------------------------
 INSTALLER (premiere fois)

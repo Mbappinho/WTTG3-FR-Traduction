@@ -211,7 +211,8 @@ python scripts\build_azerty_imc_patch.py
 powershell -ExecutionPolicy Bypass -File scripts\build_azerty_runtime.ps1
 ```
 
-- **Full** : `INSTALLER.bat` → O/N AZERTY complet ; apres maj GitHub, **relance auto** du nouvel installeur
+- **Full** : `INSTALLER.bat` → O/N AZERTY complet ; apres maj GitHub depuis **1.6.0+**, **relance auto** du nouvel installeur
+- **Maj depuis 1.5.3** : l'ancien INSTALLER telecharge 1.6.x mais n'installe que le pak AZERTY dans la meme session → **relancer INSTALLER.bat une 2e fois** puis O (runtime mini-jeux)
 - **Nexus** : `optionnel_azerty\` = pak seul ; mini-jeux = pack Full
 - **DESINSTALLER** : retire `FR_AZERTY_P` + desactive `dwmapi.dll` + AHK
 
