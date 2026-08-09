@@ -45,16 +45,24 @@ try {
     }
 
     Write-Host "Nettoyage ancien injecteur AZERTY (v1.6.0, si present)..."
+    # Comme a l'installation : dwmapi.dll n'est desactive que si l'injecteur
+    # AZERTY est reconnu. Sinon c'est UE4SS pose par le joueur — le mod de
+    # sous-titres en depend — et desinstaller la traduction n'a pas a le casser.
     $win64 = Join-Path $game "WTTGSD\Binaries\Win64"
     $dwmapi = Join-Path $win64 "dwmapi.dll"
-    if (Test-Path -LiteralPath $dwmapi) {
+    $azertyMod = Join-Path $win64 "ue4ss\Mods\AzertyRemap"
+    $vieilInjecteur = Test-Path -LiteralPath $azertyMod
+
+    if ((Test-Path -LiteralPath $dwmapi) -and $vieilInjecteur) {
         $off = Join-Path $win64 "dwmapi.dll.off"
         if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
         Rename-Item -LiteralPath $dwmapi -NewName "dwmapi.dll.off" -Force
         Write-Host "  dwmapi.dll -> dwmapi.dll.off"
     }
-    $azertyMod = Join-Path $win64 "ue4ss\Mods\AzertyRemap"
-    if (Test-Path -LiteralPath $azertyMod) {
+    elseif (Test-Path -LiteralPath $dwmapi) {
+        Write-Host "  UE4SS conserve (aucun injecteur AZERTY detecte)"
+    }
+    if ($vieilInjecteur) {
         Remove-Item -LiteralPath $azertyMod -Recurse -Force
         Write-Host "  AzertyRemap retire"
     }

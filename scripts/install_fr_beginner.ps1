@@ -7,17 +7,27 @@ $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "beginner_common.ps1")
 
 # Cleanup leftovers from withdrawn v1.6.0 UE4SS/AHK injector (fatal errors).
+#
+# dwmapi.dll n'est desactive que si le VIEIL injecteur AZERTY est reconnu,
+# c'est-a-dire si ue4ss\Mods\AzertyRemap est present. Le desactiver sans
+# condition cassait tout autre mod UE4SS installe par le joueur : le mod de
+# sous-titres de cinematiques se charge par ce meme proxy.
 function Remove-AzertyRuntimeLeftovers([string]$GameRoot) {
     $win64 = Join-Path $GameRoot "WTTGSD\Binaries\Win64"
     $dwmapi = Join-Path $win64 "dwmapi.dll"
     $dwmapiOff = Join-Path $win64 "dwmapi.dll.off"
-    if (Test-Path -LiteralPath $dwmapi) {
+    $azertyMod = Join-Path $win64 "ue4ss\Mods\AzertyRemap"
+    $vieilInjecteur = Test-Path -LiteralPath $azertyMod
+
+    if ((Test-Path -LiteralPath $dwmapi) -and $vieilInjecteur) {
         if (Test-Path -LiteralPath $dwmapiOff) { Remove-Item -LiteralPath $dwmapiOff -Force }
         Rename-Item -LiteralPath $dwmapi -NewName "dwmapi.dll.off" -Force
-        Write-Host "  Ancien injecteur desactive (dwmapi.dll -> .off)"
+        Write-Host "  Ancien injecteur AZERTY desactive (dwmapi.dll -> .off)"
     }
-    $azertyMod = Join-Path $win64 "ue4ss\Mods\AzertyRemap"
-    if (Test-Path -LiteralPath $azertyMod) {
+    elseif (Test-Path -LiteralPath $dwmapi) {
+        Write-Host "  UE4SS present et conserve (aucun injecteur AZERTY detecte)"
+    }
+    if ($vieilInjecteur) {
         Remove-Item -LiteralPath $azertyMod -Recurse -Force
         Write-Host "  Ancien mod AzertyRemap retire"
     }

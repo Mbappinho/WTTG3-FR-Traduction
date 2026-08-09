@@ -53,6 +53,8 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 
 ## Contenu traduit (pack Release)
 
+- **Sous-titres des cinématiques** (composant optionnel, mod UE4SS — 28 pistes,
+  120 répliques) : voir [docs/SOUS_TITRES.md](docs/SOUS_TITRES.md)
 - Menus / UI / inventaire / DarkDrop (accents FR via FString UTF-16)
 - Prompts interaction monde (Ouvrir, Déverrouiller, Allumer, Se cacher, etc.)
 - Prompts `[RMB]` (Quitter / Se lever du bureau / Quitter l'ordinateur)
