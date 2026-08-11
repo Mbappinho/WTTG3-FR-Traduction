@@ -37,6 +37,7 @@
 - **v1.5.3** : rebuild post-MAJ Steam BuildID **`24415407`** + **option AZERTY** (`WTTGSD-Windows_FR_AZERTY_P`, ZQSD ; Full prompt O/N ; Nexus `optionnel_azerty\`). Extract retoc **sans** overlays `FR_*` dans Paks.
 - **v1.6.0** : tentative AZERTY + injecteur UE4SS/AHK (mini-jeux) — **retire en 1.6.1** (fatal errors).
 - **v1.6.1** : retrait injecteur ; AZERTY = pak ZQSD seul ; INSTALLER nettoie dwmapi/AHK ; doc mini-jeux W/A vs pas de mod.
+- **v1.6.2** : INSTALLER/DESINSTALLER ne desactivent `dwmapi.dll` que si `ue4ss\Mods\AzertyRemap` est present (fix PR #1 iPresing) — conserve UE4SS tiers (ex. sous-titres).
 - **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; **1** oubli flagrant (dialogue NOPSled quasi non traduit). Pas de gap HUD massif de leur côté.
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).

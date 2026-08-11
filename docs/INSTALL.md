@@ -209,7 +209,7 @@ Build : `python scripts\build_azerty_imc_patch.py`
 
 - **Full** : `INSTALLER.bat` → O/N AZERTY (pak) ; nettoie tout seul un vieux injecteur 1.6.0 s'il reste
 - **Nexus** : `optionnel_azerty\`
-- **DESINSTALLER** : retire `FR_AZERTY_P` + desactive `dwmapi.dll` / AHK restants
+- **DESINSTALLER** : retire `FR_AZERTY_P` + desactive `dwmapi.dll` / AHK **seulement** si l'ancien injecteur AZERTY (`AzertyRemap`) est detecte (v1.6.2+) — conserve UE4SS tiers
 
 ## Boutons / prompts interaction patchés
 

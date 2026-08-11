@@ -2,7 +2,7 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.6.1)
+## Version validée (pack v1.6.2)
 
 | Champ | Valeur |
 |-------|--------|
@@ -44,6 +44,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.6.2 | `24415407` | INSTALLER ne desactive plus dwmapi.dll sauf si AzertyRemap present (PR #1) |
 | v1.6.1 | `24415407` | Retrait injecteur AZERTY (fatal errors) ; pak ZQSD seul + doc mini-jeux W/A |
 | v1.6.0 | `24415407` | ~~UE4SS/AHK mini-jeux~~ retire en 1.6.1 ; INSTALLER relance apres maj GitHub |
 | v1.5.3 | `24415407` | Rebuild post-MAJ Steam + option AZERTY (`FR_AZERTY_P`, ZQSD) |
