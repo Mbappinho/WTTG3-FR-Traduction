@@ -72,6 +72,34 @@ try {
         }
     }
 
+    Write-Host "Sous-titres cinematiques (UE4SS)..."
+    $subsMod = Join-Path $win64 "ue4ss\Mods\SousTitresFR"
+    if (Test-Path -LiteralPath $subsMod) {
+        $rmSubs = Read-Host "Retirer aussi les sous-titres cinematiques ? (O/N)"
+        if ($rmSubs -match '^[oOyY]') {
+            Remove-Item -LiteralPath $subsMod -Recurse -Force
+            Write-Host "  SousTitresFR retire"
+            # Si plus de mods custom, desactiver dwmapi (sinon laisser UE4SS)
+            $modsDir = Join-Path $win64 "ue4ss\Mods"
+            $custom = @()
+            if (Test-Path $modsDir) {
+                $custom = @(Get-ChildItem $modsDir -Directory | Where-Object {
+                    $_.Name -notin @("Keybinds", "shared")
+                })
+            }
+            if (($custom.Count -eq 0) -and (Test-Path -LiteralPath $dwmapi)) {
+                $off = Join-Path $win64 "dwmapi.dll.off"
+                if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
+                Rename-Item -LiteralPath $dwmapi -NewName "dwmapi.dll.off" -Force
+                Write-Host "  dwmapi.dll -> .off (plus de mod UE4SS)"
+            }
+        } else {
+            Write-Host "  SousTitresFR conserve"
+        }
+    } else {
+        Write-Host "  Aucun SousTitresFR trouve."
+    }
+
     if ($hasPdfBackup) {
         if (-not (Test-Path $pdfDst)) { throw "Dossier PDFS introuvable : $pdfDst" }
         Write-Host "Restauration des PDF anglais..."

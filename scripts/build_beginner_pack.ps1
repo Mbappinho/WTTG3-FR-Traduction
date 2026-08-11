@@ -25,6 +25,16 @@ if (-not $hasAzerty) {
     Write-Host "WARN: pak AZERTY absent (build\pak\WTTGSD-Windows_FR_AZERTY_P.*) — lance build_azerty_imc_patch.py pour l'option ZQSD." -ForegroundColor Yellow
 }
 if (-not (Test-Path $pdfFr)) { throw "PDF FR manquants : build\pdfs" }
+$subtitlesRuntime = Join-Path $LocRoot "release\subtitles_runtime"
+$hasSubtitles = Test-Path (Join-Path $subtitlesRuntime "ue4ss_core\Mods\SousTitresFR\Scripts\main.lua")
+if ($Distribution -eq "Full") {
+    if (-not $hasSubtitles) {
+        Write-Host "WARN: release\subtitles_runtime incomplet — sous-titres optionnels absents." -ForegroundColor Yellow
+    } elseif (-not (Test-Path (Join-Path $subtitlesRuntime "ue4ss_core\dwmapi.dll"))) {
+        Write-Host "WARN: dwmapi manquant — lance scripts\build_subtitles_runtime.ps1" -ForegroundColor Yellow
+        $hasSubtitles = $false
+    }
+}
 if ($Distribution -eq "Full" -and -not (Test-Path $pdfEn)) {
     throw "Backup PDF EN manquant : backup\PDFS"
 }
@@ -82,6 +92,11 @@ if ($Distribution -eq "Nexus") {
     Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_P.*") (Join-Path $out "fichiers\paks") -Force
     if ($hasAzerty) {
         Copy-Item (Join-Path $pakSrc "WTTGSD-Windows_FR_AZERTY_P.*") (Join-Path $out "fichiers\paks") -Force
+    }
+    if ($hasSubtitles) {
+        $stDst = Join-Path $out "fichiers\subtitles_runtime"
+        New-Item -ItemType Directory -Force -Path $stDst | Out-Null
+        Copy-Item (Join-Path $subtitlesRuntime "*") $stDst -Recurse -Force
     }
     Copy-Item (Join-Path $pdfFr "*") (Join-Path $out "fichiers\pdfs") -Recurse -Force
 

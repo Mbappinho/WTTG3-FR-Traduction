@@ -1,7 +1,7 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.6.3)
+COMPATIBILITE STEAM (v1.7.0)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24463842
@@ -25,14 +25,18 @@ CONTENU
 - Auto-update GitHub via INSTALLER.bat (pack Full uniquement)
 - Option AZERTY (ZQSD) : INSTALLER demande O/N — PAK UNIQUEMENT
   → deplacement monde = ZQSD (Windows reste en AZERTY)
-  → PAS d'injecteur UE4SS / AutoHotkey (retire en v1.6.1 : fatal errors)
+  → PAS d'injecteur AZERTY (retire en v1.6.1 : fatal errors)
   → Mini-jeux de hack (MemDealloc, ShiftSEQ, etc.) :
       le jeu lit toujours W/A/S/D.
       SOIT tu utilises les touches W/A (positions QWERTY) pour ces hacks,
       SOIT tu refuses le mod AZERTY (N) pour garder WASD partout.
   → saisie texte (chat) inchangee
-- Si tu avais installe v1.6.0 avec injecteur : INSTALLER/DESINSTALLER
-  desactive automatiquement dwmapi.dll / AHK (reste de l'ancien plan).
+- Option sous-titres cinematiques : INSTALLER demande O/N (desactive par defaut)
+  → UE4SS + fichiers .srt (voix Wade, Simon, Cletus, …)
+  → antivirus peut signaler dwmapi.dll ; credit iPresing (PR #1)
+  → details : docs/SOUS_TITRES.md (dans le depot) / LIREMOI
+- Si tu avais installe v1.6.0 avec injecteur AZERTY : INSTALLER/DESINSTALLER
+  desactive automatiquement AzertyRemap sans casser UE4SS sous-titres.
 
 ------------------------------------------------
 INSTALLER (premiere fois)
@@ -49,7 +53,8 @@ INSTALLER (premiere fois)
 6. Confirme l'installation avec O
 7. Optionnel : Activer remap AZERTY (ZQSD monde) ? → O ou N
    (lis l'avertissement mini-jeux avant de choisir)
-8. Relance le jeu
+8. Optionnel : Activer les sous-titres cinematiques ? → O ou N (defaut N)
+9. Relance le jeu
 
 ------------------------------------------------
 METTRE A JOUR LE MOD (proprement)

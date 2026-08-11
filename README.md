@@ -14,7 +14,7 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.6.3** |
+| **Pack actuel** | **v1.7.0** |
 | **Steam BuildID** | **`24463842`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
@@ -65,6 +65,7 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
   - Monde = ZQSD ; mini-jeux hack = toujours W/A → soit tu joues en touches QWERTY sur les hacks, soit tu refuses le mod AZERTY
   - v1.6.0 injecteur retiré en **v1.6.1** (fatal errors) ; INSTALLER nettoie dwmapi/AHK restants
   - Nexus : `optionnel_azerty\` ; Build : `build_azerty_imc_patch.py`
+- **Option sous-titres cinématiques** (Full, **v1.7.0+**) : prompt O/N — UE4SS + `.srt` (contribution iPresing). Off par défaut. Voir [docs/SOUS_TITRES.md](docs/SOUS_TITRES.md).
 - **Steam :** pack buildé depuis l’extract officiel — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 

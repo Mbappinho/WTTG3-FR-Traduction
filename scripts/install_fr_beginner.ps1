@@ -39,6 +39,72 @@ function Remove-AzertyRuntimeLeftovers([string]$GameRoot) {
     }
 }
 
+function Remove-SubtitlesMod([string]$GameRoot) {
+    $mod = Join-Path $GameRoot "WTTGSD\Binaries\Win64\ue4ss\Mods\SousTitresFR"
+    if (Test-Path -LiteralPath $mod) {
+        Remove-Item -LiteralPath $mod -Recurse -Force
+        Write-Host "  SousTitresFR retire"
+    }
+}
+
+function Install-SubtitlesRuntime([string]$GameRoot, [string]$PackRoot) {
+    $src = Join-Path $PackRoot "fichiers\subtitles_runtime"
+    if (-not (Test-Path -LiteralPath $src)) {
+        Write-Host "WARN: fichiers\subtitles_runtime absent — sous-titres non disponibles dans ce pack." -ForegroundColor Yellow
+        return
+    }
+    $win64 = Join-Path $GameRoot "WTTGSD\Binaries\Win64"
+    if (-not (Test-Path -LiteralPath $win64)) {
+        throw "Binaries Win64 introuvable : $win64"
+    }
+
+    $ue4ssSrc = Join-Path $src "ue4ss_core"
+    if (-not (Test-Path -LiteralPath $ue4ssSrc)) {
+        throw "ue4ss_core manquant dans subtitles_runtime"
+    }
+
+    # Proxy dwmapi
+    $dwmapiSrc = Join-Path $ue4ssSrc "dwmapi.dll"
+    if (Test-Path -LiteralPath $dwmapiSrc) {
+        $off = Join-Path $win64 "dwmapi.dll.off"
+        if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
+        Copy-Item $dwmapiSrc (Join-Path $win64 "dwmapi.dll") -Force
+    } else {
+        Write-Host "WARN: dwmapi.dll manquant dans le pack — lance scripts\build_subtitles_runtime.ps1" -ForegroundColor Yellow
+    }
+
+    $ue4ssDst = Join-Path $win64 "ue4ss"
+    New-Item -ItemType Directory -Force -Path $ue4ssDst | Out-Null
+    foreach ($name in @("UE4SS.dll", "UE4SS-settings.ini", "LICENSE")) {
+        $f = Join-Path $ue4ssSrc $name
+        if (Test-Path -LiteralPath $f) { Copy-Item $f (Join-Path $ue4ssDst $name) -Force }
+    }
+
+    $sigSrc = Join-Path $ue4ssSrc "UE4SS_Signatures"
+    if (Test-Path -LiteralPath $sigSrc) {
+        $sigDst = Join-Path $ue4ssDst "UE4SS_Signatures"
+        if (Test-Path $sigDst) { Remove-Item $sigDst -Recurse -Force }
+        Copy-Item $sigSrc $sigDst -Recurse -Force
+    }
+
+    $modsSrc = Join-Path $ue4ssSrc "Mods"
+    $modsDst = Join-Path $ue4ssDst "Mods"
+    New-Item -ItemType Directory -Force -Path $modsDst | Out-Null
+    if (Test-Path -LiteralPath $modsSrc) {
+        # Keybinds / shared / mods.txt / SousTitresFR
+        Copy-Item (Join-Path $modsSrc "*") $modsDst -Recurse -Force
+    }
+
+    # Garantir : pas d'AzertyRemap reactive par erreur
+    $az = Join-Path $modsDst "AzertyRemap"
+    if (Test-Path -LiteralPath $az) {
+        Remove-Item -LiteralPath $az -Recurse -Force
+    }
+
+    Write-Host "  Sous-titres UE4SS deployes (dwmapi + SousTitresFR)"
+    Write-Host "  Note: antivirus peut signaler dwmapi.dll (injecteur)." -ForegroundColor Yellow
+}
+
 try {
     Write-Title "WTTG3 - Installer la traduction FR"
     Write-Host "Ferme le jeu avant de continuer."
@@ -108,11 +174,11 @@ try {
     Copy-Item (Join-Path $paksSrc "WTTGSD-Windows_FR_P.*") -Destination $paksDst -Force
     Write-InstalledPackStamp $game $pack
 
-    # Always strip withdrawn injector if present (v1.6.0)
+    # Always strip withdrawn AZERTY injector if present (v1.6.0)
     Write-Host "Nettoyage ancien injecteur AZERTY (si present)..."
     Remove-AzertyRuntimeLeftovers $game
 
-    # Optional AZERTY: pak IMC only (no UE4SS / AutoHotkey)
+    # Optional AZERTY: pak IMC only
     $azertyGlob = Join-Path $paksSrc "WTTGSD-Windows_FR_AZERTY_P.*"
     $azertyFiles = @(Get-ChildItem $azertyGlob -ErrorAction SilentlyContinue)
     Get-ChildItem (Join-Path $paksDst "WTTGSD-Windows_FR_AZERTY_P.*") -ErrorAction SilentlyContinue |
@@ -133,6 +199,26 @@ try {
             Copy-Item $azertyGlob -Destination $paksDst -Force
         } else {
             Write-Host "Remap AZERTY non installe (WASD / touches QWERTY)."
+        }
+    }
+
+    # Optional cinematic subtitles (UE4SS) — off by default
+    $hasSubtitles = Test-Path (Join-Path $pack "fichiers\subtitles_runtime\ue4ss_core\Mods\SousTitresFR\Scripts\main.lua")
+    Write-Host "Preparation option sous-titres..."
+    Remove-SubtitlesMod $game
+    if ($hasSubtitles) {
+        Write-Host ""
+        Write-Host "Option sous-titres cinematiques (UE4SS) :" -ForegroundColor Cyan
+        Write-Host "  Affiche en FR les voix (Wade, Simon, Cletus, …) — le jeu n'a aucun sous-titre natif."
+        Write-Host "  Independant du pak FR ; utilise un injecteur (dwmapi.dll)."
+        Write-Host "  Antivirus peut signaler dwmapi. Pas active par defaut."
+        Write-Host "  Credit : contribution iPresing (PR #1)."
+        $subs = Read-Host "Activer les sous-titres cinematiques ? (O/N)"
+        if ($subs -match '^[oOyY]') {
+            Write-Host "Deploiement sous-titres (UE4SS + SousTitresFR)..."
+            Install-SubtitlesRuntime $game $pack
+        } else {
+            Write-Host "Sous-titres non installes."
         }
     }
 

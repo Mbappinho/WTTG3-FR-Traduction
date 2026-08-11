@@ -1,0 +1,6 @@
+﻿Sous-titres cinematiques WTTG3 FR
+
+Mod Lua + .srt : contribution iPresing (PR #1).
+UE4SS (dwmapi.dll + UE4SS.dll) : https://github.com/UE4SS-RE/RE-UE4SS
+Optionnel via INSTALLER.bat (O/N) - pas active par defaut.
+Voir docs/SOUS_TITRES.md
