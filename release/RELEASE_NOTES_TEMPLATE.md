@@ -7,8 +7,8 @@ Mettre à jour `pack_version` dans `release/steam_target.json` avant le pack.
 
 ## Summary
 - (1–3 puces : ce qui change pour le joueur)
-- BuildID Steam : `24415407`
-- Pack **v1.6.1** : retrait injecteur AZERTY ; pak ZQSD seul
+- BuildID Steam : `24463842`
+- Pack **v1.6.3** : rebuild post-MAJ Steam
 
 ## Install (premiere fois)
 **GitHub Full** (`WTTG3-FR-Traduction.zip`)

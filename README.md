@@ -14,8 +14,8 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.6.2** |
-| **Steam BuildID** | **`24415407`** (AppID `3869850`) |
+| **Pack actuel** | **v1.6.3** |
+| **Steam BuildID** | **`24463842`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
 `INSTALLER.bat` **detecte automatiquement** ton BuildID et indique si le pack est compatible.  
