@@ -5,7 +5,8 @@
 - [ ] Menus : Jouer / Continuer / Parametres / Quitter
 - [ ] Pause / options graphiques & audio en FR
 - [ ] Difficulte / credits en FR
-- [ ] UE4SS off (`dwmapi.dll.off`)
+- [ ] UE4SS : off (`dwmapi.dll.off`) **sauf** sous-titres O (`dwmapi` + SousTitresFR)
+- [ ] Relancer INSTALLER → N aux sous-titres : plus d'injecteur orphelin (dwmapi .off si aucun autre mod)
 
 ## Tutoriel / CryptChat
 

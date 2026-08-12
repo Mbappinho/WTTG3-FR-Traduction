@@ -112,4 +112,7 @@ Si le filtre `COPY_PREFIXES` est sensible à la casse, **tous** les prompts mond
 
 ## UE4SS
 
-Reste **désactivé** pour jouer (`dwmapi.dll.off`). Réactiver uniquement pour re-dump usmap.
+- **Jouer sans sous-titres** : `dwmapi.dll.off` (pas d'injecteur).
+- **Option sous-titres O (v1.7.0+)** : `dwmapi.dll` actif + mod `SousTitresFR` — voir [SOUS_TITRES.md](SOUS_TITRES.md).
+- Relancer `INSTALLER.bat` et répondre **N** doit retirer `SousTitresFR` et recouper `dwmapi` s'il ne reste aucun autre mod custom.
+- Dump usmap : réactiver temporairement le proxy, puis remettre off si tu ne joues pas avec les sous-titres ([DUMP_USMAP.md](DUMP_USMAP.md)).

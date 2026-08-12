@@ -30,7 +30,17 @@ if (-not (Test-Path $dwmapi)) {
 Copy-Item $dwmapi (Join-Path $core "dwmapi.dll") -Force
 Copy-Item (Join-Path $tools "UE4SS.dll") (Join-Path $core "UE4SS.dll") -Force
 if (Test-Path (Join-Path $tools "UE4SS-settings.ini")) {
-    Copy-Item (Join-Path $tools "UE4SS-settings.ini") (Join-Path $core "UE4SS-settings.ini") -Force
+    $iniDst = Join-Path $core "UE4SS-settings.ini"
+    Copy-Item (Join-Path $tools "UE4SS-settings.ini") $iniDst -Force
+    # WTTG3 (UE5.6) : cache UObject off, pas de console GUI, version forcee
+    $ini = Get-Content -Raw $iniDst
+    $ini = $ini -replace '(?m)^bUseUObjectArrayCache\s*=\s*\w+', 'bUseUObjectArrayCache = false'
+    $ini = $ini -replace '(?m)^GuiConsoleEnabled\s*=\s*\d+', 'GuiConsoleEnabled = 0'
+    $ini = $ini -replace '(?m)^GuiConsoleVisible\s*=\s*\d+', 'GuiConsoleVisible = 0'
+    $ini = $ini -replace '(?m)^MajorVersion\s*=.*', 'MajorVersion = 5'
+    $ini = $ini -replace '(?m)^MinorVersion\s*=.*', 'MinorVersion = 6'
+    $utf8 = New-Object System.Text.UTF8Encoding $false
+    [IO.File]::WriteAllText($iniDst, $ini, $utf8)
 }
 if (Test-Path (Join-Path $tools "LICENSE")) {
     Copy-Item (Join-Path $tools "LICENSE") (Join-Path $core "LICENSE") -Force
@@ -47,7 +57,7 @@ foreach ($m in @("Keybinds", "shared")) {
     }
 }
 
-# mods.txt : pas d'AzertyRemap ; SousTitresFR via enabled.txt
+# mods.txt : SousTitresFR explicite (+ enabled.txt en secours)
 @"
 CheatManagerEnablerMod : 0
 ConsoleCommandsMod : 0
@@ -56,16 +66,21 @@ SplitScreenMod : 0
 LineTraceMod : 0
 BPML_GenericFunctions : 0
 BPModLoaderMod : 0
+SousTitresFR : 1
 
 ; Built-in keybinds, do not move up!
 Keybinds : 1
 "@ | Set-Content -Path (Join-Path $modsKeep "mods.txt") -Encoding ASCII
+
+# enabled.txt non vide (certains unzip Windows sautent les fichiers 0 octet)
+Set-Content -Path (Join-Path $mod "enabled.txt") -Value "1" -Encoding ASCII -NoNewline
 
 $attr = @(
     "Sous-titres cinematiques WTTG3 FR",
     "",
     "Mod Lua + .srt : contribution iPresing (PR #1).",
     "UE4SS (dwmapi.dll + UE4SS.dll) : https://github.com/UE4SS-RE/RE-UE4SS",
+    "Build valide : experimental-latest (nested ue4ss/) - v3.0.1 ancien (fev 2024) casse sur ce jeu.",
     "Optionnel via INSTALLER.bat (O/N) - pas active par defaut.",
     "Voir docs/SOUS_TITRES.md"
 ) -join "`r`n"

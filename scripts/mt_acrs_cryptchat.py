@@ -12,17 +12,7 @@ from __future__ import annotations
 import json
 import re
 import time
-import warnings
 from pathlib import Path
-
-from deep_translator import GoogleTranslator
-
-warnings.warn(
-    "mt_acrs_cryptchat.py is deprecated (Google + deaccent). "
-    "Use work/acrs_batches + merge_acrs_fr_batches.py instead.",
-    DeprecationWarning,
-    stacklevel=1,
-)
 
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / "work"
@@ -83,6 +73,8 @@ def deaccent(s: str) -> str:
 
 def main() -> None:
     import sys
+
+    from deep_translator import GoogleTranslator
 
     sys.path.insert(0, str(ROOT / "scripts"))
     from build_ui_uassetgui_patch import RAW
@@ -157,4 +149,11 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    print(
+        "DEPRECATED: mt_acrs_cryptchat.py (Google Translate + deaccent). "
+        "Use work/acrs_batches + merge_acrs_fr_batches.py.",
+        file=sys.stderr,
+    )
+    sys.exit(1)

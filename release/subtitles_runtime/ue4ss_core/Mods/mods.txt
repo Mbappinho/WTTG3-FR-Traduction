@@ -5,6 +5,7 @@ SplitScreenMod : 0
 LineTraceMod : 0
 BPML_GenericFunctions : 0
 BPModLoaderMod : 0
+SousTitresFR : 1
 
 ; Built-in keybinds, do not move up!
 Keybinds : 1

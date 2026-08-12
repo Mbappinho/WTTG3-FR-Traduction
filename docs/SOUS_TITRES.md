@@ -18,15 +18,48 @@ Il est indépendant du pak `FR_P` : c'est un mod Lua UE4SS et des fichiers
 
 ### Pack Full (recommande)
 `INSTALLER.bat` propose **Activer les sous-titres cinematiques ? (O/N)** — desactive par defaut.
-Repondre **O** deploie UE4SS + le mod `SousTitresFR`.
+Repondre **O** deploie `SousTitresFR`. S’il n’y a pas d’UE4SS, le pack installe le runtime
+(experimental-latest). S’il y en a déjà un (layout `ue4ss\`) : **merge** — DLL, settings et
+autres mods conservés ; `mods.txt` reçoit `SousTitresFR : 1` ; signature
+`StaticConstructObject` posée (backup `.bak-wttg3fr` si un fichier existait).
+Le proxy `dwmapi` n’est copié que s’il est absent (un `.off` est réactivé).
 
 ### Manuel
-Le contenu de `ue4ss_core/` va dans `WTTGSD\Binaries\Win64\ue4ss\`, a cote du
-proxy `dwmapi.dll` d'UE4SS. Rebuild local des DLL :
-`powershell -File scripts\build_subtitles_runtime.ps1`
-Le fichier `enabled.txt` suffit a activer le mod, sans toucher `mods.txt`.
+Layout **nested** (obligatoire avec le proxy actuel) :
+
+```
+WTTGSD\Binaries\Win64\
+  dwmapi.dll          ← proxy seulement
+  ue4ss\
+    UE4SS.dll
+    UE4SS-settings.ini
+    UE4SS_Signatures\StaticConstructObject.lua
+    Mods\SousTitresFR\...
+```
+
+Rebuild local des DLL : `powershell -File scripts\build_subtitles_runtime.ps1`  
+(necessite `tools\UE4SS` = **experimental-latest**, pas le zip v3.0.1 de fevrier 2024).
+
+Le mod est liste dans `mods.txt` (`SousTitresFR : 1`) et a un `enabled.txt` non vide.
 
 Nexus : pas d'injecteur dans le zip drop-in — utiliser le pack Full.
+
+## Depannage (log qui ne bouge pas / F9 mort)
+
+Si `ue4ss\UE4SS.log` ne se met pas a jour au lancement, **UE4SS ne s'injecte pas**.
+
+Cause (assets 1.7.0 remplaces) : le `dwmapi.dll` / `UE4SS.dll` **v3.0.1 (fev 2024)** ne chargeait
+plus correctement le layout `ue4ss\` sur ce jeu (chemin avec espaces). Contre-mesure :
+**UE4SS experimental-latest** (proxy nested-aware, scan GUObjectArray OK sur UE5.6).
+
+Controle rapide :
+
+1. Fermer le jeu, supprimer `ue4ss\UE4SS.log`, relancer 20 s.
+2. Le fichier doit reapparaitre avec `PS scan successful` puis `Starting Lua mod 'SousTitresFR'`.
+3. En jeu : **F9** = ligne d'essai 10 s (bas d'ecran).
+
+Ne pas laisser un `UE4SS.dll` a la racine de `Win64` en plus du dossier `ue4ss\`
+(double install → scan casse). L'installeur Full nettoie ces restes.
 
 ## Pourquoi pas un patch d'asset
 
@@ -99,3 +132,11 @@ correspondance doit rester unique.
 Cela neutralisait **tout** mod UE4SS installé par le joueur. Ils ne le font
 désormais que si la signature du vieil injecteur est présente — le dossier
 `ue4ss\Mods\AzertyRemap`.
+
+**Sous-titres N après un O** (relancer INSTALLER) : retire `SousTitresFR` et
+coupe `dwmapi` s'il ne reste aucun autre mod custom (Keybinds/shared ignorés).
+Un UE4SS tiers avec d'autres mods n'est pas éteint.
+
+**Sous-titres O sur un UE4SS déjà présent** : merge uniquement `SousTitresFR` +
+ligne `mods.txt` + signature SCO. Pas d'écrasement de `UE4SS.dll` / `mods.txt`
+complet / autres dossiers Mods.

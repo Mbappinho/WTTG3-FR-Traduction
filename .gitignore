@@ -14,13 +14,23 @@ release/WTTG3-FR-Beginner-Nexus/
 release/WTTG3-FR-Traduction.zip
 release/WTTG3-FR-Traduction-Nexus.zip
 release/github-repo/
-# Assembled AZERTY runtime binaries (rebuild: scripts\build_azerty_runtime.ps1)
+# Assembled AZERTY runtime binaries (rebuild: scripts\build_azerty_runtime.ps1 -Force ; DEPRECATED)
 release/azerty_runtime/AutoHotkey64.exe
 release/azerty_runtime/ue4ss_core/UE4SS.dll
 release/azerty_runtime/ue4ss_core/dwmapi.dll
 # Assembled subtitles runtime binaries (rebuild: scripts\build_subtitles_runtime.ps1)
 release/subtitles_runtime/ue4ss_core/UE4SS.dll
 release/subtitles_runtime/ue4ss_core/dwmapi.dll
+release/*.sha256
+
+# Scratch dumps / asides (do not commit)
+work/_*/
+work/_*.json
+work/_*.txt
+work/_*.py
+work/*.pak
+work/*.ucas
+work/*.utoc
 
 
 # Simon intro texture: keep FR PNG + scripts, ignore exploration junk

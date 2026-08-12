@@ -1,7 +1,7 @@
 WTTG3 - Traduction francaise (pack Nexus drop-in)
 =================================================
 
-COMPATIBILITE STEAM (v1.7.0)
+COMPATIBILITE STEAM (v1.7.1)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24463842
@@ -19,6 +19,8 @@ CONTENU (aucun .bat / .ps1 — regles Nexus)
 - Option AZERTY (desactivee par defaut) : dossier optionnel_azerty\
   (voir LIREMOI_AZERTY.txt dedans) — pak ZQSD seulement, pas d'injecteur
 - PAS de fichiers anglais d'origine redistribues
+- PAS de sous-titres cinematiques (injecteur UE4SS) : pack GitHub Full uniquement
+  https://github.com/Mbappinho/WTTG3-FR-Traduction/releases
 
 ------------------------------------------------
 INSTALLER (premiere fois — drop-in)

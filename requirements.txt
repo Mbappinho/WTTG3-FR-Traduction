@@ -1,1 +1,3 @@
+# Uniquement pour l'ancien scripts/mt_acrs_cryptchat.py (DEPRECATED — ne plus lancer).
+# Le pipeline vivant (UAssetGUI / merge ACRS) n'a pas de dependance pip.
 deep-translator>=1.11.4

@@ -39,14 +39,6 @@ function Remove-AzertyRuntimeLeftovers([string]$GameRoot) {
     }
 }
 
-function Remove-SubtitlesMod([string]$GameRoot) {
-    $mod = Join-Path $GameRoot "WTTGSD\Binaries\Win64\ue4ss\Mods\SousTitresFR"
-    if (Test-Path -LiteralPath $mod) {
-        Remove-Item -LiteralPath $mod -Recurse -Force
-        Write-Host "  SousTitresFR retire"
-    }
-}
-
 function Install-SubtitlesRuntime([string]$GameRoot, [string]$PackRoot) {
     $src = Join-Path $PackRoot "fichiers\subtitles_runtime"
     if (-not (Test-Path -LiteralPath $src)) {
@@ -63,45 +55,110 @@ function Install-SubtitlesRuntime([string]$GameRoot, [string]$PackRoot) {
         throw "ue4ss_core manquant dans subtitles_runtime"
     }
 
-    # Proxy dwmapi
-    $dwmapiSrc = Join-Path $ue4ssSrc "dwmapi.dll"
-    if (Test-Path -LiteralPath $dwmapiSrc) {
-        $off = Join-Path $win64 "dwmapi.dll.off"
-        if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
-        Copy-Item $dwmapiSrc (Join-Path $win64 "dwmapi.dll") -Force
-    } else {
-        Write-Host "WARN: dwmapi.dll manquant dans le pack — lance scripts\build_subtitles_runtime.ps1" -ForegroundColor Yellow
+    # Nettoyer un ancien layout « flat » (UE4SS.dll a la racine Win64) qui
+    # double-charge / casse le scan avec le proxy moderne nested ue4ss/.
+    foreach ($stale in @(
+            (Join-Path $win64 "UE4SS.dll"),
+            (Join-Path $win64 "UE4SS-settings.ini"),
+            (Join-Path $win64 "UE4SS.log"),
+            (Join-Path $win64 "override.txt")
+        )) {
+        if (Test-Path -LiteralPath $stale) { Remove-Item -LiteralPath $stale -Force }
+    }
+    foreach ($staleDir in @("Mods", "UE4SS_Signatures")) {
+        $p = Join-Path $win64 $staleDir
+        if (Test-Path -LiteralPath $p) { Remove-Item -LiteralPath $p -Recurse -Force }
     }
 
     $ue4ssDst = Join-Path $win64 "ue4ss"
-    New-Item -ItemType Directory -Force -Path $ue4ssDst | Out-Null
-    foreach ($name in @("UE4SS.dll", "UE4SS-settings.ini", "LICENSE")) {
-        $f = Join-Path $ue4ssSrc $name
-        if (Test-Path -LiteralPath $f) { Copy-Item $f (Join-Path $ue4ssDst $name) -Force }
+    $existingNested = Test-Path -LiteralPath (Join-Path $ue4ssDst "UE4SS.dll")
+    $dwmapiSrc = Join-Path $ue4ssSrc "dwmapi.dll"
+    $dwmapiDst = Join-Path $win64 "dwmapi.dll"
+    $dwmapiOff = Join-Path $win64 "dwmapi.dll.off"
+
+    if ($existingNested) {
+        Write-Host "  UE4SS existant detecte — on ajoute SousTitresFR (DLL / settings / autres mods conserves)."
+        New-Item -ItemType Directory -Force -Path $ue4ssDst | Out-Null
+
+        if (Test-Path -LiteralPath $dwmapiDst) {
+            Write-Host "  Proxy dwmapi existant conserve."
+        } elseif (Test-Path -LiteralPath $dwmapiOff) {
+            Rename-Item -LiteralPath $dwmapiOff -NewName "dwmapi.dll" -Force
+            Write-Host "  Proxy dwmapi reactive (.off -> .dll)"
+        } elseif (Test-Path -LiteralPath $dwmapiSrc) {
+            Copy-Item $dwmapiSrc $dwmapiDst -Force
+            Write-Host "  Proxy dwmapi installe (aucun proxy present)."
+        } else {
+            Write-Host "WARN: dwmapi.dll manquant dans le pack et aucun proxy sur le jeu." -ForegroundColor Yellow
+        }
+
+        $sigSrcFile = Join-Path $ue4ssSrc "UE4SS_Signatures\StaticConstructObject.lua"
+        if (Test-Path -LiteralPath $sigSrcFile) {
+            $sigDir = Join-Path $ue4ssDst "UE4SS_Signatures"
+            New-Item -ItemType Directory -Force -Path $sigDir | Out-Null
+            $sigDstFile = Join-Path $sigDir "StaticConstructObject.lua"
+            $sigBak = Join-Path $sigDir "StaticConstructObject.lua.bak-wttg3fr"
+            if ((Test-Path -LiteralPath $sigDstFile) -and -not (Test-Path -LiteralPath $sigBak)) {
+                Copy-Item $sigDstFile $sigBak -Force
+            }
+            Copy-Item $sigSrcFile $sigDstFile -Force
+            Write-Host "  Signature StaticConstructObject installee (requise pour ce jeu)."
+        }
+    } else {
+        if (Test-Path -LiteralPath $dwmapiSrc) {
+            if (Test-Path -LiteralPath $dwmapiOff) { Remove-Item -LiteralPath $dwmapiOff -Force }
+            Copy-Item $dwmapiSrc $dwmapiDst -Force
+        } else {
+            Write-Host "WARN: dwmapi.dll manquant dans le pack — lance scripts\build_subtitles_runtime.ps1" -ForegroundColor Yellow
+        }
+
+        New-Item -ItemType Directory -Force -Path $ue4ssDst | Out-Null
+        foreach ($name in @("UE4SS.dll", "UE4SS-settings.ini", "LICENSE")) {
+            $f = Join-Path $ue4ssSrc $name
+            if (Test-Path -LiteralPath $f) { Copy-Item $f (Join-Path $ue4ssDst $name) -Force }
+        }
+
+        $sigSrc = Join-Path $ue4ssSrc "UE4SS_Signatures"
+        if (Test-Path -LiteralPath $sigSrc) {
+            $sigDst = Join-Path $ue4ssDst "UE4SS_Signatures"
+            if (Test-Path $sigDst) { Remove-Item $sigDst -Recurse -Force }
+            Copy-Item $sigSrc $sigDst -Recurse -Force
+        }
+
+        $modsSrc = Join-Path $ue4ssSrc "Mods"
+        $modsDst = Join-Path $ue4ssDst "Mods"
+        New-Item -ItemType Directory -Force -Path $modsDst | Out-Null
+        if (Test-Path -LiteralPath $modsSrc) {
+            Copy-Item (Join-Path $modsSrc "*") $modsDst -Recurse -Force
+        }
     }
 
-    $sigSrc = Join-Path $ue4ssSrc "UE4SS_Signatures"
-    if (Test-Path -LiteralPath $sigSrc) {
-        $sigDst = Join-Path $ue4ssDst "UE4SS_Signatures"
-        if (Test-Path $sigDst) { Remove-Item $sigDst -Recurse -Force }
-        Copy-Item $sigSrc $sigDst -Recurse -Force
+    $modSrc = Join-Path $ue4ssSrc "Mods\SousTitresFR"
+    $modDst = Join-Path $ue4ssDst "Mods\SousTitresFR"
+    if (Test-Path -LiteralPath $modSrc) {
+        New-Item -ItemType Directory -Force -Path (Split-Path $modDst -Parent) | Out-Null
+        if (Test-Path -LiteralPath $modDst) { Remove-Item -LiteralPath $modDst -Recurse -Force }
+        Copy-Item $modSrc $modDst -Recurse -Force
     }
 
-    $modsSrc = Join-Path $ue4ssSrc "Mods"
-    $modsDst = Join-Path $ue4ssDst "Mods"
-    New-Item -ItemType Directory -Force -Path $modsDst | Out-Null
-    if (Test-Path -LiteralPath $modsSrc) {
-        # Keybinds / shared / mods.txt / SousTitresFR
-        Copy-Item (Join-Path $modsSrc "*") $modsDst -Recurse -Force
-    }
-
-    # Garantir : pas d'AzertyRemap reactive par erreur
-    $az = Join-Path $modsDst "AzertyRemap"
+    $az = Join-Path $ue4ssDst "Mods\AzertyRemap"
     if (Test-Path -LiteralPath $az) {
         Remove-Item -LiteralPath $az -Recurse -Force
     }
 
-    Write-Host "  Sous-titres UE4SS deployes (dwmapi + SousTitresFR)"
+    $modsTxt = Join-Path $ue4ssDst "Mods\mods.txt"
+    Set-Ue4ssModLine $modsTxt "SousTitresFR" "1"
+
+    $en = Join-Path $modDst "enabled.txt"
+    if (Test-Path (Split-Path $en -Parent)) {
+        Set-Content -Path $en -Value "1" -Encoding ASCII -NoNewline
+    }
+
+    if ($existingNested) {
+        Write-Host "  SousTitresFR fusionne dans l'UE4SS existant."
+    } else {
+        Write-Host "  Sous-titres UE4SS deployes (dwmapi + SousTitresFR)"
+    }
     Write-Host "  Note: antivirus peut signaler dwmapi.dll (injecteur)." -ForegroundColor Yellow
 }
 
@@ -202,10 +259,10 @@ try {
         }
     }
 
-    # Optional cinematic subtitles (UE4SS) — off by default
+    # Optional cinematic subtitles (UE4SS) — off by default.
+    # Do not strip SousTitresFR before the prompt: a previous O then N must
+    # also disable dwmapi when no other custom UE4SS mod remains.
     $hasSubtitles = Test-Path (Join-Path $pack "fichiers\subtitles_runtime\ue4ss_core\Mods\SousTitresFR\Scripts\main.lua")
-    Write-Host "Preparation option sous-titres..."
-    Remove-SubtitlesMod $game
     if ($hasSubtitles) {
         Write-Host ""
         Write-Host "Option sous-titres cinematiques (UE4SS) :" -ForegroundColor Cyan
@@ -213,13 +270,20 @@ try {
         Write-Host "  Independant du pak FR ; utilise un injecteur (dwmapi.dll)."
         Write-Host "  Antivirus peut signaler dwmapi. Pas active par defaut."
         Write-Host "  Credit : contribution iPresing (PR #1)."
+        Write-Host "  Si un UE4SS est deja la : on ajoute SousTitresFR sans ecraser tes autres mods."
+        Write-Host "  N (y compris apres un O precedent) : retire SousTitresFR et coupe dwmapi"
+        Write-Host "    s'il ne reste aucun autre mod UE4SS."
         $subs = Read-Host "Activer les sous-titres cinematiques ? (O/N)"
         if ($subs -match '^[oOyY]') {
             Write-Host "Deploiement sous-titres (UE4SS + SousTitresFR)..."
             Install-SubtitlesRuntime $game $pack
         } else {
             Write-Host "Sous-titres non installes."
+            Disable-PackSubtitles $game
         }
+    } else {
+        Write-Host "Pack sans runtime sous-titres — nettoyage d'un eventuel SousTitresFR precedent..."
+        Disable-PackSubtitles $game
     }
 
     if (Test-Path $pdfSrc) {

@@ -4,8 +4,20 @@
 #   2) Desktop "WTTG3 AZERTY Rebind*" Win64 (if present)
 #   3) tools/UE4SS (+ optional tools/UE4SS-exp)
 param(
-    [string]$LocRoot = (Split-Path $PSScriptRoot -Parent)
+    [string]$LocRoot = (Split-Path $PSScriptRoot -Parent),
+    [switch]$Force
 )
+# DEPRECATED since v1.6.1 — AZERTY injector (UE4SS+AHK) caused fatal errors.
+# Player AZERTY = build_azerty_imc_patch.py (pak ZQSD only).
+# Cinematic subtitles = build_subtitles_runtime.ps1.
+if (-not $Force) {
+    throw @"
+DEPRECATED depuis v1.6.1 : ne plus assembler l'injecteur AZERTY (fatal errors).
+AZERTY joueur : python scripts\build_azerty_imc_patch.py
+Sous-titres   : powershell -File scripts\build_subtitles_runtime.ps1
+Relance avec -Force uniquement pour extraire un vieux runtime (ne pas le shipper).
+"@
+}
 $ErrorActionPreference = "Stop"
 $dst = Join-Path $LocRoot "release\azerty_runtime"
 $core = Join-Path $dst "ue4ss_core"

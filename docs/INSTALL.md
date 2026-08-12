@@ -39,6 +39,7 @@ Puis :
 python scripts\build_translations.py
 python scripts\build_ui_uassetgui_patch.py
 python scripts\build_azerty_imc_patch.py   # optionnel : pak FR_AZERTY_P (ZQSD)
+powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1  # Full : option sous-titres
 ```
 
 `build_ui_uassetgui_patch.py` préfère `source/legacy_ui_steam` s’il existe.
@@ -47,9 +48,9 @@ python scripts\build_azerty_imc_patch.py   # optionnel : pak FR_AZERTY_P (ZQSD)
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.7.0) :** BuildID **`24463842`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.7.1) :** BuildID **`24463842`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Sous-titres** : option Full O/N — [SOUS_TITRES.md](SOUS_TITRES.md).
-- **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
+- **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Vérifie le SHA256 (digest GitHub ou asset `.sha256`) ; sans hash (vieilles releases) : avertissement puis continue. Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
 - Détail + historique : [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md)
@@ -64,7 +65,17 @@ Apres un build UI + PDF, genere le dossier a zipper :
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1
 # Variante Nexus (sans backup PDF EN / achievements EN) :
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1 -Distribution Nexus
+# Pack Full >= 1.7.0 sans dwmapi : echec (override : -AllowNoSubtitles)
 ```
+
+Apres zip des dossiers `release\WTTG3-FR-Beginner*` :
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\hash_release_zips.ps1
+```
+
+Joindre `release\WTTG3-FR-Traduction.zip.sha256` (et le sidecar Nexus) aux assets GitHub.
+L'auto-update Full verifie le SHA256 (digest GitHub ou fichier `.sha256`). Sans hash : WARN puis continue (releases anciennes).
 
 **Textes joueur (a tenir a jour a chaque release) :**
 - Full : [`release/LIREMOI_BEGINNER_TEMPLATE.txt`](../release/LIREMOI_BEGINNER_TEMPLATE.txt) → copié en `LIREMOI.txt`
@@ -92,7 +103,7 @@ Sortie Nexus : `release\WTTG3-FR-Beginner-Nexus\` → zip `WTTG3-FR-Traduction-N
 
 Automatisation des maj Nexus depuis les releases GitHub : [NEXUS_AUTOMATION.md](NEXUS_AUTOMATION.md).
 
-Le script demande le dossier du jeu (detection auto si possible). Fermer le jeu avant.
+Le script demande le dossier du jeu (détection auto : registre Steam + `libraryfolders.vdf`, donc bibliothèques F:/G:/… pas seulement D:/E:). Fermer le jeu avant.
 
 ## Mise a jour du pack (joueurs)
 
@@ -147,7 +158,7 @@ python scripts\build_ui_uassetgui_patch.py
 # python scripts\qa_acrs_cryptchat.py
 ```
 
-`mt_acrs_cryptchat.py` (Google + strip d'accents) est **déprécié** — ne plus l'utiliser pour le livrable.
+`mt_acrs_cryptchat.py` (Google + strip d'accents) est **déprécié** et refuse de s'exécuter (`sys.exit(1)`). Map livrable = `work/acrs_batches` + `merge_acrs_fr_batches.py`.
 
 Les dialogues CryptChat doivent matcher la **FString exacte** du `.uexp` (souvent un seul bloc avec `\r\n` et placeholders `[LINK]` / `[PRICE]` / `[WIKI]`). Des morceaux découpés ne matchent pas.
 
@@ -263,5 +274,5 @@ powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1
 7. Inventaire : Lettre d'expulsion + descriptions items
 8. Interactions monde : **Ouvrir / Déverrouiller**, **Allumer / Éteindre**, **Se cacher**, **Regarder**, etc.
 9. PDF FR ; WebSites toujours EN
-10. UE4SS désactivé (`dwmapi.dll.off`)
+10. UE4SS : **off** (`dwmapi.dll.off`) sauf option sous-titres **O** (alors `dwmapi` actif + `SousTitresFR`). Relancer INSTALLER → N doit recouper l'injecteur s'il ne reste aucun autre mod.
 11. Fermer le jeu avant rebuild (sinon verrouillage `FR_P.ucas`)

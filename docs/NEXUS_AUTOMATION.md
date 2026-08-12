@@ -29,7 +29,9 @@ Sur https://github.com/Mbappinho/WTTG3-FR-Traduction :
    ```powershell
    powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1 -Distribution Nexus
    Compress-Archive -Path release\WTTG3-FR-Beginner-Nexus\* -DestinationPath release\WTTG3-FR-Traduction-Nexus.zip -Force
+   powershell -ExecutionPolicy Bypass -File scripts\hash_release_zips.ps1
    ```
+   Joindre `WTTG3-FR-Traduction-Nexus.zip.sha256` (et le sidecar Full) aux assets de la GitHub Release. L’installeur Full vérifie le hash du zip Full.
 2. Cree / mets a jour une GitHub Release (`vX.Y.Z`) avec l’asset
    `WTTG3-FR-Traduction-Nexus.zip` (et le zip Full si tu veux).
 3. Le workflow **Upload to Nexus Mods** demarre sur `release: published`

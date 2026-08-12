@@ -1,5 +1,9 @@
 # Analyse écart vs concurrent UE4SS (2026-07-22)
 
+> **Snapshot historique.** Ne plus utiliser ce dossier comme backlog de complétude.
+> `Price`, `2 - 4 mins`, `pay up`, `Payment???`, `Upload to` sont dans le map depuis **v1.4.1**.
+> `Offline` Title Case était un faux positif. Voir `docs/REVIEW_NOTES.md`.
+
 Pack concurrent analysé : `WTTGSD_Trad_FR … 2026-07-20` (FrenchInject + Wiki.js).
 
 ## Méthode

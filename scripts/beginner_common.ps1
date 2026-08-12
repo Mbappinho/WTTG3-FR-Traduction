@@ -23,30 +23,100 @@ function Test-GameLooksValid([string]$Root) {
     return (Test-Path $paks) -and (Test-Path $exe)
 }
 
+function Add-UniquePath([System.Collections.Generic.List[string]]$List, [string]$Path) {
+    if (-not $Path) { return }
+    $Path = [string]$Path
+    $Path = $Path.Trim().Trim('"')
+    $Path = $Path -replace '/', '\'
+    while ($Path.Contains('\\')) { $Path = $Path.Replace('\\', '\') }
+    if ($Path.Length -gt 3) { $Path = $Path.TrimEnd('\') }
+    if (-not $Path) { return }
+    foreach ($x in $List) {
+        if ([string]::Equals($x, $Path, [StringComparison]::OrdinalIgnoreCase)) { return }
+    }
+    try {
+        if (Test-Path -LiteralPath $Path) { $List.Add($Path) | Out-Null }
+    } catch {}
+}
+
+function Get-SteamHomePaths {
+    $homes = New-Object System.Collections.Generic.List[string]
+    try {
+        $reg = Get-ItemProperty -Path "HKCU:\Software\Valve\Steam" -ErrorAction SilentlyContinue
+        if ($reg -and $reg.SteamPath) { Add-UniquePath $homes ([string]$reg.SteamPath) }
+    } catch {}
+    try {
+        $regLm = Get-ItemProperty -Path "HKLM:\SOFTWARE\WOW6432Node\Valve\Steam" -ErrorAction SilentlyContinue
+        if ($regLm -and $regLm.InstallPath) { Add-UniquePath $homes ([string]$regLm.InstallPath) }
+    } catch {}
+    foreach ($g in @(
+            "${env:ProgramFiles(x86)}\Steam",
+            "$env:ProgramFiles\Steam",
+            "C:\Steam"
+        )) {
+        Add-UniquePath $homes $g
+    }
+    return $homes
+}
+
+function Get-SteamLibraryRoots {
+    $libs = New-Object System.Collections.Generic.List[string]
+    foreach ($steamRoot in @(Get-SteamHomePaths)) {
+        Add-UniquePath $libs $steamRoot
+        $vdf = Join-Path $steamRoot "steamapps\libraryfolders.vdf"
+        if (-not (Test-Path -LiteralPath $vdf)) { continue }
+        try {
+            $raw = Get-Content -LiteralPath $vdf -Raw -Encoding UTF8 -ErrorAction Stop
+            foreach ($m in [regex]::Matches($raw, '"path"\s+"([^"]+)"')) {
+                Add-UniquePath $libs $m.Groups[1].Value
+            }
+        } catch {}
+    }
+    foreach ($fallback in @(
+            "D:\SteamLibrary",
+            "E:\SteamLibrary",
+            "F:\SteamLibrary"
+        )) {
+        Add-UniquePath $libs $fallback
+    }
+    return $libs
+}
+
+function Get-AcfInstallDir([string]$ManifestPath) {
+    if (-not $ManifestPath -or -not (Test-Path -LiteralPath $ManifestPath)) { return $null }
+    try {
+        $raw = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 -ErrorAction Stop
+        $m = [regex]::Match($raw, '"installdir"\s+"([^"]+)"')
+        if ($m.Success) { return $m.Groups[1].Value }
+    } catch {}
+    return $null
+}
+
 function Find-CandidateGameRoots {
     $candidates = New-Object System.Collections.Generic.List[string]
-    $add = {
+    $addGame = {
         param($p)
-        if ($p -and (Test-Path $p) -and (Test-GameLooksValid $p) -and -not $candidates.Contains($p)) {
-            $candidates.Add($p) | Out-Null
+        if ($p -and (Test-Path -LiteralPath $p) -and (Test-GameLooksValid $p)) {
+            Add-UniquePath $candidates $p
+            Add-UniquePath $candidates (Join-Path $p "game")
         }
     }
 
-    $steamRoots = @(
-        "${env:ProgramFiles(x86)}\Steam\steamapps\common",
-        "$env:ProgramFiles\Steam\steamapps\common",
-        "D:\SteamLibrary\steamapps\common",
-        "E:\SteamLibrary\steamapps\common"
-    )
-    foreach ($lib in $steamRoots) {
-        try {
-            if (-not (Test-Path -LiteralPath $lib)) { continue }
-        } catch { continue }
-        Get-ChildItem $lib -Directory -ErrorAction SilentlyContinue | ForEach-Object {
-            $name = $_.Name
-            if ($name -match "Welcome|WTTG|Game.?III") {
-                & $add $_.FullName
-                & $add (Join-Path $_.FullName "game")
+    foreach ($lib in @(Get-SteamLibraryRoots)) {
+        $steamapps = Join-Path $lib "steamapps"
+        $common = Join-Path $steamapps "common"
+        $acf = Join-Path $steamapps "appmanifest_3869850.acf"
+        if (Test-Path -LiteralPath $acf) {
+            $installdir = Get-AcfInstallDir $acf
+            if ($installdir) {
+                & $addGame (Join-Path $common $installdir)
+            }
+        }
+        if (Test-Path -LiteralPath $common) {
+            Get-ChildItem $common -Directory -ErrorAction SilentlyContinue | ForEach-Object {
+                if ($_.Name -match "Welcome|WTTG|Game.?III") {
+                    & $addGame $_.FullName
+                }
             }
         }
     }
@@ -92,6 +162,50 @@ function Assert-GameClosed {
         Write-Host "Le jeu est encore ouvert. Ferme-le puis relance cet outil." -ForegroundColor Yellow
         throw "Jeu ouvert (WTTGSD-Win64-Shipping)"
     }
+}
+
+function Get-Ue4ssCustomModDirs([string]$GameRoot) {
+    $modsDir = Join-Path $GameRoot "WTTGSD\Binaries\Win64\ue4ss\Mods"
+    if (-not (Test-Path -LiteralPath $modsDir)) { return @() }
+    return @(Get-ChildItem -LiteralPath $modsDir -Directory -ErrorAction SilentlyContinue | Where-Object {
+            $_.Name -notin @("Keybinds", "shared")
+        })
+}
+
+function Disable-Ue4ssProxyIfNoCustomMods([string]$GameRoot) {
+    $win64 = Join-Path $GameRoot "WTTGSD\Binaries\Win64"
+    $dwmapi = Join-Path $win64 "dwmapi.dll"
+    $custom = Get-Ue4ssCustomModDirs $GameRoot
+    if (($custom.Count -eq 0) -and (Test-Path -LiteralPath $dwmapi)) {
+        $off = Join-Path $win64 "dwmapi.dll.off"
+        if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
+        Rename-Item -LiteralPath $dwmapi -NewName "dwmapi.dll.off" -Force
+        Write-Host "  dwmapi.dll -> .off (plus de mod UE4SS custom)"
+        return $true
+    }
+    return $false
+}
+
+function Remove-SubtitlesMod([string]$GameRoot) {
+    $mod = Join-Path $GameRoot "WTTGSD\Binaries\Win64\ue4ss\Mods\SousTitresFR"
+    $hadMod = Test-Path -LiteralPath $mod
+    if ($hadMod) {
+        Remove-Item -LiteralPath $mod -Recurse -Force
+        Write-Host "  SousTitresFR retire"
+    }
+    $modsTxt = Join-Path $GameRoot "WTTGSD\Binaries\Win64\ue4ss\Mods\mods.txt"
+    if (Test-Path -LiteralPath $modsTxt) {
+        $raw = Get-Content -LiteralPath $modsTxt -Raw -ErrorAction SilentlyContinue
+        if ($hadMod -or ($raw -and $raw -match '(?m)^\s*SousTitresFR\s*:')) {
+            Set-Ue4ssModLine $modsTxt "SousTitresFR" "0"
+            Write-Host "  mods.txt : SousTitresFR desactive"
+        }
+    }
+}
+
+function Disable-PackSubtitles([string]$GameRoot) {
+    Remove-SubtitlesMod $GameRoot
+    [void](Disable-Ue4ssProxyIfNoCustomMods $GameRoot)
 }
 
 function Get-PackRoot {
@@ -175,22 +289,12 @@ function Find-SteamAppManifest([string]$GameRoot, [string]$AppId) {
         $common = Split-Path -Parent $GameRoot
         $steamapps = Split-Path -Parent $common
         if ($steamapps) {
-            $candidates.Add((Join-Path $steamapps $name)) | Out-Null
+            Add-UniquePath $candidates (Join-Path $steamapps $name)
         }
     } catch {}
 
-    foreach ($lib in @(
-            "${env:ProgramFiles(x86)}\Steam\steamapps",
-            "$env:ProgramFiles\Steam\steamapps",
-            "C:\Steam\steamapps",
-            "D:\SteamLibrary\steamapps",
-            "E:\SteamLibrary\steamapps"
-        )) {
-        try {
-            if ($lib -and (Test-Path -LiteralPath $lib)) {
-                $candidates.Add((Join-Path $lib $name)) | Out-Null
-            }
-        } catch {}
+    foreach ($lib in @(Get-SteamLibraryRoots)) {
+        Add-UniquePath $candidates (Join-Path $lib "steamapps\$name")
     }
 
     foreach ($p in $candidates) {
@@ -199,6 +303,45 @@ function Find-SteamAppManifest([string]$GameRoot, [string]$AppId) {
         } catch {}
     }
     return $null
+}
+
+function Set-Ue4ssModLine([string]$ModsTxtPath, [string]$ModName, [string]$Value) {
+    $dir = Split-Path $ModsTxtPath -Parent
+    if (-not (Test-Path -LiteralPath $dir)) {
+        New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    }
+    $lines = @()
+    if (Test-Path -LiteralPath $ModsTxtPath) {
+        $lines = @(Get-Content -LiteralPath $ModsTxtPath -ErrorAction SilentlyContinue)
+    }
+    $newLine = "{0} : {1}" -f $ModName, $Value
+    $found = $false
+    for ($i = 0; $i -lt $lines.Count; $i++) {
+        if ($lines[$i] -match ("^\s*" + [regex]::Escape($ModName) + "\s*:")) {
+            $lines[$i] = $newLine
+            $found = $true
+            break
+        }
+    }
+    if (-not $found) {
+        $insertAt = -1
+        for ($i = 0; $i -lt $lines.Count; $i++) {
+            if ($lines[$i] -match '^\s*Keybinds\s*:') {
+                $insertAt = $i
+                if ($i -gt 0 -and $lines[$i - 1] -match '^\s*;') { $insertAt = $i - 1 }
+                break
+            }
+        }
+        if ($insertAt -ge 0) {
+            $before = @()
+            if ($insertAt -gt 0) { $before = $lines[0..($insertAt - 1)] }
+            $after = $lines[$insertAt..($lines.Count - 1)]
+            $lines = @($before) + @($newLine, "") + @($after)
+        } else {
+            $lines = @($lines) + @($newLine)
+        }
+    }
+    Set-Content -LiteralPath $ModsTxtPath -Value $lines -Encoding ASCII
 }
 
 function Get-SteamBuildIdFromManifest([string]$ManifestPath) {
@@ -302,12 +445,47 @@ function Get-GitHubLatestReleaseInfo {
     }
 }
 
-function Find-ReleaseAssetUrl($Release, [string]$AssetName) {
+function Find-ReleaseAsset($Release, [string]$AssetName) {
     if (-not $Release -or -not $Release.assets) { return $null }
     foreach ($a in $Release.assets) {
-        if ([string]$a.name -eq $AssetName) { return [string]$a.browser_download_url }
+        if ([string]$a.name -eq $AssetName) { return $a }
     }
     return $null
+}
+
+function Find-ReleaseAssetUrl($Release, [string]$AssetName) {
+    $a = Find-ReleaseAsset $Release $AssetName
+    if ($a) { return [string]$a.browser_download_url }
+    return $null
+}
+
+function Get-ExpectedZipSha256($Release, [string]$ZipAssetName) {
+    $asset = Find-ReleaseAsset $Release $ZipAssetName
+    if ($asset -and $asset.digest) {
+        $d = [string]$asset.digest
+        if ($d -match '^sha256:([0-9a-fA-F]{64})$') {
+            return $Matches[1].ToLowerInvariant()
+        }
+    }
+    $url = Find-ReleaseAssetUrl $Release ($ZipAssetName + ".sha256")
+    if (-not $url) { return $null }
+    try {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        $tmp = Join-Path $env:TEMP ("wttg3_fr_sha256_{0}.txt" -f [guid]::NewGuid().ToString("N"))
+        Invoke-WebRequest -Uri $url -OutFile $tmp -UseBasicParsing -Headers @{ "User-Agent" = "WTTG3-FR-Installer" } -TimeoutSec 30
+        $raw = (Get-Content -LiteralPath $tmp -Raw -Encoding ASCII).Trim()
+        Remove-Item $tmp -Force -ErrorAction SilentlyContinue
+        if ($raw -match '([0-9a-fA-F]{64})') { return $Matches[1].ToLowerInvariant() }
+    } catch {}
+    return $null
+}
+
+function Assert-FileSha256([string]$Path, [string]$Expected) {
+    $actual = (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant()
+    $want = $Expected.ToLowerInvariant()
+    if ($actual -ne $want) {
+        throw ("SHA256 mismatch pour {0}`n  attendu : {1}`n  obtenu  : {2}" -f (Split-Path $Path -Leaf), $want, $actual)
+    }
 }
 
 function Get-RemoteSteamTarget($Release) {
@@ -425,6 +603,14 @@ function Update-PackFromGitHubIfNeeded([string]$PackRoot, [hashtable]$Compat) {
         Write-Host "  Telechargement..."
         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
         Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath -UseBasicParsing -Headers @{ "User-Agent" = "WTTG3-FR-Installer" } -TimeoutSec 600
+        $expectedSha = Get-ExpectedZipSha256 $rel $script:Wttg3FrZipAsset
+        if ($expectedSha) {
+            Write-Host "  Verification SHA256..."
+            Assert-FileSha256 $zipPath $expectedSha
+            Write-Host "  SHA256 OK." -ForegroundColor Green
+        } else {
+            Write-Host "  WARN: pas de SHA256 sur la release (digest GitHub ou asset .sha256). On continue." -ForegroundColor Yellow
+        }
         Write-Host "  Extraction..."
         $extractRoot = Join-Path $work "extracted"
         $newPack = Expand-FrPackZip $zipPath $extractRoot

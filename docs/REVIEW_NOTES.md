@@ -4,7 +4,7 @@
 
 - PDF VirtMesh / Hacks / Threats : traduits ; noms techniques (INJ3KT-R, K3RN3LC0MP1L3R, sujets) **conservés**.
 - **Intro Simon Zhao** : texte EN dans texture `AptLoadingScreen` (1064×810 BGRA). **Patché FR** dans `FR_P` (2026-07-21). Note : `TitleLogoA/B` = logo W3LCM3, pas l’intro.
-- Settings restants : `Master Audio`, `Browser & Files` / Resolution / FPS / GPU Acceleration / Requires Restart.
+- Settings (map RAW) : `Master Audio`→`Audio principal`, `Browser & Files`→`Navigateur et fichiers`, Resolution / FPS / GPU Acceleration / Requires Restart. Si un label reste EN in-game → plutôt runtime/C++, pas un oubli de map.
 - **Difficulté** : bullets Normal+ — maj `24359942` a retiré `Experimental` ; clé à 2 lignes remappée (`Same as Normal` / `Perma Death`).
 - **Crash Steam post-MAJ** (`LeetMode2` Bad export index, 2026-07-20) : re-extract `legacy_ui_steam` + rebuild FR_P (cook a changé, ex. LeetMode2 3406→3410).
 - **Crash Steam post-MAJ** (2026-07-21) : base `WTTGSD-Windows.*` plus récente que `FR_P` → même fix (re-extract + rebuild + PDF FR réappliqués).
@@ -39,8 +39,11 @@
 - **v1.6.1** : retrait injecteur ; AZERTY = pak ZQSD seul ; INSTALLER nettoie dwmapi/AHK ; doc mini-jeux W/A vs pas de mod.
 - **v1.6.2** : INSTALLER/DESINSTALLER ne desactivent `dwmapi.dll` que si `ue4ss\Mods\AzertyRemap` est present (fix PR #1 iPresing) — conserve UE4SS tiers (ex. sous-titres).
 - **v1.6.3** : rebuild FR post-MAJ Steam BuildID **`24463842`** (ex-`24415407`).
+- **v1.7.1** : installeur — N après O coupe `dwmapi` si plus de mod custom ; **O** merge `SousTitresFR` dans un UE4SS existant ; détection Steam via `libraryfolders.vdf` ; auto-update SHA256.
 - **v1.7.0** : option sous-titres cinematiques (UE4SS + `.srt`, O/N defaut N) — contribution iPresing PR #1 ; `build_subtitles_runtime.ps1`.
-- **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; **1** oubli flagrant (dialogue NOPSled quasi non traduit). Pas de gap HUD massif de leur côté.
+- **Installeur sous-titres (scripts, à shipper)** : relancer INSTALLER → **N** après un **O** retire `SousTitresFR` **et** coupe `dwmapi` s’il ne reste aucun autre mod UE4SS (plus d’injecteur orphelin). **O** sur un UE4SS déjà nested : merge `SousTitresFR` + `mods.txt` + signature SCO, sans écraser DLL / autres mods.
+- **Détection Steam** : `libraryfolders.vdf` + registre (plus seulement Program Files / D: / E:).
+- **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; dialogue NOPSled (`lol instant NOPSled freak out…`) **traduit** dans `acrs_cryptchat_fr.json`. Pas de gap HUD massif de leur côté. L’analyse `work/competitor_gap_analysis/` (2026-07-22) est un **snapshot** — ne plus l’utiliser comme backlog (`Price` / `2 - 4 mins` / `pay up` patchés en v1.4.1).
 - **v1.2.9 / v1.3** : intro Simon via texture `AptLoadingScreen` FR ; PDF Hacks comportement vanilla (trad FR seule) ; essais TEST HACK mis de côté. v1.3 = même pack, tag version public.
 - **Gaps runtime** : DarkDrop `OWNED`/`INSTALLING`/`INSTALLED!` ; ShadowFetch prompts download ; simulation `ONLINE` (ALL CAPS, absent du cook) / `AFK` / `MINED` / `Using …` ; BitHit `15 Seconds` dynamique (seul le défaut `230 Seconds` est patchable).
 - **ACRS panneau user (confirmé exe, BuildID `24327711`)** : `Online` / `Offline` et `Not Enough Rep - Required Rep Level %d` sont des littéraux **C++** dans `WTTGSD-Win64-Shipping.exe` (à côté de `PingPress` / `UserNameClickAction`). Le `FR_P` patch bien les FString défaut du widget (`En ligne`, `Pas assez…`) mais le runtime les **écrase**. Pas corrigeable via pak seul (il faudrait patch exe ou UE4SS). Ne pas confondre avec `ONLINE` simulation.
@@ -58,7 +61,7 @@
 ## P2
 
 - PDF Contestants : lieux, métiers, couleurs, ADDITIONAL INFO traduits (2026-07-21) ; noms / coords / MAC / IP / téléphones conservés.
-- **Compat Steam documentée** : BuildID `24303741` (AppID 3869850) pour pack v1.2.7 — `docs/STEAM_COMPAT.md`.
+- **Compat Steam (historique v1.2.7)** : BuildID `24303741` — voir l’historique dans [STEAM_COMPAT.md](STEAM_COMPAT.md). Courant : v1.7.1 / `24463842`.
 - Overlay Steam officiel : non modifiable sans Steamworks ; fichier local steam_settings mis à jour pour usage perso.
 - Entrées `ui_fr.csv` sans FString correspondante (Apply, Yes/No génériques, etc.) : **ne peuvent pas** être injectées telles quelles.
 

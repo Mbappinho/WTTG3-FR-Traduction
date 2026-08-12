@@ -1,13 +1,14 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.7.0)
+COMPATIBILITE STEAM (v1.7.1)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
 - BuildID Steam cible : 24463842
 - Auto-update : apres telechargement, le dossier pack local est synchronise
   (fichiers + scripts) puis l'installeur a jour est RELANCE automatiquement
   (un seul INSTALLER.bat suffit pour les nouveautes — depuis v1.6.0+).
+  Le zip est verifie (SHA256 GitHub ou fichier .sha256) quand la release le fournit.
 - Si ton pack Full est <= v1.5.1 : telecharge UNE FOIS un zip v1.5.2+
   et remplace ton dossier (les anciens scripts ne synchronisaient pas).
 - Fichier fichiers\steam_target.json = version du pack + BuildID cible
@@ -32,8 +33,12 @@ CONTENU
       SOIT tu refuses le mod AZERTY (N) pour garder WASD partout.
   → saisie texte (chat) inchangee
 - Option sous-titres cinematiques : INSTALLER demande O/N (desactive par defaut)
-  → UE4SS + fichiers .srt (voix Wade, Simon, Cletus, …)
+  → UE4SS experimental + fichiers .srt (voix Wade, Simon, Cletus, …)
   → antivirus peut signaler dwmapi.dll ; credit iPresing (PR #1)
+  → si F9 / sous-titres morts : retelecharge ce 1.7.1 (corrige l'ancien UE4SS fev 2024)
+  → relancer INSTALLER et repondre N coupe SousTitresFR + dwmapi s'il ne reste
+    aucun autre mod UE4SS (plus d'injecteur orphelin)
+  → si un UE4SS est deja installe : O ajoute SousTitresFR sans ecraser tes mods
   → details : docs/SOUS_TITRES.md (dans le depot) / LIREMOI
 - Si tu avais installe v1.6.0 avec injecteur AZERTY : INSTALLER/DESINSTALLER
   desactive automatiquement AzertyRemap sans casser UE4SS sous-titres.

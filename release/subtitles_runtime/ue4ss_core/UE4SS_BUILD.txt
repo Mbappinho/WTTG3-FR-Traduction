@@ -1,0 +1,2 @@
+UE4SS experimental 1c1a1497 (v3.0.1-1021) + SousTitresFR
+Installed 2026-08-11T18:38:26.0202883+02:00

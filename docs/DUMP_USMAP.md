@@ -37,6 +37,10 @@ Move-Item ...\Win64\dwmapi.dll.off ...\Win64\dwmapi.dll
 # 5. Désactiver proxy (dwmapi.dll → .off), AutoDumpUSMAP : 0
 ```
 
-## Désactiver UE4SS (jeu normal)
+## Désactiver UE4SS (jeu sans sous-titres)
 
 Renomme `dwmapi.dll` → `dwmapi.dll.off`
+
+Si le joueur a l’option sous-titres **O**, laisser `dwmapi.dll` actif
+(voir [SOUS_TITRES.md](SOUS_TITRES.md)). Ne pas couper le proxy après un dump
+usmap tant que les sous-titres doivent rester.

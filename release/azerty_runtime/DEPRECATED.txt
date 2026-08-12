@@ -1,0 +1,9 @@
+DEPRECATED depuis v1.6.1 — ne plus deployer.
+
+L'injecteur AZERTY (UE4SS AzertyRemap + AutoHotkey) causait des fatal errors.
+Le pack joueur n'utilise plus ce dossier.
+
+AZERTY actuel : pak WTTGSD-Windows_FR_AZERTY_P (build_azerty_imc_patch.py), ZQSD monde.
+Sous-titres : release/subtitles_runtime (build_subtitles_runtime.ps1).
+
+Ne pas appeler scripts/build_azerty_runtime.ps1 (refuse sans -Force).

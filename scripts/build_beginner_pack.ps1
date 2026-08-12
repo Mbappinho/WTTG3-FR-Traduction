@@ -4,7 +4,8 @@
 param(
     [string]$LocRoot = (Split-Path $PSScriptRoot -Parent),
     [ValidateSet("Full", "Nexus")]
-    [string]$Distribution = "Full"
+    [string]$Distribution = "Full",
+    [switch]$AllowNoSubtitles
 )
 
 $ErrorActionPreference = "Stop"
@@ -25,14 +26,30 @@ if (-not $hasAzerty) {
     Write-Host "WARN: pak AZERTY absent (build\pak\WTTGSD-Windows_FR_AZERTY_P.*) — lance build_azerty_imc_patch.py pour l'option ZQSD." -ForegroundColor Yellow
 }
 if (-not (Test-Path $pdfFr)) { throw "PDF FR manquants : build\pdfs" }
+
+$steamTarget = Join-Path $LocRoot "release\steam_target.json"
+if (-not (Test-Path $steamTarget)) {
+    throw "steam_target.json manquant : release\steam_target.json (BuildID Steam du pack)"
+}
+$packMeta = Get-Content -LiteralPath $steamTarget -Raw -Encoding UTF8 | ConvertFrom-Json
+$packVerRaw = [string]$packMeta.pack_version
+$packVer = [version]"0.0.0"
+try {
+    $parts = $packVerRaw.Trim().TrimStart("v", "V").Split(".")
+    while ($parts.Count -lt 2) { $parts += "0" }
+    $packVer = [version]($parts -join ".")
+} catch {}
+
 $subtitlesRuntime = Join-Path $LocRoot "release\subtitles_runtime"
-$hasSubtitles = Test-Path (Join-Path $subtitlesRuntime "ue4ss_core\Mods\SousTitresFR\Scripts\main.lua")
+$hasSubtitlesLua = Test-Path (Join-Path $subtitlesRuntime "ue4ss_core\Mods\SousTitresFR\Scripts\main.lua")
+$hasSubtitlesDll = Test-Path (Join-Path $subtitlesRuntime "ue4ss_core\dwmapi.dll")
+$hasSubtitles = $hasSubtitlesLua -and $hasSubtitlesDll
 if ($Distribution -eq "Full") {
+    if ($packVer -ge [version]"1.7.0" -and -not $hasSubtitles -and -not $AllowNoSubtitles) {
+        throw "Pack Full v$packVerRaw sans runtime sous-titres (dwmapi + SousTitresFR). Lance scripts\build_subtitles_runtime.ps1, ou -AllowNoSubtitles."
+    }
     if (-not $hasSubtitles) {
         Write-Host "WARN: release\subtitles_runtime incomplet — sous-titres optionnels absents." -ForegroundColor Yellow
-    } elseif (-not (Test-Path (Join-Path $subtitlesRuntime "ue4ss_core\dwmapi.dll"))) {
-        Write-Host "WARN: dwmapi manquant — lance scripts\build_subtitles_runtime.ps1" -ForegroundColor Yellow
-        $hasSubtitles = $false
     }
 }
 if ($Distribution -eq "Full" -and -not (Test-Path $pdfEn)) {
@@ -41,11 +58,6 @@ if ($Distribution -eq "Full" -and -not (Test-Path $pdfEn)) {
 
 if (Test-Path $out) { Remove-Item $out -Recurse -Force }
 New-Item -ItemType Directory -Force -Path $out | Out-Null
-
-$steamTarget = Join-Path $LocRoot "release\steam_target.json"
-if (-not (Test-Path $steamTarget)) {
-    throw "steam_target.json manquant : release\steam_target.json (BuildID Steam du pack)"
-}
 
 if ($Distribution -eq "Nexus") {
     # Drop-in: unzip into the Steam game root (folder that contains WTTGSD).

@@ -14,7 +14,7 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.7.0** |
+| **Pack actuel** | **v1.7.1** |
 | **Steam BuildID** | **`24463842`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
@@ -65,7 +65,7 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
   - Monde = ZQSD ; mini-jeux hack = toujours W/A → soit tu joues en touches QWERTY sur les hacks, soit tu refuses le mod AZERTY
   - v1.6.0 injecteur retiré en **v1.6.1** (fatal errors) ; INSTALLER nettoie dwmapi/AHK restants
   - Nexus : `optionnel_azerty\` ; Build : `build_azerty_imc_patch.py`
-- **Option sous-titres cinématiques** (Full, **v1.7.0+**) : prompt O/N — UE4SS + `.srt` (contribution iPresing). Off par défaut. Voir [docs/SOUS_TITRES.md](docs/SOUS_TITRES.md).
+- **Option sous-titres cinématiques** (Full, **v1.7.0+**) : prompt O/N — UE4SS experimental + `.srt` (contribution iPresing). Off par défaut. Voir [docs/SOUS_TITRES.md](docs/SOUS_TITRES.md).
 - **Steam :** pack buildé depuis l’extract officiel — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 
@@ -92,23 +92,25 @@ Non versionne (trop gros / contenus jeu) : `source/` (extracts), `tools/` (retoc
 
 Details : [docs/INSTALL.md](docs/INSTALL.md)
 
-## Multi-langues (zh / ja / ko) — en cours
+## Multi-langues (zh / ja / ko) — export only, pas de packs
 
-Inventaire EN (perimetre FR) pret pour traduction parallele :
-`python scripts\export_i18n_inventory.py` → `work/i18n_export/`  
-Doc : [docs/I18N_MULTI_LANG.md](docs/I18N_MULTI_LANG.md). Packs cibles separes : ZH-CN / ZH-TW / JA / KO.
+Inventaire EN (perimetre FR) : `python scripts\export_i18n_inventory.py` → `work/i18n_export/`  
+**Aucun script d'import**, aucun zip ZH/JA/KO. Doc : [docs/I18N_MULTI_LANG.md](docs/I18N_MULTI_LANG.md).
 
 ## Build local (avance)
 
 Prerequis : Python 3, .NET 8 (UAssetGUI), `tools/retoc`, `tools/UAssetGUI`, `source/Mappings.usmap`, extract **Steam** dans `source/legacy_ui_steam` (voir `docs/INSTALL.md`).
+`pip install -r requirements.txt` n'est utile que pour l'ancien `mt_acrs_cryptchat.py` (**ne plus l'utiliser**).
 
 ```powershell
-pip install -r requirements.txt
 python scripts\build_translations.py
 python scripts\build_ui_uassetgui_patch.py
 python scripts\build_azerty_imc_patch.py
-powershell -ExecutionPolicy Bypass -File scripts\build_azerty_runtime.ps1
+powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1
+# Zip puis hashes (assets GitHub) :
+# Compress-Archive ... release\WTTG3-FR-Traduction.zip
+# powershell -File scripts\hash_release_zips.ps1
 ```
 
 ## Handoff autre jeu (Scrutinized)
