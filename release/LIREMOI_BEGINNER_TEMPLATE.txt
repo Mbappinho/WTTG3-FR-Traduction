@@ -8,7 +8,7 @@ COMPATIBILITE STEAM (v1.7.1)
 - Auto-update : apres telechargement, le dossier pack local est synchronise
   (fichiers + scripts) puis l'installeur a jour est RELANCE automatiquement
   (un seul INSTALLER.bat suffit pour les nouveautes — depuis v1.6.0+).
-  Le zip est verifie (SHA256 GitHub ou fichier .sha256) quand la release le fournit.
+  Le zip telecharge est verifie via le hash GitHub du fichier (rien a telecharger a part le zip).
 - Si ton pack Full est <= v1.5.1 : telecharge UNE FOIS un zip v1.5.2+
   et remplace ton dossier (les anciens scripts ne synchronisaient pas).
 - Fichier fichiers\steam_target.json = version du pack + BuildID cible

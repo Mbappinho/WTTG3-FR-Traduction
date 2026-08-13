@@ -45,7 +45,7 @@ Toujours coller le badge Ko-fi dans le titre Summary (comme README) :
 
 ## Fichiers de la release
 - `WTTG3-FR-Traduction.zip` — Full (INSTALLER + auto-update)
-- `WTTG3-FR-Traduction.zip.sha256` — hash du zip Full (`scripts/hash_release_zips.ps1`)
 - `WTTG3-FR-Traduction-Nexus.zip` — drop-in Nexus
-- `WTTG3-FR-Traduction-Nexus.zip.sha256` — hash du zip Nexus
-- `steam_target.json` — meta `pack_version` + BuildID
+- `steam_target.json` — meta `pack_version` + BuildID (lu par l’auto-update, pas un pack joueur)
+
+Ne **pas** uploader de `.sha256` : l’installeur utilise le digest GitHub du zip. `scripts/hash_release_zips.ps1` reste un contrôle local.

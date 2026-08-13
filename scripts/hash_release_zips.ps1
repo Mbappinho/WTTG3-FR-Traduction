@@ -1,4 +1,6 @@
-# Write SHA256 sidecars for GitHub release assets (upload *.zip.sha256 next to the zips).
+# Write local SHA256 sidecars for the release zips (optional maintainer check).
+# Do NOT upload *.zip.sha256 to GitHub Releases — players would not know which file to download.
+# The Full installer verifies the zip via the GitHub API asset digest.
 # Run AFTER Compress-Archive of the Full / Nexus packs.
 param(
     [string]$LocRoot = (Split-Path $PSScriptRoot -Parent)
@@ -25,4 +27,5 @@ foreach ($name in $names) {
 if (-not $any) {
     throw "Aucun zip release trouve. Cree d'abord WTTG3-FR-Traduction.zip / -Nexus.zip sous release\"
 }
-Write-Host "Joins les fichiers .sha256 aux assets de la GitHub Release (l'installeur Full les verifie)."
+Write-Host "Hash local OK. Ne PAS uploader les .sha256 sur GitHub (les joueurs ne sauraient plus quel zip prendre)."
+Write-Host "L'installeur Full utilise le digest SHA256 deja fourni par l'API GitHub sur le zip."

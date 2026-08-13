@@ -50,7 +50,7 @@ Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le *
 
 - **Build Steam validé (v1.7.1) :** BuildID **`24463842`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Sous-titres** : option Full O/N — [SOUS_TITRES.md](SOUS_TITRES.md).
-- **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Vérifie le SHA256 (digest GitHub ou asset `.sha256`) ; sans hash (vieilles releases) : avertissement puis continue. Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
+- **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Vérifie le SHA256 via le **digest GitHub de l’asset zip** (pas de fichier `.sha256` à télécharger). Sans digest (vieilles releases) : avertissement puis continue. Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.
 - **Test :** enlever `WTTGSD-Windows_FR_P.*` → si le jeu vanilla boote, le mod est périmé → **re-extract Steam + rebuild** (pas seulement réinstaller le même zip).
 - Détail + historique : [UI_PATCH_CRASH.md](UI_PATCH_CRASH.md)
@@ -74,8 +74,7 @@ Apres zip des dossiers `release\WTTG3-FR-Beginner*` :
 powershell -ExecutionPolicy Bypass -File scripts\hash_release_zips.ps1
 ```
 
-Joindre `release\WTTG3-FR-Traduction.zip.sha256` (et le sidecar Nexus) aux assets GitHub.
-L'auto-update Full verifie le SHA256 (digest GitHub ou fichier `.sha256`). Sans hash : WARN puis continue (releases anciennes).
+Contrôle local optionnel. **Ne pas** uploader les `.sha256` sur GitHub : les joueurs ne sauraient plus quel zip prendre. L’auto-update Full lit le digest SHA256 déjà fourni par l’API GitHub sur `WTTG3-FR-Traduction.zip`.
 
 **Textes joueur (a tenir a jour a chaque release) :**
 - Full : [`release/LIREMOI_BEGINNER_TEMPLATE.txt`](../release/LIREMOI_BEGINNER_TEMPLATE.txt) → copié en `LIREMOI.txt`
