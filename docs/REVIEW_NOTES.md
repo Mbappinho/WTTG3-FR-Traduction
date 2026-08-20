@@ -1,5 +1,18 @@
 # Relecture humaine — notes
 
+## Patch linguistique 2026-08-20 (sources)
+
+Les 27 findings de [TRANSLATION_QA.md](TRANSLATION_QA.md) (`QA-001`…`QA-027`) sont **appliqués dans les sources**. Détail : [`work/translation_qa_findings.json`](../work/translation_qa_findings.json).
+
+- **P0** : PDF Hacks `shiftSEQ` / `memDEALLOCATER` indiquent **WASD** (`[W]/[A]/[S]/[D]`), aligné sur ce que les mini-jeux lisent. Le pak AZERTY ne remap **pas** ces hacks.
+- **P1** : accents RAW ; tutoiement menus/PDF/Key Finding ; PDF `DÉMINER` ; calques menaces ; intro « réclamer la mise » ; Wade SRT ; Ronald `4 h du mat'` ; `satanés`.
+- **P2** : `Guetter` (Peep), `RÉINIT.`, `Frais réseau`, `LIEU :`, `nœud central` / `planque`, succès (espace Doigts rapides, noms d'outils), SRT Tanner « Je te zyeute ! ».
+- **Rebuild `FR_P` (2026-08-20)** : `build_translations.py` + `build_ui_uassetgui_patch.py` (1293 assets / 2825 remplacements) + `apply_patch.ps1` (PDF FR). Pak copié dans `WTTGSD\Content\Paks`. Overlay Steam succès sauté (`steam_settings` absent). Zip beginner non régénéré. `.srt` déjà à jour dans `release/subtitles_runtime`.
+
+## Revue linguistique 2026-08-20 (rapport initial)
+
+Périmètre in-game pack v1.7.1. Le rapport ci-dessus a été **patché le même jour**.
+
 ## P0 (fait, à revalider in-game)
 
 - PDF VirtMesh / Hacks / Threats : traduits ; noms techniques (INJ3KT-R, K3RN3LC0MP1L3R, sujets) **conservés**.
@@ -12,7 +25,7 @@
 - Labels Contestants (PLAYER NAME, LOCATION, etc.).
 - Achievements (27) dans `work/achievements_fr.json`.
 - **Accents UI** : dict `RAW` avec accents ; patch en FString **UTF-16** (pas cp1252 — les glyphes disparaissaient in-game).
-- **Boutons / HUD interaction** : `BUY`→ACHETER ; DARE Confirm/Connect/Checkout ; `Hide`→Se cacher ; portes Open/Close/Lock/Unlock ; Turn On/Off ; Peep, Repair, Attempt Defusal, Enter Panic Mode, Head To Work (`BluePrints\GameActors`) ; VirtMesh `MONTER`/`DÉMONTER`/`MINER`/`DÉMINER`/`PIRATER`/`Entrer`.
+- **Boutons / HUD interaction** : `BUY`→ACHETER ; DARE Confirm/Connect/Checkout ; `Hide`→Se cacher ; portes Open/Close/Lock/Unlock ; Turn On/Off ; Peep→**Guetter**, Repair, Attempt Defusal, Enter Panic Mode, Head To Work (`BluePrints\GameActors`) ; VirtMesh `MONTER`/`DÉMONTER`/`MINER`/`DÉMINER`/`PIRATER`/`Entrer`.
 - **Prompts [RMB]** : `[RMB] Exit` / `- Exit` → `[Clic droit] Quitter` ; Get Up From Desk ; Leave Computer ; `Exit To VertMesh` → Passer à VirtMesh.
 - **Crash Steam** (`Bad export index`) : extract Desktop ≠ cook Steam. Fix = `legacy_ui_steam` + rebuild (v1.2.2).  
   **MAJ Steam future** : même risque si le cook change → re-extract + rebuild (pas seulement réinstaller l’ancien zip). Voir `docs/UI_PATCH_CRASH.md`.
@@ -40,6 +53,7 @@
 - **v1.6.2** : INSTALLER/DESINSTALLER ne desactivent `dwmapi.dll` que si `ue4ss\Mods\AzertyRemap` est present (fix PR #1 iPresing) — conserve UE4SS tiers (ex. sous-titres).
 - **v1.6.3** : rebuild FR post-MAJ Steam BuildID **`24463842`** (ex-`24415407`).
 - **v1.7.1** : installeur — N après O coupe `dwmapi` si plus de mod custom ; **O** merge `SousTitresFR` dans un UE4SS existant ; détection Steam via `libraryfolders.vdf` ; auto-update SHA256.
+- **SousTitresFR / CryptChat (Lua, post-1.7.1)** : overlay UE4SS en `SelfHitTestInvisible` laissait le `TextBlock` Visible sur la bande basse → clics sur le champ de saisie CryptChat ignorés après l’intro Wade. Fix : `HitTestInvisible` sur widget/toile/bloc + `Collapsed` si pas de réplique. Pas un bug du pak `FR_P`. ACRS VelvetRoad reste lecture seule (vanilla `CHAT DISABLED`).
 - **v1.7.0** : option sous-titres cinematiques (UE4SS + `.srt`, O/N defaut N) — contribution iPresing PR #1 ; `build_subtitles_runtime.ps1`.
 - **Installeur sous-titres (scripts, à shipper)** : relancer INSTALLER → **N** après un **O** retire `SousTitresFR` **et** coupe `dwmapi` s’il ne reste aucun autre mod UE4SS (plus d’injecteur orphelin). **O** sur un UE4SS déjà nested : merge `SousTitresFR` + `mods.txt` + signature SCO, sans écraser DLL / autres mods.
 - **Détection Steam** : `libraryfolders.vdf` + registre (plus seulement Program Files / D: / E:).

@@ -3,21 +3,22 @@
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-src = Path(
-    r"C:\Users\kaoth\Projects\WTTG3-FR-Loc\work\simon_intro_texture\candidates\AptLoadingScreen.png"
-)
-out_dir = Path(r"C:\Users\kaoth\Projects\WTTG3-FR-Loc\work\simon_intro_texture")
+here = Path(__file__).resolve().parent
+src_en = here / "candidates" / "AptLoadingScreen.png"
+src_fr = here / "AptLoadingScreen_FR.png"
+src = src_en if src_en.is_file() else src_fr
+out_dir = here
 im = Image.open(src).convert("RGBA")
 draw = ImageDraw.Draw(im)
 
-# Full wipe of EN text area (starts ~x357; leave Simon on the left)
+# Full wipe of EN/FR text area (starts ~x357; leave Simon on the left)
 draw.rectangle((320, 240, 1064, 430), fill=(0, 0, 0, 255))
 
 fr = (
     "Tu es Simon Zhao, un joueur pathologique qui fait les nuits "
     "dans un motel délabré. Pour nourrir ton addiction, tu as "
     "emprunté de l'argent à la mauvaise personne — et maintenant, "
-    "on vient te collecter…"
+    "on vient te réclamer la mise…"
 )
 
 font = ImageFont.truetype(r"C:\Windows\Fonts\segoeui.ttf", 22)
@@ -46,6 +47,7 @@ for i, line in enumerate(lines):
 
 out_png = out_dir / "AptLoadingScreen_FR.png"
 im.save(out_png)
+print("source", src)
 print("saved", out_png)
 for L in lines:
     print(" ", L)

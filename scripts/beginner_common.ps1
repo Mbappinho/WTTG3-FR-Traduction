@@ -305,6 +305,34 @@ function Find-SteamAppManifest([string]$GameRoot, [string]$AppId) {
     return $null
 }
 
+function Set-Ue4ssIniKey([string]$IniPath, [string]$Key, [string]$Value) {
+    if (-not (Test-Path -LiteralPath $IniPath)) { return $false }
+    $ini = Get-Content -LiteralPath $IniPath -Raw -Encoding UTF8 -ErrorAction Stop
+    if ($null -eq $ini) { $ini = "" }
+    $pattern = '(?m)^' + [regex]::Escape($Key) + '\s*=.*'
+    if ($ini -match $pattern) {
+        $ini = [regex]::Replace($ini, $pattern, ($Key + ' = ' + $Value))
+    }
+    elseif ($ini -match '(?m)^\[Debug\]\s*$') {
+        $ini = [regex]::Replace($ini, '(?m)^\[Debug\]\s*$', ("[Debug]`r`n" + $Key + ' = ' + $Value))
+    }
+    else {
+        $ini = $ini.TrimEnd() + "`r`n`r`n[Debug]`r`n$Key = $Value`r`n"
+    }
+    $utf8 = New-Object System.Text.UTF8Encoding $false
+    [IO.File]::WriteAllText($IniPath, $ini, $utf8)
+    return $true
+}
+
+# UE4SS defaults ConsoleEnabled/GuiConsole* to ON if the INI is missing or
+# a merge left a developer config. Player pack: never show the debug console.
+function Disable-Ue4ssDebugConsoles([string]$IniPath) {
+    if (-not $IniPath -or -not (Test-Path -LiteralPath $IniPath)) { return }
+    [void](Set-Ue4ssIniKey $IniPath "ConsoleEnabled" "0")
+    [void](Set-Ue4ssIniKey $IniPath "GuiConsoleEnabled" "0")
+    [void](Set-Ue4ssIniKey $IniPath "GuiConsoleVisible" "0")
+}
+
 function Set-Ue4ssModLine([string]$ModsTxtPath, [string]$ModName, [string]$Value) {
     $dir = Split-Path $ModsTxtPath -Parent
     if (-not (Test-Path -LiteralPath $dir)) {

@@ -39,6 +39,9 @@ CONTENU
   → relancer INSTALLER et repondre N coupe SousTitresFR + dwmapi s'il ne reste
     aucun autre mod UE4SS (plus d'injecteur orphelin)
   → si un UE4SS est deja installe : O ajoute SousTitresFR sans ecraser tes mods
+  → coupe la console debug UE4SS (plus de cmd au lancement du jeu)
+  → si le champ CryptChat n'accepte plus les clics : maj de main.lua
+    (overlay qui recouvrait la barre) — fermer le jeu puis relancer
   → details : docs/SOUS_TITRES.md (dans le depot) / LIREMOI
 - Si tu avais installe v1.6.0 avec injecteur AZERTY : INSTALLER/DESINSTALLER
   desactive automatiquement AzertyRemap sans casser UE4SS sous-titres.

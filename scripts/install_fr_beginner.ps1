@@ -30,11 +30,13 @@ function Remove-AzertyRuntimeLeftovers([string]$GameRoot) {
         Remove-Item -LiteralPath $azertyMod -Recurse -Force
         Write-Host "  Ancien mod AzertyRemap retire"
     }
-    foreach ($name in @("WTTG3-Menu-Touches.ahk", "WTTG3-Menu.ini", "AutoHotkey64.exe", "WTTG3-AZERTY-Menu.cmd")) {
-        $p = Join-Path $GameRoot $name
-        if (Test-Path -LiteralPath $p) {
-            Remove-Item -LiteralPath $p -Force
-            Write-Host ("  Retire : {0}" -f $name)
+    foreach ($root in @($GameRoot, $win64)) {
+        foreach ($name in @("WTTG3-Menu-Touches.ahk", "WTTG3-Menu.ini", "AutoHotkey64.exe", "WTTG3-AZERTY-Menu.cmd")) {
+            $p = Join-Path $root $name
+            if (Test-Path -LiteralPath $p) {
+                Remove-Item -LiteralPath $p -Force
+                Write-Host ("  Retire : {0}" -f $name)
+            }
         }
     }
 }
@@ -153,6 +155,13 @@ function Install-SubtitlesRuntime([string]$GameRoot, [string]$PackRoot) {
     if (Test-Path (Split-Path $en -Parent)) {
         Set-Content -Path $en -Value "1" -Encoding ASCII -NoNewline
     }
+
+    $iniDst = Join-Path $ue4ssDst "UE4SS-settings.ini"
+    $iniSrc = Join-Path $ue4ssSrc "UE4SS-settings.ini"
+    if (-not (Test-Path -LiteralPath $iniDst) -and (Test-Path -LiteralPath $iniSrc)) {
+        Copy-Item $iniSrc $iniDst -Force
+    }
+    Disable-Ue4ssDebugConsoles $iniDst
 
     if ($existingNested) {
         Write-Host "  SousTitresFR fusionne dans l'UE4SS existant."

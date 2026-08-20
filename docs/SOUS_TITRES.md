@@ -61,6 +61,43 @@ Controle rapide :
 Ne pas laisser un `UE4SS.dll` a la racine de `Win64` en plus du dossier `ue4ss\`
 (double install → scan casse). L'installeur Full nettoie ces restes.
 
+### Clics CryptChat qui « ne prennent pas »
+
+Le champ de saisie CryptChat est en bas de l'écran, pile sous la bande de
+sous-titres. Avant le correctif, le `TextBlock` restait **Visible** (hit-test
+ON) après l'intro Wade : cliquer la barre = cliquer l'overlay UE4SS.
+
+Le Lua courant force **HitTestInvisible** sur toute la chaîne et **Collapsed**
+quand il n'y a pas de texte. Relancer le jeu (UE4SS recharge `main.lua` au
+boot). Si un vieux `main.lua` est encore dans `ue4ss\Mods\SousTitresFR\`,
+recopier celui de `release/subtitles_runtime/` ou relancer `INSTALLER.bat` → **O**.
+
+Le salon ACRS VelvetRoad reste en lecture seule (**CHAT DÉSACTIVÉ**) : c'est
+le jeu, pas l'overlay.
+
+### Fenetre cmd qui flash au lancement
+
+UE4SS alloue une console Windows (`AllocConsole`) si `ConsoleEnabled` n'est pas
+a `0`. Defaut amont : **console ON**. Le pack force :
+
+```
+[Debug]
+ConsoleEnabled = 0
+GuiConsoleEnabled = 0
+GuiConsoleVisible = 0
+```
+
+dans `ue4ss\UE4SS-settings.ini` (rebuild runtime **et** INSTALLER, y compris
+un merge qui conservait un INI developpeur).
+
+Controle immediat sans reinstaller : fermer le jeu, editer ce fichier, relancer.
+
+Si ca flash encore ~0,25 s avec ces trois cles a `0` : ce n'est plus la console
+UE4SS (souvent un reste `WTTG3-AZERTY-Menu.cmd` / options de lancement Steam,
+ou un conhost Windows). Verifier Steam > Proprietes > Options de lancement
+(doivent etre vides). On ne peut pas supprimer a 100 % un micro-flash OS lie
+a l'injection `dwmapi` sans desactiver les sous-titres (INSTALLER → N).
+
 ## Pourquoi pas un patch d'asset
 
 Trois verrous, vérifiés un par un :
@@ -81,13 +118,22 @@ D'où UE4SS, qui exécute du code et lève les trois d'un coup.
   sont gardés à vue jusqu'à leur départ.
 - **Affichage.** Un widget UMG bâti à l'exécution
   (`WidgetBlueprintLibrary:Create`, puis `WidgetTree` / `CanvasPanel` /
-  `TextBlock`), ancré en bas de l'écran.
+  `TextBlock`), ancré en bas de l'écran. Visibilité **HitTestInvisible**
+  (clics traversent) ; **Collapsed** dès qu'il n'y a plus de réplique —
+  sinon la bande basse recouvre le champ CryptChat.
 - **Minutage.** Horloge audio du moteur (`GetAudioTimeSeconds`), avec repli sur
   un compteur de boucle. La pause fige le sous-titre ; couper une scène
   l'efface.
 
 Ajouter une voix ne demande que de déposer un `.srt` nommé d'après le
 `SoundWave` : le script lit le dossier au démarrage.
+
+## Texte FR (2026-08-20)
+
+- Wade intro (`Wade_MotelIntro-Full` + `_FX`) : `parieur` (plus `gambler`) ;
+  « Je vais te faire gagner du temps » ; cues 14–15 recoupées (`En échange` sur
+  une cue, plus de « En » orphelin).
+- Tanner `SFX_Tanner_Voice_EyeSeeYou` : « Je te zyeute ! » (jeu I/œil).
 
 ## Pièges rencontrés, pour éviter de les repayer
 
@@ -108,6 +154,9 @@ Ajouter une voix ne demande que de déposer un `.srt` nommé d'après le
   UFunction hors du fil du jeu, passer une chaîne Lua là où un `FText` est
   attendu, et balayer tous les `AudioComponent` à chaque tour. `pcall` n'en
   rattrape aucun : ce sont des violations d'accès natives, pas des erreurs Lua.
+- **Overlay qui mange les clics CryptChat.** `SetVisibility(SelfHitTestInvisible)`
+  sur le UserWidget ne suffit pas : le `TextBlock` enfant reste Visible et
+  intercepte la bande Y≈88 %. HitTestInvisible partout + Collapsed si vide.
 
 ## Signature `StaticConstructObject`
 

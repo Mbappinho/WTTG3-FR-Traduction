@@ -400,8 +400,48 @@ end
 -- Le widget est bati piece par piece : UserWidget nu, arbre de widgets, toile,
 -- bloc de texte. Le jeu ne fournit aucun WidgetBlueprint de sous-titre a
 -- reutiliser, et sa classe UserWidget nue n'a pas d'arbre — on le pose donc.
-local vue = nil          -- { widget, bloc }
+local vue = nil          -- { widget, bloc, toile }
 local etape = "aucune"   -- derniere etape atteinte, pour lire les echecs
+
+-- ESlateVisibility : 0 Visible, 1 Collapsed, 2 Hidden,
+-- 3 HitTestInvisible (dessine, clics traversent soi + enfants),
+-- 4 SelfHitTestInvisible (clics traversent soi, PAS les enfants).
+--
+-- Le TextBlock est Visible par defaut. Avec seulement SelfHitTestInvisible
+-- sur le UserWidget, la bande basse (Y=0.88, 100 px) avalait les clics —
+-- champ CryptChat injoignable apres l'intro Wade, overlay jamais retire.
+local VIS_COLLAPSE = 1
+local VIS_CLICKTHROUGH = 3
+
+local function pas_de_focus(w)
+    if not w then return end
+    pcall(function() w:SetIsFocusable(false) end)
+    pcall(function() w.bIsFocusable = false end)
+end
+
+local function clic_traverse(w)
+    if not w then return end
+    pcall(function() w:SetVisibility(VIS_CLICKTHROUGH) end)
+    pas_de_focus(w)
+end
+
+local function replier(w)
+    if not w then return end
+    pcall(function() w:SetVisibility(VIS_COLLAPSE) end)
+end
+
+local function appliquer_overlay(montre)
+    if not vue then return end
+    if montre then
+        clic_traverse(vue.widget)
+        clic_traverse(vue.toile)
+        clic_traverse(vue.bloc)
+    else
+        replier(vue.widget)
+        replier(vue.bloc)
+        clic_traverse(vue.toile)
+    end
+end
 
 local function classe(chemin)
     local c = StaticFindObject(chemin)
@@ -477,18 +517,20 @@ local function construire()
 
     etape = "AddToViewport"
     widget:AddToViewport(1000)
-    pcall(function() widget:SetVisibility(4) end)  -- SelfHitTestInvisible
+    clic_traverse(widget)
+    clic_traverse(toile)
+    clic_traverse(bloc)
 
     etape = "pret"
     if DIAG then log("widget construit : " .. widget:GetFullName()) end
-    return { widget = widget, bloc = bloc }
+    return { widget = widget, bloc = bloc, toile = toile }
 end
 
 local function vue_valide()
     if not vue then return false end
     local ok, res = pcall(function()
         return vue.widget:IsValid() and vue.bloc:IsValid()
-               and vue.widget:IsInViewport()
+               and vue.toile:IsValid() and vue.widget:IsInViewport()
     end)
     return ok and res == true
 end
@@ -556,6 +598,7 @@ local function rafraichir()
     if not poser_texte(vue.bloc, texte or "") then
         log("SetText refuse (etape " .. etape .. ")")
     end
+    appliquer_overlay(texte ~= nil and texte ~= "")
 end
 
 -- ---------------------------------------------------------------- branchement

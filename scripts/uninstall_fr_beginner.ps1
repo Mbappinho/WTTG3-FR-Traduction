@@ -64,11 +64,13 @@ try {
         Remove-Item -LiteralPath $azertyMod -Recurse -Force
         Write-Host "  AzertyRemap retire"
     }
-    foreach ($name in @("WTTG3-Menu-Touches.ahk", "WTTG3-Menu.ini", "AutoHotkey64.exe", "WTTG3-AZERTY-Menu.cmd")) {
-        $p = Join-Path $game $name
-        if (Test-Path -LiteralPath $p) {
-            Remove-Item -LiteralPath $p -Force
-            Write-Host ("  Retire : {0}" -f $name)
+    foreach ($root in @($game, $win64)) {
+        foreach ($name in @("WTTG3-Menu-Touches.ahk", "WTTG3-Menu.ini", "AutoHotkey64.exe", "WTTG3-AZERTY-Menu.cmd")) {
+            $p = Join-Path $root $name
+            if (Test-Path -LiteralPath $p) {
+                Remove-Item -LiteralPath $p -Force
+                Write-Host ("  Retire : {0}" -f $name)
+            }
         }
     }
 

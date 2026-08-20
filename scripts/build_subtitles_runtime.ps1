@@ -32,9 +32,10 @@ Copy-Item (Join-Path $tools "UE4SS.dll") (Join-Path $core "UE4SS.dll") -Force
 if (Test-Path (Join-Path $tools "UE4SS-settings.ini")) {
     $iniDst = Join-Path $core "UE4SS-settings.ini"
     Copy-Item (Join-Path $tools "UE4SS-settings.ini") $iniDst -Force
-    # WTTG3 (UE5.6) : cache UObject off, pas de console GUI, version forcee
+    # WTTG3 (UE5.6) : cache UObject off, pas de console debug (AllocConsole), version forcee
     $ini = Get-Content -Raw $iniDst
     $ini = $ini -replace '(?m)^bUseUObjectArrayCache\s*=\s*\w+', 'bUseUObjectArrayCache = false'
+    $ini = $ini -replace '(?m)^ConsoleEnabled\s*=\s*\d+', 'ConsoleEnabled = 0'
     $ini = $ini -replace '(?m)^GuiConsoleEnabled\s*=\s*\d+', 'GuiConsoleEnabled = 0'
     $ini = $ini -replace '(?m)^GuiConsoleVisible\s*=\s*\d+', 'GuiConsoleVisible = 0'
     $ini = $ini -replace '(?m)^MajorVersion\s*=.*', 'MajorVersion = 5'

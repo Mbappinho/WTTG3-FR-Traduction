@@ -65,7 +65,7 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
   - Monde = ZQSD ; mini-jeux hack = toujours W/A → soit tu joues en touches QWERTY sur les hacks, soit tu refuses le mod AZERTY
   - v1.6.0 injecteur retiré en **v1.6.1** (fatal errors) ; INSTALLER nettoie dwmapi/AHK restants
   - Nexus : `optionnel_azerty\` ; Build : `build_azerty_imc_patch.py`
-- **Option sous-titres cinématiques** (Full, **v1.7.0+**) : prompt O/N — UE4SS experimental + `.srt` (contribution iPresing). Off par défaut. Voir [docs/SOUS_TITRES.md](docs/SOUS_TITRES.md).
+- **Option sous-titres cinématiques** (Full, **v1.7.0+**) : prompt O/N — UE4SS experimental + `.srt` (contribution iPresing). Off par défaut. L’installeur coupe la console debug UE4SS (`ConsoleEnabled = 0`) pour éviter une fenêtre cmd au lancement. Overlay UMG en **HitTestInvisible** (sinon la bande basse avale les clics CryptChat). Voir [docs/SOUS_TITRES.md](docs/SOUS_TITRES.md).
 - **Steam :** pack buildé depuis l’extract officiel — ne pas overlay un build Desktop sur Steam
 - **Après une MAJ Steam :** si crash → desinstaller le mod ou mettre a jour vers la derniere release (voir ci-dessus)
 
@@ -74,7 +74,7 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 | Dossier | Role |
 |---------|------|
 | `scripts/` | Build du mod UI (`build_ui_uassetgui_patch.py`), ACRS/CryptChat, pack debutant |
-| `docs/` | INSTALL, dump usmap, QA, notes de crash |
+| `docs/` | INSTALL, dump usmap, [QA in-game](docs/QA_CHECKLIST.md), [revue linguistique](docs/TRANSLATION_QA.md) (findings patchés + `FR_P` rebuild 2026-08-20), notes de crash |
 | `work/` | Dictionnaires FR (CSV / JSON), map ACRS/CryptChat |
 | `work/acrs_batches/` | Lots ACRS (`fr_status.json` : pubs/UI ; `fr_dialogs_*.json` : dialogues agents ; `fr_topics.json` : 299 topics/spam lobby) |
 | `release/` | Template `LIREMOI` pour le pack debutant |

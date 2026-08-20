@@ -133,7 +133,7 @@ RAW: dict[str, str] = {
     "Turn On": "Allumer",
     "Turn Off": "Éteindre",
     "Turn On Computer": "Allumer l'ordinateur",
-    "Peep": "Regarder",
+    "Peep": "Guetter",
     "Repair": "Réparer",
     "Attempt Defusal": "Tenter désamorçage",
     "Enter Panic Mode": "Mode panique",
@@ -192,9 +192,9 @@ RAW: dict[str, str] = {
     "FAR": "LOIN",
     "Normal": "Normal",
     "OVERWRITE?": "ÉCRASER ?",
-    "Select Your Difficulty:": "Choisissez votre difficulté :",
-    "This will overwrite your current save file.": "Ceci écrasera votre sauvegarde actuelle.",
-    "Are you sure?": "Êtes-vous sûr ?",
+    "Select Your Difficulty:": "Choisis ta difficulté :",
+    "This will overwrite your current save file.": "Ceci écrasera ta sauvegarde actuelle.",
+    "Are you sure?": "T'es sûr ?",
     # Short title: previous "Scène de crime de Tanner" overflowed menu by ~3 chars
     "Tanner's Crime Scene": "Scène crime Tanner",
     "TANNER'S CRIME SCENE": "SCÈNE CRIME TANNER",
@@ -203,9 +203,9 @@ RAW: dict[str, str] = {
     ),
     "ROTATE VIEW": "TOURNER",
     "PAN VIEW": "DÉPLACER",
-    "RESET VIEW": "RESET",
+    "RESET VIEW": "RÉINIT.",
     # ZOOM kept EN (short / universal)
-    "Press": "Appuyez",
+    "Press": "Appuie",
     "To Skip": "pour passer",
     "Wallet": "Solde",
     "Amount": "Montant",
@@ -219,7 +219,7 @@ RAW: dict[str, str] = {
     "SEND": "ENVOYER",
     "Default": "Défaut",
     "THANKS FOR PLAYING!": "MERCI D'AVOIR JOUÉ !",
-    "PRESS [ESC] TO EXIT": "APPUYEZ SUR [ESC] POUR QUITTER",
+    "PRESS [ESC] TO EXIT": "APPUIE SUR [ESC] POUR QUITTER",
     "GAME DEVELOPERS": "DÉVELOPPEURS",
     "PLAYTESTERS": "TESTEURS",
     "SPECIAL THANKS": "REMERCIEMENTS",
@@ -270,7 +270,7 @@ RAW: dict[str, str] = {
     "Payment???": "Le paiement ???",
     "Upload to \r\nX": "Envoyer vers\r\nX",
     "Every time you are prompted, hold/release [SPACEBAR] to keep the ring between the bands": (
-        "Quand on vous le demande, maintenez/relâchez [ESPACE] pour garder l'anneau entre les bandes"
+        "Quand on te le demande, maintiens/relâche [ESPACE] pour garder l'anneau entre les bandes"
     ),
     "DOSCoin Balance": "Solde DOSCoin",
     "YoloYen Balance": "Solde YoloYen",
@@ -290,7 +290,7 @@ RAW: dict[str, str] = {
     "Next Rep Level:": "Niveau de réputation suivant :",
     "<Bold>SomeAgent</> Sent <XP>1500</> Rep": "<Bold>SomeAgent</> a envoyé <XP>1500</> de rép",
     "Not Enough Rep To Message This User": "Pas assez de rep pour écrire à cet utilisateur",
-    "This user has blocked you.": "Cet utilisateur vous a bloqué.",
+    "This user has blocked you.": "Cet utilisateur t'a bloqué.",
     "You seem to be offline...": "Tu sembles être hors ligne...",
     "User Offline...": "Utilisateur hors ligne...",
     "SEND DOS COIN": "ENVOYER DOS COIN",
@@ -326,7 +326,7 @@ RAW: dict[str, str] = {
     "Exchange Processing": "Échange en cours",
     "999,999.00 DOS Coin For 999,999.00.00 YoloYen": "999,999.00 DOS Coin pour 999,999.00.00 YoloYen",
     "Estimated waiting time:": "Temps d'attente estimé :",
-    "Gas Fee:": "Frais de gas :",
+    "Gas Fee:": "Frais réseau :",
     "Time Remaining: 230 seconds": "Temps restant : 230 secondes",
     "Access to hacker agents": "Accès aux agents hackers",
     "Access to hitman": "Accès au tueur à gages",
@@ -343,37 +343,37 @@ RAW: dict[str, str] = {
     # Key Finding — blocs FString combines (\\r\\n\\r\\n)
     "A.N.N. is a special web browser that can connect to the Dark Net.\r\n\r\nA.N.N. can be found on every computer you enter through VirtMesh.": (
         "A.N.N. est un navigateur spécial capable de se connecter au Dark Net.\r\n\r\n"
-        "A.N.N. se trouve sur chaque ordinateur auquel vous accédez via VirtMesh."
+        "A.N.N. se trouve sur chaque ordinateur auquel tu accèdes via VirtMesh."
     ),
     "Access to Dark Net websites is gained through a Wiki page, which will have several links to choose from.\r\n\r\nImportant to note that a site may not be active at the time you to try visit it. If that happens try again after a few minutes. Certain sites are more secretive than others, reserving their active time to a shorter period within each hour.": (
         "L'accès aux sites du Dark Net se fait via une page Wiki, avec plusieurs liens au choix.\r\n\r\n"
-        "Un site peut être inactif au moment où vous essayez d'y accéder. Dans ce cas, réessayez après quelques minutes. "
+        "Un site peut être inactif au moment où tu essaies d'y accéder. Dans ce cas, réessaie après quelques minutes. "
         "Certains sites sont plus secrets et ne restent actifs que peu de temps chaque heure."
     ),
     "Your goal is to uncover all 8 keys.\r\n\r\nThe 8 keys are spread out across multiple sites, accessible only through different Wiki pages, and hidden in one of three unique methods.\r\n\r\nPro Tip: Copy text by using [CTRL + C] and paste text by using [CTRL + V]\r\n": (
-        "Votre but est de découvrir les 8 clés.\r\n\r\n"
+        "Ton but est de découvrir les 8 clés.\r\n\r\n"
         "Les 8 clés sont réparties sur plusieurs sites, accessibles via différentes pages Wiki, et cachées selon l'une des trois méthodes.\r\n\r\n"
-        "Astuce : copiez le texte avec [CTRL + C] et collez avec [CTRL + V]\r\n"
+        "Astuce : copie le texte avec [CTRL + C] et colle avec [CTRL + V]\r\n"
     ),
     "First, keys can be hidden in plain sight. Keep your eyes peeled when looking over a page.\r\n\r\nPro Tip: Resizing the A.N.N. browser can help your search": (
-        "D'abord, les clés peuvent être cachées au vu de tous. Fouillez chaque page attentivement.\r\n\r\n"
-        "Astuce : redimensionner le navigateur A.N.N. peut aider votre recherche"
+        "D'abord, les clés peuvent être cachées au vu de tous. Fouille chaque page attentivement.\r\n\r\n"
+        "Astuce : redimensionner le navigateur A.N.N. peut aider ta recherche"
     ),
     "Second, keys can be hidden inside an element on the page, only revealing themselves through a click. Look over every word, image, and any other elements, including the area surrounding them.\r\n\r\nWhen you click a key's location a sound will be played and its text will either be revealed somewhere on the page or a file will be downloaded onto your desktop with the information. Check both before moving on.": (
-        "Ensuite, une clé peut être cachée dans un element de la page et ne se révéler qu'au clic. Verifiez chaque mot, image et zone autour.\r\n\r\n"
-        "Quand vous cliquez sur l'emplacement d'une cle, un son est joué et le texte apparait sur la page, ou un fichier est téléchargé sur votre bureau. Verifiez les deux avant de continuer."
+        "Ensuite, une clé peut être cachée dans un élément de la page et ne se révéler qu'au clic. Vérifie chaque mot, image et zone autour.\r\n\r\n"
+        "Quand tu cliques sur l'emplacement d'une clé, un son est joué et le texte apparaît sur la page, ou un fichier est téléchargé sur ton bureau. Vérifie les deux avant de continuer."
     ),
     "Third, keys can be hidden within a webpage's source code. When searching a page be sure to open its source code and carefully look through it. ": (
-        "Enfin, une clé peut être cachée dans le code source d'une page. Ouvrez le code source et parcourez-le attentivement. "
+        "Enfin, une clé peut être cachée dans le code source d'une page. Ouvre le code source et parcours-le attentivement. "
     ),
     "After finding a key make sure you've copied it's index and key hash i.e. 1 - 2bfc88a4.\r\nYou'll need both parts for it to be decrypted by an agent found in the ACRS chatroom. \r\n\r\nEach decrypted key moves you one step closer to winning The Game.": (
-        "Après avoir trouvé une clé, copiez son index et son hash, par exemple : 1 - 2bfc88a4.\r\n"
-        "Il vous faut les deux parties pour qu'un agent du salon ACRS puisse la déchiffrer. \r\n\r\n"
-        "Chaque clé déchiffrée vous rapproche d'une victoire dans The Game."
+        "Après avoir trouvé une clé, copie son index et son hash, par exemple : 1 - 2bfc88a4.\r\n"
+        "Il te faut les deux parties pour qu'un agent du salon ACRS puisse la déchiffrer. \r\n\r\n"
+        "Chaque clé déchiffrée te rapproche d'une victoire dans The Game."
     ),
     "While searching for keys you may encounter Fetch URLs. These URLs direct to video files which ACRS users may have interest in buying, so save them if you come across one.\r\n\r\nAll Fetch URLs begin with file:// and finish with .fetch. Copy and paste them into the ShadowFetch application to see what its contents are, then download to later sell the video file.": (
-        "En cherchant des clés, vous pouvez croiser des URL Fetch. Ce sont des fichiers video que des utilisateurs ACRS peuvent vouloir acheter : sauvegardez-les.\r\n\r\n"
-        "Toutes les URL Fetch commencent par file:// et finissent par .fetch. Collez-les dans ShadowFetch pour voir le contenu, puis téléchargez pour revendre la video."
+        "En cherchant des clés, tu peux croiser des URL Fetch. Ce sont des fichiers vidéo que des utilisateurs ACRS peuvent vouloir acheter : sauvegarde-les.\r\n\r\n"
+        "Toutes les URL Fetch commencent par file:// et finissent par .fetch. Colle-les dans ShadowFetch pour voir le contenu, puis télécharge pour revendre la vidéo."
     ),
     "Example key:": "Exemple de clé :",
     "Ok, you know what todo!": "Ok, tu sais quoi faire !",
@@ -385,13 +385,13 @@ RAW: dict[str, str] = {
         "VirtMesh est un programme à installer. Sans lui, tu ne pourras pas accéder au Dark Net."
     ),
     "ShadowFetch will be your way to download instructions and general help documents. I'd use it if I were you.": (
-        "ShadowFetch te servira à télécharger des instructions et des documents d'aide. A ta place, je l'utiliserais."
+        "ShadowFetch te servira à télécharger des instructions et des documents d'aide. À ta place, je l'utiliserais."
     ),
     "VirtMesh? ShadowFetch? What are you fucking talking about? how do I get those programs?!": (
         "VirtMesh ? ShadowFetch ? Tu parles de quoi putain ? Comment j'obtiens ces programmes ?!"
     ),
     "Open Dark Drop to download both VirtMesh and ShadowFetch.": (
-        "Ouvre Dark Drop pour télécharger VirtMesh et ShadowFetch."
+        "Ouvre DarkDrop pour télécharger VirtMesh et ShadowFetch."
     ),
     "Oh, wait, that's right. Wade did tell me you have a gambling problem, and you probably have no DOSCoin. ": (
         "Ah oui, c'est vrai. Wade m'a dit que tu as un problème de jeu, et que tu n'as probablement pas de DOSCoin. "
@@ -406,7 +406,7 @@ RAW: dict[str, str] = {
         "Ou tu peux ouvrir VirtMesh et essayer de comprendre par toi-même."
     ),
     "Through VirtMesh hack, mount, then enter a computer. Once you get that done switch over to this desktop and I'll share a link to a Wiki Page that has all types of websites on it.": (
-        "Via VirtMesh : pirater, monter, puis entre dans un ordinateur. Une fois fait, reviens sur ce bureau "
+        "Via VirtMesh : pirate, monte, puis entre dans un ordinateur. Une fois fait, reviens sur ce bureau "
         "et je te partagerai un lien vers une page Wiki avec toutes sortes de sites."
     ),
     "If what I'm saying doesn't make sense download and look at that document from the fetch link above.": (
@@ -433,7 +433,7 @@ RAW: dict[str, str] = {
         "Goggin - A des infos sur les gens qui vont essayer de te tuer ce soir.\r\n\r\n"
         "Une fois que t'as collecté puis déchiffré les 8 clés, envoie-moi la master key "
         "(chaque clé déchiffrée dans l'ordre de son index, assemblées en une seule clé) pour finir la partie de ce soir. \r\n\r\n"
-        "Tu dois tenir jusqu'à 4AM Tonight pour battre le jeu !!\r\n\r\n"
+        "Tu as jusqu'à 4 h du mat' ce soir pour battre le jeu !!\r\n\r\n"
         "Mais soyons réalistes.. T'es très probablement déjà mort lol. \r\n\r\n"
         "Bonne chance ! "
     ),
@@ -451,10 +451,10 @@ RAW: dict[str, str] = {
         "Je sais qui vient te chercher ce soir. Paie-moi [PRICE] DOS Coin et je te file un lien ShadowFetch qui te donnera une chance de t'en sortir."
     ),
     "If you want information on the hacks you'll need to counter pay me [PRICE] DOS Coin and I'll link a file you can download off ShadowFetch": (
-        "Si tu veux des infos sur les hacks a contrer, paie-moi [PRICE] DOS Coin et je te file un lien à télécharger sur ShadowFetch"
+        "Si tu veux des infos sur les hacks à contrer, paie-moi [PRICE] DOS Coin et je te file un lien à télécharger sur ShadowFetch"
     ),
     "Was that a tip? Doesn't matter if it wasn't you're not getting that back.": (
-        "C'était un pourboire ? Peu importe, tu ne récupères pas ca."
+        "C'était un pourboire ? Peu importe, tu ne récupères pas ça."
     ),
     "It's still [PRICE] DOS Coin to get the file. Send it all in a single payment or you get nothing.": (
         "C'est toujours [PRICE] DOS Coin pour le fichier. Envoie tout en un seul paiement ou tu n'as rien."
@@ -465,7 +465,7 @@ RAW: dict[str, str] = {
     # PlayerPaid — une seule FString avec [LINK]
     "Okay, thanks. Here's the link: \r\n[LINK]\r\n\r\nPut that into ShadowFetch to download your file. I'm out of here.. Later": (
         "Ok, merci. Voici le lien : \r\n[LINK]\r\n\r\n"
-        "Mets ça dans ShadowFetch pour télécharger ton fichier. Je me casse.. A plus"
+        "Mets ça dans ShadowFetch pour télécharger ton fichier. Je me casse.. À plus"
     ),
     # VirtMesh app (UI/Widgets/Computer/VM)
     "Mount": "MONTER",
@@ -483,15 +483,15 @@ RAW: dict[str, str] = {
     "ShadowFetch": "ShadowFetch",
     "Trying to browse the Dark Net? This software is your one stop *secure solution. Access a web of virtual machines that can be hacked for Dark Net browsing or converted into DOS Coin crypto miners!\r\n\r\n*Virtual machine access can be lost if connection is overstayed.": (
         "Tu veux surfer sur le Dark Net ? Ce logiciel est ta *solution sécurisée. Accède à un réseau de machines virtuelles "
-        "a pirater pour le Dark Net, ou convertis-les en mineurs de crypto DOS Coin !\r\n\r\n"
-        "*L'accès à une machine virtuelle peut être perdu si tu restes connecte trop longtemps."
+        "à pirater pour le Dark Net, ou convertis-les en mineurs de crypto DOS Coin !\r\n\r\n"
+        "*L'accès à une machine virtuelle peut être perdu si tu restes connecté trop longtemps."
     ),
     "Looking to download contents from .fetch URLs found on the Dark Net? This program has you covered.": (
         "Tu veux télécharger le contenu des URL .fetch trouvées sur le Dark Net ? Ce programme est fait pour ça."
     ),
     "ACRS": "ACRS",
     "Install and chat with strangers! Anon Chat Relay Server is the premiere application to communicate with all types of people. Ping users to privately buy and sell goods or services through CryptChat.": (
-        "Installe et discute avec des inconnus ! Anon Chat Relay Server est l'appli de référence pour parler a tout le monde. "
+        "Installe et discute avec des inconnus ! Anon Chat Relay Server est l'appli de référence pour parler à tout le monde. "
         "Pingue des utilisateurs pour acheter ou vendre en privé via CryptChat."
     ),
     "AID Pods": "AID Pods",
@@ -501,12 +501,12 @@ RAW: dict[str, str] = {
     ),
     "Backdoor Hack": "Backdoor",
     "Want a way to get back at those pesky hackers?! The Backdoor Hack is what you need! Defeating a hack will steal DOS Coin from the hacker! Each time you're hacked one will be auto-consumed.": (
-        "Envie de te venger de ces satânés hackers ?! Le Backdoor est ce qu'il te faut ! "
-        "Battre un hack vole des DOS Coin au hacker ! A chaque hack subi, un exemplaire est consommé automatiquement."
+        "Envie de te venger de ces satanés hackers ?! Le Backdoor est ce qu'il te faut ! "
+        "Battre un hack vole des DOS Coin au hacker ! À chaque hack subi, un exemplaire est consommé automatiquement."
     ),
     "Want a way to get back at those pesky hackers?! Then the Backdoor Hack is what you need! Each time you are hacked, it will auto consume, if you defeat the hack you will steal DOS Coin from the hacker!": (
-        "Envie de te venger de ces satânés hackers ?! Le Backdoor est ce qu'il te faut ! "
-        "A chaque hack subi il se consomme ; si tu gagnes, tu voles des DOS Coin au hacker !"
+        "Envie de te venger de ces satanés hackers ?! Le Backdoor est ce qu'il te faut ! "
+        "À chaque hack subi il se consomme ; si tu gagnes, tu voles des DOS Coin au hacker !"
     ),
     "DAREDash": "DAREDash",
     "Convenient app to purchase drugs off the Dark Net. Quickly access drug dealer inventories, make a selection, then order for delivery.": (
@@ -518,47 +518,47 @@ RAW: dict[str, str] = {
     "Firewall Tier IV": "Pare-feu IV",
     "Firewall Tier V": "Pare-feu V",
     "Passively prevents incoming hacks with a 20% success rate. Can be turned on / off by clicking on the taskbar icon and checking / unchecking the box.": (
-        "Bloque passivement les hacks entrants avec 20% de réussite. Active / désactive via l'icone de la barre des taches."
+        "Bloque passivement les hacks entrants avec 20% de réussite. Active / désactive via l'icône de la barre des tâches."
     ),
     "Increases passive defense against incoming hacks to a 40% success rate.": (
-        "Passe la défense passive contre les hacks entrants a 40% de réussite."
+        "Passe la défense passive contre les hacks entrants à 40% de réussite."
     ),
     "Increases passive defense against incoming hacks to a 60% success rate.": (
-        "Passe la défense passive contre les hacks entrants a 60% de réussite."
+        "Passe la défense passive contre les hacks entrants à 60% de réussite."
     ),
     "Increases passive defense against incoming hacks to a 80% success rate.": (
-        "Passe la défense passive contre les hacks entrants a 80% de réussite."
+        "Passe la défense passive contre les hacks entrants à 80% de réussite."
     ),
     "Increases passive defense against incoming hacks to a 98% success rate.": (
-        "Passe la défense passive contre les hacks entrants a 98% de réussite."
+        "Passe la défense passive contre les hacks entrants à 98% de réussite."
     ),
     "GO CAM": "GO CAM",
     "Portable battery-powered camera that can be attached to a surface and viewed remotely through the SecCam application. All placed cameras auto-sync to SecCam.": (
-        "Caméra portable à piles, à fixer sur une surface et à consulter a distance via SecCam. Toutes les caméras placées se synchronisent avec SecCam."
+        "Caméra portable à piles, à fixer sur une surface et à consulter à distance via SecCam. Toutes les caméras placées se synchronisent avec SecCam."
     ),
     "Portable battery-powered camera that can be attached to a surface and viewed remotely through the SecCam application. All placed cameras auto-sync to the SecCam application.": (
-        "Caméra portable à piles, à fixer sur une surface et à consulter a distance via SecCam. Toutes les caméras placées se synchronisent avec SecCam."
+        "Caméra portable à piles, à fixer sur une surface et à consulter à distance via SecCam. Toutes les caméras placées se synchronisent avec SecCam."
     ),
     "Key Cue": "Key Cue",
     "Key Cue Plus": "Key Cue Plus",
     "Want extra help to find key hashes? When loaded onto a website that contains one there will be a small key icon visible near the top right of A.N.N. browser.": (
-        "Besoin d'aide pour trouver les hash de clés ? Sur un site qui en contient une, une petite icône clé apparait en haut a droite du navigateur A.N.N."
+        "Besoin d'aide pour trouver les hash de clés ? Sur un site qui en contient une, une petite icône clé apparaît en haut à droite du navigateur A.N.N."
     ),
     "Interested in gaining more help with key hashes? When loaded onto the specific website page which contains one the key icon near the top right of A.N.N. browser will change from white to a gold color.": (
-        "Envie d'encore plus d'aide pour les hash de clés ? Sur la page exacte qui en contient une, l'icône clé en haut a droite d'A.N.N. passe du blanc au doré."
+        "Envie d'encore plus d'aide pour les hash de clés ? Sur la page exacte qui en contient une, l'icône clé en haut à droite d'A.N.N. passe du blanc au doré."
     ),
     "Motion Alert": "Alerte mvt",
     "Software that provides visual & audio notifications when a placed motion sensor is triggered. Perfect for the person who's focused on other tasks when unexpected motion arrives.\r\n\r\nClicking on the motion alert taskbar icon will reveal the named location and status of all placed motion sensors.": (
         "Logiciel qui envoie des alertes visuelles et sonores quand un Capteur mvt placé se déclenche. Idéal quand tu es concentré ailleurs.\r\n\r\n"
-        "Clique l'icone d'alerte dans la barre des taches pour voir le lieu et l'état de tous les capteurs placés."
+        "Clique l'icône d'alerte dans la barre des tâches pour voir le lieu et l'état de tous les capteurs placés."
     ),
     "Motion Sensor": "Capteur mvt",
     "Portable battery-powered sensor that detects nearby motion. Requires separate purchase of Motion Alert to receive visual and sound based notifications on your computer when a sensor is triggered.": (
-        "Capteur portable à piles qui detecte le mouvement à proximité. Nécessite l'achat separe d'Alerte mvt pour les notifications sur ton PC."
+        "Capteur portable à piles qui détecte le mouvement à proximité. Nécessite l'achat séparé d'Alerte mvt pour les notifications sur ton PC."
     ),
     "NOP Sled": "NOP Sled",
     "Want to skip an incoming hack? The NOP Sled is your answer! Upon activation you'll immediately break free. (Backdoor Hacks are not consumed).\r\n\r\nPress [Middle Mouse Button] during a hack to activate.": (
-        "Envie de zapper un hack entrant ? Le NOP Sled est la réponse ! A l'activation tu te libères tout de suite. (Les Backdoors ne sont pas consommés).\r\n\r\n"
+        "Envie de zapper un hack entrant ? Le NOP Sled est la réponse ! À l'activation tu te libères tout de suite. (Les Backdoors ne sont pas consommés).\r\n\r\n"
         "Appuie sur [Clic molette] pendant un hack pour l'activer."
     ),
     "Find yourself in a hack you don't want to deal with? Then the NOPSled is what you want! By simply pressing the middle mouse button you break free from the hack!(Does not consume any Backdoors)": (
@@ -571,21 +571,21 @@ RAW: dict[str, str] = {
     ),
     "SecCam": "SecCam",
     "Monitor your placed GO CAM camera feeds with this app. Navigate between cameras using the on-screen buttons or press [A] / [D].": (
-        "Surveille tes flux GO CAM avec cette appli. Change de camera avec les boutons à l'écran ou [A] / [D]."
+        "Surveille tes flux GO CAM avec cette appli. Change de caméra avec les boutons à l'écran ou [A] / [D]."
     ),
     "Signal Booster": "Boost signal",
     "Temporarily increase internet speed by placing this device in an *optimal location. View on-device section labled \"Signal Strength\" to see quality of speed boost.\r\n\r\n*Over time device may need to be moved to maintain full speed boost.": (
-        "Augmente temporairement la vitesse internet en placant cet appareil a un endroit *optimal. "
-        "Regarde la section \"Signal Strength\" sur l'appareil pour la qualité du boost.\r\n\r\n"
-        "*Avec le temps, tu devras peut-être le deplacer pour garder le boost max."
+        "Augmente temporairement la vitesse internet en plaçant cet appareil à un endroit *optimal. "
+        "Regarde la section « Force du signal » sur l'appareil pour la qualité du boost.\r\n\r\n"
+        "*Avec le temps, tu devras peut-être le déplacer pour garder le boost max."
     ),
     "Sig.Boost Monitor": "Moniteur boost",
     "Track your Signal Booster's internet speed increase through a desktop taskbar icon. The icon will display the current boost strength.": (
-        "Suis le boost de vitesse de ton Boost signal via une icône de barre des taches. L'icone affiche la force actuelle."
+        "Suis le boost de vitesse de ton Boost signal via une icône de barre des tâches. L'icône affiche la force actuelle."
     ),
     "VM Cyrpto Miner": "Mineur VM",
     "Purchase a *single-use script that turns a hacked computer in VirtMesh to a crypto miner for passive money generation.\r\n\r\n*Choosing to unmine a hacked computer will destroy the script. It can be mined again, but will require another script to do so.": (
-        "Achete un script *à usage unique qui transforme un PC piraté dans VirtMesh en mineur crypto pour gagner passivement.\r\n\r\n"
+        "Achète un script *à usage unique qui transforme un PC piraté dans VirtMesh en mineur crypto pour gagner passivement.\r\n\r\n"
         "*Déminer un PC détruit le script. Tu pourras reminer, mais il faudra un autre script."
     ),
     "VM Grid Tier II": "Grille VM II",
@@ -617,7 +617,7 @@ RAW: dict[str, str] = {
     "[R] - Toggle AID Pods": "[R] - Allumer / éteindre les AID Pods",
     "[T] - Toggle Ringonome": "[T] - Allumer / éteindre le Ringonome",
     "Electrical Room Key": "Clé de la salle électrique",
-    "This key unlocks the inner electrical room door.": "Cette clé ouvre la porte interieure de la salle électrique.",
+    "This key unlocks the inner electrical room door.": "Cette clé ouvre la porte intérieure de la salle électrique.",
     "Employee Key": "Clé employé",
     "This key unlocks the employee back doors.": (
         "Cette clé ouvre les portes arrière réservées aux employés."
@@ -680,11 +680,11 @@ RAW: dict[str, str] = {
     ),
     # Cinema / messages hacker
     "I can't believe that fucking degenerate gambler won...": (
-        "J'arrive pas a croire que ce putain de joueur dégénéré ait gagné..."
+        "J'arrive pas à croire que ce putain de joueur dégénéré ait gagné..."
     ),
     "Pay off the rent he owes and make sure the payment's in his name. Keeping him in that shithole will make it easy to find him if we're given a reason": (
         "Paie le loyer qu'il doit et assure-toi que le paiement est à son nom. "
-        "Le garder dans ce trou a rats facilitera de le retrouver si on a une raison"
+        "Le garder dans ce trou à rats permettra de le retrouver plus facilement si on a une raison"
     ),
     "Also, you can cut surveillance to focus on the big task. I assume you know what...": (
         "Aussi, tu peux couper la surveillance pour te concentrer sur la grosse tâche. Je suppose que tu vois ce que..."

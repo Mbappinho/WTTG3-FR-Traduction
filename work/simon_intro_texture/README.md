@@ -14,9 +14,11 @@ Le texte EN n’est **pas** une FString. Il est peint dans :
 |---------|------|
 | `candidates/AptLoadingScreen.png` | Export EN |
 | `AptLoadingScreen_FR.png` | Version FR (source du patch) |
-| `make_fr_png.py` | Régénère le PNG FR |
+| `make_fr_png.py` | Régénère le PNG FR (source EN `candidates/` si présent, sinon réécrit par-dessus `AptLoadingScreen_FR.png`) |
 | `inject_apt_loading.py` | Inject BGRA standalone |
 | `cooked/` | Copie uasset/uexp patchés |
+
+Texte FR (2026-08-20) : « on vient te réclamer la mise… » (plus « collecter »).
 
 ## Pipeline
 

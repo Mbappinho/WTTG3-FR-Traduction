@@ -37,12 +37,12 @@ ACH_TR = {
     "Bad Luck": ("Pas de chance", "Subir une perte maximale sur Merramun"),
     "Agent 67": (
         "Agent 67",
-        "Éliminer tous les autres joueurs via services de hitman en une seule partie",
+        "Éliminer tous les autres joueurs via des services de tueur à gages en une seule partie",
     ),
-    "Stacked": ("Stacked", "Contrer 100 hacks Stack Pusher"),
-    "QWERTY": ("QWERTY", "Contrer 100 hacks KernalCompiler"),
-    " Fast Fingers": (" Doigts rapides", "Contrer 100 hacks MEMDeallacator"),
-    "Fast Fingers": ("Doigts rapides", "Contrer 100 hacks MEMDeallacator"),
+    "Stacked": ("Stacked", "Contrer 100 hacks stackPUSHER"),
+    "QWERTY": ("QWERTY", "Contrer 100 hacks K3RN3LC0MP1L3R"),
+    " Fast Fingers": ("Doigts rapides", "Contrer 100 hacks memDEALLOCATER"),
+    "Fast Fingers": ("Doigts rapides", "Contrer 100 hacks memDEALLOCATER"),
     "You Are Human": ("Tu es humain", "Contrer 100 hacks TOKEN9"),
     "Stick Shift": ("Stick Shift", "Contrer 100 hacks ShiftSeq"),
     "Breacher": ("Breacher", "Pirater 50 machines virtuelles"),
@@ -125,7 +125,7 @@ CHAT_TR = {
 # Phrase replacements applied to PDF HTML (order matters: longer first).
 PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ("Details provided in accordance with fair play standard", "Détails fournis conformément au standard de fair-play"),
-    ("Simulate a test hack by clicking the button at the bottom.", "Simulez un hack test en cliquant sur le bouton en bas."),
+    ("Simulate a test hack by clicking the button at the bottom.", "Simule un hack test en cliquant sur le bouton en bas."),
     ("All Threats", "Toutes les menaces"),
     ("All Hacks", "Tous les hacks"),
     ("Quick links:", "Liens rapides :"),
@@ -139,11 +139,11 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     # VirtMesh
     (
         "VirtMesh is your path onto the Dark Net. Hacking a computer here allows you to remotely access its Dark Net web browser application.",
-        "VirtMesh est votre accès au Dark Net. Pirater un ordinateur ici permet d'accéder à distance à son navigateur Dark Net.",
+        "VirtMesh est ton accès au Dark Net. Pirater un ordinateur ici permet d'accéder à distance à son navigateur Dark Net.",
     ),
     (
         "After opening VirtMesh a network web will expand before you.",
-        "Après avoir ouvert VirtMesh, une toile réseau s'étend devant vous.",
+        "Après avoir ouvert VirtMesh, une toile réseau s'étend devant toi.",
     ),
     (
         "All unlocked nodes can be clicked <strong>[LMB]</strong> and hacked to gain remote access to another computer.",
@@ -167,11 +167,11 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Each tile can be clicked <strong>[LMB]</strong> to change its flow direction. Click the same tile multiple times to cycle through flow directions - Up, Right, Down, Left.",
-        "Chaque tuile peut être cliquée <strong>[Clic gauche]</strong> pour changer la direction du flux. Cliquez plusieurs fois pour cycler : Haut, Droite, Bas, Gauche.",
+        "Chaque tuile peut être cliquée <strong>[Clic gauche]</strong> pour changer la direction du flux. Clique plusieurs fois pour cycler : Haut, Droite, Bas, Gauche.",
     ),
     (
         "<strong>NOTE: Mistakes in your created path will cause failure, however you're only temporarily locked out of the targeted computer.</strong>",
-        "<strong>NOTE : Une erreur dans le chemin provoque un échec, mais vous n'êtes verrouillé que temporairement hors de l'ordinateur cible.</strong>",
+        "<strong>NOTE : Une erreur dans le chemin provoque un échec, mais tu n'es verrouillé que temporairement hors de l'ordinateur cible.</strong>",
     ),
     (
         "Once hacked clicking the computer again will offer options to <strong>MOUNT</strong> or <strong>MINE</strong>.",
@@ -183,11 +183,11 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "MINE - Use to passively mine cryptocurrency - UNMINE does not return mining token",
-        "MINER - Pour miner passivement de la crypto - ARRÊTER LE MINAGE ne rend pas le jeton",
+        "MINER - Pour miner passivement de la crypto - DÉMINER ne rend pas le jeton",
     ),
     (
         "After clicking MOUNT a token is consumed and the short mounting process begins. Once complete you can click the now mounted computer again to ENTER and use it for browsing the Dark Net.",
-        "Après MONTER, un jeton est consommé et le montage démarre. Ensuite, recliquez sur l'ordinateur monté pour ENTRER et naviguer sur le Dark Net.",
+        "Après MONTER, un jeton est consommé et le montage démarre. Ensuite, reclique sur l'ordinateur monté pour ENTRER et naviguer sur le Dark Net.",
     ),
     (
         "Available mount and mine tokens can be seen in the top right",
@@ -195,70 +195,70 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "<strong>NOTE: Mount multiple computers and swap between them routinely to avoid losing access to one by overstaying your connection.</strong>",
-        "<strong>NOTE : Montez plusieurs ordinateurs et alternez régulièrement pour éviter de perdre l'accès en restant trop longtemps connecté.</strong>",
+        "<strong>NOTE : Monte plusieurs ordinateurs et alterne régulièrement pour éviter de perdre l'accès en restant trop longtemps connecté.</strong>",
     ),
     (
         "While using a mounted computer you can return to your main desktop or VirtMesh using the bottom right taskbar buttons. Hovering over either will tell you their purpose.",
-        "Sur un ordinateur monté, revenez au bureau principal ou à VirtMesh via les boutons de la barre des tâches en bas à droite. Survolez-les pour voir leur rôle.",
+        "Sur un ordinateur monté, reviens au bureau principal ou à VirtMesh via les boutons de la barre des tâches en bas à droite. Survole-les pour voir leur rôle.",
     ),
     (
         "<strong>NOTE: Switching to your main desktop does not disconnect you from a mounted computer.</strong>",
-        "<strong>NOTE : Passer au bureau principal ne vous déconnecte pas d'un ordinateur monté.</strong>",
+        "<strong>NOTE : Passer au bureau principal ne te déconnecte pas d'un ordinateur monté.</strong>",
     ),
     (
         "If you want to exit VirtMesh completely click the central circle twice.",
-        "Pour quitter VirtMesh complètement, cliquez deux fois sur le cercle central.",
+        "Pour quitter VirtMesh complètement, clique deux fois sur le cercle central.",
     ),
     # Threats - Noir
     (
         "This couple appears seemingly out of thin air. Preferring the dark, they are often together and demand you follow their rules.",
-        "Ce couple apparaît comme de nulle part. Ils préfèrent l'obscurité, restent souvent ensemble et exigent que vous suiviez leurs règles.",
+        "Ce couple surgit de nulle part. Ils préfèrent l'obscurité, restent souvent ensemble et exigent que tu suives leurs règles.",
     ),
     (
         "Their pose will decide your next move. If you see, from left to right, the shorter woman, then the taller man - Shine a flashlight at them for a moment and turn away completely, <strong>count exactly to 10</strong>, then immediately turn back around to where they previously were.",
-        "Leur pose décide de votre prochain geste. De gauche à droite : la femme plus petite puis l'homme plus grand — allumez une lampe un instant, détournez-vous complètement, <strong>comptez exactement jusqu'à 10</strong>, puis regardez immédiatement l'endroit où ils étaient.",
+        "Leur pose décide de ton prochain geste. De gauche à droite : la femme plus petite puis l'homme plus grand — allume une lampe un instant, détourne-toi complètement, <strong>compte exactement jusqu'à 10</strong>, puis regarde immédiatement l'endroit où ils étaient.",
     ),
     (
         "See, from left to right, the taller man, then the shorter woman - Do nearly the same as above, but <strong>count exactly to 5</strong>.",
-        "De gauche à droite : l'homme plus grand puis la femme plus petite — même procédure, mais <strong>comptez exactement jusqu'à 5</strong>.",
+        "De gauche à droite : l'homme plus grand puis la femme plus petite — même procédure, mais <strong>compte exactement jusqu'à 5</strong>.",
     ),
     (
         "Observing prey is something they both individually enjoy. Find yourself alone with either one and you must follow similar rules, but no longer need to count exact.<strong> Once you're close by only look away.</strong> After waiting a moment they'll disappear.",
-        "Observer leur proie les amuse chacun. Seul face à l'un d'eux, suivez des règles similaires sans compter exactement. <strong>Une fois près, détournez seulement le regard.</strong> Après un moment, ils disparaissent.",
+        "Observer leur proie les amuse chacun. Seul face à l'un d'eux, suis des règles similaires sans compter exactement. <strong>Une fois près, détourne seulement le regard.</strong> Après un moment, ils disparaissent.",
     ),
     # Tanner
     (
         "You are to be his next victim, but be thankful he likes to play.",
-        "Vous serez sa prochaine victime — remerciez le fait qu'il aime jouer.",
+        "Tu seras sa prochaine victime — tant mieux : il aime jouer.",
     ),
     (
         "Always secure the area you're in, because if there's an easy way to you he'll take it.",
-        "Sécurisez toujours la zone : s'il existe un accès facile jusqu'à vous, il le prendra.",
+        "Sécurise toujours la zone : s'il existe un accès facile jusqu'à toi, il le prendra.",
     ),
     (
         "At times acknowledging his presence can be enough to ruin his fun. Use what you have around to look him in the eyes and remove any dreams of ambush he may have had.",
-        "Parfois, reconnaître sa présence suffit à gâcher son plaisir. Utilisez ce que vous avez pour le regarder dans les yeux et briser toute idée d'embuscade.",
+        "Parfois, reconnaître sa présence suffit à gâcher son plaisir. Utilise ce que tu as pour le regarder dans les yeux et briser toute idée d'embuscade.",
     ),
     (
         "Equipped at your desk is a panic button. Pressing it will lock the front sliding doors shut, stopping anyone from entering... that is if you hit the button in time.",
-        "Un bouton de panique est installé à votre bureau. Il verrouille les portes coulissantes avant et empêche quiconque d'entrer… si vous appuyez à temps.",
+        "Un bouton de panique est installé à ton bureau. Il verrouille les portes coulissantes avant et empêche quiconque d'entrer… si tu appuies à temps.",
     ),
     # Tucker
     (
         "One of Wade's boys who's been put on to take some swings at you. The thrill of the hunt gets him going, be that luring his prey to a trap or setting the place off to see a scramble for safety.",
-        "Un des gars de Wade chargé de s'occuper de vous. Le frisson de la chasse l'excite : attirer sa proie dans un piège ou semer le chaos pour voir tout le monde fuir.",
+        "Un des gars de Wade chargé de s'occuper de toi. Le frisson de la chasse l'excite : attirer sa proie dans un piège ou semer le chaos pour voir tout le monde fuir.",
     ),
     (
         "Listen close when heading out to do repairs, with your back turned there may be someone over your shoulder. Hear strange noise? It's best to stay still for a moment before carrying on.",
-        "Écoutez bien en sortant faire des réparations : dos tourné, quelqu'un peut être derrière vous. Bruit bizarre ? Restez immobile un instant avant de continuer.",
+        "Écoute bien en sortant faire des réparations : dos tourné, quelqu'un peut être derrière toi. Bruit bizarre ? Reste immobile un instant avant de continuer.",
     ),
     (
         "This boy isn't all quiet though, from time to time you may hear an old tune. When heard caution is out the window and time is ticking. Search the motel's lot to find a door with the Ace of Spades playing card, then enter.",
-        "Il n'est pas toujours silencieux : parfois une vieille mélodie retentit. Alors plus de prudence lente — le temps presse. Cherchez sur le parking du motel une porte avec l'As de pique, puis entrez.",
+        "Il n'est pas toujours silencieux : parfois une vieille mélodie retentit. Alors plus de prudence lente — le temps presse. Cherche sur le parking du motel une porte avec l'As de pique, puis entre.",
     ),
     (
         "Make it inside before the night turns quiet again and you'll survive.",
-        "Entrez avant que la nuit redevienne silencieuse et vous survivrez.",
+        "Entre avant que la nuit redevienne silencieuse et tu survivras.",
     ),
     # Cletus
     (
@@ -267,50 +267,50 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "There's only one way to be on this tweaker's good side and it's giving him with what he craves most, meth.",
-        "Une seule façon de rester dans ses bons papiers : lui donner ce qu'il crave le plus, de la meth.",
+        "Une seule façon de rester dans ses bons papiers : lui donner ce dont il a le plus envie, de la meth.",
     ),
     (
         "Once you pickup don't worry about finding him, he'll sniff you out when he's hungry for another hit, just have it on ya.",
-        "Une fois récupérée, ne cherchez pas à le trouver : il vous flairera quand il voudra une autre dose. Ayez-la sur vous.",
+        "Une fois récupérée, ne cherche pas à le trouver : il te flairera quand il voudra une autre dose. Aie-la sur toi.",
     ),
     # Lucas
     (
         "All players in The Game have an assigned hitman standing by, waiting for the call to kill them. This one is yours.",
-        "Chaque joueur de The Game a un hitman assigné, prêt à tuer sur appel. Celui-ci est le vôtre.",
+        "Chaque joueur de The Game a un hitman assigné, prêt à tuer sur appel. Celui-ci est le tien.",
     ),
     (
         "You won't know when the hitman is called upon, so secure yourself before that time comes. A trained killer is stealthy, sticking to the shadows and staying silent in most cases, little will tell you he's closing in unless you prepare.",
-        "Vous ne saurez pas quand le hitman est appelé : sécurisez-vous avant. Un tueur entraîné est furtif, reste dans l'ombre et silencieux ; peu d'indices annoncent son approche sans préparation.",
+        "Tu ne sauras pas quand le hitman est appelé : sécurise-toi avant. Un tueur entraîné est furtif, reste dans l'ombre et silencieux ; peu d'indices annoncent son approche sans préparation.",
     ),
     (
         "If you've noticed him, disguise where you're playing from. Turn off lights, keep doors locked, and locate a place you can hide inside.",
-        "S'il est repéré, masquez votre position de jeu. Éteignez les lumières, verrouillez les portes, trouvez une cachette intérieure.",
+        "S'il est repéré, masque ta position de jeu. Éteins les lumières, verrouille les portes, trouve une cachette intérieure.",
     ),
     (
         "That anxiety condition of yours will make staying silent a challenge.",
-        "Votre anxiété rendra le silence difficile.",
+        "Ton anxiété rendra le silence difficile.",
     ),
     # Kidnapper
     (
         "This trained trafficker knows of your location and has been instructed to capture if the opportunity arises while he's parked nearby.",
-        "Ce trafiquant entraîné connaît votre position et a pour ordre de vous capturer si l'occasion se présente pendant qu'il est garé à proximité.",
+        "Ce trafiquant entraîné connaît ta position et a pour ordre de te capturer si l'occasion se présente pendant qu'il est garé à proximité.",
     ),
     (
         "Stealth is a priority of his, so keep your back doors locked. If heading outside take a good look at the surrounding street area for his white van. See it and you'll have to wait for him to drive off.",
-        "La furtivité est sa priorité : gardez les portes arrière verrouillées. Dehors, scrutez la rue pour son van blanc. S'il est là, attendez qu'il reparte.",
+        "La furtivité est sa priorité : garde les portes arrière verrouillées. Dehors, scrute la rue pour son van blanc. S'il est là, attends qu'il reparte.",
     ),
     (
         "Using your eyes alone will often not be enough to spot his vehicle's position. Secure yourself early, or question every time you walk outdoors.",
-        "Les yeux seuls ne suffisent souvent pas à le repérer. Sécurisez-vous tôt, ou méfiez-vous à chaque sortie.",
+        "Les yeux seuls ne suffisent souvent pas à le repérer. Sécurise-toi tôt, ou méfie-toi à chaque sortie.",
     ),
     # Breather
     (
         "A troubled manic man may wait around your dead drop package location.",
-        "Un homme maniaque et troublé peut attendre près de votre dead drop.",
+        "Un homme maniaque et troublé peut attendre près de ta planque.",
     ),
     (
         "If he appears run away, back towards an area with others. Their presence, even if only assumed, will be enough for him to give up chase.",
-        "S'il apparaît, fuyez vers une zone avec d'autres personnes. Leur présence, même supposée, suffit à le faire abandonner.",
+        "S'il apparaît, fuis vers une zone avec d'autres personnes. Leur présence, même supposée, suffit à le faire abandonner.",
     ),
     # Hacks generic / K3RN3L
     (
@@ -331,7 +331,7 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Mistakes will highlight in red for both the active line and your typed input. Resolve them by removing the characters with <strong>[BACKSPACE]</strong>.",
-        "Les erreurs s'affichent en rouge sur la ligne active et votre saisie. Corrigez avec <strong>[RETOUR ARRIÈRE]</strong>.",
+        "Les erreurs s'affichent en rouge sur la ligne active et ta saisie. Corrige avec <strong>[RETOUR ARRIÈRE]</strong>.",
     ),
     (
         "<strong>NOTE: More difficult versions of this hack exist, which require you to counter multiple corrupted memory blocks, type code strings instead of text, or counter many corrupted memory blocks of code strings.</strong>",
@@ -351,17 +351,17 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Using memDEALLOCATER correctly requires you avoid red sections of memory by directing to the left, right, or skip, one line at a time.",
-        "Bien utiliser memDEALLOCATER : évitez les sections rouges en allant à gauche, à droite, ou en sautant, une ligne à la fois.",
+        "Bien utiliser memDEALLOCATER : évite les sections rouges en allant à gauche, à droite, ou en sautant, une ligne à la fois.",
     ),
     (
         "Starting at the bottom and moving up, focus on the green sections of memory to determine what sequence of keys to press. Every key press moves the memory block down one line and a new line appears at the top.",
-        "Du bas vers le haut, concentrez-vous sur les sections vertes pour choisir les touches. Chaque touche fait descendre le bloc d'une ligne ; une nouvelle ligne apparaît en haut.",
+        "Du bas vers le haut, concentre-toi sur les sections vertes pour choisir les touches. Chaque touche fait descendre le bloc d'une ligne ; une nouvelle ligne apparaît en haut.",
     ),
     (
         "It's fastest to look at the upcoming lines, than react to what the key hint tells you to press.",
         "Le plus rapide : anticiper les lignes à venir plutôt que de réagir à l'indice de touche.",
     ),
-    ("Left section green -> <strong> Left - [A] / [◀]</strong>", "Section gauche verte -> <strong> Gauche - [Q] / [◀]</strong>"),
+    ("Left section green -> <strong> Left - [A] / [◀]</strong>", "Section gauche verte -> <strong> Gauche - [A] / [◀]</strong>"),
     ("Both sections green -> <strong> Skip - [SPACEBAR]</strong>", "Les deux sections vertes -> <strong> Sauter - [ESPACE]</strong>"),
     ("Right section green -> <strong>Right - [D] / [▶]</strong>", "Section droite verte -> <strong>Droite - [D] / [▶]</strong>"),
     (
@@ -382,31 +382,31 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Stopping an attack using shiftSEQ requires you to remove all infected nodes by navigating to each one and destroying it through repeated actions.",
-        "Arrêter une attaque avec shiftSEQ : éliminez tous les nœuds infectés en y naviguant et en les détruisant par actions répétées.",
+        "Arrêter une attaque avec shiftSEQ : élimine tous les nœuds infectés en y naviguant et en les détruisant par actions répétées.",
     ),
     (
         "You always begin inside the home node. While inside infected node attacks are blocked.",
-        "Vous commencez toujours dans le nœud home. Dedans, les attaques de nœuds infectés sont bloquées.",
+        "Tu commences toujours dans le nœud central. Dedans, les attaques de nœuds infectés sont bloquées.",
     ),
     (
         "If you're outside the home node when an attack reaches it your connection health will decrease. This is the only way to fail early. You can move freely through node attacks without issue.",
-        "Hors du nœud home, si une attaque l'atteint, votre santé de connexion baisse. C'est le seul échec précoce. Vous pouvez traverser librement les attaques de nœuds.",
+        "Hors du nœud central, si une attaque l'atteint, ta santé de connexion baisse. C'est le seul échec précoce. Tu peux traverser librement les attaques de nœuds.",
     ),
     (
         "Navigate onto infected nodes using <strong>[W] / [A] / [S] / [D]</strong>, then destroy them using <strong>[SPACEBAR]</strong>.",
-        "Naviguez vers les nœuds infectés avec <strong>[Z] / [Q] / [S] / [D]</strong>, puis détruisez-les avec <strong>[ESPACE]</strong>.",
+        "Navigue vers les nœuds infectés avec <strong>[W] / [A] / [S] / [D]</strong>, puis détruis-les avec <strong>[ESPACE]</strong>.",
     ),
-    ("<strong>[W] - Up</strong>", "<strong>[Z] - Haut</strong>"),
-    ("<strong>[A] - Left</strong>", "<strong>[Q] - Gauche</strong>"),
+    ("<strong>[W] - Up</strong>", "<strong>[W] - Haut</strong>"),
+    ("<strong>[A] - Left</strong>", "<strong>[A] - Gauche</strong>"),
     ("<strong>[S] - Down</strong>", "<strong>[S] - Bas</strong>"),
     ("<strong>[D] - Right</strong>", "<strong>[D] - Droite</strong>"),
     (
         "<strong>[SPACEBAR] - Attack infected node / Active restore (while inside home node)</strong>",
-        "<strong>[ESPACE] - Attaquer le nœud infecté / Restauration active (dans le nœud home)</strong>",
+        "<strong>[ESPACE] - Attaquer le nœud infecté / Restauration active (dans le nœud central)</strong>",
     ),
     (
         "Once on top of an infected node press <strong>[SPACEBAR]</strong> repeatedly to decrease its health to zero. However note that you have limited resources and must return to the home node to recharge.",
-        "Sur un nœud infecté, appuyez sur <strong>[ESPACE]</strong> plusieurs fois pour le réduire à zéro. Ressources limitées : revenez au nœud home pour recharger.",
+        "Sur un nœud infecté, appuie sur <strong>[ESPACE]</strong> plusieurs fois pour le réduire à zéro. Ressources limitées : reviens au nœud central pour recharger.",
     ),
     (
         "<strong>NOTE: Resources are measured via the battery symbol in the bottom right.</strong>",
@@ -414,11 +414,11 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Quickly recharge to full by pressing <strong>[SPACEBAR]</strong> when the expanding pulse overlaps the solid outline of the home node. Incorrect timing will temporarily disable all recharging.",
-        "Rechargez vite en appuyant sur <strong>[ESPACE]</strong> quand l'impulsion chevauche le contour du nœud home. Un mauvais timing désactive temporairement la recharge.",
+        "Recharge vite en appuyant sur <strong>[ESPACE]</strong> quand l'impulsion chevauche le contour du nœud central. Un mauvais timing désactive temporairement la recharge.",
     ),
     (
         "<strong>NOTE: More difficult versions of this hack exist, which have faster and more frequent infected node attacks, unblocked attacks have a greater penalty to connection health, and the amount of infected nodes to destroy is increased.</strong>",
-        "<strong>NOTE : Versions plus difficiles : attaques plus rapides/fréquentes, pénalité plus forte hors home, plus de nœuds infectés.</strong>",
+        "<strong>NOTE : Versions plus difficiles : attaques plus rapides/fréquentes, pénalité plus forte hors nœud central, plus de nœuds infectés.</strong>",
     ),
     # stackPUSHER
     (
@@ -431,7 +431,7 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Defend against a stack overflow attack with stackPUSHER by pushing all stack nodes:",
-        "Défendez-vous d'un stack overflow avec stackPUSHER en poussant tous les nœuds stack :",
+        "Défends-toi d'un stack overflow avec stackPUSHER en poussant tous les nœuds stack :",
     ),
     ("Into the popper node:", "Dans le nœud popper :"),
     (
@@ -440,7 +440,7 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "You can move the pusher node anywhere on the grid by clicking <strong>[LMB]</strong> on it to activate, then clicking again <strong>[LMB]</strong> to place it. The same goes for stack nodes, click to pick up, then click to place down.",
-        "Déplacez le pusher n'importe où : <strong>[Clic gauche]</strong> pour l'activer, puis encore pour le placer. Idem pour les nœuds stack : clic pour prendre, clic pour poser.",
+        "Déplace le pusher n'importe où : <strong>[Clic gauche]</strong> pour l'activer, puis encore <strong>[Clic gauche]</strong> pour le placer. Idem pour les nœuds stack : clic pour prendre, clic pour poser.",
     ),
     (
         "<strong>NOTE: A stack node is limited to moving within a 3x3 matrix surrounding the pusher node, example below:</strong>",
@@ -452,7 +452,7 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "<strong>NOTE: Avoid placing any nodes atop laughing skulls within the grid. Doing so will result in an immediate failure.</strong>",
-        "<strong>NOTE : Ne placez aucun nœud sur les crânes rieurs de la grille. Sinon, échec immédiat.</strong>",
+        "<strong>NOTE : Ne place aucun nœud sur les crânes rieurs de la grille. Sinon, échec immédiat.</strong>",
     ),
     # TOKENINE
     (
@@ -465,7 +465,7 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Stopping an attack using TOKENINE requires you assemble an auth token which matches the one shown by clicking <strong>[LMB]</strong> on each piece.",
-        "Arrêter une attaque TOKENINE : assemblez un jeton d'auth identique en cliquant <strong>[Clic gauche]</strong> sur chaque pièce.",
+        "Arrêter une attaque TOKENINE : assemble un jeton d'auth identique en cliquant <strong>[Clic gauche]</strong> sur chaque pièce.",
     ),
     (
         "<strong>NOTE: You can see how many pieces it will take to create the auth token shown via the squares underneath it.</strong> E.g. Image below shows the auth token requires two pieces to create.",
@@ -481,7 +481,7 @@ PDF_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "<strong>NOTE: There's limited time between token piece selections, and failing to choose will cause failure. Always select something, even if it's wrong, to avoid early failure.</strong>",
-        "<strong>NOTE : Temps limité entre les sélections ; ne rien choisir provoque un échec. Sélectionnez toujours quelque chose, même faux, pour éviter l'échec précoce.</strong>",
+        "<strong>NOTE : Temps limité entre les sélections ; ne rien choisir provoque un échec. Sélectionne toujours quelque chose, même faux, pour éviter l'échec précoce.</strong>",
     ),
     (
         "<strong>NOTE: More difficult versions of this hack exist, which require a greater number of auth tokens to be put together, visual glitches distort the auth token you must copy, and copying a token requires more pieces to assemble.</strong>",
@@ -498,7 +498,7 @@ CONTESTANT_LABELS = [
     ("####-----LOG END-----####", "####-----FIN DU LOG-----####"),
     ("PLAYER NAME: ", "PSEUDO JOUEUR : "),
     ("REAL NAME: ", "NOM RÉEL : "),
-    ("LOCATION:", "POSITION :"),
+    ("LOCATION:", "LIEU :"),
     ("AGE:", "ÂGE :"),
     ("HAIR:", "CHEVEUX :"),
     ("EYES:", "YEUX :"),

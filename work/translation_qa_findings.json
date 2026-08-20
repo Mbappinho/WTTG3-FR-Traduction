@@ -1,0 +1,399 @@
+{
+  "meta": {
+    "date": "2026-08-20",
+    "pack": "v1.7.1",
+    "steam_buildid": "24463842",
+    "scope": "in-game shipped FR only",
+    "corrections_applied": true,
+    "sources_of_truth": [
+      "scripts/build_ui_uassetgui_patch.py RAW (wins on collision)",
+      "work/acrs_cryptchat_fr.json",
+      "scripts/build_translations.py PDF_REPLACEMENTS + CONTESTANT_LABELS",
+      "work/achievements_fr.json",
+      "release/subtitles_runtime/.../SousTitres/*.srt",
+      "work/simon_intro_texture/make_fr_png.py"
+    ],
+    "not_shipped": [
+      "work/ui_fr.csv",
+      "work/ui_gameplay_fr.csv (truncated_prefix — not injected)"
+    ],
+    "corrections_date": "2026-08-20",
+    "rebuild_fr_p": true,
+    "rebuild_note": "2026-08-20 build_translations + build_ui_uassetgui_patch (1293/2825) + apply_patch PDFs; steam_settings achievements skipped; beginner zip not rebuilt"
+  },
+  "inventory": {
+    "ui_raw": 364,
+    "acrs_cryptchat": 1419,
+    "raw_acrs_key_overlap": 14,
+    "raw_overrides_acrs_values": 10,
+    "shipped_merged_fstrings": 1769,
+    "pdf_replacements": 101,
+    "contestant_labels": 64,
+    "achievements": 27,
+    "achievement_strings": 54,
+    "srt_files": 28,
+    "srt_cues": 120,
+    "intro": 1,
+    "context_overrides": 3,
+    "acrs_batches_match_merged": true
+  },
+  "address": {
+    "ui_raw": {
+      "vous_only": 12,
+      "tu_only": 40,
+      "both": 0,
+      "neither": 312
+    },
+    "acrs": {
+      "vous_only": 45,
+      "tu_only": 739,
+      "both": 9,
+      "neither": 626
+    },
+    "pdf": {
+      "vous_only": 25,
+      "tu_only": 0,
+      "both": 0,
+      "neither": 76
+    },
+    "note": "ACRS vous_only is mostly lobby addressing the room (y'all) — accepted. PDF + RAW menus tutoyent (patch 2026-08-20)."
+  },
+  "mechanical_false_positives": [
+    "[RMB]→[Clic droit], [SPACEBAR]→[ESPACE], [EXIT]→[QUITTER], [LMB]→[Clic gauche] — intentional key-label localization",
+    "EN=FR hashes/JFIF/FUCKYOU/Contestants/*.html — do_not_translate",
+    "The Game EN leak — glossary preserve",
+    "de le / s'il vous plaît in lobby — grammatical French, not MT",
+    "connecte / Connecte-toi — imperative, not missing accent"
+  ],
+  "severity_counts": {
+    "P0": 1,
+    "P1": 12,
+    "P2": 14
+  },
+  "findings": [
+    {
+      "id": "QA-001",
+      "severity": "P0",
+      "corpus": "pdf",
+      "title": "PDF mini-jeux en ZQSD alors que le jeu lit WASD",
+      "en": "[W]/[A]/[S]/[D] and Left [A] (shiftSEQ, memDEALLOCATER)",
+      "fr": "[Z]/[Q]/[S]/[D] et Gauche [Q]",
+      "issue": "Les PDF Hacks traduisent les binds en AZERTY. Les mini-jeux lisent toujours W/A (doc INSTALLER / REVIEW_NOTES). Un joueur qui suit le PDF FR rate les hacks.",
+      "reco": "Remettre [W]/[A]/[S]/[D] (et [A] gauche) dans les PDF, avec une note « touches physiques QWERTY / positions WASD » ; ou conditionner au pak AZERTY — mais le pak AZERTY ne remap pas les mini-jeux.",
+      "status": "applied",
+      "fix": "PDF WASD [W]/[A]/[S]/[D] + [A] gauche"
+    },
+    {
+      "id": "QA-002",
+      "severity": "P1",
+      "corpus": "ui_raw",
+      "title": "Accents manquants dans RAW (items, Key Finding, cinéma)",
+      "en": "(plusieurs chaînes DarkDrop / Key Finding / cinema)",
+      "fr": "element, Verifiez, cle, apparait, video, ca, a croire, trou a rats, a pirater, connecte, icone, taches, a distance, haut a droite, detecte, separe, placant, deplacer, Achete, interieure, meth, A ta place, A plus, a contrer",
+      "issue": "Le glossaire exige les accents. Beaucoup de descriptions RAW (DarkDrop, Key Finding, messages cinéma) sont restées en ASCII partiel. Les batches extras avaient déjà ça/à/À — RAW gagne et régresse.",
+      "reco": "Passe d'accents sur RAW uniquement (pas les CSV stale). Priorité Key Finding + DarkDrop + cinéma.",
+      "status": "applied",
+      "fix": "Accents RAW (DarkDrop / Key Finding / cinema / extras)"
+    },
+    {
+      "id": "QA-003",
+      "severity": "P1",
+      "corpus": "cross",
+      "title": "Tutoiement / vouvoiement mélangés selon l'écran",
+      "en": "Select Your Difficulty / Are you sure? / Key Finding / DarkDrop / Ronald",
+      "fr": "Choisissez votre difficulté / Êtes-vous sûr ? vs Tu veux surfer / Salut je suis Ronald",
+      "issue": "Glossaire : tutoiement joueur. Menus difficulté/sauvegarde, Key Finding et PDF vouvoient ; DarkDrop, ShadowFetch, Ronald, intro et pensées Simon tutoyent.",
+      "reco": "Trancher : (A) tutoiement partout côté joueur, ou (B) vouvoiement menus/PDF et tutoiement chat. Puis aligner Key Finding + overwrite save + difficulté.",
+      "status": "applied",
+      "fix": "Tutoiement menus, overwrite save, Key Finding, PDF"
+    },
+    {
+      "id": "QA-004",
+      "severity": "P1",
+      "corpus": "pdf",
+      "title": "UNMINE : ARRÊTER LE MINAGE vs DÉMINER",
+      "en": "UNMINE does not return mining token",
+      "fr": "ARRÊTER LE MINAGE ne rend pas le jeton",
+      "issue": "L'UI VirtMesh et le glossaire mappent UNMINE → DÉMINER. Le PDF dit ARRÊTER LE MINAGE — le bouton in-game n'aura pas ce libellé.",
+      "reco": "PDF : DÉMINER, comme MONTER/DÉMONTER déjà harmonisés.",
+      "status": "applied",
+      "fix": "PDF UNMINE -> DEMINER"
+    },
+    {
+      "id": "QA-005",
+      "severity": "P1",
+      "corpus": "pdf",
+      "title": "Calque « crave » (Cletus)",
+      "en": "giving him with what he craves most, meth",
+      "fr": "lui donner ce qu'il crave le plus, de la meth",
+      "issue": "crave n'est pas français. meth sans accent.",
+      "reco": "ce dont il a le plus envie / sa came — de la meth.",
+      "status": "applied",
+      "fix": "crave -> ce dont il a le plus envie"
+    },
+    {
+      "id": "QA-006",
+      "severity": "P1",
+      "corpus": "pdf",
+      "title": "Tanner : « remerciez le fait qu'il aime jouer »",
+      "en": "be thankful he likes to play",
+      "fr": "Vous serez sa prochaine victime — remerciez le fait qu'il aime jouer.",
+      "issue": "Calque lourd, peu idiomatique pour un PDF menaces.",
+      "reco": "tant mieux : il aime jouer / soyez-en « reconnaissant » : il aime jouer.",
+      "status": "applied",
+      "fix": "Tanner: tant mieux, il aime jouer"
+    },
+    {
+      "id": "QA-007",
+      "severity": "P1",
+      "corpus": "pdf",
+      "title": "Noir : « apparaît comme de nulle part »",
+      "en": "appears seemingly out of thin air",
+      "fr": "Ce couple apparaît comme de nulle part.",
+      "issue": "Construction incomplète.",
+      "reco": "surgit de nulle part / apparaît comme sorti de nulle part.",
+      "status": "applied",
+      "fix": "Noir: surgit de nulle part"
+    },
+    {
+      "id": "QA-008",
+      "severity": "P1",
+      "corpus": "ui_raw",
+      "title": "Syntaxe « facilitera de le retrouver »",
+      "en": "will make it easy to find him",
+      "fr": "Le garder dans ce trou a rats facilitera de le retrouver si on a une raison",
+      "issue": "français fautif + accent manquant sur à.",
+      "reco": "permettra de le retrouver plus facilement / facilitera le fait de le retrouver. trou à rats.",
+      "status": "applied",
+      "fix": "permettra de le retrouver; trou a rats"
+    },
+    {
+      "id": "QA-009",
+      "severity": "P1",
+      "corpus": "acrs",
+      "title": "Calque « Tu es promis d'obtenir »",
+      "en": "You are promised to get something worth at least 300 DOS Coin",
+      "fr": "Tu es promis d'obtenir un truc d'au moins 300 DOS Coin",
+      "issue": "Calque de You are promised. Chaîne lobby shippée (pas overlay RAW).",
+      "reco": "On te promet un truc d'au moins 300 DOS Coin / T'es assuré d'avoir…",
+      "status": "applied",
+      "fix": "On te promet un truc…"
+    },
+    {
+      "id": "QA-010",
+      "severity": "P1",
+      "corpus": "intro",
+      "title": "Anglicisme « on vient te collecter »",
+      "en": "(AptLoadingScreen) they are coming to collect",
+      "fr": "on vient te collecter…",
+      "issue": "collecter une personne/dette est un anglicisme. Le tutoiement et le reste du paragraphe sont bons.",
+      "reco": "on vient te réclamer la mise / récupérer son dû.",
+      "status": "applied",
+      "fix": "Intro: reclamer la mise (PNG regenere)"
+    },
+    {
+      "id": "QA-011",
+      "severity": "P1",
+      "corpus": "srt",
+      "title": "Wade intro : « t'épargner du temps »",
+      "en": "I'll spare you the time",
+      "fr": "Je vais t'épargner du temps : ne pense même pas à t'enfuir",
+      "issue": "Calque. En français on épargne quelqu'un, pas « du temps » dans ce sens.",
+      "reco": "Je vais te faire gagner du temps / Laisse-moi t'éviter de chercher : …",
+      "status": "applied",
+      "fix": "Wade SRT: te faire gagner du temps"
+    },
+    {
+      "id": "QA-012",
+      "severity": "P1",
+      "corpus": "ui_raw",
+      "title": "Ronald wrap-up : 4AM Tonight + « tenir »",
+      "en": "You have to 4AM Tonight to beat the game!!",
+      "fr": "Tu dois tenir jusqu'à 4AM Tonight pour battre le jeu !!",
+      "issue": "L'EN est un have until mal tapé. FR ajoute « tenir » (survivre) et laisse 4AM Tonight en anglais.",
+      "reco": "T'as jusqu'à 4 h du mat' ce soir pour battre le jeu !! (ou 4AM, si on garde le jargon)",
+      "status": "applied",
+      "fix": "Ronald: 4 h du mat ce soir (RAW+ACRS+lots)"
+    },
+    {
+      "id": "QA-013",
+      "severity": "P1",
+      "corpus": "ui_raw",
+      "title": "Orthographe « satânés »",
+      "en": "pesky hackers",
+      "fr": "ces satânés hackers",
+      "issue": "Graphie incorrecte. Attendu : satanés.",
+      "reco": "ces satanés hackers / ces putains de hackers",
+      "status": "applied",
+      "fix": "satanes"
+    },
+    {
+      "id": "QA-014",
+      "severity": "P2",
+      "corpus": "ui_raw",
+      "title": "RESET VIEW laissé en anglais",
+      "en": "RESET VIEW",
+      "fr": "RESET",
+      "issue": "ROTATE/PAN sont traduits (TOURNER/DÉPLACER), RESET non.",
+      "reco": "RÉINITIALISER (si overflow : RESET VIEW assumé partout, alors aussi ROTATE)",
+      "status": "applied",
+      "fix": "RESET VIEW -> REINIT."
+    },
+    {
+      "id": "QA-015",
+      "severity": "P2",
+      "corpus": "ui_raw",
+      "title": "« Signal Strength » non traduit dans la fiche Boost",
+      "en": "section labled \"Signal Strength\"",
+      "fr": "la section \"Signal Strength\" sur l'appareil",
+      "issue": "Le label physique de l'objet reste EN ; le reste de la fiche est FR.",
+      "reco": "section « Force du signal » — seulement si le mesh 3D n'affiche pas le texte EN (sinon garder EN = ce que le joueur lit sur l'objet).",
+      "status": "applied",
+      "fix": "Force du signal"
+    },
+    {
+      "id": "QA-016",
+      "severity": "P2",
+      "corpus": "achievement",
+      "title": "Titres de succès : politique EN/FR mixte",
+      "en": "God Gamer, Juiced, Stacked, QWERTY, Stick Shift, Breacher, Blackhat, NOPE, JESTER, Heisenberg, Yoink vs Debt Settled",
+      "fr": "God Gamer… vs Dettes réglées / Soirée cinéma / Parano",
+      "issue": "Choix conscient possible (memes), mais incohérent avec les titres traduits. Espace initial sur « Doigts rapides » (copié de l'EN).",
+      "reco": "Documenter la règle (memes EN, descriptifs FR) ; retirer l'espace devant Doigts rapides si Steam le permet.",
+      "status": "applied",
+      "fix": "Espace Doigts rapides retire; memes EN conserves"
+    },
+    {
+      "id": "QA-017",
+      "severity": "P2",
+      "corpus": "achievement",
+      "title": "Typos EN recopiées dans les descriptions",
+      "en": "KernalCompiler / MEMDeallacator",
+      "fr": "Contrer 100 hacks KernalCompiler / MEMDeallacator",
+      "issue": "Les vrais noms d'outils sont K3RN3LC0MP1L3R / memDEALLOCATER. Les descriptions FR recopient les fautes Steam.",
+      "reco": "Aligner sur les noms d'outils du jeu, ou garder Steam tel quel si l'overlay doit matcher l'EN officiel.",
+      "status": "applied",
+      "fix": "K3RN3LC0MP1L3R / memDEALLOCATER / stackPUSHER; tueur a gages"
+    },
+    {
+      "id": "QA-018",
+      "severity": "P2",
+      "corpus": "ui_raw",
+      "title": "Peep → Regarder (sous-traduction)",
+      "en": "Peep",
+      "fr": "Regarder",
+      "issue": "Peep = regarder par le judas. Regarder est générique (conflit possible avec d'autres prompts).",
+      "reco": "Guetter / Espionner / Judas — tester overflow HUD.",
+      "status": "applied",
+      "fix": "Peep -> Guetter"
+    },
+    {
+      "id": "QA-019",
+      "severity": "P2",
+      "corpus": "acrs",
+      "title": "Lobby : pay-it-forward / Gatekeepez / Hell yeah",
+      "en": "pay-it-forward group / Gatekeep that / Hell yeah",
+      "fr": "groupe pay-it-forward / Gatekeepez ça / Hell yeah",
+      "issue": "Anglicismes volontaires OK en spam ACRS, mais pay-it-forward est opaque en FR.",
+      "reco": "groupe d'entraide / paye-d'avance. Gatekeep/Hell yeah : laisser si registre salon.",
+      "status": "applied",
+      "fix": "groupe d entraide; Gatekeep/Hell yeah laisses"
+    },
+    {
+      "id": "QA-020",
+      "severity": "P2",
+      "corpus": "srt",
+      "title": "Wade : gambler + coupure En / échange",
+      "en": "you're a gambler / in exchange",
+      "fr": "tu es un gambler / …mes gains. En / échange, ils ont le droit…",
+      "issue": "gambler laissé EN (Wade tutoyé, OK registre). Coupure de sous-titre orpheline « En ».",
+      "reco": "joueur / parieur. Recouper : « …gonfler mes gains. En échange, ils… » sur une cue.",
+      "status": "applied",
+      "fix": "parieur + recoupe En echange (Full + FX)"
+    },
+    {
+      "id": "QA-021",
+      "severity": "P2",
+      "corpus": "srt",
+      "title": "Tanner : calembour Eye See You perdu",
+      "en": "Eye See You",
+      "fr": "J'ai l'œil sur toi !",
+      "issue": "Sens OK, jeu I/Eye perdu. Acceptable.",
+      "reco": "Je te vois (œil) / J'te zyeute — seulement si on veut le gag.",
+      "status": "applied",
+      "fix": "Je te zyeute !"
+    },
+    {
+      "id": "QA-022",
+      "severity": "P2",
+      "corpus": "pdf",
+      "title": "Jargon EN conservé (home, dead drop, pusher)",
+      "en": "home node / dead drop / pusher node / popper",
+      "fr": "nœud home / dead drop / pusher / popper",
+      "issue": "Cohérent avec INJ3KT-R etc. Un joueur FR non-tech peut coincer sur home.",
+      "reco": "nœud central / planque — ou garder EN et l'assumer dans le glossaire.",
+      "status": "applied",
+      "fix": "noeud central / planque"
+    },
+    {
+      "id": "QA-023",
+      "severity": "P2",
+      "corpus": "pdf",
+      "title": "Contestants LOCATION → POSITION",
+      "en": "LOCATION:",
+      "fr": "POSITION :",
+      "issue": "POSITION peut se lire comme pose/rôle. LIEU / LOCALISATION plus clair.",
+      "reco": "LIEU :",
+      "status": "applied",
+      "fix": "LIEU :"
+    },
+    {
+      "id": "QA-024",
+      "severity": "P2",
+      "corpus": "ui_raw",
+      "title": "Frais de gas (BitHit)",
+      "en": "Gas Fee:",
+      "fr": "Frais de gas :",
+      "issue": "gas crypto souvent laissé EN ; en FR « gaz » est autre chose. Incohérent (ni EN ni gaz).",
+      "reco": "Frais de gas (italique/EN) ou Frais réseau.",
+      "status": "applied",
+      "fix": "Frais reseau"
+    },
+    {
+      "id": "QA-025",
+      "severity": "P2",
+      "corpus": "pdf",
+      "title": "stackPUSHER : 2e balise <strong> [LMB] omise",
+      "en": "clicking [LMB] … then clicking again [LMB]",
+      "fr": "Clic gauche pour l'activer, puis encore pour le placer (un seul <strong>)",
+      "issue": "Pas un crash ; mise en forme PDF légèrement allégée. Sens conservé.",
+      "reco": "Rétablir le second <strong>[Clic gauche]</strong> pour coller au vanilla.",
+      "status": "applied",
+      "fix": "2e strong Clic gauche stackPUSHER"
+    },
+    {
+      "id": "QA-026",
+      "severity": "P2",
+      "corpus": "acrs",
+      "title": "Batches « Wiki Page » / extras polis non shippés",
+      "en": "Wiki Page (Ronald) ; extras ça / à / À plus",
+      "fr": "Batches : Wiki Page ; RAW shippé : page Wiki. Extras polis écrasés par RAW.",
+      "issue": "Les lots sont à jour ; RAW plus ancien gagne. Pas de bug in-game sur Wiki Page (RAW corrige), mais accents extras sont perdus.",
+      "reco": "Réimporter les extras dans RAW ou inverser la priorité pour ces clés Ronald/ODDroot/Goggin.",
+      "status": "applied",
+      "fix": "lots page Wiki + extras RAW"
+    },
+    {
+      "id": "QA-027",
+      "severity": "P2",
+      "corpus": "acrs",
+      "title": "What's up mother fuckers → enculeurs",
+      "en": "What's up mother fuckers?",
+      "fr": "Quoi de neuf les enculeurs ?",
+      "issue": "enculeurs = agents, pas l'insulte d'adresse. Registre à côté.",
+      "reco": "Quoi de neuf les enfoirés / les fils de pute.",
+      "status": "applied",
+      "fix": "enfoires"
+    }
+  ]
+}

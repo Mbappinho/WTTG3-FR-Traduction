@@ -90,7 +90,7 @@
     "description_en": "Get a max loss on Merramun"
   },
   {
-    "description": "Éliminer tous les autres joueurs via services de hitman en une seule partie",
+    "description": "Éliminer tous les autres joueurs via des services de tueur à gages en une seule partie",
     "displayName": "Agent 67",
     "hidden": 0,
     "icon": "achievement_images/fca18330bd65d2dfafb013d5a78bb4e9dea2e293.jpg",
@@ -100,7 +100,7 @@
     "description_en": "Kill all other players with hitman services in a single run"
   },
   {
-    "description": "Contrer 100 hacks Stack Pusher",
+    "description": "Contrer 100 hacks stackPUSHER",
     "displayName": "Stacked",
     "hidden": 0,
     "icon": "achievement_images/8cf7b6b1ec70819f63fa541c9791a0fea591ed98.jpg",
@@ -110,7 +110,7 @@
     "description_en": "Defeat 100 Stack Pusher hacks"
   },
   {
-    "description": "Contrer 100 hacks KernalCompiler",
+    "description": "Contrer 100 hacks K3RN3LC0MP1L3R",
     "displayName": "QWERTY",
     "hidden": 0,
     "icon": "achievement_images/e3f3a156411373147c7992f0ea71cdf24fe36dc7.jpg",
@@ -120,8 +120,8 @@
     "description_en": "Defeat 100 KernalCompiler hacks"
   },
   {
-    "description": "Contrer 100 hacks MEMDeallacator",
-    "displayName": " Doigts rapides",
+    "description": "Contrer 100 hacks memDEALLOCATER",
+    "displayName": "Doigts rapides",
     "hidden": 0,
     "icon": "achievement_images/ceff7ad2d5ec59ec02713dede02c3a57e3b7343a.jpg",
     "icongray": "achievement_images/4b6dfa14b8ad946fd0daa968dcdc4e7d2e649b00.jpg",

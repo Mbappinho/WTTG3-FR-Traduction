@@ -225,6 +225,12 @@ Build : `python scripts\build_azerty_imc_patch.py`
 ### Option sous-titres cinematiques (Full v1.7.0+)
 
 Prompt O/N (defaut N). Deploye UE4SS + mod Lua `.srt`. Voir [SOUS_TITRES.md](SOUS_TITRES.md).
+L'installeur force `ConsoleEnabled = 0` dans `ue4ss\UE4SS-settings.ini` (y compris
+en merge) pour eviter la fenetre cmd de debug au lancement.
+Si le champ CryptChat n'accepte plus les clics avec les sous-titres ON : overlay
+UMG qui interceptait la bande basse — Lua corrige (HitTestInvisible + Collapsed).
+Relancer le jeu apres maj de `SousTitresFR\Scripts\main.lua`. Le salon ACRS
+(`CHAT DÉSACTIVÉ`) est vanilla, pas ce bug.
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1
 ```
@@ -255,7 +261,7 @@ powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1
 | `Turn On` / `Turn Off` | `Allumer` / `Éteindre` | Interrupteurs / disjoncteurs |
 | `Turn On Computer` | `Allumer l'ordinateur` | PC principal |
 | `Enter Computer` | `Entrer dans l'ordinateur` | Tooltip input |
-| `Peep` / `Repair` | `Regarder` / `Réparer` | Judas / hub réseau |
+| `Peep` / `Repair` | `Guetter` / `Réparer` | Judas / hub réseau |
 | `Attempt Defusal` | `Tenter désamorçage` | Bombe |
 | `Enter Panic Mode` | `Mode panique` | Bouton panique |
 | `Head To Work` | `Aller au travail` | Quitter l'appart |
@@ -264,6 +270,8 @@ powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1
 
 ## QA in-game
 
+Checklist joueur : [QA_CHECKLIST.md](QA_CHECKLIST.md). Revue linguistique (2026-08-20, **sources + `FR_P` rebuild**) : [TRANSLATION_QA.md](TRANSLATION_QA.md).
+
 1. Menu : **Jouer / Continuer / Paramètres / Quitter** (accents visibles)
 2. Pause / réglages en FR (Paramètres graphiques / audio…)
 3. Tutoriel Ronald + Key Finding en FR (wrap-up complet + Good luck)
@@ -271,7 +279,7 @@ powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1
 5. DarkDrop : noms courts sans chevauchement prix (`Boost signal`, `Capteur mvt`…) + bouton **ACHETER** + descriptions VirtMesh / ShadowFetch
 6. DAREDash : **Confirmer** / **Commander** / **Annuler** / **Retour**
 7. Inventaire : Lettre d'expulsion + descriptions items
-8. Interactions monde : **Ouvrir / Déverrouiller**, **Allumer / Éteindre**, **Se cacher**, **Regarder**, etc.
+8. Interactions monde : **Ouvrir / Déverrouiller**, **Allumer / Éteindre**, **Se cacher**, **Guetter**, etc.
 9. PDF FR ; WebSites toujours EN
 10. UE4SS : **off** (`dwmapi.dll.off`) sauf option sous-titres **O** (alors `dwmapi` actif + `SousTitresFR`). Relancer INSTALLER → N doit recouper l'injecteur s'il ne reste aucun autre mod.
 11. Fermer le jeu avant rebuild (sinon verrouillage `FR_P.ucas`)

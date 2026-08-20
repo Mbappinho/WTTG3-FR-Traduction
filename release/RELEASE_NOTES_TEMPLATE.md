@@ -42,6 +42,8 @@ Toujours coller le badge Ko-fi dans le titre Summary (comme README) :
 - Credit : **iPresing** ([PR #1](https://github.com/Mbappinho/WTTG3-FR-Traduction/pull/1))
 - N après un O : retire SousTitresFR et coupe dwmapi s'il ne reste aucun autre mod
 - O sur un UE4SS déjà là : merge (n'écrase pas tes autres mods)
+- Force `ConsoleEnabled = 0` (pas de fenêtre cmd de debug au lancement)
+- Overlay UMG en HitTestInvisible + Collapsed à vide (sinon clics CryptChat avalés)
 
 ## Fichiers de la release
 - `WTTG3-FR-Traduction.zip` — Full (INSTALLER + auto-update)
