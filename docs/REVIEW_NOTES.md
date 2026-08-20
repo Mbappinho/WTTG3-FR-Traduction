@@ -7,11 +7,11 @@ Les 27 findings de [TRANSLATION_QA.md](TRANSLATION_QA.md) (`QA-001`…`QA-027`) 
 - **P0** : PDF Hacks `shiftSEQ` / `memDEALLOCATER` indiquent **WASD** (`[W]/[A]/[S]/[D]`), aligné sur ce que les mini-jeux lisent. Le pak AZERTY ne remap **pas** ces hacks.
 - **P1** : accents RAW ; tutoiement menus/PDF/Key Finding ; PDF `DÉMINER` ; calques menaces ; intro « réclamer la mise » ; Wade SRT ; Ronald `4 h du mat'` ; `satanés`.
 - **P2** : `Guetter` (Peep), `RÉINIT.`, `Frais réseau`, `LIEU :`, `nœud central` / `planque`, succès (espace Doigts rapides, noms d'outils), SRT Tanner « Je te zyeute ! ».
-- **Rebuild `FR_P` (2026-08-20)** : `build_translations.py` + `build_ui_uassetgui_patch.py` (1293 assets / 2825 remplacements) + `apply_patch.ps1` (PDF FR). Pak copié dans `WTTGSD\Content\Paks`. Overlay Steam succès sauté (`steam_settings` absent). Zip beginner non régénéré. `.srt` déjà à jour dans `release/subtitles_runtime`.
+- **Rebuild `FR_P` (2026-08-20)** : `build_translations.py` + `build_ui_uassetgui_patch.py` (1293 assets / 2825 remplacements) + `apply_patch.ps1` (PDF FR). Pak copié dans `WTTGSD\Content\Paks`. Overlay Steam succès sauté (`steam_settings` absent). Pack beginner **v1.7.2**. `.srt` déjà à jour dans `release/subtitles_runtime`.
 
 ## Revue linguistique 2026-08-20 (rapport initial)
 
-Périmètre in-game pack v1.7.1. Le rapport ci-dessus a été **patché le même jour**.
+Périmètre in-game pack v1.7.2. Le rapport ci-dessus a été **patché le même jour**.
 
 ## P0 (fait, à revalider in-game)
 
@@ -52,9 +52,9 @@ Périmètre in-game pack v1.7.1. Le rapport ci-dessus a été **patché le même
 - **v1.6.1** : retrait injecteur ; AZERTY = pak ZQSD seul ; INSTALLER nettoie dwmapi/AHK ; doc mini-jeux W/A vs pas de mod.
 - **v1.6.2** : INSTALLER/DESINSTALLER ne desactivent `dwmapi.dll` que si `ue4ss\Mods\AzertyRemap` est present (fix PR #1 iPresing) — conserve UE4SS tiers (ex. sous-titres).
 - **v1.6.3** : rebuild FR post-MAJ Steam BuildID **`24463842`** (ex-`24415407`).
-- **v1.7.1** : installeur — N après O coupe `dwmapi` si plus de mod custom ; **O** merge `SousTitresFR` dans un UE4SS existant ; détection Steam via `libraryfolders.vdf` ; auto-update SHA256.
-- **SousTitresFR / CryptChat (Lua, post-1.7.1)** : overlay UE4SS en `SelfHitTestInvisible` laissait le `TextBlock` Visible sur la bande basse → clics sur le champ de saisie CryptChat ignorés après l’intro Wade. Fix : `HitTestInvisible` sur widget/toile/bloc + `Collapsed` si pas de réplique. Pas un bug du pak `FR_P`. ACRS VelvetRoad reste lecture seule (vanilla `CHAT DISABLED`).
 - **v1.7.0** : option sous-titres cinematiques (UE4SS + `.srt`, O/N defaut N) — contribution iPresing PR #1 ; `build_subtitles_runtime.ps1`.
+- **v1.7.1** : installeur — N après O coupe `dwmapi` si plus de mod custom ; **O** merge `SousTitresFR` dans un UE4SS existant ; détection Steam via `libraryfolders.vdf` ; auto-update SHA256.
+- **v1.7.2** : loc FR QA (PDF WASD, tutoiement, calques, intro, SRT) ; overlay sous-titres **HitTestInvisible** + **Collapsed** (clics CryptChat) ; `ConsoleEnabled = 0` (plus de cmd UE4SS) ; nettoyage AHK aussi sous `Win64`.
 - **Installeur sous-titres (scripts, à shipper)** : relancer INSTALLER → **N** après un **O** retire `SousTitresFR` **et** coupe `dwmapi` s’il ne reste aucun autre mod UE4SS (plus d’injecteur orphelin). **O** sur un UE4SS déjà nested : merge `SousTitresFR` + `mods.txt` + signature SCO, sans écraser DLL / autres mods.
 - **Détection Steam** : `libraryfolders.vdf` + registre (plus seulement Program Files / D: / E:).
 - **Audit concurrent UE4SS** : ~213 EN absents de nos maps dont ~151 Wiki (exclus volontaires) ; **1** EN=FR (`47.56 / Min`, déjà chez nous) ; dialogue NOPSled (`lol instant NOPSled freak out…`) **traduit** dans `acrs_cryptchat_fr.json`. Pas de gap HUD massif de leur côté. L’analyse `work/competitor_gap_analysis/` (2026-07-22) est un **snapshot** — ne plus l’utiliser comme backlog (`Price` / `2 - 4 mins` / `pay up` patchés en v1.4.1).
@@ -75,7 +75,7 @@ Périmètre in-game pack v1.7.1. Le rapport ci-dessus a été **patché le même
 ## P2
 
 - PDF Contestants : lieux, métiers, couleurs, ADDITIONAL INFO traduits (2026-07-21) ; noms / coords / MAC / IP / téléphones conservés.
-- **Compat Steam (historique v1.2.7)** : BuildID `24303741` — voir l’historique dans [STEAM_COMPAT.md](STEAM_COMPAT.md). Courant : v1.7.1 / `24463842`.
+- **Compat Steam (historique v1.2.7)** : BuildID `24303741` — voir l’historique dans [STEAM_COMPAT.md](STEAM_COMPAT.md). Courant : v1.7.2 / `24463842`.
 - Overlay Steam officiel : non modifiable sans Steamworks ; fichier local steam_settings mis à jour pour usage perso.
 - Entrées `ui_fr.csv` sans FString correspondante (Apply, Yes/No génériques, etc.) : **ne peuvent pas** être injectées telles quelles.
 

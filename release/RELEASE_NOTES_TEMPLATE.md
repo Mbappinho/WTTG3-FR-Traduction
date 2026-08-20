@@ -11,7 +11,7 @@ Toujours coller le badge Ko-fi dans le titre Summary (comme README) :
 ## Summary
 - (1–3 puces : ce qui change pour le joueur)
 - BuildID Steam : `24463842`
-- Pack **v1.7.1** : correctifs installeur (sous-titres N/O, merge UE4SS, Steam VDF, SHA256)
+- Pack **v1.7.2** : loc FR QA + overlay CryptChat (HitTestInvisible) + console UE4SS coupée
 
 ## Install (premiere fois)
 **GitHub Full** (`WTTG3-FR-Traduction.zip`)

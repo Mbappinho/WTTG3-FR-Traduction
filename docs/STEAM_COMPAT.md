@@ -2,7 +2,7 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.7.1)
+## Version validée (pack v1.7.2)
 
 | Champ | Valeur |
 |-------|--------|
@@ -45,6 +45,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.7.2 | `24463842` | Loc FR QA (WASD PDF, tutoiement, calques) ; overlay sous-titres HitTestInvisible (CryptChat) ; console UE4SS coupée |
 | v1.7.1 | `24463842` | Installeur : N apres O coupe dwmapi ; merge UE4SS tiers ; Steam libraryfolders.vdf ; SHA256 auto-update |
 | v1.7.0 | `24463842` | Sous-titres cinematiques optionnels (UE4SS, O/N) ; credit iPresing PR #1 |
 | v1.6.3 | `24463842` | Rebuild post-MAJ Steam (ex-24415407) |

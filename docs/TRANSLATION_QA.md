@@ -1,7 +1,7 @@
 # Revue qualité traduction FR (in-game)
 
-**Date :** 2026-08-20 · **Pack :** v1.7.1 · **Steam BuildID :** `24463842`  
-**Statut :** les 27 findings (QA-001…QA-027) sont **corrigés** et **rebuild** (2026-08-20) : `build_translations.py` + `build_ui_uassetgui_patch.py` + `apply_patch.ps1`. Pak `FR_P` copié dans les Paks du jeu local. Overlay Steam `achievements.json` non posé (dossier `steam_settings` absent). Zip beginner **non** régénéré.
+**Date :** 2026-08-20 · **Pack :** v1.7.2 · **Steam BuildID :** `24463842`  
+**Statut :** les 27 findings (QA-001…QA-027) sont **corrigés** et **rebuild** (2026-08-20) : `build_translations.py` + `build_ui_uassetgui_patch.py` + `apply_patch.ps1`. Pak `FR_P` copié dans les Paks du jeu local. Overlay Steam `achievements.json` non posé (dossier `steam_settings` absent). Pack beginner **v1.7.2**.
 
 Export : [`work/translation_qa_findings.json`](../work/translation_qa_findings.json) · canvas : `traduction-qa.canvas.tsx`.
 
@@ -105,4 +105,4 @@ powershell -ExecutionPolicy Bypass -File scripts\apply_patch.ps1
 
 Résultat : 1293 assets, 2825 remplacements FString ; intro `AptLoadingScreen` FR ; `MainTitle` Jouer/Continuer OK ; PDF Hacks WASD copiés dans le jeu.
 
-Les `.srt` Wade/Tanner étaient déjà à jour dans `release/subtitles_runtime` (pas de recuit pak). Pour un zip de release : `scripts\build_beginner_pack.ps1` (pas lancé ici).
+Les `.srt` Wade/Tanner étaient déjà à jour dans `release/subtitles_runtime`. Release GitHub **v1.7.2** : `scripts\build_beginner_pack.ps1` Full + Nexus.
