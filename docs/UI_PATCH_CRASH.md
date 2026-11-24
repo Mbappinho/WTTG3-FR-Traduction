@@ -56,6 +56,9 @@ Les `.uasset` de ces widgets différaient aussi (pas seulement le `.uexp`).
 
 ```powershell
 # 1. Fermer le jeu
+# 1b. Sortir WTTGSD-Windows_FR_P.* et FR_AZERTY_P.* de Paks AVANT l'extract :
+#     retoc lit tout le dossier, sinon les assets déjà patchés FR polluent la source.
+#     Archiver l'ancien extract : source\legacy_ui_steam -> legacy_ui_steam_bak_<ancien BuildID>
 # 2. Re-extraire depuis l’install Steam à jour
 tools\retoc\retoc.exe to-legacy --version UE5_6 `
   "<STEAM>\Welcome to the Game III\WTTGSD\Content\Paks" `
@@ -64,6 +67,11 @@ tools\retoc\retoc.exe to-legacy --version UE5_6 `
 # 3. Rebuild + deploy (local_game_path.txt / WTTG3_GAME = Steam)
 python scripts\build_ui_uassetgui_patch.py
 
+# 3b. AZERTY : python scripts\build_azerty_imc_patch.py
+# 3c. Contrôles : aucune ligne "FAIL" dans le log du build ; les clés EN du CSV
+#     trouvées dans l'ancien extract doivent l'être aussi dans le nouveau ;
+#     la signature UE4SS StaticConstructObject doit rester unique (docs/SOUS_TITRES.md) ;
+#     lancement test → menu en FR, pas de nouveau dossier Saved\Crashes.
 # 4. Pack release
 powershell -ExecutionPolicy Bypass -File scripts\build_beginner_pack.ps1
 # zipper release\WTTG3-FR-Beginner → nouvelle release GitHub
