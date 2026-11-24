@@ -2,16 +2,16 @@
 
 Le mod `WTTGSD-Windows_FR_P` doit matcher le **cook exact** du jeu Steam installé.
 
-## Version validée (pack v1.7.2)
+## Version validée (pack v1.7.3)
 
 | Champ | Valeur |
 |-------|--------|
 | Jeu | Welcome to the Game III (Steam) |
 | AppID Steam | `3869850` |
-| **BuildID** | **`24463842`** |
+| **BuildID** | **`26306350`** |
 | Depot | `3869851` |
 | Manifest depot | `2133450490465218873` |
-| Dernière maj Steam (locale) | BuildID lu 2026-08-11 |
+| Dernière maj Steam (locale) | BuildID lu 2026-11-24 (Halloween Update v1.1, jeu « VER. 1.1.0 ») |
 | Source | `steamapps/appmanifest_3869850.acf` |
 
 Si ton `buildid` dans `appmanifest_3869850.acf` est **différent**, désinstalle le mod ou attends / installe une release FR rebuildée pour ce build.
@@ -45,6 +45,7 @@ Mettre à jour `release/steam_target.json` à chaque rebuild post-MAJ avant de p
 
 | Release FR | BuildID Steam cible | Notes |
 |------------|---------------------|--------|
+| v1.7.3 | `26306350` | Rebuild post-MAJ Steam (Halloween v1.1, ex-24463842) ; aucune ligne FR perdue ; contenu fin secrète (File Decryptor, clé USB) en EN |
 | v1.7.2 | `24463842` | Loc FR QA (WASD PDF, tutoiement, calques) ; overlay sous-titres HitTestInvisible (CryptChat) ; console UE4SS coupée |
 | v1.7.1 | `24463842` | Installeur : N apres O coupe dwmapi ; merge UE4SS tiers ; Steam libraryfolders.vdf ; SHA256 auto-update |
 | v1.7.0 | `24463842` | Sous-titres cinematiques optionnels (UE4SS, O/N) ; credit iPresing PR #1 |

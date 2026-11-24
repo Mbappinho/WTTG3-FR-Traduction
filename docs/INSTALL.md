@@ -48,7 +48,7 @@ powershell -ExecutionPolicy Bypass -File scripts\build_subtitles_runtime.ps1  # 
 
 Le pak `WTTGSD-Windows_FR_P` **écrase** des assets du jeu. Il doit matcher le **cook exact** de l’install.
 
-- **Build Steam validé (v1.7.2) :** BuildID **`24463842`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
+- **Build Steam validé (v1.7.3) :** BuildID **`26306350`** — voir [STEAM_COMPAT.md](STEAM_COMPAT.md).
 - **Sous-titres** : option Full O/N — [SOUS_TITRES.md](SOUS_TITRES.md).
 - **Auto-update (pack Full) :** `INSTALLER.bat` interroge GitHub Releases ; si une release plus récente / mieux adaptée au BuildID existe, propose de la télécharger (O/N). Vérifie le SHA256 via le **digest GitHub de l’asset zip** (pas de fichier `.sha256` à télécharger). Sans digest (vieilles releases) : avertissement puis continue. Nécessite internet. Le zip Nexus drop-in n’a pas d’installeur → maj manuelle.
 - **Après une mise à jour Steam**, un ancien `FR_P` peut re-crash (`Bad export index`, souvent menu Settings) même si la trad n’a pas changé.

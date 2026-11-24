@@ -14,8 +14,8 @@ Ce depot contient le **code source du pipeline de traduction** (scripts, docs, d
 
 | | |
 |--|--|
-| **Pack actuel** | **v1.7.2** |
-| **Steam BuildID** | **`24463842`** (AppID `3869850`) |
+| **Pack actuel** | **v1.7.3** |
+| **Steam BuildID** | **`26306350`** (AppID `3869850`) |
 | Verifier | fichier `steamapps/appmanifest_3869850.acf` → ligne `"buildid"` |
 
 `INSTALLER.bat` **detecte automatiquement** ton BuildID et indique si le pack est compatible.  
@@ -74,7 +74,7 @@ Details techniques : [docs/UI_PATCH_CRASH.md](docs/UI_PATCH_CRASH.md) · [docs/I
 | Dossier | Role |
 |---------|------|
 | `scripts/` | Build du mod UI (`build_ui_uassetgui_patch.py`), ACRS/CryptChat, pack debutant |
-| `docs/` | INSTALL, dump usmap, [QA in-game](docs/QA_CHECKLIST.md), [revue linguistique](docs/TRANSLATION_QA.md) (findings patchés + `FR_P` rebuild, pack **v1.7.2**), notes de crash |
+| `docs/` | INSTALL, dump usmap, [QA in-game](docs/QA_CHECKLIST.md), [revue linguistique](docs/TRANSLATION_QA.md) (findings patchés + `FR_P` rebuild, pack **v1.7.3**), notes de crash |
 | `work/` | Dictionnaires FR (CSV / JSON), map ACRS/CryptChat |
 | `work/acrs_batches/` | Lots ACRS (`fr_status.json` : pubs/UI ; `fr_dialogs_*.json` : dialogues agents ; `fr_topics.json` : 299 topics/spam lobby) |
 | `release/` | Template `LIREMOI` pour le pack debutant |

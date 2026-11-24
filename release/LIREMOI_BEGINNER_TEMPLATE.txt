@@ -1,10 +1,10 @@
 WTTG3 - Traduction francaise (pack GitHub Full)
 ===============================================
 
-COMPATIBILITE STEAM (v1.7.2)
+COMPATIBILITE STEAM (v1.7.3)
 - Jeu : Welcome to the Game III (Steam officiel)
 - AppID : 3869850
-- BuildID Steam cible : 24463842
+- BuildID Steam cible : 26306350
 - Auto-update : apres telechargement, le dossier pack local est synchronise
   (fichiers + scripts) puis l'installeur a jour est RELANCE automatiquement
   (un seul INSTALLER.bat suffit pour les nouveautes — depuis v1.6.0+).
@@ -35,7 +35,7 @@ CONTENU
 - Option sous-titres cinematiques : INSTALLER demande O/N (desactive par defaut)
   → UE4SS experimental + fichiers .srt (voix Wade, Simon, Cletus, …)
   → antivirus peut signaler dwmapi.dll ; credit iPresing (PR #1)
-  → si F9 / sous-titres morts : retelecharge ce 1.7.2 (corrige l'ancien UE4SS fev 2024)
+  → si F9 / sous-titres morts : retelecharge un pack 1.7.2+ (corrige l'ancien UE4SS fev 2024)
   → relancer INSTALLER et repondre N coupe SousTitresFR + dwmapi s'il ne reste
     aucun autre mod UE4SS (plus d'injecteur orphelin)
   → si un UE4SS est deja installe : O ajoute SousTitresFR sans ecraser tes mods
